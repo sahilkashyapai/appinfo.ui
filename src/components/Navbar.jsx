@@ -1,6 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import CompHeader from './CompHeader';
 import PreviewBlock from './PreviewBlock';
+import glanceLogo from '../images/glance/logo.png';
+
+const logoMap = {
+	glance: glanceLogo,
+	// Add more themes here as needed:
+	// dark: darkLogo,
+};
 
 const NAV_ITEMS = [
 	{ label: 'Portal' },
@@ -88,8 +95,7 @@ function NavList({ items }) {
 }
 
 export default function NavbarDemo({ theme = 'glance' }) {
-	const headerLogo = `/src/images/${theme}/logo.png`;
-	const logoPath = `/src/images/${theme}/logo.png`;
+	const headerLogo = logoMap[theme] || logoMap['glance'];
 
 	return (
 		<div className="comp-panel active" id="p-navbar">
