@@ -22,7 +22,7 @@
     "vite": "^6.3.4"
   },
   "overrides": {
-    "rollup": "^3.29.4"
+    "rollup": "^4.9.0"
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "^4.60.4"
