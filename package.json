@@ -20,5 +20,11 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.4",
     "vite": "^6.3.4"
+  },
+  "overrides": {
+    "rollup": "^3.29.4"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.60.4"
   }
 }
