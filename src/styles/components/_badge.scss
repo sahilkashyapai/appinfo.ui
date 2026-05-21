@@ -1,0 +1,59 @@
+@use '../utilities/mixins' as *;
+
+/* BADGE */
+.ai-badge {
+    @include flex(inline-flex, center, center);
+    min-height: 30px;
+    gap: 5px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    font-family: 'Work Sans', sans-serif;
+
+    &-primary {
+        background: color-mix(in srgb, var(--c-btn) 15%, transparent);
+        color: var(--c-btn);
+        border: 1px solid color-mix(in srgb, var(--c-btn) 30%, transparent);
+    }
+
+    &-dark {
+        background: var(--c-dark);
+        color: #fff;
+    }
+
+    &-success {
+        background: #d1fae5;
+        color: #065f46;
+    }
+
+    &-warning {
+        background: #fef3c7;
+        color: #92400e;
+    }
+
+    &-danger {
+        background: #fee2e2;
+        color: #991b1b;
+    }
+
+    &-neutral {
+        background: var(--c-surface2);
+        color: var(--c-text-sub);
+        border: 1px solid var(--c-border);
+    }
+
+    &-dot::before {
+        content: '';
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: currentColor;
+        display: inline-block;
+    }
+
+    .material-symbols-outlined {
+        font-size: 16px;
+    }
+}

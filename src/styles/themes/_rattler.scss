@@ -1,0 +1,42 @@
+// RATTLER — Tan + Gold
+$rattler-dark: #2f2f2f;
+$rattler-mid: #595040;
+$rattler-fade: #797163;
+$rattler-fade-alpha: #797163de;
+$rattler-btn: #d69d3a;
+$rattler-btn-hover: #c09142;
+$rattler-selected: #d69d3a88;
+$rattler-accent: #d69d3a;
+$rattler-accent2: #f0b84a;
+
+$rattler-page-bg: #faf7f2;
+$rattler-surface: #ffffff;
+$rattler-surface2: #f0ebe0;
+$rattler-border: #ddd4c0;
+$rattler-text: #1a1612;
+$rattler-text-sub: #4a3f2e;
+$rattler-text-muted: #9a8a70;
+
+[data-theme='rattler'] {
+  --c-dark: #{$rattler-dark};
+  --c-mid: #{$rattler-mid};
+  --c-fade: #{$rattler-fade};
+  --c-fade-alpha: #{$rattler-fade-alpha};
+  --c-btn: #{$rattler-btn};
+  --c-btn-hover: #{$rattler-btn-hover};
+  --c-selected: #{$rattler-selected};
+  --c-accent: #{$rattler-accent};
+  --c-accent2: #{$rattler-accent2};
+
+  --c-page-bg: #{$rattler-page-bg};
+  --c-surface: #{$rattler-surface};
+  --c-surface2: #{$rattler-surface2};
+  --c-border: #{$rattler-border};
+  --c-text: #{$rattler-text};
+  --c-text-sub: #{$rattler-text-sub};
+  --c-text-muted: #{$rattler-text-muted};
+
+  --badge-label: 'RATTLER';
+  --hero-grad: linear-gradient(135deg, #{$rattler-dark} 0%, #{$rattler-mid} 50%, #{$rattler-accent} 100%);
+  --card-top: #{$rattler-mid};
+}

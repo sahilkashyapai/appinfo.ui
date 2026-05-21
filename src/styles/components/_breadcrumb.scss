@@ -1,0 +1,35 @@
+@use '../utilities/mixins' as *;
+
+.ai-breadcrumb {
+    @include flex($align: center);
+    gap: 6px;
+    flex-wrap: wrap;
+
+    li {
+        @include flex($align: center);
+        gap: 6px;
+        font-size: 13.5px;
+        color: var(--c-text-muted);
+
+        a {
+            color: var(--c-btn);
+            font-weight: 500;
+            @include flex($align: center);
+            gap: 4px;
+
+            &:hover {
+                color: var(--c-btn-hover);
+            }
+        }
+
+        &.active {
+            color: var(--c-text);
+            font-weight: 600;
+        }
+
+        .sep {
+            color: var(--c-border);
+            font-size: 14px;
+        }
+    }
+}

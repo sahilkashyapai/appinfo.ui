@@ -1,0 +1,42 @@
+// MAINELINK — Navy + Amber
+$mainelink-dark: #0f3754;
+$mainelink-mid: #204d6c;
+$mainelink-fade: #143e60;
+$mainelink-fade-alpha: #143e60c9;
+$mainelink-btn: #e8a713;
+$mainelink-btn-hover: #f7ce00;
+$mainelink-selected: #e8a71388;
+$mainelink-accent: #e8a713;
+$mainelink-accent2: #f7ce00;
+
+$mainelink-page-bg: #f0f5fa;
+$mainelink-surface: #ffffff;
+$mainelink-surface2: #e0ecf5;
+$mainelink-border: #b8cfe0;
+$mainelink-text: #08202e;
+$mainelink-text-sub: #1a4060;
+$mainelink-text-muted: #6090b0;
+
+[data-theme='mainelink'] {
+  --c-dark: #{$mainelink-dark};
+  --c-mid: #{$mainelink-mid};
+  --c-fade: #{$mainelink-fade};
+  --c-fade-alpha: #{$mainelink-fade-alpha};
+  --c-btn: #{$mainelink-btn};
+  --c-btn-hover: #{$mainelink-btn-hover};
+  --c-selected: #{$mainelink-selected};
+  --c-accent: #{$mainelink-accent};
+  --c-accent2: #{$mainelink-accent2};
+
+  --c-page-bg: #{$mainelink-page-bg};
+  --c-surface: #{$mainelink-surface};
+  --c-surface2: #{$mainelink-surface2};
+  --c-border: #{$mainelink-border};
+  --c-text: #{$mainelink-text};
+  --c-text-sub: #{$mainelink-text-sub};
+  --c-text-muted: #{$mainelink-text-muted};
+
+  --badge-label: 'MAINELINK';
+  --hero-grad: linear-gradient(135deg, #{$mainelink-dark} 0%, #{$mainelink-mid} 50%, #{$mainelink-accent} 100%);
+  --card-top: #{$mainelink-dark};
+}

@@ -1,0 +1,54 @@
+// Spacing system (4px base)
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 12px;
+$spacing-lg: 16px;
+$spacing-xl: 28px;
+$spacing-2xl: 32px;
+$spacing-3xl: 36px;
+$spacing-4xl: 48px;
+
+// Font families — Applied Information brand
+// Work Sans = headlines + body (primary), Arek Latin (with Lora fallback) = long-form serif copy
+$font-family-mono: 'DM Mono', monospace;
+$font-family-sans: 'Work Sans', sans-serif;
+$font-family-display: 'Work Sans', sans-serif;
+$font-family-serif: 'Arek Latin', 'Lora', Georgia, serif;
+
+// Layout dimensions
+$sidebar-width: 256px;
+$sidebar-width-md: 220px;
+$navbar-height: 56px;
+
+// Code highlight colors
+$color-code-string: #f0d8a8;
+$color-code-attr: #a8f0c6;
+$color-code-tag: #f0a8d4;
+$color-code-comment: rgba(255, 255, 255, 0.3);
+$color-code-text: #a8d4f0;
+
+// ═══ Global Mixins ═══
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin mono-label {
+  font-family: $font-family-mono;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+}
+
+@mixin transition-colors {
+  transition: color 0.1s, background 0.1s, border-color 0.1s;
+}

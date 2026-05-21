@@ -1,0 +1,62 @@
+@use '../utilities/mixins' as *;
+
+/* CARD */
+.ai-card {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform .2s, box-shadow .2s;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08)
+    }
+
+    &-header {
+        padding: 16px 20px;
+        border-bottom: 1px solid var(--c-border);
+        background: var(--c-surface2)
+    }
+
+    &-header-title {
+        font-family: 'Work Sans', sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--c-text)
+    }
+
+    &-img {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+        background: var(--hero-grad);
+        @include flex(flex, center, center);
+        font-size: 40px
+    }
+
+    &-body {
+        padding: 18px 20px
+    }
+
+    &-title {
+        font-family: 'Work Sans', sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--c-text);
+        margin-bottom: 6px
+    }
+
+    &-text {
+        font-size: 13px;
+        color: var(--c-text-sub);
+        line-height: 1.6
+    }
+
+    &-footer {
+        padding: 12px 20px;
+        border-top: 1px solid var(--c-border);
+        @include flex($justify: flex-end);
+        gap: 8px
+    }
+}

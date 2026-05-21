@@ -1,0 +1,43 @@
+@use '../utilities/mixins' as *;
+
+/* TAG */
+.ai-tag {
+  @include flex(inline-flex, center);
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.04em;
+
+  &-primary {
+    background: color-mix(in srgb, var(--c-btn) 12%, transparent);
+    color: var(--c-btn);
+    border: 1px solid color-mix(in srgb, var(--c-btn) 25%, transparent);
+  }
+
+  &-gray {
+    background: var(--c-surface2);
+    color: var(--c-text-sub);
+    border: 1px solid var(--c-border);
+  }
+
+  &-red {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+  }
+
+  &-green {
+    background: #d1fae5;
+    color: #065f46;
+    border: 1px solid #6ee7b7;
+  }
+
+  &-yellow {
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fcd34d;
+  }
+}

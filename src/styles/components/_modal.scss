@@ -1,0 +1,75 @@
+@use '../utilities/mixins' as *;
+
+.ai-modal {
+    background: var(--c-surface);
+    border-radius: 14px;
+    width: min(480px, 90vw);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
+    transform: scale(.95) translateY(10px);
+    transition: transform .2s, opacity .2s;
+    opacity: 0;
+
+    &-header {
+        padding: 20px 24px;
+        border-bottom: 1px solid var(--c-border);
+        @include flex(flex, center, space-between);
+
+        .ai-modal-title {
+            font-family: 'Work Sans', sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--c-text);
+        }
+    }
+
+    &-body {
+        padding: 22px 24px;
+        font-size: 14px;
+        color: var(--c-text-sub);
+        line-height: 1.65;
+    }
+
+
+    &-footer {
+        padding: 16px 24px;
+        border-top: 1px solid var(--c-border);
+        @include flex($justify: flex-end);
+        gap: 10px;
+    }
+
+    &-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, .45);
+        @include flex(flex, center, center);
+        z-index: 1000;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .2s;
+        backdrop-filter: blur(2px);
+
+        &.open {
+            opacity: 1;
+            pointer-events: auto;
+
+            .ai-modal {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .ai-modal-close {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: var(--c-text-muted);
+            line-height: 1;
+            transition: color .1s;
+
+            &:hover {
+                color: var(--c-text);
+            }
+        }
+    }
+}

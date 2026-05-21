@@ -1,0 +1,38 @@
+@use '../utilities/mixins' as *;
+
+/* TOOLTIP */
+.ai-tooltip-wrap {
+  position: relative;
+  @include flex(inline-flex);
+
+  .ai-tooltip {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a1a2e;
+    color: #fff;
+    font-size: 12px;
+    padding: 6px 11px;
+    border-radius: 6px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s;
+    font-family: 'Work Sans', sans-serif;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-color: #1a1a2e;
+    }
+  }
+
+  &:hover .ai-tooltip {
+    opacity: 1;
+  }
+}

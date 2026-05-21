@@ -1,0 +1,66 @@
+@use '../utilities/mixins' as *;
+
+.ai-accordion {
+    border: 1px solid var(--c-border);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+
+    .ai-acc-item {
+        border-bottom: 1px solid var(--c-border);
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        .ai-acc-btn {
+            width: 100%;
+            background: var(--c-surface);
+            border: none;
+            text-align: left;
+            padding: 14px 18px;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--c-text);
+            cursor: pointer;
+            @include flex(flex, center, space-between);
+            transition: background .12s;
+
+            &:hover {
+                background: var(--c-surface2);
+            }
+
+            &.open {
+                color: var(--c-btn);
+                background: color-mix(in srgb, var(--c-btn) 6%, var(--c-surface));
+
+                .ai-acc-icon {
+                    transform: rotate(180deg);
+                    color: var(--c-btn);
+                }
+            }
+        }
+
+        .ai-acc-icon {
+            font-size: 24px;
+            transition: transform .2s;
+            color: var(--c-text-muted);
+        }
+
+        .ai-acc-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .25s ease, padding .2s;
+            font-size: 13.5px;
+            color: var(--c-text-sub);
+            line-height: 1.65;
+            background: var(--c-page-bg);
+
+            &.open {
+                max-height: 200px;
+                padding: 14px 18px;
+            }
+        }
+    }
+}

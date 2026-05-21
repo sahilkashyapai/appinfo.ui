@@ -1,0 +1,43 @@
+@use '../utilities/mixins' as *;
+
+/* LIST GROUP */
+.ai-list {
+    border: 1px solid var(--c-border);
+    border-radius: 10px;
+    overflow: hidden;
+
+    .ai-list-item {
+        padding: 12px 18px;
+        border-bottom: 1px solid var(--c-border);
+        @include flex($align: center);
+        gap: 12px;
+        font-size: 14px;
+        color: var(--c-text-sub);
+        transition: background .1s;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &:hover {
+            background: var(--c-surface2);
+        }
+
+        &.active {
+            background: color-mix(in srgb, var(--c-btn) 8%, transparent);
+            color: var(--c-btn);
+            font-weight: 600;
+        }
+
+        .li-icon {
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .li-meta {
+            margin-left: auto;
+            font-size: 12px;
+            color: var(--c-text-muted);
+        }
+    }
+}

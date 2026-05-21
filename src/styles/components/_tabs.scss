@@ -1,0 +1,44 @@
+@use '../utilities/mixins' as *;
+
+/* TABS */
+.ai-tabs {
+  border-bottom: 1px solid var(--c-border);
+
+  .ai-tab-list {
+    @include flex;
+    gap: 0;
+  }
+
+  .ai-tab-btn {
+    padding: 9px 20px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--c-text-muted);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: color 0.12s, border-color 0.12s;
+    font-family: 'Work Sans', sans-serif;
+
+    &:hover {
+      color: var(--c-text);
+    }
+
+    &.active {
+      color: var(--c-btn);
+      border-bottom-color: var(--c-btn);
+    }
+  }
+
+  .ai-tab-content {
+    display: none;
+    padding: 18px 0;
+    font-size: 14px;
+    color: var(--c-text-sub);
+
+    &.active {
+      display: block;
+    }
+  }
+}

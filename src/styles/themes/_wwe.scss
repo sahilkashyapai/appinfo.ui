@@ -1,0 +1,42 @@
+// WWE — Indigo + Cyan
+$wwe-dark: #21336b;
+$wwe-mid: #3a4d87;
+$wwe-fade: #283c7c;
+$wwe-fade-alpha: #283c7cab;
+$wwe-btn: #008fbe;
+$wwe-btn-hover: #007ea8;
+$wwe-selected: #279fd699;
+$wwe-accent: #008fbe;
+$wwe-accent2: #00b8f0;
+
+$wwe-page-bg: #f0f2fb;
+$wwe-surface: #ffffff;
+$wwe-surface2: #e0e6f8;
+$wwe-border: #bac4e8;
+$wwe-text: #0d1433;
+$wwe-text-sub: #2d3f7a;
+$wwe-text-muted: #7080bb;
+
+[data-theme='wwe'] {
+  --c-dark: #{$wwe-dark};
+  --c-mid: #{$wwe-mid};
+  --c-fade: #{$wwe-fade};
+  --c-fade-alpha: #{$wwe-fade-alpha};
+  --c-btn: #{$wwe-btn};
+  --c-btn-hover: #{$wwe-btn-hover};
+  --c-selected: #{$wwe-selected};
+  --c-accent: #{$wwe-accent};
+  --c-accent2: #{$wwe-accent2};
+
+  --c-page-bg: #{$wwe-page-bg};
+  --c-surface: #{$wwe-surface};
+  --c-surface2: #{$wwe-surface2};
+  --c-border: #{$wwe-border};
+  --c-text: #{$wwe-text};
+  --c-text-sub: #{$wwe-text-sub};
+  --c-text-muted: #{$wwe-text-muted};
+
+  --badge-label: 'WWE';
+  --hero-grad: linear-gradient(135deg, #{$wwe-dark} 0%, #{$wwe-mid} 50%, #{$wwe-accent} 100%);
+  --card-top: #{$wwe-dark};
+}

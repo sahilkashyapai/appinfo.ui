@@ -1,0 +1,33 @@
+@use '../utilities/mixins' as *;
+
+/* CHIP */
+.ai-chip {
+    @include flex(inline-flex, center);
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: var(--c-surface2);
+    border: 1px solid var(--c-border);
+    font-size: 13px;
+    color: var(--c-text-sub);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .12s;
+
+    &:hover,
+    &.active {
+        background: color-mix(in srgb, var(--c-btn) 12%, transparent);
+        border-color: var(--c-btn);
+        color: var(--c-btn)
+    }
+
+    .chip-x {
+        font-size: 11px;
+        opacity: .5;
+        margin-left: 2px;
+
+        &:hover {
+            opacity: 1
+        }
+    }
+}

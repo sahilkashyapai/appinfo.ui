@@ -1,0 +1,56 @@
+@use '../utilities/mixins' as *;
+
+/* AVATAR */
+.ai-avatar {
+    @include flex(inline-flex, center, center);
+    border-radius: 50%;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+    background: var(--hero-grad);
+    font-family: 'Work Sans', sans-serif;
+
+    &-sm {
+        width: 32px;
+        height: 32px;
+        font-size: 13px;
+    }
+
+    &-md {
+        width: 42px;
+        height: 42px;
+        font-size: 16px;
+    }
+
+    &-lg {
+        width: 56px;
+        height: 56px;
+        font-size: 20px;
+    }
+
+    &-xl {
+        width: 72px;
+        height: 72px;
+        font-size: 26px;
+    }
+
+    &-img {
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--c-border);
+    }
+
+    &-stack {
+        @include flex;
+
+        .ai-avatar,
+        .ai-avatar-img {
+            margin-left: -10px;
+            border: 2px solid var(--c-surface);
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+}

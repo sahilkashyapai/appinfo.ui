@@ -1,0 +1,24 @@
+// Flex mixin — all values default to `normal`.
+// Usage:
+//   @include flex;                          // display:flex; align-items:normal; justify-content:normal;
+//   @include flex(inline-flex, center, space-between);
+
+@mixin flex($display: flex, $align: normal, $justify: normal) {
+  display: $display;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Placeholder version for `@extend`.
+// Usage:  @extend %flex;
+%flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

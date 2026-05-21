@@ -1,0 +1,42 @@
+// MCOMMS — Ocean + Green
+$mcomms-dark: #1c5696;
+$mcomms-mid: #097bb7;
+$mcomms-fade: #0b699b;
+$mcomms-fade-alpha: #0b699bda;
+$mcomms-btn: #48aa40;
+$mcomms-btn-hover: #54d34e;
+$mcomms-selected: #54d34edb;
+$mcomms-accent: #48aa40;
+$mcomms-accent2: #54d34e;
+
+$mcomms-page-bg: #f0f7f5;
+$mcomms-surface: #ffffff;
+$mcomms-surface2: #dff0e8;
+$mcomms-border: #b8dcc8;
+$mcomms-text: #0a2a1e;
+$mcomms-text-sub: #1f5c44;
+$mcomms-text-muted: #6aaa88;
+
+[data-theme='mcomms'] {
+  --c-dark: #{$mcomms-dark};
+  --c-mid: #{$mcomms-mid};
+  --c-fade: #{$mcomms-fade};
+  --c-fade-alpha: #{$mcomms-fade-alpha};
+  --c-btn: #{$mcomms-btn};
+  --c-btn-hover: #{$mcomms-btn-hover};
+  --c-selected: #{$mcomms-selected};
+  --c-accent: #{$mcomms-accent};
+  --c-accent2: #{$mcomms-accent2};
+
+  --c-page-bg: #{$mcomms-page-bg};
+  --c-surface: #{$mcomms-surface};
+  --c-surface2: #{$mcomms-surface2};
+  --c-border: #{$mcomms-border};
+  --c-text: #{$mcomms-text};
+  --c-text-sub: #{$mcomms-text-sub};
+  --c-text-muted: #{$mcomms-text-muted};
+
+  --badge-label: 'MCOMMS';
+  --hero-grad: linear-gradient(135deg, #{$mcomms-dark} 0%, #{$mcomms-mid} 50%, #{$mcomms-accent} 100%);
+  --card-top: #{$mcomms-mid};
+}

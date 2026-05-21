@@ -1,0 +1,42 @@
+// GLANCE — Steel blue
+$glance-dark: #1c5380;
+$glance-mid: #2878a3;
+$glance-fade: #296789;
+$glance-fade-alpha: #296789ec;
+$glance-btn: #2878a3;
+$glance-btn-hover: #279fd6;
+$glance-selected: #279fd699;
+$glance-accent: #279fd6;
+$glance-accent2: #56c8f0;
+
+$glance-page-bg: #f0f6fb;
+$glance-surface: #ffffff;
+$glance-surface2: #e4eef7;
+$glance-border: #c5daea;
+$glance-text: #0d2b40;
+$glance-text-sub: #3a6480;
+$glance-text-muted: #7aa3bf;
+
+[data-theme='glance'] {
+  --c-dark: #{$glance-dark};
+  --c-mid: #{$glance-mid};
+  --c-fade: #{$glance-fade};
+  --c-fade-alpha: #{$glance-fade-alpha};
+  --c-btn: #{$glance-btn};
+  --c-btn-hover: #{$glance-btn-hover};
+  --c-selected: #{$glance-selected};
+  --c-accent: #{$glance-accent};
+  --c-accent2: #{$glance-accent2};
+
+  --c-page-bg: #{$glance-page-bg};
+  --c-surface: #{$glance-surface};
+  --c-surface2: #{$glance-surface2};
+  --c-border: #{$glance-border};
+  --c-text: #{$glance-text};
+  --c-text-sub: #{$glance-text-sub};
+  --c-text-muted: #{$glance-text-muted};
+
+  --badge-label: 'GLANCE';
+  --hero-grad: linear-gradient(135deg, #{$glance-dark} 0%, #{$glance-mid} 50%, #{$glance-accent} 100%);
+  --card-top: #{$glance-dark};
+}

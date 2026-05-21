@@ -1,0 +1,65 @@
+@use '../utilities/mixins' as *;
+
+/* SPINNER */
+.ai-spinner {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 3.5px solid var(--c-surface2);
+    border-top-color: var(--c-btn);
+    animation: spin .75s linear infinite;
+    display: inline-block;
+
+    &-sm {
+        width: 20px;
+        height: 20px;
+        border-width: 2.5px;
+    }
+
+    &-lg {
+        width: 52px;
+        height: 52px;
+        border-width: 5px;
+    }
+
+    &-dots {
+        @include flex($align: center);
+        gap: 6px;
+    }
+
+    &-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--c-btn);
+        animation: bounce .7s ease-in-out infinite;
+
+        &:nth-child(2) {
+            animation-delay: .15s;
+        }
+
+        &:nth-child(3) {
+            animation-delay: .3s;
+        }
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: .4;
+    }
+
+    50% {
+        transform: translateY(-7px);
+        opacity: 1;
+    }
+}

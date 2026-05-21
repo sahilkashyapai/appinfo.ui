@@ -1,0 +1,104 @@
+@use '../utilities/mixins' as *;
+
+// Footer styles
+.footer {
+  background: var(--c-dark);
+  color: rgba(255, 255, 255, 0.6);
+  padding: 48px 0 0;
+
+  &-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 28px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+  }
+
+  &-brand {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.375rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.03em;
+    margin-bottom: 10px;
+
+    &-sub {
+      font-size: 0.8125rem;
+      color: rgba(255, 255, 255, 0.45);
+      line-height: 1.6;
+    }
+  }
+
+  &-col {
+    h4 {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 14px;
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        margin-bottom: 8px;
+      }
+
+      a {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.8125rem;
+        transition: color 0.12s;
+
+        &:hover {
+          color: rgba(255, 255, 255, 0.9);
+        }
+      }
+    }
+  }
+
+  &-bottom {
+    max-width: 1160px;
+    margin: 32px auto 0;
+    padding: 18px 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    @include flex(flex, center, space-between);
+    flex-wrap: wrap;
+    gap: 8px;
+
+    p {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.35);
+    }
+  }
+}
+
+// Theme badges in footer
+.theme-badges-footer {
+  @include flex;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.theme-badge-f {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.5625rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 20px;
+  letter-spacing: 0.06em;
+}
+
+.tbf-glance    { background: #2878a3; color: #fff; }
+.tbf-mcomms   { background: #48aa40; color: #fff; }
+.tbf-wwe      { background: #3a4d87; color: #fff; }
+.tbf-rattler  { background: #d69d3a; color: #fff; }
+.tbf-mainelink { background: #e8a713; color: #1a1a1a; }
+
+@media (max-width: 768px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}

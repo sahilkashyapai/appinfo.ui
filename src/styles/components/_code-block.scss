@@ -1,0 +1,123 @@
+@use '../utilities/mixins' as *;
+@import '../utilities/colors';
+@import '../utilities/variables';
+
+.code-block {
+	position: relative;
+	background: #1e1e1e;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 6px;
+	overflow: hidden;
+	margin: 1.5rem 0;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+	.copy-btn {
+        width: 73px;
+		position: absolute;
+		top: 12px;
+		right: 12px;
+		@include flex($align: center);
+		gap: 6px;
+		padding: 6px 12px;
+		background: rgba(88, 166, 255, 0.1);
+		border: 1px solid rgba(88, 166, 255, 0.2);
+		border-radius: 4px;
+		color: #58a6ff;
+		font-size: 12px;
+		font-weight: 500;
+		cursor: pointer;
+		transition: all 0.2s ease;
+		font-family: inherit;
+		z-index: 10;
+
+		.material-symbols-outlined {
+			font-size: 16px;
+			width: 16px;
+			height: 16px;
+			@include flex(flex, center, center);
+		}
+
+		span {
+			display: inline-block;
+		}
+
+		&:hover:not(.is-copied) {
+			background: rgba(88, 166, 255, 0.15);
+			border-color: rgba(88, 166, 255, 0.3);
+			box-shadow: 0 0 8px rgba(88, 166, 255, 0.2);
+		}
+
+		&:active:not(.is-copied) {
+			transform: scale(0.98);
+		}
+
+		&.is-copied {
+			background: rgba(3, 102, 214, 0.15);
+			border-color: rgba(3, 102, 214, 0.3);
+			color: #0366d6;
+		}
+	}
+
+	pre {
+		margin: 0;
+		padding: 16px;
+		padding-top: 48px;
+		background: transparent;
+		overflow-x: auto;
+		overflow-y: hidden;
+		font-family: 'Fira Code', 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
+		font-size: 13px;
+		line-height: 1.6;
+		color: #e0e0e0;
+		letter-spacing: 0.3px;
+
+		// Scrollbar styling
+		&::-webkit-scrollbar {
+			height: 6px;
+		}
+
+		// Syntax highlighting classes
+		.kw {
+			color: #d4d4d4; // Keywords/tags - light gray
+			font-weight: 500;
+		}
+
+		.at {
+			color: #9cdcfe; // Attributes - light blue
+			font-weight: 500;
+		}
+
+		.vl {
+			color: #ce9178; // Values - brownish orange
+		}
+
+		.cm {
+			color: #6a9955; // Comments - green (if needed)
+		}
+	}
+
+	// Responsive
+	@media (max-width: 768px) {
+		margin: 1rem 0;
+
+		pre {
+			padding: 48px 12px 12px;
+			font-size: 12px;
+			max-height: 400px;
+			overflow-y: auto;
+		}
+
+		.copy-btn {
+			padding: 5px 10px;
+			font-size: 11px;
+			top: 8px;
+			right: 8px;
+
+			.material-symbols-outlined {
+				font-size: 14px;
+				width: 14px;
+				height: 14px;
+			}
+		}
+	}
+}

@@ -1,0 +1,45 @@
+@use '../utilities/mixins' as *;
+
+/* PAGINATION */
+.ai-pagination {
+    @include flex($align: center);
+    gap: 4px;
+}
+
+.ai-page-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 7px;
+    border: 1.5px solid var(--c-border);
+    background: var(--c-surface);
+    color: var(--c-text-sub);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    @include flex(flex, center, center);
+    transition: all .12s;
+    font-family: 'DM Mono', monospace;
+
+    &:hover {
+        border-color: var(--c-btn);
+        color: var(--c-btn);
+    }
+
+    &.active {
+        background: var(--c-btn);
+        color: #fff;
+        border-color: var(--c-btn);
+    }
+
+    &:disabled {
+        opacity: .35;
+        cursor: not-allowed;
+    }
+}
+
+.ai-page-ellipsis {
+    color: var(--c-text-muted);
+    padding: 0 4px;
+    font-size: 14px;
+    letter-spacing: .1em;
+}

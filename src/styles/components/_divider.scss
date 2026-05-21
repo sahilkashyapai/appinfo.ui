@@ -1,0 +1,29 @@
+@use '../utilities/mixins' as *;
+
+/* DIVIDER */
+.ai-divider {
+    border: none;
+    border-top: 1px solid var(--c-border);
+    margin: 0;
+
+    &-thick {
+        border-top-width: 2px;
+        border-color: var(--c-btn)
+    }
+
+    &-text {
+        @include flex($align: center);
+        gap: 12px;
+        color: var(--c-text-muted);
+        font-size: 12px;
+        font-family: 'DM Mono', monospace;
+        letter-spacing: .06em;
+
+        &::before,
+        &::after {
+            content: '';
+            flex: 1;
+            border-top: 1px solid var(--c-border)
+        }
+    }
+}

@@ -1,0 +1,173 @@
+@use '../utilities/mixins' as *;
+
+// sidebar
+.ai-devicelist-sidebar {
+    width: var(--sidebar-width);
+
+    &.sidebar-expanded-full {
+        width: auto;
+
+        .devicelist-header {
+            .devicelist-items {
+                max-width: var(--sidebar-width);
+            }
+        }
+
+        .devicelist-content {
+            overflow-y: hidden;
+            overflow-x: auto;
+
+            .devicelist-item-wrapper {
+                display: inline-flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+
+                &::-webkit-scrollbar {
+                    height: 6px;
+                }
+
+                .device-title,
+                .devicelist-items {
+                    width: var(--sidebar-width);
+
+                }
+
+                .devicelist-items li:last-of-type,
+                .device-title {
+                    border-right: 1px solid var(--c-border);
+
+                }
+            }
+        }
+    }
+
+    .devicelist-header {
+        background: var(--c-surface2);
+        color: var(--c-text-sub);
+        position: relative;
+        height: var(--sidebar-header-height);
+
+        .devicelist-items {
+            @extend %flex;
+            padding: 8px 36px 8px 16px;
+
+            &:last-of-type {
+                padding-right: 8px;
+            }
+        }
+
+        .devicelist-header-toggle {
+            position: absolute;
+            top: 50%;
+            left: 316px;
+            transform: translateY(-50%);
+            height: 100%;
+            @include flex($align: center);
+            background: var(--c-text-sub);
+            color: var(--c-page-bg);
+            width: 24px;
+            overflow: hidden;
+            user-select: none;
+
+            span {
+                font-size: 32px;
+                margin-left: -3px;
+            }
+        }
+    }
+
+    .devicelist-content {
+        .devicelist-item-wrapper {
+            max-height: calc(100vh - var(--header-height) - var(--sidebar-header-height));
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                width: 6px;
+            }
+
+            .device-title {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .device-title,
+            .child1-item {
+                padding-top: 8px;
+                padding-bottom: 8px;
+                border-bottom: 1px solid var(--c-border);
+            }
+
+            .device-title {
+                font-weight: bold;
+                color: var(--c-btn);
+                font-size: 16px;
+                background-color: var(--c-page-bg);
+            }
+
+            .devicelist-items {
+
+                li {
+                    background-color: var(--c-page-bg);
+
+
+                    &:first-of-type {
+
+                        @include flex($align: center);
+                        gap: 6px;
+                        line-height: 1;
+
+
+                        .device-status-light {
+                            height: 10px;
+                            width: 10px;
+                            display: inline-block;
+                            border-radius: 2px;
+                            margin-bottom: 2px;
+
+                            &.red {
+                                background-color: red;
+                            }
+                        }
+                    }
+
+                    a {
+                        color: var(--c-mid);
+                        font-size: 14px;
+                        transition: filter 0.15s ease;
+
+                        &:hover {
+                            filter: brightness(135%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .devicelist-items {
+        display: flex;
+
+        li {
+            word-break: break-all;
+
+            &:first-of-type {
+                width: 53%;
+                padding-left: 12px;
+                padding-right: 4px;
+            }
+
+            &:nth-of-type(2) {
+                width: 35%;
+                padding-left: 4px;
+                padding-right: 4px;
+            }
+
+            &:last-of-type {
+                width: 12%;
+                padding-left: 4px;
+                padding-right: 4px;
+            }
+        }
+    }
+
+}
