@@ -2,11 +2,17 @@ import { useEffect, useRef, useState } from 'react';
 import CompHeader from './CompHeader';
 import PreviewBlock from './PreviewBlock';
 import glanceLogo from '../images/glance/logo.png';
+import maineinkLogo from '../images/maineink/logo.png';
+import mcommsLogo from '../images/mcomms/logo.png';
+import rattlerLogo from '../images/rattler/logo.png';
+import wweLogo from '../images/wwe/logo.png';
 
 const logoMap = {
 	glance: glanceLogo,
-	// Add more themes here as needed:
-	// dark: darkLogo,
+	rattler: rattlerLogo,
+	mcomms: mcommsLogo,
+	maineink: maineinkLogo,
+	wwe: wweLogo,
 };
 
 const NAV_ITEMS = [
@@ -94,7 +100,7 @@ function NavList({ items }) {
 	);
 }
 
-export default function NavbarDemo({ theme = 'glance' }) {
+export default function Navbar({ theme = 'glance' }) {
 	const headerLogo = logoMap[theme] || logoMap['glance'];
 
 	return (
