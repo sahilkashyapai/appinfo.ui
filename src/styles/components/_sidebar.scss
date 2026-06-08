@@ -1,5 +1,11 @@
 @use '../utilities/mixins' as *;
 
+:root {
+    --sidebar-width: 340px;
+    --sidebar-header-height: 40px;
+}
+
+
 // sidebar
 .ai-devicelist-sidebar {
     width: var(--sidebar-width);
@@ -21,6 +27,7 @@
                 display: inline-flex;
                 flex-direction: column;
                 flex-wrap: wrap;
+                background: var(--c-page-bg);
 
                 &::-webkit-scrollbar {
                     height: 6px;
@@ -76,68 +83,66 @@
         }
     }
 
-    .devicelist-content {
-        .devicelist-item-wrapper {
-            max-height: calc(100vh - var(--header-height) - var(--sidebar-header-height));
-            overflow-y: auto;
+    .devicelist-item-wrapper {
+        max-height: calc(100vh - var(--header-height) - var(--sidebar-header-height));
+        overflow-y: auto;
 
-            &::-webkit-scrollbar {
-                width: 6px;
-            }
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
 
-            .device-title {
-                padding-left: 12px;
-                padding-right: 12px;
-            }
+        .device-title {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
 
-            .device-title,
-            .child1-item {
-                padding-top: 8px;
-                padding-bottom: 8px;
-                border-bottom: 1px solid var(--c-border);
-            }
+        .device-title,
+        .child1-item {
+            padding-top: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--c-border);
+        }
 
-            .device-title {
-                font-weight: bold;
-                color: var(--c-btn);
-                font-size: 16px;
+        .device-title {
+            font-weight: bold;
+            color: var(--c-btn);
+            font-size: 16px;
+            background-color: var(--c-page-bg);
+        }
+
+        .devicelist-items {
+
+            li {
                 background-color: var(--c-page-bg);
-            }
-
-            .devicelist-items {
-
-                li {
-                    background-color: var(--c-page-bg);
 
 
-                    &:first-of-type {
+                &:first-of-type {
 
-                        @include flex($align: center);
-                        gap: 6px;
-                        line-height: 1;
+                    @include flex($align: center);
+                    gap: 6px;
+                    line-height: 1;
 
 
-                        .device-status-light {
-                            height: 10px;
-                            width: 10px;
-                            display: inline-block;
-                            border-radius: 2px;
-                            margin-bottom: 2px;
+                    .device-status-light {
+                        height: 10px;
+                        width: 10px;
+                        display: inline-block;
+                        border-radius: 2px;
+                        margin-bottom: 2px;
 
-                            &.red {
-                                background-color: red;
-                            }
+                        &.red {
+                            background-color: red;
                         }
                     }
+                }
 
-                    a {
-                        color: var(--c-mid);
-                        font-size: 14px;
-                        transition: filter 0.15s ease;
+                a {
+                    color: var(--c-mid);
+                    font-size: 14px;
+                    transition: filter 0.15s ease;
 
-                        &:hover {
-                            filter: brightness(135%);
-                        }
+                    &:hover {
+                        filter: brightness(135%);
                     }
                 }
             }

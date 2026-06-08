@@ -1,6 +1,6 @@
 @use '../utilities/mixins' as *;
-@import '../utilities/colors';
-@import '../utilities/variables';
+@use '../utilities/colors' as *;
+@use '../utilities/variables' as *;
 
 .code-block {
 	position: relative;

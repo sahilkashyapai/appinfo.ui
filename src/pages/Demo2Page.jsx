@@ -45,6 +45,22 @@ const DEVICE_GROUPS = [
 			{ name: 'PHX-Indian School', status: 'Pending', count: '1', alert: true },
 		],
 	},
+	{
+		title: 'Phoenix AZ Network',
+		rows: [
+			{ name: 'PHX-Camelback-01', status: 'Online', count: '0', alert: false },
+			{ name: 'PHX-Camelback-02', status: 'Online', count: '0', alert: false },
+			{ name: 'PHX-Indian School', status: 'Pending', count: '1', alert: true },
+		],
+	},
+	{
+		title: 'Phoenix AZ Network',
+		rows: [
+			{ name: 'PHX-Camelback-01', status: 'Online', count: '0', alert: false },
+			{ name: 'PHX-Camelback-02', status: 'Online', count: '0', alert: false },
+			{ name: 'PHX-Indian School', status: 'Pending', count: '1', alert: true },
+		],
+	},
 ];
 
 const KPIS = [
@@ -153,7 +169,7 @@ function DeviceListSidebar() {
 		const update = () => {
 			setHasScroll(
 				wrapper.scrollHeight > parent.clientHeight ||
-					wrapper.scrollWidth > parent.clientWidth
+				wrapper.scrollWidth > parent.clientWidth
 			);
 		};
 		update();
@@ -299,10 +315,10 @@ export default function Demo2Page({ theme = 'glance' }) {
 				</nav>
 			</header>
 
-			<div className="demo2-body">
+			<main className="main-wrapper">
 				<DeviceListSidebar />
 
-				<main className="demo2-main">
+				<section className="map-content-wrapper">
 					<div className="demo2-page-head">
 						<div>
 							<h1 className="demo2-title">Operations Dashboard</h1>
@@ -397,8 +413,8 @@ export default function Demo2Page({ theme = 'glance' }) {
 							</div>
 						</section>
 					</div>
-				</main>
-			</div>
+				</section>
+			</main>
 		</div>
 	);
 }

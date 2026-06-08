@@ -14,7 +14,7 @@ export default function Range() {
 			/>
 			<PreviewBlock
 				label="Preview"
-				canvasStyle={{ display: 'flex', flexDirection: 'column', maxWidth: '400px' }}
+				canvasStyle={{ display: 'flex', flexDirection: 'column' }}
 			>
 				<div className="ai-input-group">
 					<label className="ai-label">Threshold Level - <span>{thresholdLevel}</span>%</label>

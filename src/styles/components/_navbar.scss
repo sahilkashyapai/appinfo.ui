@@ -4,8 +4,6 @@
     --header-head-height: 50px;
     --navbar-height: 60px;
     --header-height: calc(var(--header-head-height) + var(--navbar-height));
-    --sidebar-width: 340px;
-    --sidebar-header-height: 40px;
 }
 
 /* HEADER WITHOUT NAVBAR */
@@ -27,7 +25,7 @@
 
     .header-head {
         background: var(--c-dark);
-        padding: 8px 18px;
+        padding: 9px 18px;
         gap: 16px;
         width: 100%;
         @include flex($align: center, $justify: space-between);
