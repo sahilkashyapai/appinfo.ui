@@ -279,6 +279,7 @@ function DeviceListSidebar() {
 
 export default function Demo2Page({ theme = 'glance' }) {
 	const logoPath = `/src/images/${theme}/logo.png`;
+	const [isNavbarExpanded, setIsNavbarExpanded] = useState(false);
 
 	return (
 		<div className="demo2-shell">
@@ -300,9 +301,23 @@ export default function Demo2Page({ theme = 'glance' }) {
 							<span className="logout-btn-icon material-symbols-outlined">power_settings_new</span>
 						</button>
 					</div>
+
+					<button
+						className={`ai-navbar-toggler only-mobile${isNavbarExpanded ? ' burger-open' : ''}`}
+						type="button"
+						aria-label="Toggle navigation"
+						aria-expanded={isNavbarExpanded}
+						onClick={() => setIsNavbarExpanded((v) => !v)}
+					>
+						<div className="navtoggler-sticks">
+							<div className="stick"></div>
+							<div className="stick"></div>
+							<div className="stick"></div>
+						</div>
+					</button>
 				</div>
 
-				<nav className="ai-navbar">
+				<nav className={`ai-navbar${isNavbarExpanded ? ' navbar-expanded' : ''}`}>
 					<div className="ai-navbar-searchbox">
 						<input
 							type="text"

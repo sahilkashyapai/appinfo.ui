@@ -29,6 +29,46 @@
         }
     }
 
+    &-primary-light {
+        background: var(--c-btn-hover);
+        color: #fff;
+        box-shadow: 0 3px 10px color-mix(in srgb, var(--c-btn-hover) 30%, transparent)
+    }
+
+    &-primary-light:hover {
+        background: var(--c-btn);
+    }
+
+    &-secondary {
+        background: #87898c;
+        color: #cdd0d4;
+        box-shadow: 0 3px 10px color-mix(in srgb, #87898c 30%, transparent)
+    }
+
+    &-secondary:hover {
+        background: #6e6f71
+    }
+
+    &-warning {
+        background: #F8AE42;
+        color: #0F3849;
+        box-shadow: 0 3px 10px color-mix(in srgb, #F8AE42 30%, transparent)
+    }
+
+    &-warning:hover {
+        background: #F7A028;
+    }
+
+    &-dark {
+        background: #0F3849;
+        color: #fff;
+        box-shadow: 0 3px 10px color-mix(in srgb, #0F3849 30%, transparent)
+    }
+
+    &-dark:hover {
+        background: #0b2a3b;
+    }
+
     &-outline {
         background: transparent;
         color: var(--c-btn);

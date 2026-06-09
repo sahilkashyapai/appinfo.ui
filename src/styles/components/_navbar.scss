@@ -23,6 +23,10 @@
         gap: 10px;
     }
 
+    .only-mobile {
+        display: none !important;
+    }
+
     .header-head {
         background: var(--c-dark);
         padding: 9px 18px;
@@ -75,6 +79,74 @@
         .logout-btn-icon {
             font-size: 1.25rem !important;
             display: none !important;
+        }
+
+
+        .ai-navbar-toggler {
+            background-color: #244662;
+            padding: 0;
+            border: 0;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+
+        .navtoggler-sticks {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            padding: 5px;
+            position: relative;
+            width: 40px;
+            height: 35px;
+
+            .stick {
+                height: 3px;
+                width: 30px;
+                background-color: #fff;
+                border-radius: 3px;
+                position: absolute;
+                transition: ease 0.3s all;
+
+                &:first-of-type {
+                    top: 8px;
+                }
+
+                &:nth-of-type(2) {
+                    top: 16px;
+                }
+
+                &:last-of-type {
+                    bottom: 8px;
+                }
+
+            }
+        }
+
+
+        .burger-open {
+            display: flex;
+
+            .stick:first-of-type {
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+                top: 16px;
+            }
+
+            .stick:nth-of-type(2) {
+                opacity: 0;
+            }
+
+            .stick:last-of-type {
+                -webkit-transform: rotate(-45deg);
+                -ms-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                bottom: 16px;
+            }
         }
     }
 
@@ -199,19 +271,83 @@
     }
 }
 
-@media (max-width: 576px) {
-
-    .powered-by,
-    .logout-btn-text {
-        display: none;
+@media(max-width: 1080px) {
+    body {
+        overflow: hidden
     }
 
-    .ai-btn {
-        padding: 7px 16px;
+    .header {
+        &.header--has-nav {
+            height: var(--header-head-height);
+        }
+
+        .only-mobile {
+            display: flex !important;
+        }
+
+        .ai-navbar {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            right: 0;
+            top: var(--header-head-height);
+            height: calc(100dvh - var(--header-head-height));
+            z-index: 1001;
+            display: none;
+            align-items: start;
+            justify-content: unset;
+            gap: 20px;
+            background-color: #244662;
+            padding-right: 0;
+
+            &.navbar-expanded {
+                display: flex;
+            }
+
+
+            .ai-navbar-nav {
+                flex-direction: column;
+                /* height: auto; */
+                align-items: start;
+                justify-content: start;
+                margin: 0 0;
+                margin-left: unset !important;
+                gap: 0;
+                padding: 0;
+                width: 100%;
+
+                .nav-item {
+                    height: auto;
+                    padding: 12px 24px;
+                    border-bottom: 1px solid var(--c-dark);
+                    width: 100%;
+
+                    .nav-link {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
     }
 
-    .logout-btn-icon {
-        display: inline-block !important;
+
+    .header-user-actions {
+        display: none !important;
     }
 }
 
+@media(max-width: 576px) {
+
+    .powered-by,
+    .logout-btn-text {
+        display: none
+    }
+
+    .ai-btn {
+        padding: 7px 16px
+    }
+
+    .logout-btn-icon {
+        display: inline-block !important
+    }
+}

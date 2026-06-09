@@ -102,6 +102,8 @@ function NavList({ items }) {
 
 export default function Navbar({ theme = 'glance' }) {
 	const headerLogo = logoMap[theme] || logoMap['glance'];
+	const [primaryNavExpanded, setPrimaryNavExpanded] = useState(false);
+	const [dropdownNavExpanded, setDropdownNavExpanded] = useState(false);
 
 	return (
 		<div className="comp-panel active" id="p-navbar">
@@ -157,10 +159,26 @@ export default function Navbar({ theme = 'glance' }) {
 								<span className="logout-btn-text">LOGOUT</span>
 								<span className="logout-btn-icon material-symbols-outlined">power_settings_new</span>
 							</button>
+
+
 						</div>
+
+						<button
+							className={`ai-navbar-toggler only-mobile${primaryNavExpanded ? ' burger-open' : ''}`}
+							type="button"
+							aria-label="Toggle navigation"
+							aria-expanded={primaryNavExpanded}
+							onClick={() => setPrimaryNavExpanded((v) => !v)}
+						>
+							<div className="navtoggler-sticks">
+								<div className="stick"></div>
+								<div className="stick"></div>
+								<div className="stick"></div>
+							</div>
+						</button>
 					</div>
 
-					<nav className="ai-navbar">
+					<nav className={`ai-navbar${primaryNavExpanded ? ' navbar-expanded' : ''}`}>
 						<div className="ai-navbar-searchbox">
 							<input type="text" className="ai-input ai-input-search" placeholder="Search..." aria-label="Search through site content" />
 						</div>
@@ -205,7 +223,17 @@ export default function Navbar({ theme = 'glance' }) {
 								<span className="logout-btn-text">LOGOUT</span>
 								<span className="logout-btn-icon material-symbols-outlined">power_settings_new</span>
 							</button>
+
+
 						</div>
+
+						<button className="ai-navbar-toggler only-mobile" type="button" aria-label="Toggle navigation">
+							<div className="navtoggler-sticks">
+								<div className="stick"></div>
+								<div className="stick"></div>
+								<div className="stick"></div>
+							</div>
+						</button>
 					</div>
 				</header>
 			</PreviewBlock>
@@ -246,10 +274,27 @@ export default function Navbar({ theme = 'glance' }) {
 								<span className="logout-btn-text">LOGOUT</span>
 								<span className="logout-btn-icon material-symbols-outlined">power_settings_new</span>
 							</button>
+
+
+
 						</div>
+
+						<button
+							className={`ai-navbar-toggler only-mobile${dropdownNavExpanded ? ' burger-open' : ''}`}
+							type="button"
+							aria-label="Toggle navigation"
+							aria-expanded={dropdownNavExpanded}
+							onClick={() => setDropdownNavExpanded((v) => !v)}
+						>
+							<div className="navtoggler-sticks">
+								<div className="stick"></div>
+								<div className="stick"></div>
+								<div className="stick"></div>
+							</div>
+						</button>
 					</div>
 
-					<nav className="ai-navbar">
+					<nav className={`ai-navbar${dropdownNavExpanded ? ' navbar-expanded' : ''}`}>
 						<div className="ai-navbar-searchbox">
 							<input type="text" className="ai-input ai-input-search" placeholder="Search..." aria-label="Search through site content" />
 						</div>
