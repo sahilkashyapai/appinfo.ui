@@ -286,6 +286,10 @@
             height: var(--header-head-height);
         }
 
+        .ai-navbar-searchbox {
+            display: none;
+        }
+
         .only-mobile {
             display: flex !important;
         }
