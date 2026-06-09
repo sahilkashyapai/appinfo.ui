@@ -14,6 +14,8 @@
     modalBackdrop: '.ai-modal-backdrop',
     modalClose: '.ai-modal-close, [data-ai-modal-close]',
     modalOpen: '[data-ai-modal-open]',
+    navbar: '.ai-navbar',
+    navbarToggler: '.ai-navbar-toggler',
     navDropdown: '.nav-item--has-dropdown',
     sidebar: '.ai-devicelist-sidebar',
     sidebarToggle: '.devicelist-header-toggle',
@@ -32,12 +34,32 @@
 
   function closeNavDropdowns(except) {
     document.querySelectorAll(SELECTORS.navDropdown).forEach((item) => {
-      if (item !== except) item.classList.remove('is-open');
+      if (item !== except) {
+        item.classList.remove('is-open');
+        setExpanded(item.querySelector('.nav-caret-btn'), false);
+        setNavCaretIcon(item, false);
+      }
     });
   }
 
   function setExpanded(control, expanded) {
     if (control) control.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+  }
+
+  function setNavCaretIcon(item, expanded) {
+    const icon = item ? item.querySelector('.nav-caret') : null;
+    if (icon) icon.textContent = expanded ? 'expand_less' : 'expand_more';
+  }
+
+  function toggleNavbar(button) {
+    const header = button.closest('.header');
+    const navbar = header ? header.querySelector(SELECTORS.navbar) : null;
+    if (!navbar) return;
+
+    const willOpen = !navbar.classList.contains('navbar-expanded');
+    navbar.classList.toggle('navbar-expanded', willOpen);
+    button.classList.toggle('burger-open', willOpen);
+    setExpanded(button, willOpen);
   }
 
   function toggleAccordion(button) {
@@ -151,14 +173,22 @@
         return;
       }
 
+      const navbarToggler = event.target.closest(SELECTORS.navbarToggler);
+      if (navbarToggler) {
+        toggleNavbar(navbarToggler);
+        return;
+      }
+
       const navToggle = event.target.closest('.nav-link--toggle, .nav-caret-btn');
       if (navToggle) {
         const item = navToggle.closest(SELECTORS.navDropdown);
         if (item) {
+          event.preventDefault();
           const willOpen = !item.classList.contains('is-open');
           closeNavDropdowns(item);
           item.classList.toggle('is-open', willOpen);
-          setExpanded(navToggle, willOpen);
+          setExpanded(item.querySelector('.nav-caret-btn'), willOpen);
+          setNavCaretIcon(item, willOpen);
           return;
         }
       }
