@@ -74,7 +74,7 @@ function formatHtml(html) {
 	return lines.join('\n');
 }
 
-export default function PreviewBlock({ label = 'Preview', code, children, canvasStyle = {} }) {
+export default function PreviewBlock({ label = 'Preview', code, children, canvasStyle = {}, canvasClassName = '' }) {
 	const { copy } = useClipboard();
 	const [activeTab, setActiveTab] = useState('preview');
 
@@ -118,7 +118,7 @@ export default function PreviewBlock({ label = 'Preview', code, children, canvas
 			</div>
 
 			{activeTab === 'preview' ? (
-				<div className="preview-canvas" style={canvasStyle}>
+				<div className={`preview-canvas${canvasClassName ? ` ${canvasClassName}` : ''}`} style={canvasStyle}>
 					{children}
 				</div>
 			) : (

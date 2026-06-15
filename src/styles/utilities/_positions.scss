@@ -1,0 +1,230 @@
+// ═══ Position Utilities (.ai-position-*) ═══
+// Position utilities with Bootstrap-like responsive support
+// Prefix: .ai- (Applied Information)
+
+$breakpoints: (
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1400px
+);
+
+$position-scale: (
+  0: 0px,
+  1: 4px,
+  2: 8px,
+  3: 12px,
+  4: 16px,
+  5: 20px,
+  6: 24px,
+  7: 28px,
+  8: 32px,
+  9: 36px,
+  10: 40px,
+  12: 48px,
+  16: 64px,
+  20: 80px,
+  24: 96px,
+  25: 100px,
+  auto: auto
+);
+
+// ─── Position Values ───
+.ai-position-static {
+  position: static !important;
+}
+
+.ai-position-relative {
+  position: relative !important;
+}
+
+.ai-position-absolute {
+  position: absolute !important;
+}
+
+.ai-position-fixed {
+  position: fixed !important;
+}
+
+.ai-position-sticky {
+  position: sticky !important;
+}
+
+// ─── Top/Right/Bottom/Left/Z-Index ───
+@each $position, $value in $position-scale {
+  @if $position != auto {
+    .ai-top-#{$position} {
+      top: $value !important;
+    }
+    .ai-right-#{$position} {
+      right: $value !important;
+    }
+    .ai-bottom-#{$position} {
+      bottom: $value !important;
+    }
+    .ai-left-#{$position} {
+      left: $value !important;
+    }
+  } @else {
+    .ai-top-#{$position} {
+      top: $value !important;
+    }
+    .ai-right-#{$position} {
+      right: $value !important;
+    }
+    .ai-bottom-#{$position} {
+      bottom: $value !important;
+    }
+    .ai-left-#{$position} {
+      left: $value !important;
+    }
+  }
+}
+
+// Z-index utilities
+$z-indexes: (
+  0: 0,
+  1: 1,
+  10: 10,
+  20: 20,
+  30: 30,
+  40: 40,
+  50: 50,
+  100: 100,
+  1000: 1000,
+  1020: 1020,
+  1030: 1030,
+  1040: 1040,
+  1050: 1050
+);
+
+@each $level, $z-value in $z-indexes {
+  .ai-z-#{$level} {
+    z-index: $z-value !important;
+  }
+}
+
+// ─── Float ───
+.ai-float-start {
+  float: left !important;
+}
+
+.ai-float-end {
+  float: right !important;
+}
+
+.ai-float-none {
+  float: none !important;
+}
+
+// ─── Clear ───
+.ai-clear-start {
+  clear: left !important;
+}
+
+.ai-clear-end {
+  clear: right !important;
+}
+
+.ai-clear-both {
+  clear: both !important;
+}
+
+.ai-clear-none {
+  clear: none !important;
+}
+
+// ─── Object Position ───
+.ai-object-fill {
+  object-fit: fill !important;
+}
+
+.ai-object-contain {
+  object-fit: contain !important;
+}
+
+.ai-object-cover {
+  object-fit: cover !important;
+}
+
+.ai-object-scale-down {
+  object-fit: scale-down !important;
+}
+
+.ai-object-none {
+  object-fit: none !important;
+}
+
+// ─── Responsive Position Utilities ───
+@each $breakpoint, $breakpoint-value in $breakpoints {
+  @media (min-width: $breakpoint-value) {
+    .ai-position-static-#{$breakpoint} {
+      position: static !important;
+    }
+
+    .ai-position-relative-#{$breakpoint} {
+      position: relative !important;
+    }
+
+    .ai-position-absolute-#{$breakpoint} {
+      position: absolute !important;
+    }
+
+    .ai-position-fixed-#{$breakpoint} {
+      position: fixed !important;
+    }
+
+    .ai-position-sticky-#{$breakpoint} {
+      position: sticky !important;
+    }
+
+    @each $position, $value in $position-scale {
+      @if $position != auto {
+        .ai-top-#{$breakpoint}-#{$position} {
+          top: $value !important;
+        }
+        .ai-right-#{$breakpoint}-#{$position} {
+          right: $value !important;
+        }
+        .ai-bottom-#{$breakpoint}-#{$position} {
+          bottom: $value !important;
+        }
+        .ai-left-#{$breakpoint}-#{$position} {
+          left: $value !important;
+        }
+      } @else {
+        .ai-top-#{$breakpoint}-#{$position} {
+          top: $value !important;
+        }
+        .ai-right-#{$breakpoint}-#{$position} {
+          right: $value !important;
+        }
+        .ai-bottom-#{$breakpoint}-#{$position} {
+          bottom: $value !important;
+        }
+        .ai-left-#{$breakpoint}-#{$position} {
+          left: $value !important;
+        }
+      }
+    }
+
+    @each $level, $z-value in $z-indexes {
+      .ai-z-#{$breakpoint}-#{$level} {
+        z-index: $z-value !important;
+      }
+    }
+
+    .ai-float-start-#{$breakpoint} {
+      float: left !important;
+    }
+
+    .ai-float-end-#{$breakpoint} {
+      float: right !important;
+    }
+
+    .ai-float-none-#{$breakpoint} {
+      float: none !important;
+    }
+  }
+}

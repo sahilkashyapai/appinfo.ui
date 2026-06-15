@@ -1,0 +1,266 @@
+// ═══ Background Color Utilities (.ai-bg-*) ═══
+// Background color utilities with Bootstrap-like responsive support
+// Prefix: .ai- (Applied Information)
+
+$breakpoints: (
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1400px
+);
+
+// ─── Theme Colors ───
+.ai-bg-primary {
+  background-color: var(--c-primary, #007bff) !important;
+}
+
+.ai-bg-secondary {
+  background-color: var(--c-secondary, #6c757d) !important;
+}
+
+.ai-bg-success {
+  background-color: var(--c-success, #28a745) !important;
+}
+
+.ai-bg-danger {
+  background-color: var(--c-danger, #dc3545) !important;
+}
+
+.ai-bg-warning {
+  background-color: var(--c-warning, #ffc107) !important;
+}
+
+.ai-bg-info {
+  background-color: var(--c-info, #17a2b8) !important;
+}
+
+.ai-bg-light {
+  background-color: var(--c-light, #f8f9fa) !important;
+}
+
+.ai-bg-dark {
+  background-color: var(--c-dark, #343a40) !important;
+}
+
+// ─── Neutral Colors ───
+.ai-bg-white {
+  background-color: #ffffff !important;
+}
+
+.ai-bg-black {
+  background-color: #000000 !important;
+}
+
+.ai-bg-transparent {
+  background-color: transparent !important;
+}
+
+.ai-bg-body {
+  background-color: var(--c-bg-primary, #ffffff) !important;
+}
+
+.ai-bg-body-secondary {
+  background-color: var(--c-bg-secondary, #f8f9fa) !important;
+}
+
+// ─── Grayscale ───
+$grayscale: (
+  'gray-50': #f9fafb,
+  'gray-100': #f3f4f6,
+  'gray-200': #e5e7eb,
+  'gray-300': #d1d5db,
+  'gray-400': #9ca3af,
+  'gray-500': #6b7280,
+  'gray-600': #4b5563,
+  'gray-700': #374151,
+  'gray-800': #1f2937,
+  'gray-900': #111827
+);
+
+@each $name, $color in $grayscale {
+  .ai-bg-#{$name} {
+    background-color: $color !important;
+  }
+}
+
+// ─── Extended Color Palette (Primary Shades) ───
+$color-shades: (
+  'primary-50': #e7f1ff,
+  'primary-100': #cfe2ff,
+  'primary-200': #a8d5ff,
+  'primary-300': #84c9ff,
+  'primary-400': #5dbbff,
+  'primary-500': #0d6efd,
+  'primary-600': #0b5ed7,
+  'primary-700': #0a58ca,
+  'primary-800': #084298,
+  'primary-900': #052c65,
+  'success-50': #ecfdf5,
+  'success-100': #d1fae5,
+  'success-200': #a7f3d0,
+  'success-300': #6ee7b7,
+  'success-400': #34d399,
+  'success-500': #10b981,
+  'success-600': #059669,
+  'success-700': #047857,
+  'success-800': #065f46,
+  'success-900': #064e3b,
+  'danger-50': #fef2f2,
+  'danger-100': #fee2e2,
+  'danger-200': #fecaca,
+  'danger-300': #fca5a5,
+  'danger-400': #f87171,
+  'danger-500': #ef4444,
+  'danger-600': #dc2626,
+  'danger-700': #b91c1c,
+  'danger-800': #991b1b,
+  'danger-900': #7f1d1d,
+  'warning-50': #fffbeb,
+  'warning-100': #fef3c7,
+  'warning-200': #fde68a,
+  'warning-300': #fcd34d,
+  'warning-400': #fbbf24,
+  'warning-500': #f59e0b,
+  'warning-600': #d97706,
+  'warning-700': #b45309,
+  'warning-800': #92400e,
+  'warning-900': #78350f,
+  'info-50': #f0f9ff,
+  'info-100': #e0f2fe,
+  'info-200': #bae6fd,
+  'info-300': #7dd3fc,
+  'info-400': #38bdf8,
+  'info-500': #0ea5e9,
+  'info-600': #0284c7,
+  'info-700': #0369a1,
+  'info-800': #075985,
+  'info-900': #0c4a6e
+);
+
+@each $name, $color in $color-shades {
+  .ai-bg-#{$name} {
+    background-color: $color !important;
+  }
+}
+
+// ─── Background Size ───
+.ai-bg-cover {
+  background-size: cover !important;
+}
+
+.ai-bg-contain {
+  background-size: contain !important;
+}
+
+.ai-bg-auto {
+  background-size: auto !important;
+}
+
+// ─── Background Position ───
+.ai-bg-center {
+  background-position: center !important;
+}
+
+.ai-bg-top {
+  background-position: top !important;
+}
+
+.ai-bg-right {
+  background-position: right !important;
+}
+
+.ai-bg-bottom {
+  background-position: bottom !important;
+}
+
+.ai-bg-left {
+  background-position: left !important;
+}
+
+// ─── Background Repeat ───
+.ai-bg-repeat {
+  background-repeat: repeat !important;
+}
+
+.ai-bg-repeat-x {
+  background-repeat: repeat-x !important;
+}
+
+.ai-bg-repeat-y {
+  background-repeat: repeat-y !important;
+}
+
+.ai-bg-no-repeat {
+  background-repeat: no-repeat !important;
+}
+
+// ─── Background Attachment ───
+.ai-bg-scroll {
+  background-attachment: scroll !important;
+}
+
+.ai-bg-fixed {
+  background-attachment: fixed !important;
+}
+
+// ─── Responsive Background Utilities ───
+@each $breakpoint, $breakpoint-value in $breakpoints {
+  @media (min-width: $breakpoint-value) {
+    .ai-bg-primary-#{$breakpoint} {
+      background-color: var(--c-primary, #007bff) !important;
+    }
+
+    .ai-bg-secondary-#{$breakpoint} {
+      background-color: var(--c-secondary, #6c757d) !important;
+    }
+
+    .ai-bg-success-#{$breakpoint} {
+      background-color: var(--c-success, #28a745) !important;
+    }
+
+    .ai-bg-danger-#{$breakpoint} {
+      background-color: var(--c-danger, #dc3545) !important;
+    }
+
+    .ai-bg-warning-#{$breakpoint} {
+      background-color: var(--c-warning, #ffc107) !important;
+    }
+
+    .ai-bg-info-#{$breakpoint} {
+      background-color: var(--c-info, #17a2b8) !important;
+    }
+
+    .ai-bg-light-#{$breakpoint} {
+      background-color: var(--c-light, #f8f9fa) !important;
+    }
+
+    .ai-bg-dark-#{$breakpoint} {
+      background-color: var(--c-dark, #343a40) !important;
+    }
+
+    .ai-bg-white-#{$breakpoint} {
+      background-color: #ffffff !important;
+    }
+
+    .ai-bg-black-#{$breakpoint} {
+      background-color: #000000 !important;
+    }
+
+    .ai-bg-transparent-#{$breakpoint} {
+      background-color: transparent !important;
+    }
+
+    @each $name, $color in $grayscale {
+      .ai-bg-#{$name}-#{$breakpoint} {
+        background-color: $color !important;
+      }
+    }
+
+    @each $name, $color in $color-shades {
+      .ai-bg-#{$name}-#{$breakpoint} {
+        background-color: $color !important;
+      }
+    }
+  }
+}

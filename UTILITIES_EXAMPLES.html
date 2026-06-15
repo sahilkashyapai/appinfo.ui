@@ -1,0 +1,348 @@
+<!-- 
+  AppInfo UI Utilities - Quick Examples
+  All utilities use the .ai- prefix for consistency
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AppInfo UI Utilities Examples</title>
+  <link rel="stylesheet" href="path/to/compiled/css">
+</head>
+<body>
+
+<!-- ═══ SPACING EXAMPLES ═══ -->
+<section class="ai-p-6 ai-bg-gray-50">
+  <h2 class="ai-text-2xl ai-fw-bold ai-mb-4">Spacing Utilities</h2>
+  
+  <!-- Responsive padding -->
+  <div class="ai-p-3 ai-p-md-5 ai-p-lg-7 ai-bg-white ai-border ai-rounded-2">
+    Padding: 12px (mobile) → 20px (tablet) → 28px (desktop)
+  </div>
+
+  <!-- Margin auto (center) -->
+  <div class="ai-w-50 ai-mx-auto ai-mt-5 ai-p-4 ai-bg-primary ai-text-white ai-text-center">
+    Centered with mx-auto
+  </div>
+</section>
+
+<!-- ═══ FLEXBOX EXAMPLES ═══ -->
+<section class="ai-p-6">
+  <h2 class="ai-text-2xl ai-fw-bold ai-mb-4">Flexbox Utilities</h2>
+  
+  <!-- Flex row with gap -->
+  <div class="ai-d-flex ai-flex-wrap ai-gap-4 ai-justify-between ai-align-center ai-mb-5">
+    <div class="ai-bg-primary ai-text-white ai-p-4 ai-rounded-2">Item 1</div>
+    <div class="ai-bg-success ai-text-white ai-p-4 ai-rounded-2">Item 2</div>
+    <div class="ai-bg-warning ai-text-white ai-p-4 ai-rounded-2">Item 3</div>
+  </div>
+
+  <!-- Flex column (responsive) -->
+  <div class="ai-d-flex ai-flex-column ai-gap-3 ai-lg-flex-row">
+    <div class="ai-flex-1 ai-p-4 ai-bg-light ai-rounded-2">Flex item 1</div>
+    <div class="ai-flex-1 ai-p-4 ai-bg-light ai-rounded-2">Flex item 2</div>
+  </div>
+</section>
+
+<!-- ═══ GRID SYSTEM EXAMPLES ═══ -->
+<section class="ai-p-6 ai-bg-gray-50">
+  <h2 class="ai-text-2xl ai-fw-bold ai-mb-4">Grid System (Rows & Columns)</h2>
+  
+  <!-- 12-column grid -->
+  <div class="ai-container">
+    <div class="ai-row ai-g-3 ai-mb-5">
+      <!-- Responsive columns: 12 (mobile), 6 (tablet), 4 (desktop) -->
+      <div class="ai-col-12 ai-col-md-6 ai-col-lg-4">
+        <div class="ai-bg-primary ai-text-white ai-p-5 ai-rounded-2 ai-text-center">
+          Column 1
+        </div>
+      </div>
+      <div class="ai-col-12 ai-col-md-6 ai-col-lg-4">
+        <div class="ai-bg-success ai-text-white ai-p-5 ai-rounded-2 ai-text-center">
+          Column 2
+        </div>
+      </div>
+      <div class="ai-col-12 ai-col-md-6 ai-col-lg-4">
+        <div class="ai-bg-warning ai-text-white ai-p-5 ai-rounded-2 ai-text-center">
+          Column 3
+        </div>
+      </div>
+    </div>
+
+    <!-- Row columns: Auto-divide children -->
+    <div class="ai-row ai-row-cols-1 ai-row-cols-md-2 ai-row-cols-lg-4 ai-g-3">
+      <div><div class="ai-bg-light ai-p-4 ai-rounded-2">Item 1</div></div>
+      <div><div class="ai-bg-light ai-p-4 ai-rounded-2">Item 2</div></div>
+      <div><div class="ai-bg-light ai-p-4 ai-rounded-2">Item 3</div></div>
+      <div><div class="ai-bg-light ai-p-4 ai-rounded-2">Item 4</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TEXT & TYPOGRAPHY EXAMPLES ═══ -->
+<section class="ai-p-6">
+  <h2 class="ai-text-2xl ai-fw-bold ai-mb-4">Text & Typography</h2>
+  
+  <!-- Text alignment (responsive) -->
+  <p class="ai-text-start ai-md-text-center ai-lg-text-end ai-mb-3">
+    Text align: left (mobile) → center (tablet) → right (desktop)
+  </p>
+
+  <!-- Font sizes -->
+  <div class="ai-mb-4">
+    <h1 class="ai-fs-1 ai-fw-bold">Heading 1 - 2rem</h1>
+    <h2 class="ai-fs-2 ai-fw-bold">Heading 2 - 1.75rem</h2>
+    <h3 class="ai-fs-3 ai-fw-semibold">Heading 3 - 1.5rem</h3>
+    <p class="ai-fs-5 ai-text-muted">Muted text - 1.1rem</p>
+  </div>
+
+  <!-- Font colors -->
+  <div class="ai-d-flex ai-gap-2 ai-flex-wrap">
+    <span class="ai-text-primary">Primary</span>
+    <span class="ai-text-success">Success</span>
+    <span class="ai-text-danger">Danger</span>
+    <span class="ai-text-warning">Warning</span>
+    <span class="ai-text-info">Info</span>
+  </div>
+
+  <!-- Font weight & style -->
+  <div class="ai-mt-4">
+    <p class="ai-fw-light">Light text (300)</p>
+    <p class="ai-fw-normal">Normal text (400)</p>
+    <p class="ai-fw-semibold">Semibold text (600)</p>
+    <p class="ai-fw-bold">Bold text (700)</p>
+    <p class="ai-fst-italic">Italic text</p>
+    <p class="ai-text-uppercase">uppercase text</p>
+  </div>
+</section>
+
+<!-- ═══ BORDER EXAMPLES ═══ -->
+<section class="ai-p-6 ai-bg-gray-50">
+  <h2 class="ai-text-2xl ai-fw-bold ai-mb-4">Border Utilities</h2>
+  
+  <!-- Various border styles -->
+  <div class="ai-d-flex ai-gap-4 ai-flex-wrap ai-mb-4">
+    <div class="ai-p-4 ai-border ai-border-solid ai-rounded-2">Solid</div>
+    <div class="ai-p-4 ai-border ai-border-dashed ai-rounded-2">Dashed</div>
+    <div class="ai-p-4 ai-border ai-border-dotted ai-rounded-2">Dotted</div>
+  </div>
+
+  <!-- Border colors -->
+  <div class="ai-d-flex ai-gap-3 ai-flex-wrap">
+    <div class="ai-p-4 ai-border-2 ai-border-primary ai-rounded-2">Primary</div>
+    <div class="ai-p-4 ai-border-2 ai-border-success ai-rounded-2">Success</div>
+    <div class="ai-p-4 ai-border-2 ai-border-danger ai-rounded-2">Danger</div>
+  </div>
+
+  <!-- Rounded corners -->
+  <div class="ai-d-flex ai-gap-3 ai-flex-wrap ai-mt-4">
+    <div class="ai-p-4 ai-bg-light ai-rounded-0">rounded-0</div>
+    <div class="ai-p-4 ai-bg-light ai-rounded-1">rounded-1</div>
+    <div class="ai-p-4 ai-bg-light ai-rounded-2">rounded-2</div>
+    <div class="ai-p-4 ai-bg-light ai-rounded-3">rounded-3</div>
+    <div class="ai-p-4 ai-bg-light ai-rounded-circle">circle</div>
+    <div class="ai-p-4 ai-bg-light ai-rounded-pill">pill</div>
+  </div>
+</section>
+
+<!-- ═══ BACKGROUND COLOR EXAMPLES ═══ -->
+<section class="ai-p-6">
+  <h2 class="ai-text-2xl ai-fw-bold ai-mb-4">Background Colors</h2>
+  
+  <!-- Theme colors -->
+  <div class="ai-d-flex ai-gap-3 ai-flex-wrap ai-mb-4">
+    <div class="ai-bg-primary ai-text-white ai-p-4 ai-rounded-2">Primary</div>
+    <div class="ai-bg-secondary ai-text-white ai-p-4 ai-rounded-2">Secondary</div>
+    <div class="ai-bg-success ai-text-white ai-p-4 ai-rounded-2">Success</div>
+    <div class="ai-bg-danger ai-text-white ai-p-4 ai-rounded-2">Danger</div>
+    <div class="ai-bg-warning ai-text-white ai-p-4 ai-rounded-2">Warning</div>
+    <div class="ai-bg-info ai-text-white ai-p-4 ai-rounded-2">Info</div>
+  </div>
+
+  <!-- Color shades -->
+  <div class="ai-d-flex ai-gap-2 ai-flex-wrap">
+    <div class="ai-bg-primary-100 ai-p-3 ai-rounded-1">primary-100</div>
+    <div class="ai-bg-primary-300 ai-p-3 ai-rounded-1">primary-300</div>
+    <div class="ai-bg-primary-500 ai-p-3 ai-rounded-1 ai-text-white">primary-500</div>
+    <div class="ai-bg-primary-700 ai-p-3 ai-rounded-1 ai-text-white">primary-700</div>
+    <div class="ai-bg-primary-900 ai-p-3 ai-rounded-1 ai-text-white">primary-900</div>
+  </div>
+</section>
+
+<!-- ═══ SHADOW EXAMPLES ═══ -->
+<section class="ai-p-6 ai-bg-gray-50">
+  <h2 class="ai-text-2xl ai-fw-bold ai-mb-4">Shadow Utilities</h2>
+  
+  <!-- Box shadows -->
+  <div class="ai-d-flex ai-gap-4 ai-flex-wrap">
+    <div class="ai-p-4 ai-bg-white ai-rounded-2 ai-shadow-sm">shadow-sm</div>
+    <div class="ai-p-4 ai-bg-white ai-rounded-2 ai-shadow">shadow</div>
+    <div class="ai-p-4 ai-bg-white ai-rounded-2 ai-shadow-lg">shadow-lg</div>
+    <div class="ai-p-4 ai-bg-white ai-rounded-2 ai-shadow-xl">shadow-xl</div>
+  </div>
+
+  <!-- Color shadows -->
+  <div class="ai-d-flex ai-gap-3 ai-flex-wrap ai-mt-4">
+    <div class="ai-p-4 ai-bg-white ai-rounded-2 ai-shadow-primary">Primary</div>
+    <div class="ai-p-4 ai-bg-white ai-rounded-2 ai-shadow-success">Success</div>
+    <div class="ai-p-4 ai-bg-white ai-rounded-2 ai-shadow-danger">Danger</div>
+  </div>
+</section>
+
+<!-- ═══ DISPLAY & VISIBILITY EXAMPLES ═══ -->
+<section class="ai-p-6">
+  <h2 class="ai-text-2xl ai-fw-bold ai-mb-4">Display & Visibility</h2>
+  
+  <!-- Responsive display -->
+  <div class="ai-d-none ai-md-d-block ai-p-4 ai-bg-info ai-text-white ai-rounded-2 ai-mb-4">
+    Hidden on mobile, visible from tablet up
+  </div>
+
+  <!-- Text truncate -->
+  <div class="ai-text-truncate ai-p-4 ai-bg-light ai-rounded-2 ai-mb-4">
+    This is a very long text that will be truncated with an ellipsis because it's too long to fit in the container
+  </div>
+
+  <!-- Overflow -->
+  <div class="ai-overflow-auto ai-bg-light ai-p-4 ai-rounded-2" style="height: 150px; width: 300px;">
+    This content will scroll if it overflows the container dimensions
+  </div>
+</section>
+
+<!-- ═══ DIMENSIONS EXAMPLES ═══ -->
+<section class="ai-p-6 ai-bg-gray-50">
+  <h2 class="ai-text-2xl ai-fw-bold ai-mb-4">Dimension Utilities</h2>
+  
+  <!-- Responsive widths -->
+  <div class="ai-w-100 ai-md-w-75 ai-lg-w-50 ai-p-4 ai-bg-primary ai-text-white ai-rounded-2 ai-mb-4">
+    Width: 100% (mobile) → 75% (tablet) → 50% (desktop)
+  </div>
+
+  <!-- Aspect ratio -->
+  <div class="ai-w-100 ai-lg-w-50 ai-mb-4">
+    <div class="ai-aspect-16x9 ai-bg-light ai-rounded-2 ai-d-flex ai-justify-center ai-align-center">
+      <span class="ai-text-muted">16:9 Aspect Ratio</span>
+    </div>
+  </div>
+
+  <!-- Min/Max heights -->
+  <div class="ai-min-h-100vh ai-d-flex ai-justify-center ai-align-center ai-bg-light ai-rounded-2">
+    <p class="ai-text-muted">Min height 100vh (full viewport height)</p>
+  </div>
+</section>
+
+<!-- ═══ POSITION EXAMPLES ═══ -->
+<section class="ai-p-6">
+  <h2 class="ai-text-2xl ai-fw-bold ai-mb-4">Position Utilities</h2>
+  
+  <!-- Relative positioning -->
+  <div class="ai-position-relative ai-bg-light ai-p-6 ai-rounded-2 ai-mb-4" style="height: 200px;">
+    <p class="ai-mb-4">Relative container (parent)</p>
+    <div class="ai-position-absolute ai-top-0 ai-right-0 ai-bg-danger ai-text-white ai-p-3 ai-rounded-1">
+      Absolute positioned (top-right)
+    </div>
+  </div>
+
+  <!-- Float -->
+  <div class="ai-border ai-rounded-2 ai-p-4">
+    <img src="placeholder.jpg" class="ai-float-start ai-mr-3" alt="Floated image">
+    <p>Text wraps around floated image. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </div>
+</section>
+
+<!-- ═══ EFFECTS EXAMPLES ═══ -->
+<section class="ai-p-6 ai-bg-gray-50">
+  <h2 class="ai-text-2xl ai-fw-bold ai-mb-4">Effects Utilities</h2>
+  
+  <!-- Opacity -->
+  <div class="ai-d-flex ai-gap-3 ai-mb-4">
+    <div class="ai-opacity-25 ai-p-4 ai-bg-primary ai-text-white ai-rounded-2">opacity-25</div>
+    <div class="ai-opacity-50 ai-p-4 ai-bg-primary ai-text-white ai-rounded-2">opacity-50</div>
+    <div class="ai-opacity-75 ai-p-4 ai-bg-primary ai-text-white ai-rounded-2">opacity-75</div>
+    <div class="ai-opacity-100 ai-p-4 ai-bg-primary ai-text-white ai-rounded-2">opacity-100</div>
+  </div>
+
+  <!-- Blur -->
+  <div class="ai-d-flex ai-gap-3">
+    <img src="placeholder.jpg" class="ai-blur-none ai-rounded-2" alt="No blur" style="width: 120px;">
+    <img src="placeholder.jpg" class="ai-blur ai-rounded-2" alt="Blur" style="width: 120px;">
+    <img src="placeholder.jpg" class="ai-blur-lg ai-rounded-2" alt="Large blur" style="width: 120px;">
+  </div>
+
+  <!-- Grayscale -->
+  <div class="ai-d-flex ai-gap-3 ai-mt-4">
+    <img src="placeholder.jpg" class="ai-grayscale-0 ai-rounded-2" alt="Color" style="width: 120px;">
+    <img src="placeholder.jpg" class="ai-grayscale-100 ai-rounded-2" alt="Grayscale" style="width: 120px;">
+  </div>
+</section>
+
+<!-- ═══ COMPLETE CARD EXAMPLE ═══ -->
+<section class="ai-p-6">
+  <h2 class="ai-text-2xl ai-fw-bold ai-mb-4">Complete Component Example</h2>
+  
+  <div class="ai-container">
+    <div class="ai-row ai-g-4">
+      <!-- Card 1 -->
+      <div class="ai-col-12 ai-col-md-6 ai-col-lg-4">
+        <div class="ai-bg-white ai-p-5 ai-rounded-3 ai-shadow-lg ai-border ai-position-relative ai-overflow-hidden">
+          <!-- Gradient overlay -->
+          <div class="ai-position-absolute ai-top-0 ai-left-0 ai-w-100 ai-h-20 ai-bg-primary ai-rounded-bottom-3"></div>
+          
+          <!-- Content -->
+          <div class="ai-position-relative ai-z-10">
+            <h3 class="ai-fs-4 ai-fw-bold ai-text-primary ai-mb-3">Card Title</h3>
+            <p class="ai-text-muted ai-fs-6 ai-lh-lg ai-mb-4">
+              This is a responsive card component built entirely with utility classes.
+            </p>
+            <div class="ai-d-flex ai-gap-2">
+              <button class="ai-flex-1 ai-bg-primary ai-text-white ai-p-2 ai-rounded-2 ai-border-0 ai-fw-semibold ai-cursor-pointer">
+                Primary
+              </button>
+              <button class="ai-flex-1 ai-bg-light ai-text-dark ai-p-2 ai-rounded-2 ai-border ai-fw-semibold ai-cursor-pointer">
+                Secondary
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="ai-col-12 ai-col-md-6 ai-col-lg-4">
+        <div class="ai-bg-white ai-p-5 ai-rounded-3 ai-shadow-lg ai-border">
+          <h3 class="ai-fs-4 ai-fw-bold ai-mb-3">Stats Card</h3>
+          <div class="ai-d-flex ai-justify-between ai-align-center ai-mb-4">
+            <div class="ai-text-center">
+              <div class="ai-fs-2 ai-fw-bold ai-text-success">1,234</div>
+              <p class="ai-text-muted ai-fs-7 ai-mt-1">Total Users</p>
+            </div>
+            <div class="ai-text-center">
+              <div class="ai-fs-2 ai-fw-bold ai-text-primary">567</div>
+              <p class="ai-text-muted ai-fs-7 ai-mt-1">Active</p>
+            </div>
+          </div>
+          <div class="ai-bg-gray-100 ai-p-3 ai-rounded-2">
+            <p class="ai-text-muted ai-fs-7 ai-lh-lg">Updated 2 hours ago</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="ai-col-12 ai-col-md-6 ai-col-lg-4">
+        <div class="ai-bg-white ai-p-5 ai-rounded-3 ai-shadow-lg ai-border">
+          <h3 class="ai-fs-4 ai-fw-bold ai-mb-4">Responsive Card</h3>
+          <p class="ai-text-muted ai-mb-4 ai-lh-lg">
+            Stacks on mobile, wraps on tablet, 3-column on desktop.
+          </p>
+          <div class="ai-bg-primary-50 ai-p-3 ai-rounded-2 ai-border ai-border-primary">
+            <p class="ai-text-primary ai-fw-semibold ai-fs-7">Tip: Resize browser to see responsive behavior</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

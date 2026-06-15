@@ -21,11 +21,11 @@ const NAV_ITEMS = [
 		label: 'Home',
 		children: [
 			'Ag test',
-			'Akash Thakur',
-			'angel angel',
-			'angeldeep angeldeep',
-			'Ashok samrat',
-			'Ashok Samrat',
+			'lorem ipsum',
+			'lorem ipsum dolor',
+			'lorem ipsum dolor sit amet',
+			'lorem samrat',
+			'lorem samrat ipsum',
 			'Kevin R'
 		],
 		footer: 'Save Map Coordinates',
@@ -159,8 +159,6 @@ export default function Navbar({ theme = 'glance' }) {
 								<span className="logout-btn-text">LOGOUT</span>
 								<span className="logout-btn-icon material-symbols-outlined">power_settings_new</span>
 							</button>
-
-
 						</div>
 
 						<button
@@ -303,8 +301,6 @@ export default function Navbar({ theme = 'glance' }) {
 					</nav>
 				</header>
 			</PreviewBlock>
-
-
 		</div>
 	);
 }

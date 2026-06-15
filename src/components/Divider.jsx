@@ -10,15 +10,15 @@ export default function Divider() {
 			/>
 			<PreviewBlock
 				label="Preview"
-				canvasStyle={{ display: 'flex', flexDirection: 'column' }}
+				canvasClassName="ai-d-flex ai-flex-column"
 			>
-				<p style={{ fontSize: '13.5px', color: 'var(--c-text-sub)' }}>Content above the divider</p>
+				<p className="ai-fs-7 ai-text-muted">Content above the divider</p>
 				<hr className="ai-divider" />
-				<p style={{ fontSize: '13.5px', color: 'var(--c-text-sub)' }}>Default divider above</p>
-				<hr className="ai-divider ai-divider-thick" style={{ margin: '8px 0' }} />
-				<p style={{ fontSize: '13.5px', color: 'var(--c-text-sub)' }}>Thick accent divider above</p>
-				<div className="ai-divider-text" style={{ margin: '12px 0' }}>OR</div>
-				<p style={{ fontSize: '13.5px', color: 'var(--c-text-sub)' }}>Text divider above</p>
+				<p className="ai-fs-7 ai-text-muted">Default divider above</p>
+				<hr className="ai-divider ai-divider-thick ai-my-2" />
+				<p className="ai-fs-7 ai-text-muted">Thick accent divider above</p>
+				<div className="ai-divider-text ai-my-3">OR</div>
+				<p className="ai-fs-7 ai-text-muted">Text divider above</p>
 			</PreviewBlock>
 		</div>
 	);

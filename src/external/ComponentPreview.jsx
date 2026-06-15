@@ -57,7 +57,7 @@ function BadgesPanel() {
         <span className="demo-badge badge-neutral">Neutral</span>
       </div>
       <p className="demo-meta mt">Inline with text</p>
-      <p style={{ fontSize: '14px', color: 'var(--c-text-sub)' }}>
+      <p className="ai-fs-7 ai-text-muted">
         Device status: <span className="demo-badge badge-success"><Icon name="check" /> Online</span>&nbsp;
         Firmware: <span className="demo-badge badge-primary">v2.4.1</span>&nbsp;
         Sync: <span className="demo-badge badge-warning"><Icon name="warning" /> Pending</span>
@@ -165,7 +165,7 @@ function CardsPanel() {
           <div className="demo-card-body">
             <div className="demo-card-title">{c.title}</div>
             <p className="demo-card-text">{c.text}</p>
-            <div style={{ marginTop: 10 }}>
+            <div className="ai-mt-2">
               <span className={`demo-badge ${c.badge.cls}`}><Icon name={c.badge.icon} /> {c.badge.label}</span>
             </div>
           </div>

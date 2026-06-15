@@ -23,7 +23,7 @@ function AccordionSection({ title, items, openState, onToggle }) {
 			<div className="sub-heading">{title}</div>
 			<PreviewBlock
 				label="Preview"
-				canvasStyle={{ gap: 0, padding: 24 }}
+				canvasClassName="ai-p-6 ai-gap-0"
 			>
 				<div className="ai-accordion">
 					{items.map((item, idx) => {

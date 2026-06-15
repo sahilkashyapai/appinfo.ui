@@ -1,0 +1,317 @@
+// ═══ Effects Utilities (.ai-opacity*, .ai-transform*, etc.) ═══
+// Opacity, opacity, transforms with responsive support
+// Prefix: .ai- (Applied Information)
+
+$breakpoints: (
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1400px
+);
+
+// ─── Opacity ───
+.ai-opacity-0 {
+  opacity: 0 !important;
+}
+
+.ai-opacity-25 {
+  opacity: 0.25 !important;
+}
+
+.ai-opacity-50 {
+  opacity: 0.5 !important;
+}
+
+.ai-opacity-75 {
+  opacity: 0.75 !important;
+}
+
+.ai-opacity-100 {
+  opacity: 1 !important;
+}
+
+// ─── Blur ───
+.ai-blur-none {
+  filter: blur(0) !important;
+}
+
+.ai-blur-sm {
+  filter: blur(4px) !important;
+}
+
+.ai-blur {
+  filter: blur(12px) !important;
+}
+
+.ai-blur-md {
+  filter: blur(12px) !important;
+}
+
+.ai-blur-lg {
+  filter: blur(20px) !important;
+}
+
+.ai-blur-xl {
+  filter: blur(40px) !important;
+}
+
+// ─── Brightness ───
+.ai-brightness-50 {
+  filter: brightness(0.5) !important;
+}
+
+.ai-brightness-75 {
+  filter: brightness(0.75) !important;
+}
+
+.ai-brightness-100 {
+  filter: brightness(1) !important;
+}
+
+.ai-brightness-125 {
+  filter: brightness(1.25) !important;
+}
+
+.ai-brightness-150 {
+  filter: brightness(1.5) !important;
+}
+
+// ─── Contrast ───
+.ai-contrast-50 {
+  filter: contrast(0.5) !important;
+}
+
+.ai-contrast-75 {
+  filter: contrast(0.75) !important;
+}
+
+.ai-contrast-100 {
+  filter: contrast(1) !important;
+}
+
+.ai-contrast-125 {
+  filter: contrast(1.25) !important;
+}
+
+.ai-contrast-150 {
+  filter: contrast(1.5) !important;
+}
+
+// ─── Grayscale ───
+.ai-grayscale-0 {
+  filter: grayscale(0) !important;
+}
+
+.ai-grayscale-50 {
+  filter: grayscale(0.5) !important;
+}
+
+.ai-grayscale-100 {
+  filter: grayscale(1) !important;
+}
+
+// ─── Saturate ───
+.ai-saturate-50 {
+  filter: saturate(0.5) !important;
+}
+
+.ai-saturate-100 {
+  filter: saturate(1) !important;
+}
+
+.ai-saturate-150 {
+  filter: saturate(1.5) !important;
+}
+
+.ai-saturate-200 {
+  filter: saturate(2) !important;
+}
+
+// ─── Sepia ───
+.ai-sepia-0 {
+  filter: sepia(0) !important;
+}
+
+.ai-sepia-50 {
+  filter: sepia(0.5) !important;
+}
+
+.ai-sepia-100 {
+  filter: sepia(1) !important;
+}
+
+// ─── Hue Rotate ───
+.ai-hue-rotate-0 {
+  filter: hue-rotate(0deg) !important;
+}
+
+.ai-hue-rotate-15 {
+  filter: hue-rotate(15deg) !important;
+}
+
+.ai-hue-rotate-30 {
+  filter: hue-rotate(30deg) !important;
+}
+
+.ai-hue-rotate-60 {
+  filter: hue-rotate(60deg) !important;
+}
+
+.ai-hue-rotate-90 {
+  filter: hue-rotate(90deg) !important;
+}
+
+.ai-hue-rotate-180 {
+  filter: hue-rotate(180deg) !important;
+}
+
+// ─── Invert ───
+.ai-invert-0 {
+  filter: invert(0) !important;
+}
+
+.ai-invert-100 {
+  filter: invert(1) !important;
+}
+
+// ─── Drop Shadow ───
+.ai-drop-shadow-none {
+  filter: drop-shadow(0 0 #0000) !important;
+}
+
+.ai-drop-shadow-sm {
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05)) !important;
+}
+
+.ai-drop-shadow {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1)) !important;
+}
+
+.ai-drop-shadow-md {
+  filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1)) !important;
+}
+
+.ai-drop-shadow-lg {
+  filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04)) !important;
+}
+
+.ai-drop-shadow-xl {
+  filter: drop-shadow(0 20px 13px rgba(0, 0, 0, 0.03)) !important;
+}
+
+// ─── Cursor ───
+.ai-cursor-auto {
+  cursor: auto !important;
+}
+
+.ai-cursor-default {
+  cursor: default !important;
+}
+
+.ai-cursor-pointer {
+  cursor: pointer !important;
+}
+
+.ai-cursor-wait {
+  cursor: wait !important;
+}
+
+.ai-cursor-text {
+  cursor: text !important;
+}
+
+.ai-cursor-move {
+  cursor: move !important;
+}
+
+.ai-cursor-not-allowed {
+  cursor: not-allowed !important;
+}
+
+.ai-cursor-help {
+  cursor: help !important;
+}
+
+.ai-cursor-progress {
+  cursor: progress !important;
+}
+
+// ─── Pointer Events ───
+.ai-pointer-events-none {
+  pointer-events: none !important;
+}
+
+.ai-pointer-events-auto {
+  pointer-events: auto !important;
+}
+
+// ─── User Select ───
+.ai-user-select-all {
+  user-select: all !important;
+}
+
+.ai-user-select-auto {
+  user-select: auto !important;
+}
+
+.ai-user-select-none {
+  user-select: none !important;
+}
+
+.ai-user-select-text {
+  user-select: text !important;
+}
+
+// ─── Responsive Effects Utilities ───
+@each $breakpoint, $breakpoint-value in $breakpoints {
+  @media (min-width: $breakpoint-value) {
+    .ai-opacity-0-#{$breakpoint} {
+      opacity: 0 !important;
+    }
+
+    .ai-opacity-50-#{$breakpoint} {
+      opacity: 0.5 !important;
+    }
+
+    .ai-opacity-100-#{$breakpoint} {
+      opacity: 1 !important;
+    }
+
+    .ai-blur-none-#{$breakpoint} {
+      filter: blur(0) !important;
+    }
+
+    .ai-blur-#{$breakpoint} {
+      filter: blur(12px) !important;
+    }
+
+    .ai-brightness-100-#{$breakpoint} {
+      filter: brightness(1) !important;
+    }
+
+    .ai-contrast-100-#{$breakpoint} {
+      filter: contrast(1) !important;
+    }
+
+    .ai-grayscale-0-#{$breakpoint} {
+      filter: grayscale(0) !important;
+    }
+
+    .ai-grayscale-100-#{$breakpoint} {
+      filter: grayscale(1) !important;
+    }
+
+    .ai-cursor-pointer-#{$breakpoint} {
+      cursor: pointer !important;
+    }
+
+    .ai-cursor-not-allowed-#{$breakpoint} {
+      cursor: not-allowed !important;
+    }
+
+    .ai-user-select-none-#{$breakpoint} {
+      user-select: none !important;
+    }
+  }
+}

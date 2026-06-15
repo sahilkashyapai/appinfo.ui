@@ -28,6 +28,7 @@ export default function Modal() {
 				/>
 				<PreviewBlock
 					label="Preview"
+					canvasClassName="ai-d-flex ai-gap-3 ai-flex-wrap"
 				>
 					<button className="ai-btn ai-btn-primary" onClick={() => openModal('m1')} type="button">Open Modal</button>
 					<button className="ai-btn ai-btn-danger" onClick={() => openModal('m2')} type="button">Confirm Delete</button>
@@ -50,7 +51,7 @@ export default function Modal() {
 					</div>
 					<div className="ai-modal-body">
 						<p>Update the configuration settings for device <strong>SNSR-042</strong>. Changes will apply after next sync cycle.</p>
-						<div style={{ marginTop: '16px' }} className="ai-input-group">
+						<div className="ai-input-group ai-mt-4">
 							<label className="ai-label">Poll Interval</label>
 							<select className="ai-select">
 								<option>30 seconds</option>

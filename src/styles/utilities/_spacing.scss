@@ -1,0 +1,205 @@
+// ═══ Spacing Utilities (.ai-p*, .ai-m*) ═══
+// Padding and margin utilities from 0px to 100px with responsive support
+// Prefix: .ai- (Applied Information)
+
+$spacing-scale: (
+  0: 0px,
+  1: 4px,
+  2: 8px,
+  3: 12px,
+  4: 16px,
+  5: 20px,
+  6: 24px,
+  7: 28px,
+  8: 32px,
+  9: 36px,
+  10: 40px,
+  11: 44px,
+  12: 48px,
+  13: 52px,
+  14: 56px,
+  15: 60px,
+  16: 64px,
+  17: 68px,
+  18: 72px,
+  19: 76px,
+  20: 80px,
+  21: 84px,
+  22: 88px,
+  23: 92px,
+  24: 96px,
+  25: 100px
+);
+
+$breakpoints: (
+  'xs': 0px,
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1400px
+);
+
+@mixin generate-spacing-utilities {
+  // Padding utilities
+  @each $size, $value in $spacing-scale {
+    .ai-p-#{$size} {
+      padding: $value !important;
+    }
+    .ai-pt-#{$size} {
+      padding-top: $value !important;
+    }
+    .ai-pe-#{$size} {
+      padding-right: $value !important;
+    }
+    .ai-pb-#{$size} {
+      padding-bottom: $value !important;
+    }
+    .ai-ps-#{$size} {
+      padding-left: $value !important;
+    }
+    .ai-px-#{$size} {
+      padding-left: $value !important;
+      padding-right: $value !important;
+    }
+    .ai-py-#{$size} {
+      padding-top: $value !important;
+      padding-bottom: $value !important;
+    }
+  }
+
+  // Margin utilities
+  @each $size, $value in $spacing-scale {
+    .ai-m-#{$size} {
+      margin: $value !important;
+    }
+    .ai-mt-#{$size} {
+      margin-top: $value !important;
+    }
+    .ai-me-#{$size} {
+      margin-right: $value !important;
+    }
+    .ai-mb-#{$size} {
+      margin-bottom: $value !important;
+    }
+    .ai-ms-#{$size} {
+      margin-left: $value !important;
+    }
+    .ai-mx-#{$size} {
+      margin-left: $value !important;
+      margin-right: $value !important;
+    }
+    .ai-my-#{$size} {
+      margin-top: $value !important;
+      margin-bottom: $value !important;
+    }
+  }
+
+  // Auto margin utilities
+  .ai-m-auto {
+    margin: auto !important;
+  }
+  .ai-mt-auto {
+    margin-top: auto !important;
+  }
+  .ai-me-auto {
+    margin-right: auto !important;
+  }
+  .ai-mb-auto {
+    margin-bottom: auto !important;
+  }
+  .ai-ms-auto {
+    margin-left: auto !important;
+  }
+  .ai-mx-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .ai-my-auto {
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+  }
+
+  // Responsive spacing utilities
+  @each $breakpoint, $breakpoint-value in $breakpoints {
+    @if $breakpoint != 'xs' {
+      @media (min-width: $breakpoint-value) {
+        @each $size, $value in $spacing-scale {
+          .ai-p-#{$breakpoint}-#{$size} {
+            padding: $value !important;
+          }
+          .ai-pt-#{$breakpoint}-#{$size} {
+            padding-top: $value !important;
+          }
+          .ai-pe-#{$breakpoint}-#{$size} {
+            padding-right: $value !important;
+          }
+          .ai-pb-#{$breakpoint}-#{$size} {
+            padding-bottom: $value !important;
+          }
+          .ai-ps-#{$breakpoint}-#{$size} {
+            padding-left: $value !important;
+          }
+          .ai-px-#{$breakpoint}-#{$size} {
+            padding-left: $value !important;
+            padding-right: $value !important;
+          }
+          .ai-py-#{$breakpoint}-#{$size} {
+            padding-top: $value !important;
+            padding-bottom: $value !important;
+          }
+
+          .ai-m-#{$breakpoint}-#{$size} {
+            margin: $value !important;
+          }
+          .ai-mt-#{$breakpoint}-#{$size} {
+            margin-top: $value !important;
+          }
+          .ai-me-#{$breakpoint}-#{$size} {
+            margin-right: $value !important;
+          }
+          .ai-mb-#{$breakpoint}-#{$size} {
+            margin-bottom: $value !important;
+          }
+          .ai-ms-#{$breakpoint}-#{$size} {
+            margin-left: $value !important;
+          }
+          .ai-mx-#{$breakpoint}-#{$size} {
+            margin-left: $value !important;
+            margin-right: $value !important;
+          }
+          .ai-my-#{$breakpoint}-#{$size} {
+            margin-top: $value !important;
+            margin-bottom: $value !important;
+          }
+        }
+
+        .ai-m-#{$breakpoint}-auto {
+          margin: auto !important;
+        }
+        .ai-mt-#{$breakpoint}-auto {
+          margin-top: auto !important;
+        }
+        .ai-me-#{$breakpoint}-auto {
+          margin-right: auto !important;
+        }
+        .ai-mb-#{$breakpoint}-auto {
+          margin-bottom: auto !important;
+        }
+        .ai-ms-#{$breakpoint}-auto {
+          margin-left: auto !important;
+        }
+        .ai-mx-#{$breakpoint}-auto {
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+        .ai-my-#{$breakpoint}-auto {
+          margin-top: auto !important;
+          margin-bottom: auto !important;
+        }
+      }
+    }
+  }
+}
+
+@include generate-spacing-utilities;

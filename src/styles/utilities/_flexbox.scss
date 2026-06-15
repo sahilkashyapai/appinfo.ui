@@ -1,0 +1,338 @@
+// ═══ Flexbox Utilities (.ai-flex*) ═══
+// Comprehensive flexbox utilities with Bootstrap-like responsive support
+// Prefix: .ai- (Applied Information)
+
+$breakpoints: (
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1400px
+);
+
+// ─── Display Flex ───
+.ai-d-flex {
+  display: flex !important;
+}
+
+.ai-d-inline-flex {
+  display: inline-flex !important;
+}
+
+// ─── Flex Direction ───
+.ai-flex-row {
+  flex-direction: row !important;
+}
+
+.ai-flex-column {
+  flex-direction: column !important;
+}
+
+.ai-flex-row-reverse {
+  flex-direction: row-reverse !important;
+}
+
+.ai-flex-column-reverse {
+  flex-direction: column-reverse !important;
+}
+
+// ─── Flex Wrap ───
+.ai-flex-wrap {
+  flex-wrap: wrap !important;
+}
+
+.ai-flex-nowrap {
+  flex-wrap: nowrap !important;
+}
+
+.ai-flex-wrap-reverse {
+  flex-wrap: wrap-reverse !important;
+}
+
+// ─── Justify Content ───
+.ai-justify-start {
+  justify-content: flex-start !important;
+}
+
+.ai-justify-end {
+  justify-content: flex-end !important;
+}
+
+.ai-justify-center {
+  justify-content: center !important;
+}
+
+.ai-justify-between {
+  justify-content: space-between !important;
+}
+
+.ai-justify-around {
+  justify-content: space-around !important;
+}
+
+.ai-justify-evenly {
+  justify-content: space-evenly !important;
+}
+
+// ─── Align Items ───
+.ai-align-start {
+  align-items: flex-start !important;
+}
+
+.ai-align-end {
+  align-items: flex-end !important;
+}
+
+.ai-align-center {
+  align-items: center !important;
+}
+
+.ai-align-baseline {
+  align-items: baseline !important;
+}
+
+.ai-align-stretch {
+  align-items: stretch !important;
+}
+
+// ─── Align Self ───
+.ai-align-self-auto {
+  align-self: auto !important;
+}
+
+.ai-align-self-start {
+  align-self: flex-start !important;
+}
+
+.ai-align-self-end {
+  align-self: flex-end !important;
+}
+
+.ai-align-self-center {
+  align-self: center !important;
+}
+
+.ai-align-self-baseline {
+  align-self: baseline !important;
+}
+
+.ai-align-self-stretch {
+  align-self: stretch !important;
+}
+
+// ─── Align Content ───
+.ai-align-content-start {
+  align-content: flex-start !important;
+}
+
+.ai-align-content-end {
+  align-content: flex-end !important;
+}
+
+.ai-align-content-center {
+  align-content: center !important;
+}
+
+.ai-align-content-between {
+  align-content: space-between !important;
+}
+
+.ai-align-content-around {
+  align-content: space-around !important;
+}
+
+.ai-align-content-stretch {
+  align-content: stretch !important;
+}
+
+// ─── Flex Grow & Shrink ───
+.ai-flex-grow-0 {
+  flex-grow: 0 !important;
+}
+
+.ai-flex-grow-1 {
+  flex-grow: 1 !important;
+}
+
+.ai-flex-shrink-0 {
+  flex-shrink: 0 !important;
+}
+
+.ai-flex-shrink-1 {
+  flex-shrink: 1 !important;
+}
+
+// ─── Flex Basis ───
+.ai-flex-basis-auto {
+  flex-basis: auto !important;
+}
+
+.ai-flex-basis-0 {
+  flex-basis: 0 !important;
+}
+
+// ─── Flex Shorthand ───
+.ai-flex-1 {
+  flex: 1 1 auto !important;
+}
+
+.ai-flex-auto {
+  flex: auto !important;
+}
+
+.ai-flex-none {
+  flex: none !important;
+}
+
+// ─── Gap (Spacing between flex items) ───
+$gap-scale: (
+  0: 0px,
+  1: 4px,
+  2: 8px,
+  3: 12px,
+  4: 16px,
+  5: 20px,
+  6: 24px,
+  7: 28px,
+  8: 32px,
+  9: 36px,
+  10: 40px,
+  12: 48px,
+  16: 64px,
+  20: 80px,
+  24: 96px,
+  25: 100px
+);
+
+@each $size, $value in $gap-scale {
+  .ai-gap-#{$size} {
+    gap: $value !important;
+  }
+  .ai-gap-x-#{$size} {
+    column-gap: $value !important;
+  }
+  .ai-gap-y-#{$size} {
+    row-gap: $value !important;
+  }
+}
+
+// ─── Responsive Flexbox Utilities ───
+@each $breakpoint, $breakpoint-value in $breakpoints {
+  @media (min-width: $breakpoint-value) {
+    .ai-d-flex-#{$breakpoint} {
+      display: flex !important;
+    }
+
+    .ai-d-inline-flex-#{$breakpoint} {
+      display: inline-flex !important;
+    }
+
+    .ai-flex-row-#{$breakpoint} {
+      flex-direction: row !important;
+    }
+
+    .ai-flex-column-#{$breakpoint} {
+      flex-direction: column !important;
+    }
+
+    .ai-flex-row-reverse-#{$breakpoint} {
+      flex-direction: row-reverse !important;
+    }
+
+    .ai-flex-column-reverse-#{$breakpoint} {
+      flex-direction: column-reverse !important;
+    }
+
+    .ai-flex-wrap-#{$breakpoint} {
+      flex-wrap: wrap !important;
+    }
+
+    .ai-flex-nowrap-#{$breakpoint} {
+      flex-wrap: nowrap !important;
+    }
+
+    .ai-justify-start-#{$breakpoint} {
+      justify-content: flex-start !important;
+    }
+
+    .ai-justify-end-#{$breakpoint} {
+      justify-content: flex-end !important;
+    }
+
+    .ai-justify-center-#{$breakpoint} {
+      justify-content: center !important;
+    }
+
+    .ai-justify-between-#{$breakpoint} {
+      justify-content: space-between !important;
+    }
+
+    .ai-justify-around-#{$breakpoint} {
+      justify-content: space-around !important;
+    }
+
+    .ai-justify-evenly-#{$breakpoint} {
+      justify-content: space-evenly !important;
+    }
+
+    .ai-align-start-#{$breakpoint} {
+      align-items: flex-start !important;
+    }
+
+    .ai-align-end-#{$breakpoint} {
+      align-items: flex-end !important;
+    }
+
+    .ai-align-center-#{$breakpoint} {
+      align-items: center !important;
+    }
+
+    .ai-align-baseline-#{$breakpoint} {
+      align-items: baseline !important;
+    }
+
+    .ai-align-stretch-#{$breakpoint} {
+      align-items: stretch !important;
+    }
+
+    .ai-flex-grow-0-#{$breakpoint} {
+      flex-grow: 0 !important;
+    }
+
+    .ai-flex-grow-1-#{$breakpoint} {
+      flex-grow: 1 !important;
+    }
+
+    .ai-flex-shrink-0-#{$breakpoint} {
+      flex-shrink: 0 !important;
+    }
+
+    .ai-flex-shrink-1-#{$breakpoint} {
+      flex-shrink: 1 !important;
+    }
+
+    .ai-flex-1-#{$breakpoint} {
+      flex: 1 1 auto !important;
+    }
+
+    .ai-flex-auto-#{$breakpoint} {
+      flex: auto !important;
+    }
+
+    .ai-flex-none-#{$breakpoint} {
+      flex: none !important;
+    }
+
+    @each $size, $value in $gap-scale {
+      .ai-gap-#{$breakpoint}-#{$size} {
+        gap: $value !important;
+      }
+      .ai-gap-x-#{$breakpoint}-#{$size} {
+        column-gap: $value !important;
+      }
+      .ai-gap-y-#{$breakpoint}-#{$size} {
+        row-gap: $value !important;
+      }
+    }
+  }
+}

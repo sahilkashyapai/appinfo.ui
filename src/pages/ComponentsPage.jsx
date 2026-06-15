@@ -24,6 +24,7 @@ import Switch from '../components/Switch';
 import Table from '../components/Table';
 import Tabs from '../components/Tabs';
 import Tag from '../components/Tag';
+import Icons from '../components/Icons';
 import Toast from '../components/Toast';
 import Tooltip from '../components/Tooltip';
 import Typography from '../components/Typography';
@@ -41,6 +42,7 @@ const PANEL_META = [
 	{ id: 'chip', label: 'Chip' },
 	{ id: 'divider', label: 'Divider' },
 	{ id: 'dropdown', label: 'Dropdown' },
+	{ id: 'icons', label: 'Icons' },
 	{ id: 'input', label: 'Input & Form' },
 	{ id: 'listgroup', label: 'List Group' },
 	{ id: 'modal', label: 'Modal' },
@@ -72,6 +74,7 @@ const PANEL_COMPONENTS = {
 	chip: Chip,
 	divider: Divider,
 	dropdown: Dropdown,
+	icons: Icons,
 	input: Inputs,
 	listgroup: List,
 	modal: Modal,

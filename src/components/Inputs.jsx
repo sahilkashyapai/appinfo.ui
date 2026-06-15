@@ -11,7 +11,7 @@ export default function Inputs() {
         />
         <PreviewBlock
           label="Preview"
-          canvasStyle={{ display: 'flex', flexDirection: 'column', gap: 16}}
+          canvasClassName="ai-d-flex ai-flex-column ai-gap-4"
         >
           <div className="ai-input-group">
             <label className="ai-label">Device Name <span className="req">*</span></label>
@@ -45,10 +45,10 @@ export default function Inputs() {
         />
         <PreviewBlock
           label="Preview"
-          canvasStyle={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}
+          canvasClassName="ai-row ai-row-cols-2 ai-g-4"
         >
           <div>
-            <div style={{ fontSize: '12px', fontFamily: "'DM Mono', monospace", color: 'var(--c-text-muted)', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '.1em' }}>
+            <div className="ai-fs-8 ai-fw-bold ai-text-muted ai-text-uppercase ai-ls-wider ai-mb-3">
               Checkboxes
             </div>
             <div className="ai-check-group">
@@ -59,7 +59,7 @@ export default function Inputs() {
             </div>
           </div>
           <div>
-            <div style={{ fontSize: '12px', fontFamily: "'DM Mono', monospace", color: 'var(--c-text-muted)', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '.1em' }}>
+            <div className="ai-fs-8 ai-fw-bold ai-text-muted ai-text-uppercase ai-ls-wider ai-mb-3">
               Radio Buttons
             </div>
             <div className="ai-check-group">

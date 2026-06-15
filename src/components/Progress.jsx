@@ -10,7 +10,7 @@ export default function Progress() {
 			/>
 			<PreviewBlock
 				label="Preview"
-				canvasStyle={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
+				canvasClassName="ai-d-flex ai-flex-column ai-gap-4"
 			>
 				<div>
 					<div className="ai-progress-label"><span>Sync Progress</span><span>72%</span></div>
@@ -26,7 +26,7 @@ export default function Progress() {
 				</div>
 				<div>
 					<div className="ai-progress-label"><span>Storage Used</span><span>90%</span></div>
-					<div className="ai-progress" style={{ height: '12px' }}>
+					<div className="ai-progress ai-h-3">
 						<div className="ai-progress-bar" style={{ width: '90%', background: '#ef4444' }} />
 					</div>
 				</div>

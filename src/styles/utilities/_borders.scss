@@ -1,0 +1,428 @@
+// ═══ Border Utilities (.ai-border*) ═══
+// Border utilities with Bootstrap-like responsive support
+// Prefix: .ai- (Applied Information)
+
+$breakpoints: (
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1400px
+);
+
+// ─── Border ───
+.ai-border {
+  border: 1px solid #dee2e6 !important;
+}
+
+.ai-border-top {
+  border-top: 1px solid #dee2e6 !important;
+}
+
+.ai-border-right {
+  border-right: 1px solid #dee2e6 !important;
+}
+
+.ai-border-bottom {
+  border-bottom: 1px solid #dee2e6 !important;
+}
+
+.ai-border-left {
+  border-left: 1px solid #dee2e6 !important;
+}
+
+.ai-border-x {
+  border-left: 1px solid #dee2e6 !important;
+  border-right: 1px solid #dee2e6 !important;
+}
+
+.ai-border-y {
+  border-top: 1px solid #dee2e6 !important;
+  border-bottom: 1px solid #dee2e6 !important;
+}
+
+// ─── Border Width ───
+.ai-border-0 {
+  border: 0 !important;
+}
+
+.ai-border-1 {
+  border-width: 1px !important;
+}
+
+.ai-border-2 {
+  border-width: 2px !important;
+}
+
+.ai-border-3 {
+  border-width: 3px !important;
+}
+
+.ai-border-4 {
+  border-width: 4px !important;
+}
+
+.ai-border-5 {
+  border-width: 5px !important;
+}
+
+.ai-border-top-0 {
+  border-top: 0 !important;
+}
+
+.ai-border-top-1 {
+  border-top-width: 1px !important;
+}
+
+.ai-border-top-2 {
+  border-top-width: 2px !important;
+}
+
+.ai-border-top-3 {
+  border-top-width: 3px !important;
+}
+
+.ai-border-top-4 {
+  border-top-width: 4px !important;
+}
+
+.ai-border-top-5 {
+  border-top-width: 5px !important;
+}
+
+.ai-border-right-0 {
+  border-right: 0 !important;
+}
+
+.ai-border-right-1 {
+  border-right-width: 1px !important;
+}
+
+.ai-border-right-2 {
+  border-right-width: 2px !important;
+}
+
+.ai-border-right-3 {
+  border-right-width: 3px !important;
+}
+
+.ai-border-right-4 {
+  border-right-width: 4px !important;
+}
+
+.ai-border-right-5 {
+  border-right-width: 5px !important;
+}
+
+.ai-border-bottom-0 {
+  border-bottom: 0 !important;
+}
+
+.ai-border-bottom-1 {
+  border-bottom-width: 1px !important;
+}
+
+.ai-border-bottom-2 {
+  border-bottom-width: 2px !important;
+}
+
+.ai-border-bottom-3 {
+  border-bottom-width: 3px !important;
+}
+
+.ai-border-bottom-4 {
+  border-bottom-width: 4px !important;
+}
+
+.ai-border-bottom-5 {
+  border-bottom-width: 5px !important;
+}
+
+.ai-border-left-0 {
+  border-left: 0 !important;
+}
+
+.ai-border-left-1 {
+  border-left-width: 1px !important;
+}
+
+.ai-border-left-2 {
+  border-left-width: 2px !important;
+}
+
+.ai-border-left-3 {
+  border-left-width: 3px !important;
+}
+
+.ai-border-left-4 {
+  border-left-width: 4px !important;
+}
+
+.ai-border-left-5 {
+  border-left-width: 5px !important;
+}
+
+// ─── Border Style ───
+.ai-border-solid {
+  border-style: solid !important;
+}
+
+.ai-border-dashed {
+  border-style: dashed !important;
+}
+
+.ai-border-dotted {
+  border-style: dotted !important;
+}
+
+.ai-border-double {
+  border-style: double !important;
+}
+
+.ai-border-none {
+  border-style: none !important;
+}
+
+// ─── Border Radius ───
+.ai-rounded-0 {
+  border-radius: 0 !important;
+}
+
+.ai-rounded-1 {
+  border-radius: 4px !important;
+}
+
+.ai-rounded-2 {
+  border-radius: 8px !important;
+}
+
+.ai-rounded-3 {
+  border-radius: 12px !important;
+}
+
+.ai-rounded-4 {
+  border-radius: 16px !important;
+}
+
+.ai-rounded-5 {
+  border-radius: 20px !important;
+}
+
+.ai-rounded-circle {
+  border-radius: 50% !important;
+}
+
+.ai-rounded-pill {
+  border-radius: 9999px !important;
+}
+
+// ─── Border Radius Individual ───
+.ai-rounded-top-0 {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+.ai-rounded-top-1 {
+  border-top-left-radius: 4px !important;
+  border-top-right-radius: 4px !important;
+}
+
+.ai-rounded-top-2 {
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+}
+
+.ai-rounded-top-3 {
+  border-top-left-radius: 12px !important;
+  border-top-right-radius: 12px !important;
+}
+
+.ai-rounded-top-4 {
+  border-top-left-radius: 16px !important;
+  border-top-right-radius: 16px !important;
+}
+
+.ai-rounded-top-5 {
+  border-top-left-radius: 20px !important;
+  border-top-right-radius: 20px !important;
+}
+
+.ai-rounded-end-0 {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.ai-rounded-end-1 {
+  border-top-right-radius: 4px !important;
+  border-bottom-right-radius: 4px !important;
+}
+
+.ai-rounded-end-2 {
+  border-top-right-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+}
+
+.ai-rounded-end-3 {
+  border-top-right-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+}
+
+.ai-rounded-end-4 {
+  border-top-right-radius: 16px !important;
+  border-bottom-right-radius: 16px !important;
+}
+
+.ai-rounded-end-5 {
+  border-top-right-radius: 20px !important;
+  border-bottom-right-radius: 20px !important;
+}
+
+.ai-rounded-bottom-0 {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.ai-rounded-bottom-1 {
+  border-bottom-left-radius: 4px !important;
+  border-bottom-right-radius: 4px !important;
+}
+
+.ai-rounded-bottom-2 {
+  border-bottom-left-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+}
+
+.ai-rounded-bottom-3 {
+  border-bottom-left-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+}
+
+.ai-rounded-bottom-4 {
+  border-bottom-left-radius: 16px !important;
+  border-bottom-right-radius: 16px !important;
+}
+
+.ai-rounded-bottom-5 {
+  border-bottom-left-radius: 20px !important;
+  border-bottom-right-radius: 20px !important;
+}
+
+.ai-rounded-start-0 {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.ai-rounded-start-1 {
+  border-top-left-radius: 4px !important;
+  border-bottom-left-radius: 4px !important;
+}
+
+.ai-rounded-start-2 {
+  border-top-left-radius: 8px !important;
+  border-bottom-left-radius: 8px !important;
+}
+
+.ai-rounded-start-3 {
+  border-top-left-radius: 12px !important;
+  border-bottom-left-radius: 12px !important;
+}
+
+.ai-rounded-start-4 {
+  border-top-left-radius: 16px !important;
+  border-bottom-left-radius: 16px !important;
+}
+
+.ai-rounded-start-5 {
+  border-top-left-radius: 20px !important;
+  border-bottom-left-radius: 20px !important;
+}
+
+// ─── Border Colors ───
+.ai-border-primary {
+  border-color: var(--c-primary, #007bff) !important;
+}
+
+.ai-border-secondary {
+  border-color: var(--c-secondary, #6c757d) !important;
+}
+
+.ai-border-success {
+  border-color: var(--c-success, #28a745) !important;
+}
+
+.ai-border-danger {
+  border-color: var(--c-danger, #dc3545) !important;
+}
+
+.ai-border-warning {
+  border-color: var(--c-warning, #ffc107) !important;
+}
+
+.ai-border-info {
+  border-color: var(--c-info, #17a2b8) !important;
+}
+
+.ai-border-dark {
+  border-color: var(--c-dark, #343a40) !important;
+}
+
+.ai-border-light {
+  border-color: var(--c-light, #f8f9fa) !important;
+}
+
+.ai-border-white {
+  border-color: #ffffff !important;
+}
+
+.ai-border-black {
+  border-color: #000000 !important;
+}
+
+// ─── Responsive Border Utilities ───
+@each $breakpoint, $breakpoint-value in $breakpoints {
+  @media (min-width: $breakpoint-value) {
+    .ai-border-#{$breakpoint} {
+      border: 1px solid #dee2e6 !important;
+    }
+
+    .ai-border-top-#{$breakpoint} {
+      border-top: 1px solid #dee2e6 !important;
+    }
+
+    .ai-border-right-#{$breakpoint} {
+      border-right: 1px solid #dee2e6 !important;
+    }
+
+    .ai-border-bottom-#{$breakpoint} {
+      border-bottom: 1px solid #dee2e6 !important;
+    }
+
+    .ai-border-left-#{$breakpoint} {
+      border-left: 1px solid #dee2e6 !important;
+    }
+
+    .ai-rounded-0-#{$breakpoint} {
+      border-radius: 0 !important;
+    }
+
+    .ai-rounded-1-#{$breakpoint} {
+      border-radius: 4px !important;
+    }
+
+    .ai-rounded-2-#{$breakpoint} {
+      border-radius: 8px !important;
+    }
+
+    .ai-rounded-3-#{$breakpoint} {
+      border-radius: 12px !important;
+    }
+
+    .ai-rounded-circle-#{$breakpoint} {
+      border-radius: 50% !important;
+    }
+
+    .ai-rounded-pill-#{$breakpoint} {
+      border-radius: 9999px !important;
+    }
+  }
+}

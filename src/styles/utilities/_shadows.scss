@@ -1,0 +1,128 @@
+// ═══ Shadow Utilities (.ai-shadow*) ═══
+// Box shadow utilities with Bootstrap-like responsive support
+// Prefix: .ai- (Applied Information)
+
+$breakpoints: (
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1400px
+);
+
+// ─── Box Shadows ───
+.ai-shadow-none {
+  box-shadow: none !important;
+}
+
+.ai-shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.ai-shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.ai-shadow-lg {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.ai-shadow-xl {
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2) !important;
+}
+
+.ai-shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+}
+
+// ─── Color Shadows ───
+.ai-shadow-primary {
+  box-shadow: 0 0.5rem 1rem rgba(0, 123, 255, 0.3) !important;
+}
+
+.ai-shadow-secondary {
+  box-shadow: 0 0.5rem 1rem rgba(108, 117, 125, 0.3) !important;
+}
+
+.ai-shadow-success {
+  box-shadow: 0 0.5rem 1rem rgba(40, 167, 69, 0.3) !important;
+}
+
+.ai-shadow-danger {
+  box-shadow: 0 0.5rem 1rem rgba(220, 53, 69, 0.3) !important;
+}
+
+.ai-shadow-warning {
+  box-shadow: 0 0.5rem 1rem rgba(255, 193, 7, 0.3) !important;
+}
+
+.ai-shadow-info {
+  box-shadow: 0 0.5rem 1rem rgba(23, 162, 184, 0.3) !important;
+}
+
+.ai-shadow-dark {
+  box-shadow: 0 0.5rem 1rem rgba(52, 58, 64, 0.3) !important;
+}
+
+.ai-shadow-light {
+  box-shadow: 0 0.5rem 1rem rgba(248, 249, 250, 0.3) !important;
+}
+
+// ─── Inset Shadow ───
+.ai-shadow-inset {
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075) !important;
+}
+
+.ai-shadow-inset-lg {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+// ─── Text Shadow ───
+.ai-text-shadow-sm {
+  text-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.ai-text-shadow {
+  text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.ai-text-shadow-lg {
+  text-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.ai-text-shadow-none {
+  text-shadow: none !important;
+}
+
+// ─── Responsive Shadow Utilities ───
+@each $breakpoint, $breakpoint-value in $breakpoints {
+  @media (min-width: $breakpoint-value) {
+    .ai-shadow-none-#{$breakpoint} {
+      box-shadow: none !important;
+    }
+
+    .ai-shadow-sm-#{$breakpoint} {
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+    }
+
+    .ai-shadow-#{$breakpoint} {
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .ai-shadow-lg-#{$breakpoint} {
+      box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+    }
+
+    .ai-shadow-xl-#{$breakpoint} {
+      box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2) !important;
+    }
+
+    .ai-text-shadow-#{$breakpoint} {
+      text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .ai-text-shadow-none-#{$breakpoint} {
+      text-shadow: none !important;
+    }
+  }
+}

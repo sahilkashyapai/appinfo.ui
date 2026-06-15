@@ -49,7 +49,7 @@ export default function Alert() {
 
 			<PreviewBlock
 				label="Preview"
-				canvasStyle={{ display: 'flex', flexDirection: 'column', gap: 10 }}
+				canvasClassName="ai-d-flex ai-flex-column ai-gap-3"
 			>
 				{alerts.map((alert) => (
 					<div key={alert.id} className={`ai-alert ${alert.cls}`}>

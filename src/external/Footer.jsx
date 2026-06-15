@@ -22,7 +22,7 @@ export default function Footer() {
             A multi-theme component library built for traffic management and IoT monitoring
             products. MIT licensed.
           </p>
-          <div className="theme-badges-footer" style={{ marginTop: '16px' }}>
+          <div className="theme-badges-footer ai-mt-4">
             {THEME_BADGES.map(({ cls, label }) => (
               <span key={label} className={`theme-badge-f ${cls}`}>{label}</span>
             ))}

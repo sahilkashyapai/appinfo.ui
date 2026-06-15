@@ -11,7 +11,7 @@ export default function Badge() {
 
 			<PreviewBlock
 				label="Variants"
-				canvasStyle={{ flexWrap: 'wrap' }}
+				canvasClassName="ai-d-flex ai-flex-wrap ai-gap-2"
 			>
 				<span className="ai-badge ai-badge-primary ai-badge-dot">Primary</span>
 				<span className="ai-badge ai-badge-dark">Dark</span>

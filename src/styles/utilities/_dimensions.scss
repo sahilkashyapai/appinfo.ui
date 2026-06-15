@@ -1,0 +1,247 @@
+// ═══ Dimensions Utilities (.ai-w-*, .ai-h-*) ═══
+// Width, height, and sizing utilities with responsive support
+// Prefix: .ai- (Applied Information)
+
+$breakpoints: (
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1400px
+);
+
+// ─── Width ───
+.ai-w-auto {
+  width: auto !important;
+}
+
+.ai-w-100 {
+  width: 100% !important;
+}
+
+.ai-w-75 {
+  width: 75% !important;
+}
+
+.ai-w-50 {
+  width: 50% !important;
+}
+
+.ai-w-25 {
+  width: 25% !important;
+}
+
+.ai-w-100vw {
+  width: 100dvw !important;
+}
+
+.ai-w-100vh {
+  width: 100dvh !important;
+}
+
+// ─── Height ───
+.ai-h-auto {
+  height: auto !important;
+}
+
+.ai-h-3 {
+  height: 12px !important;
+}
+
+.ai-h-4 {
+  height: 16px !important;
+}
+
+.ai-h-5 {
+  height: 20px !important;
+}
+
+.ai-h-100 {
+  height: 100% !important;
+}
+
+.ai-h-75 {
+  height: 75% !important;
+}
+
+.ai-h-50 {
+  height: 50% !important;
+}
+
+.ai-h-25 {
+  height: 25% !important;
+}
+
+.ai-h-100vh {
+  height: 100dvh !important;
+}
+
+.ai-h-100vw {
+  height: 100dvw !important;
+}
+
+// ─── Min Width ───
+.ai-min-w-auto {
+  min-width: auto !important;
+}
+
+.ai-min-w-100 {
+  min-width: 100% !important;
+}
+
+.ai-min-w-0 {
+  min-width: 0 !important;
+}
+
+// ─── Min Height ───
+.ai-min-h-auto {
+  min-height: auto !important;
+}
+
+.ai-min-h-100 {
+  min-height: 100% !important;
+}
+
+.ai-min-h-100vh {
+  min-height: 100dvh !important;
+}
+
+.ai-min-h-0 {
+  min-height: 0 !important;
+}
+
+// ─── Max Width ───
+.ai-max-w-auto {
+  max-width: auto !important;
+}
+
+.ai-max-w-100 {
+  max-width: 100% !important;
+}
+
+.ai-max-w-none {
+  max-width: none !important;
+}
+
+.ai-max-w-100vw {
+  max-width: 100dvw !important;
+}
+
+// ─── Max Height ───
+.ai-max-h-auto {
+  max-height: auto !important;
+}
+
+.ai-max-h-100 {
+  max-height: 100% !important;
+}
+
+.ai-max-h-100vh {
+  max-height: 100vh !important;
+}
+
+.ai-max-h-none {
+  max-height: none !important;
+}
+
+// ─── Aspect Ratio ───
+.ai-aspect-1x1 {
+  aspect-ratio: 1 / 1;
+}
+
+.ai-aspect-16x9 {
+  aspect-ratio: 16 / 9;
+}
+
+.ai-aspect-4x3 {
+  aspect-ratio: 4 / 3;
+}
+
+.ai-aspect-21x9 {
+  aspect-ratio: 21 / 9;
+}
+
+.ai-aspect-9x16 {
+  aspect-ratio: 9 / 16;
+}
+
+.ai-aspect-3x4 {
+  aspect-ratio: 3 / 4;
+}
+
+// ─── Responsive Width ───
+@each $breakpoint, $breakpoint-value in $breakpoints {
+  @media (min-width: $breakpoint-value) {
+    .ai-w-auto-#{$breakpoint} {
+      width: auto !important;
+    }
+
+    .ai-w-100-#{$breakpoint} {
+      width: 100% !important;
+    }
+
+    .ai-w-75-#{$breakpoint} {
+      width: 75% !important;
+    }
+
+    .ai-w-50-#{$breakpoint} {
+      width: 50% !important;
+    }
+
+    .ai-w-25-#{$breakpoint} {
+      width: 25% !important;
+    }
+
+    .ai-h-auto-#{$breakpoint} {
+      height: auto !important;
+    }
+
+    .ai-h-100-#{$breakpoint} {
+      height: 100% !important;
+    }
+
+    .ai-h-75-#{$breakpoint} {
+      height: 75% !important;
+    }
+
+    .ai-h-50-#{$breakpoint} {
+      height: 50% !important;
+    }
+
+    .ai-h-25-#{$breakpoint} {
+      height: 25% !important;
+    }
+
+    .ai-min-w-auto-#{$breakpoint} {
+      min-width: auto !important;
+    }
+
+    .ai-min-w-100-#{$breakpoint} {
+      min-width: 100% !important;
+    }
+
+    .ai-min-h-auto-#{$breakpoint} {
+      min-height: auto !important;
+    }
+
+    .ai-min-h-100-#{$breakpoint} {
+      min-height: 100% !important;
+    }
+
+    .ai-max-w-auto-#{$breakpoint} {
+      max-width: auto !important;
+    }
+
+    .ai-max-w-100-#{$breakpoint} {
+      max-width: 100% !important;
+    }
+
+    .ai-max-h-auto-#{$breakpoint} {
+      max-height: auto !important;
+    }
+
+    .ai-max-h-100-#{$breakpoint} {
+      max-height: 100% !important;
+    }
+  }
+}

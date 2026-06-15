@@ -11,6 +11,19 @@
 @use './utilities/mixins';
 @use './utilities/reset';
 
+// Utility Classes (.ai- prefix)
+@use './utilities/spacing';
+@use './utilities/flexbox';
+@use './utilities/display';
+@use './utilities/positions';
+@use './utilities/borders';
+@use './utilities/backgrounds';
+@use './utilities/text';
+@use './utilities/grid';
+@use './utilities/dimensions';
+@use './utilities/shadows';
+@use './utilities/effects';
+
 // Components
 @use './components/accordion';
 @use './components/alert';
@@ -22,6 +35,7 @@
 @use './components/chip';
 @use './components/divider';
 @use './components/dropdown';
+@use './components/icons';
 @use './components/inputs';
 @use './components/list';
 @use './components/modal';

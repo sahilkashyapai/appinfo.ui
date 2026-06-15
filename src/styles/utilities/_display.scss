@@ -1,0 +1,195 @@
+// ═══ Display Utilities (.ai-d-*) ═══
+// Display utilities with Bootstrap-like responsive support
+// Prefix: .ai- (Applied Information)
+
+$breakpoints: (
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1400px
+);
+
+// ─── Display Values ───
+.ai-d-none {
+  display: none !important;
+}
+
+.ai-d-inline {
+  display: inline !important;
+}
+
+.ai-d-inline-block {
+  display: inline-block !important;
+}
+
+.ai-d-block {
+  display: block !important;
+}
+
+.ai-d-flex {
+  display: flex !important;
+}
+
+.ai-d-inline-flex {
+  display: inline-flex !important;
+}
+
+.ai-d-grid {
+  display: grid !important;
+}
+
+.ai-d-inline-grid {
+  display: inline-grid !important;
+}
+
+.ai-d-table {
+  display: table !important;
+}
+
+.ai-d-table-row {
+  display: table-row !important;
+}
+
+.ai-d-table-cell {
+  display: table-cell !important;
+}
+
+.ai-d-contents {
+  display: contents !important;
+}
+
+// ─── Visibility ───
+.ai-visible {
+  visibility: visible !important;
+}
+
+.ai-invisible {
+  visibility: hidden !important;
+}
+
+// ─── Overflow ───
+.ai-overflow-visible {
+  overflow: visible !important;
+}
+
+.ai-overflow-hidden {
+  overflow: hidden !important;
+}
+
+.ai-overflow-scroll {
+  overflow: scroll !important;
+}
+
+.ai-overflow-auto {
+  overflow: auto !important;
+}
+
+.ai-overflow-x-visible {
+  overflow-x: visible !important;
+}
+
+.ai-overflow-x-hidden {
+  overflow-x: hidden !important;
+}
+
+.ai-overflow-x-scroll {
+  overflow-x: scroll !important;
+}
+
+.ai-overflow-x-auto {
+  overflow-x: auto !important;
+}
+
+.ai-overflow-y-visible {
+  overflow-y: visible !important;
+}
+
+.ai-overflow-y-hidden {
+  overflow-y: hidden !important;
+}
+
+.ai-overflow-y-scroll {
+  overflow-y: scroll !important;
+}
+
+.ai-overflow-y-auto {
+  overflow-y: auto !important;
+}
+
+// ─── Overflow Wrap ───
+.ai-text-wrap {
+  white-space: normal !important;
+}
+
+.ai-text-nowrap {
+  white-space: nowrap !important;
+}
+
+.ai-overflow-wrap-normal {
+  overflow-wrap: normal !important;
+}
+
+.ai-overflow-wrap-break-word {
+  overflow-wrap: break-word !important;
+}
+
+// ─── Text Overflow ───
+.ai-text-truncate {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+// ─── Responsive Display Utilities ───
+@each $breakpoint, $breakpoint-value in $breakpoints {
+  @media (min-width: $breakpoint-value) {
+    .ai-d-none-#{$breakpoint} {
+      display: none !important;
+    }
+
+    .ai-d-inline-#{$breakpoint} {
+      display: inline !important;
+    }
+
+    .ai-d-inline-block-#{$breakpoint} {
+      display: inline-block !important;
+    }
+
+    .ai-d-block-#{$breakpoint} {
+      display: block !important;
+    }
+
+    .ai-d-flex-#{$breakpoint} {
+      display: flex !important;
+    }
+
+    .ai-d-inline-flex-#{$breakpoint} {
+      display: inline-flex !important;
+    }
+
+    .ai-d-grid-#{$breakpoint} {
+      display: grid !important;
+    }
+
+    .ai-d-inline-grid-#{$breakpoint} {
+      display: inline-grid !important;
+    }
+
+    .ai-d-table-#{$breakpoint} {
+      display: table !important;
+    }
+
+    .ai-d-table-row-#{$breakpoint} {
+      display: table-row !important;
+    }
+
+    .ai-d-table-cell-#{$breakpoint} {
+      display: table-cell !important;
+    }
+
+    .ai-d-contents-#{$breakpoint} {
+      display: contents !important;
+    }
+  }
+}

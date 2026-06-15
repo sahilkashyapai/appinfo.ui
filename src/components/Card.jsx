@@ -11,16 +11,16 @@ export default function Card() {
 
 			<PreviewBlock
 				label="Preview"
-				canvasStyle={{ display: 'grid', gap: '16px' }}
+				canvasClassName="ai-d-grid ai-gap-4"
 			>
 				<div className="ai-card">
 					<div className="ai-card-img">
-						<span className="material-symbols-outlined" aria-hidden="true" style={{ fontSize: '2.5rem' }}>sensors</span>
+						<span className="material-symbols-outlined ai-fs-2" aria-hidden="true">sensors</span>
 					</div>
 					<div className="ai-card-body">
 						<div className="ai-card-title">Traffic Sensor</div>
 						<p className="ai-card-text">Zone A · Last sync 2 min ago</p>
-						<div style={{ marginTop: '10px' }}><span className="ai-badge ai-badge-success"><span className="material-symbols-outlined" aria-hidden="true">check</span> Online</span></div>
+						<div className="ai-mt-3"><span className="ai-badge ai-badge-success"><span className="material-symbols-outlined" aria-hidden="true">check</span> Online</span></div>
 					</div>
 					<div className="ai-card-footer">
 						<button className="ai-btn ai-btn-sm ai-btn-primary" type="button">View</button>
@@ -52,7 +52,7 @@ export default function Card() {
 							Controller
 						</div>
 						<p className="ai-card-text">Adaptive cycle active since 08:00. Phase timing normal.</p>
-						<div style={{ marginTop: '10px' }}><span className="ai-badge ai-badge-primary ai-badge-dot">Active</span></div>
+						<div className="ai-mt-3"><span className="ai-badge ai-badge-primary ai-badge-dot">Active</span></div>
 					</div>
 				</div>
 			</PreviewBlock>

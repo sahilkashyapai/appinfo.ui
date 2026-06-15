@@ -1,0 +1,385 @@
+// ═══ Text & Typography Utilities (.ai-text-*) ═══
+// Text and typography utilities with Bootstrap-like responsive support
+// Prefix: .ai- (Applied Information)
+
+$breakpoints: (
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1400px
+);
+
+// ─── Text Alignment ───
+.ai-text-start {
+  text-align: start !important;
+}
+
+.ai-text-center {
+  text-align: center !important;
+}
+
+.ai-text-end {
+  text-align: end !important;
+}
+
+.ai-text-justify {
+  text-align: justify !important;
+}
+
+// ─── Text Colors ───
+.ai-text-primary {
+  color: var(--c-primary, #007bff) !important;
+}
+
+.ai-text-secondary {
+  color: var(--c-secondary, #6c757d) !important;
+}
+
+.ai-text-success {
+  color: var(--c-success, #28a745) !important;
+}
+
+.ai-text-danger {
+  color: var(--c-danger, #dc3545) !important;
+}
+
+.ai-text-warning {
+  color: var(--c-warning, #ffc107) !important;
+}
+
+.ai-text-info {
+  color: var(--c-info, #17a2b8) !important;
+}
+
+.ai-text-light {
+  color: var(--c-light, #f8f9fa) !important;
+}
+
+.ai-text-dark {
+  color: var(--c-dark, #343a40) !important;
+}
+
+.ai-text-white {
+  color: #ffffff !important;
+}
+
+.ai-text-black {
+  color: #000000 !important;
+}
+
+.ai-text-muted {
+  color: var(--c-text-muted, #6c757d) !important;
+}
+
+// ─── Grayscale Text Colors ───
+$grayscale: (
+  'gray-50': #f9fafb,
+  'gray-100': #f3f4f6,
+  'gray-200': #e5e7eb,
+  'gray-300': #d1d5db,
+  'gray-400': #9ca3af,
+  'gray-500': #6b7280,
+  'gray-600': #4b5563,
+  'gray-700': #374151,
+  'gray-800': #1f2937,
+  'gray-900': #111827
+);
+
+@each $name, $color in $grayscale {
+  .ai-text-#{$name} {
+    color: $color !important;
+  }
+}
+
+// ─── Extended Color Text ───
+$color-shades: (
+  'primary-50': #e7f1ff,
+  'primary-100': #cfe2ff,
+  'primary-200': #a8d5ff,
+  'primary-300': #84c9ff,
+  'primary-400': #5dbbff,
+  'primary-500': #0d6efd,
+  'primary-600': #0b5ed7,
+  'primary-700': #0a58ca,
+  'primary-800': #084298,
+  'primary-900': #052c65,
+  'success-50': #ecfdf5,
+  'success-100': #d1fae5,
+  'success-200': #a7f3d0,
+  'success-300': #6ee7b7,
+  'success-400': #34d399,
+  'success-500': #10b981,
+  'success-600': #059669,
+  'success-700': #047857,
+  'success-800': #065f46,
+  'success-900': #064e3b,
+  'danger-50': #fef2f2,
+  'danger-100': #fee2e2,
+  'danger-200': #fecaca,
+  'danger-300': #fca5a5,
+  'danger-400': #f87171,
+  'danger-500': #ef4444,
+  'danger-600': #dc2626,
+  'danger-700': #b91c1c,
+  'danger-800': #991b1b,
+  'danger-900': #7f1d1d,
+  'warning-50': #fffbeb,
+  'warning-100': #fef3c7,
+  'warning-200': #fde68a,
+  'warning-300': #fcd34d,
+  'warning-400': #fbbf24,
+  'warning-500': #f59e0b,
+  'warning-600': #d97706,
+  'warning-700': #b45309,
+  'warning-800': #92400e,
+  'warning-900': #78350f,
+  'info-50': #f0f9ff,
+  'info-100': #e0f2fe,
+  'info-200': #bae6fd,
+  'info-300': #7dd3fc,
+  'info-400': #38bdf8,
+  'info-500': #0ea5e9,
+  'info-600': #0284c7,
+  'info-700': #0369a1,
+  'info-800': #075985,
+  'info-900': #0c4a6e
+);
+
+@each $name, $color in $color-shades {
+  .ai-text-#{$name} {
+    color: $color !important;
+  }
+}
+
+// ─── Font Weight ───
+.ai-fw-light {
+  font-weight: 300 !important;
+}
+
+.ai-fw-normal {
+  font-weight: 400 !important;
+}
+
+.ai-fw-medium {
+  font-weight: 500 !important;
+}
+
+.ai-fw-semibold {
+  font-weight: 600 !important;
+}
+
+.ai-fw-bold {
+  font-weight: 700 !important;
+}
+
+.ai-fw-bolder {
+  font-weight: 800 !important;
+}
+
+// ─── Font Size ───
+.ai-fs-1 {
+  font-size: 2rem !important;
+}
+
+.ai-fs-2 {
+  font-size: 1.75rem !important;
+}
+
+.ai-fs-3 {
+  font-size: 1.5rem !important;
+}
+
+.ai-fs-4 {
+  font-size: 1.25rem !important;
+}
+
+.ai-fs-5 {
+  font-size: 1.1rem !important;
+}
+
+.ai-fs-6 {
+  font-size: 1rem !important;
+}
+
+.ai-fs-7 {
+  font-size: 0.875rem !important;
+}
+
+.ai-fs-8 {
+  font-size: 0.75rem !important;
+}
+
+// ─── Font Style ───
+.ai-fst-italic {
+  font-style: italic !important;
+}
+
+.ai-fst-normal {
+  font-style: normal !important;
+}
+
+// ─── Text Decoration ───
+.ai-text-decoration-none {
+  text-decoration: none !important;
+}
+
+.ai-text-decoration-underline {
+  text-decoration: underline !important;
+}
+
+.ai-text-decoration-line-through {
+  text-decoration: line-through !important;
+}
+
+.ai-text-decoration-overline {
+  text-decoration: overline !important;
+}
+
+// ─── Text Transform ───
+.ai-text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.ai-text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.ai-text-capitalize {
+  text-transform: capitalize !important;
+}
+
+.ai-text-none-case {
+  text-transform: none !important;
+}
+
+// ─── Text Wrap ───
+.ai-text-wrap {
+  white-space: normal !important;
+}
+
+.ai-text-nowrap {
+  white-space: nowrap !important;
+}
+
+.ai-text-truncate {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+// ─── Word Break ───
+.ai-word-break {
+  overflow-wrap: break-word !important;
+}
+
+.ai-text-break {
+  word-break: break-word !important;
+}
+
+// ─── Line Height ───
+.ai-lh-1 {
+  line-height: 1 !important;
+}
+
+.ai-lh-sm {
+  line-height: 1.25 !important;
+}
+
+.ai-lh-base {
+  line-height: 1.5 !important;
+}
+
+.ai-lh-lg {
+  line-height: 1.75 !important;
+}
+
+.ai-lh-xl {
+  line-height: 2 !important;
+}
+
+// ─── Letter Spacing ───
+.ai-ls-tight {
+  letter-spacing: -0.05em !important;
+}
+
+.ai-ls-normal {
+  letter-spacing: 0 !important;
+}
+
+.ai-ls-wide {
+  letter-spacing: 0.05em !important;
+}
+
+.ai-ls-wider {
+  letter-spacing: 0.1em !important;
+}
+
+// ─── Responsive Text Utilities ───
+@each $breakpoint, $breakpoint-value in $breakpoints {
+  @media (min-width: $breakpoint-value) {
+    .ai-text-start-#{$breakpoint} {
+      text-align: start !important;
+    }
+
+    .ai-text-center-#{$breakpoint} {
+      text-align: center !important;
+    }
+
+    .ai-text-end-#{$breakpoint} {
+      text-align: end !important;
+    }
+
+    .ai-text-justify-#{$breakpoint} {
+      text-align: justify !important;
+    }
+
+    .ai-fw-light-#{$breakpoint} {
+      font-weight: 300 !important;
+    }
+
+    .ai-fw-normal-#{$breakpoint} {
+      font-weight: 400 !important;
+    }
+
+    .ai-fw-bold-#{$breakpoint} {
+      font-weight: 700 !important;
+    }
+
+    .ai-fs-1-#{$breakpoint} {
+      font-size: 2rem !important;
+    }
+
+    .ai-fs-2-#{$breakpoint} {
+      font-size: 1.75rem !important;
+    }
+
+    .ai-fs-3-#{$breakpoint} {
+      font-size: 1.5rem !important;
+    }
+
+    .ai-fs-4-#{$breakpoint} {
+      font-size: 1.25rem !important;
+    }
+
+    .ai-fs-5-#{$breakpoint} {
+      font-size: 1.1rem !important;
+    }
+
+    .ai-fs-6-#{$breakpoint} {
+      font-size: 1rem !important;
+    }
+
+    .ai-text-uppercase-#{$breakpoint} {
+      text-transform: uppercase !important;
+    }
+
+    .ai-text-lowercase-#{$breakpoint} {
+      text-transform: lowercase !important;
+    }
+
+    .ai-text-capitalize-#{$breakpoint} {
+      text-transform: capitalize !important;
+    }
+  }
+}

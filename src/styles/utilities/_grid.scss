@@ -1,0 +1,319 @@
+// ═══ Grid & Row/Column Utilities (.ai-row, .ai-col*) ═══
+// Grid system utilities with Bootstrap-like responsive support
+// Prefix: .ai- (Applied Information)
+
+$breakpoints: (
+    'xs': 0px,
+    'sm': 576px,
+    'md': 768px,
+    'lg': 992px,
+    'xl': 1200px,
+    'xxl': 1400px,
+    '3xl': 1600px,
+    '4xl': 1920px
+);
+
+$columns: 12;
+
+// ─── Container ───
+.ai-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    padding-right: 12px;
+    padding-left: 12px;
+}
+
+.ai-container-fluid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    padding-right: 12px;
+    padding-left: 12px;
+}
+
+// ─── Container Breakpoints ───
+@media (min-width: 576px) {
+    .ai-container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .ai-container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .ai-container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .ai-container {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .ai-container {
+        max-width: 1320px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .ai-container {
+        max-width: 1440px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .ai-container {
+        max-width: 1728px;
+    }
+}
+
+// ─── Row ───
+.ai-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -12px;
+    margin-left: -12px;
+}
+
+// ─── Row Column (all columns) ───
+.ai-col-auto {
+    >* {
+        flex: 0 0 auto;
+        width: auto;
+    }
+}
+
+@for $i from 1 through 6 {
+    .ai-col-#{$i} {
+        >* {
+            flex: 0 0 auto;
+            width: calc(100% / #{$i});
+        }
+    }
+}
+
+// ─── Responsive Row Columns ───
+@each $breakpoint, $breakpoint-value in $breakpoints {
+    @if $breakpoint !='xs' {
+        @media (min-width: $breakpoint-value) {
+            .ai-col-#{$breakpoint}-auto {
+                >* {
+                    flex: 0 0 auto;
+                    width: auto;
+                }
+            }
+
+            @for $i from 1 through 6 {
+                .ai-col-#{$breakpoint}-#{$i} {
+                    >* {
+                        flex: 0 0 auto;
+                        width: calc(100% / #{$i});
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ─── Column (All sizes) ───
+.ai-col {
+    flex: 1 0 0;
+    padding-right: 12px;
+    padding-left: 12px;
+}
+
+.ai-col-auto {
+    flex: 0 0 auto;
+    width: auto;
+    padding-right: 12px;
+    padding-left: 12px;
+}
+
+// ─── Column Sizes (1-12) ───
+@for $i from 1 through $columns {
+    .ai-col-#{$i} {
+        flex: 0 0 auto;
+        width: calc(100% * #{$i} / #{$columns});
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+}
+
+// ─── Responsive Column Sizes ───
+@each $breakpoint, $breakpoint-value in $breakpoints {
+    @if $breakpoint !='xs' {
+        @media (min-width: $breakpoint-value) {
+            .ai-col-#{$breakpoint} {
+                flex: 1 0 0;
+                padding-right: 12px;
+                padding-left: 12px;
+            }
+
+            .ai-col-#{$breakpoint}-auto {
+                flex: 0 0 auto;
+                width: auto;
+                padding-right: 12px;
+                padding-left: 12px;
+            }
+
+            @for $i from 1 through $columns {
+                .ai-col-#{$breakpoint}-#{$i} {
+                    flex: 0 0 auto;
+                    width: calc(100% * #{$i} / #{$columns});
+                    padding-right: 12px;
+                    padding-left: 12px;
+                }
+            }
+        }
+    }
+}
+
+// ─── Offset ───
+@for $i from 0 through $columns {
+    .ai-offset-#{$i} {
+        margin-left: calc(100% * #{$i} / #{$columns});
+    }
+}
+
+@each $breakpoint, $breakpoint-value in $breakpoints {
+    @if $breakpoint !='xs' {
+        @media (min-width: $breakpoint-value) {
+            @for $i from 0 through $columns {
+                .ai-offset-#{$breakpoint}-#{$i} {
+                    margin-left: calc(100% * #{$i} / #{$columns});
+                }
+            }
+        }
+    }
+}
+
+// ─── Order ───
+@for $i from 0 through 12 {
+    .ai-order-#{$i} {
+        order: $i !important;
+    }
+}
+
+.ai-order-first {
+    order: -1 !important;
+}
+
+.ai-order-last {
+    order: 13 !important;
+}
+
+// ─── Responsive Order ───
+@each $breakpoint, $breakpoint-value in $breakpoints {
+    @if $breakpoint !='xs' {
+        @media (min-width: $breakpoint-value) {
+            @for $i from 0 through 12 {
+                .ai-order-#{$breakpoint}-#{$i} {
+                    order: $i !important;
+                }
+            }
+
+            .ai-order-#{$breakpoint}-first {
+                order: -1 !important;
+            }
+
+            .ai-order-#{$breakpoint}-last {
+                order: 13 !important;
+            }
+        }
+    }
+}
+
+// ─── Gutters (Column spacing) ───
+$gutter-scale: (
+    0: 0px,
+    1: 4px,
+    2: 8px,
+    3: 12px,
+    4: 16px,
+    5: 20px,
+    6: 24px,
+    7: 28px,
+    8: 32px,
+    9: 36px,
+    10: 40px,
+    12: 48px,
+    16: 64px,
+    20: 80px,
+    24: 96px,
+    25: 100px
+);
+
+@each $size, $value in $gutter-scale {
+    .ai-g-#{$size} {
+        margin-right: calc(#{$value} / -2) !important;
+        margin-left: calc(#{$value} / -2) !important;
+
+        >* {
+            padding-right: calc(#{$value} / 2) !important;
+            padding-left: calc(#{$value} / 2) !important;
+        }
+    }
+
+    .ai-gx-#{$size} {
+        margin-right: calc(#{$value} / -2) !important;
+        margin-left: calc(#{$value} / -2) !important;
+
+        >* {
+            padding-right: calc(#{$value} / 2) !important;
+            padding-left: calc(#{$value} / 2) !important;
+        }
+    }
+
+    .ai-gy-#{$size} {
+        >* {
+            margin-bottom: $value !important;
+        }
+    }
+}
+
+// ─── Responsive Gutters ───
+@each $breakpoint, $breakpoint-value in $breakpoints {
+    @if $breakpoint !='xs' {
+        @media (min-width: $breakpoint-value) {
+            @each $size, $value in $gutter-scale {
+                .ai-g-#{$breakpoint}-#{$size} {
+                    margin-right: calc(#{$value} / -2) !important;
+                    margin-left: calc(#{$value} / -2) !important;
+
+                    >* {
+                        padding-right: calc(#{$value} / 2) !important;
+                        padding-left: calc(#{$value} / 2) !important;
+                    }
+                }
+
+                .ai-gx-#{$breakpoint}-#{$size} {
+                    margin-right: calc(#{$value} / -2) !important;
+                    margin-left: calc(#{$value} / -2) !important;
+
+                    >* {
+                        padding-right: calc(#{$value} / 2) !important;
+                        padding-left: calc(#{$value} / 2) !important;
+                    }
+                }
+
+                .ai-gy-#{$breakpoint}-#{$size} {
+                    >* {
+                        margin-bottom: $value !important;
+                    }
+                }
+            }
+        }
+    }
+}
