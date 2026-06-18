@@ -209,6 +209,7 @@
   font-family: 'DM Mono', monospace;
   @include flex(flex, center, space-between);
   gap: 12px;
+  border-radius: 12px 12px 0 0;
 }
 
 .preview-label-text {
@@ -255,6 +256,7 @@
   @include flex($align: flex-start);
   flex-wrap: wrap;
   gap: 12px;
+  border-radius: 0 0 12px 12px;
 
   &.col {
     flex-direction: column;
