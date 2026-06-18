@@ -28,21 +28,31 @@ const STEPS = [
   },
 ];
 
-const SNIPPET = `<!-- 1. Add AppInfo.UI CSS -->
-<link rel="stylesheet" href="https://cdn.appinfo.ui.io/v1/appinfoui.min.css">
+function buildSnippet(origin) {
+  return `<!-- 1. Add AppInfo.UI CSS -->
+<link rel="stylesheet" href="${origin}/cdn/components.bundle.css">
 
-<!-- 2. Set your brand theme on <html> -->
+<!-- 2. Add AppInfo.UI Images CDN -->
+<link rel="preconnect" href="${origin}/images/">
+
+<!-- 3. Set your brand theme on <html> -->
 <html lang="en" data-theme="glance">
 
-<!-- 3. Use components -->
+<!-- 4. Use components -->
 <button class="ai-btn ai-btn-primary">Get Started</button>
 
 <!-- Optional: Add JS for interactive components -->
-<script src="https://cdn.appinfo.ui.io/v1/appinfoui.bundle.min.js"></script>`;
+<script src="${origin}/cdn/components.js"></script>`;
+}
 
 export default function QuickStart() {
+  const origin = window.location.origin;
+  const cdnCss = `${origin}/cdn/components.bundle.css`;
+  const cdnImg = `${origin}/images/`;
+  const cdnJs = `${origin}/cdn/components.js`;
+
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(SNIPPET);
+    await navigator.clipboard.writeText(buildSnippet(origin));
   };
 
   return (
@@ -72,16 +82,23 @@ export default function QuickStart() {
             <span className="str">{'rel'}</span>={''}
             <span className="str">{'"stylesheet"'}</span>{' '}
             <span className="str">{'href'}</span>={''}
-            <span className="str">{'"https://cdn.appinfo.ui.io/v1/appinfoui.min.css"'}</span>
+            <span className="str">{`"${cdnCss}"`}</span>
             <span className="cmd">{'>'}</span>{'\n\n'}
-            <span className="comment">{'<!-- 2. Set your brand theme on <html> -->'}</span>{'\n'}
+            <span className="comment">{'<!-- 2. Add AppInfo.UI Images CDN -->'}</span>{'\n'}
+            <span className="cmd">{'<link'}</span>{' '}
+            <span className="str">{'rel'}</span>={''}
+            <span className="str">{'"preconnect"'}</span>{' '}
+            <span className="str">{'href'}</span>={''}
+            <span className="str">{`"${cdnImg}"`}</span>
+            <span className="cmd">{'>'}</span>{'\n\n'}
+            <span className="comment">{'<!-- 3. Set your brand theme on <html> -->'}</span>{'\n'}
             <span className="cmd">{'<html'}</span>{' '}
             <span className="str">{'lang'}</span>={''}
             <span className="str">{'"en"'}</span>{' '}
             <span className="str">{'data-theme'}</span>={''}
             <span className="str">{'"glance"'}</span>
             <span className="cmd">{'>'}</span>{'\n\n'}
-            <span className="comment">{'<!-- 3. Use components -->'}</span>{'\n'}
+            <span className="comment">{'<!-- 4. Use components -->'}</span>{'\n'}
             <span className="cmd">{'<button'}</span>{' '}
             <span className="str">{'class'}</span>={''}
             <span className="str">{'"ai-btn ai-btn-primary"'}</span>
@@ -91,7 +108,7 @@ export default function QuickStart() {
             <span className="comment">{'<!-- Optional: Add JS for interactive components -->'}</span>{'\n'}
             <span className="cmd">{'<script'}</span>{' '}
             <span className="str">{'src'}</span>={''}
-            <span className="str">{'"https://cdn.appinfo.ui.io/v1/appinfoui.bundle.min.js"'}</span>
+            <span className="str">{`"${cdnJs}"`}</span>
             <span className="cmd">{'></script>'}</span>
           </pre>
         </div>
