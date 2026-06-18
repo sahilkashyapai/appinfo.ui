@@ -69,7 +69,7 @@ export default function App() {
           <Features />
           <ThemesSection theme={theme} onThemeChange={setTheme} />
           <ComponentPreview />
-          <QuickStart />
+          <QuickStart theme={theme} />
           <Footer />
         </>
       )}
