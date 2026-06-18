@@ -26,6 +26,37 @@
     toastClose: '.t-close, [data-ai-toast-close]',
   };
 
+  function getEventTargetElement(event) {
+    if (!event) return null;
+    const target = event.target;
+    if (target instanceof Element) return target;
+    return target && target.parentElement ? target.parentElement : null;
+  }
+
+  function findClosest(event, selector) {
+    const target = getEventTargetElement(event);
+    return target ? target.closest(selector) : null;
+  }
+
+  function resolveSidebar(toggleControl) {
+    if (!toggleControl) return null;
+
+    const withinSidebar = toggleControl.closest(SELECTORS.sidebar);
+    if (withinSidebar) return withinSidebar;
+
+    const targetSelector =
+      toggleControl.getAttribute('data-ai-sidebar-target') ||
+      toggleControl.getAttribute('aria-controls');
+    if (!targetSelector) return null;
+
+    const normalizedSelector =
+      targetSelector.charAt(0) === '#' || targetSelector.charAt(0) === '.'
+        ? targetSelector
+        : '#' + targetSelector;
+
+    return document.querySelector(normalizedSelector);
+  }
+
   function closeDropdowns(except) {
     document.querySelectorAll(SELECTORS.dropdown).forEach((dropdown) => {
       if (dropdown !== except) dropdown.classList.remove('open');
@@ -127,59 +158,64 @@
   }
 
   function init() {
+    if (document.documentElement.hasAttribute('data-ai-ui-events-bound')) return;
+    document.documentElement.setAttribute('data-ai-ui-events-bound', 'true');
+
     document.addEventListener('click', (event) => {
-      const accordionButton = event.target.closest(SELECTORS.accordionButton);
+      const accordionButton = findClosest(event, SELECTORS.accordionButton);
       if (accordionButton) {
         toggleAccordion(accordionButton);
         return;
       }
 
-      const tabButton = event.target.closest(SELECTORS.tabButton);
+      const tabButton = findClosest(event, SELECTORS.tabButton);
       if (tabButton) {
         activateTab(tabButton);
         return;
       }
 
-      const modalOpen = event.target.closest(SELECTORS.modalOpen);
+      const modalOpen = findClosest(event, SELECTORS.modalOpen);
       if (modalOpen) {
         event.preventDefault();
         openModal(modalOpen.getAttribute('data-ai-modal-open'));
         return;
       }
 
-      const modalClose = event.target.closest(SELECTORS.modalClose);
+      const modalClose = findClosest(event, SELECTORS.modalClose);
       if (modalClose) {
         closeModal(modalClose.closest(SELECTORS.modalBackdrop));
         return;
       }
 
-      const backdrop = event.target.closest(SELECTORS.modalBackdrop);
-      if (backdrop && event.target === backdrop) {
+      const target = getEventTargetElement(event);
+      const backdrop = findClosest(event, SELECTORS.modalBackdrop);
+      if (backdrop && target === backdrop) {
         closeModal(backdrop);
         return;
       }
 
-      const toastClose = event.target.closest(SELECTORS.toastClose);
+      const toastClose = findClosest(event, SELECTORS.toastClose);
       if (toastClose) {
         const toast = toastClose.closest(SELECTORS.toast);
         if (toast) toast.remove();
         return;
       }
 
-      const sidebarToggle = event.target.closest(SELECTORS.sidebarToggle);
+      const sidebarToggle = findClosest(event, SELECTORS.sidebarToggle);
       if (sidebarToggle) {
-        const sidebar = sidebarToggle.closest(SELECTORS.sidebar);
+        const sidebar = resolveSidebar(sidebarToggle);
         if (sidebar) sidebar.classList.toggle('sidebar-expanded-full');
+        setExpanded(sidebarToggle, sidebar ? sidebar.classList.contains('sidebar-expanded-full') : false);
         return;
       }
 
-      const navbarToggler = event.target.closest(SELECTORS.navbarToggler);
+      const navbarToggler = findClosest(event, SELECTORS.navbarToggler);
       if (navbarToggler) {
         toggleNavbar(navbarToggler);
         return;
       }
 
-      const navToggle = event.target.closest('.nav-link--toggle, .nav-caret-btn');
+      const navToggle = findClosest(event, '.nav-link--toggle, .nav-caret-btn');
       if (navToggle) {
         const item = navToggle.closest(SELECTORS.navDropdown);
         if (item) {
@@ -193,8 +229,8 @@
         }
       }
 
-      const dropdown = event.target.closest(SELECTORS.dropdown);
-      if (dropdown && !event.target.closest(SELECTORS.dropdownMenu)) {
+      const dropdown = findClosest(event, SELECTORS.dropdown);
+      if (dropdown && !findClosest(event, SELECTORS.dropdownMenu)) {
         const willOpen = !dropdown.classList.contains('open');
         closeDropdowns(dropdown);
         dropdown.classList.toggle('open', willOpen);
@@ -223,6 +259,7 @@
   window.AppInfoUI = Object.assign(window.AppInfoUI || {}, {
     activateTab,
     closeModal,
+    init,
     openModal,
   });
 })();

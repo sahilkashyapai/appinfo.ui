@@ -79,20 +79,18 @@ function NavList({ items }) {
 								</span>
 							</button>
 						</span>
-						{isOpen && (
-							<div className="nav-dropdown" role="menu">
-								<ul className="nav-dropdown-list">
-									{item.children.map((child) => (
-										<li key={child} role="none">
-											<a href="#" role="menuitem" className="nav-dropdown-item">{child}</a>
-										</li>
-									))}
-								</ul>
-								{item.footer && (
-									<span className="nav-dropdown-save">{item.footer}</span>
-								)}
-							</div>
-						)}
+						<div className="nav-dropdown" role="menu">
+							<ul className="nav-dropdown-list">
+								{item.children.map((child) => (
+									<li key={child} role="none">
+										<a href="#" role="menuitem" className="nav-dropdown-item">{child}</a>
+									</li>
+								))}
+							</ul>
+							{item.footer && (
+								<span className="nav-dropdown-save">{item.footer}</span>
+							)}
+						</div>
 					</li>
 				);
 			})}
