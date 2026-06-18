@@ -219,7 +219,7 @@ export default function QuickStart({ theme = 'glance' }) {
 
               {'                '}<span className="cmd">{'<img'}</span>{' '}
               <span className="str">{'src'}</span>=
-              <span className="str">{`"${origin}/src/images/${theme}/logo.png"`}</span>{' '}
+              <span className="str">{`"${origin}/cdn/images/${theme}/logo.png"`}</span>{' '}
               <span className="str">{'class'}</span>=
               <span className="str">{'"brand-logo"'}</span>{' '}
               <span className="str">{'alt'}</span>=

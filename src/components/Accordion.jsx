@@ -42,11 +42,6 @@ function AccordionSection({ title, items, openState, onToggle }) {
 						);
 					})}
 				</div>
-
-				`
-				
-				
-				`
 			</PreviewBlock>
 		</>
 	);
