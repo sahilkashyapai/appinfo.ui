@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import ComponentsAsidebar from '../components/ComponentsAsidebar';
 import Accordion from '../components/Accordion';
 import Alert from '../components/Alert';
@@ -94,15 +95,10 @@ const PANEL_COMPONENTS = {
 	typography: Typography,
 };
 
-function getPanelFromPath(pathname = '/components') {
-	const [root, panel] = pathname.split('/').filter(Boolean);
-	if (root !== 'components') return 'accordion';
-	return panel || 'accordion';
-}
-
-export default function ComponentsPage({ pathname = '/components', theme = 'glance' }) {
+export default function ComponentsPage({ theme = 'glance' }) {
 	const [search, setSearch] = useState('');
-	const routePanel = getPanelFromPath(pathname);
+	const { panel } = useParams();
+	const routePanel = panel || 'accordion';
 	const activePanel = PANEL_COMPONENTS[routePanel] ? routePanel : 'accordion';
 	const ActiveComponent = PANEL_COMPONENTS[activePanel] || Accordion;
 

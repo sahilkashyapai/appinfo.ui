@@ -20,6 +20,7 @@ const HEADER_COLUMNS = ['Name', 'Status', 'A'];
 
 const DEVICE_GROUPS = [
 	{
+		id: 'addison-tx-intersections',
 		title: 'Addison TX Intersections',
 		rows: [
 			{ name: 'Addison-Airport', status: 'Online', count: '0', alert: false },
@@ -29,6 +30,7 @@ const DEVICE_GROUPS = [
 		],
 	},
 	{
+		id: 'atlanta-ga-corridor',
 		title: 'Atlanta GA Corridor',
 		rows: [
 			{ name: 'ATL-Peachtree-01', status: 'Online', count: '0', alert: false },
@@ -38,6 +40,7 @@ const DEVICE_GROUPS = [
 		],
 	},
 	{
+		id: 'phoenix-az-network-1',
 		title: 'Phoenix AZ Network',
 		rows: [
 			{ name: 'PHX-Camelback-01', status: 'Online', count: '0', alert: false },
@@ -46,6 +49,7 @@ const DEVICE_GROUPS = [
 		],
 	},
 	{
+		id: 'phoenix-az-network-2',
 		title: 'Phoenix AZ Network',
 		rows: [
 			{ name: 'PHX-Camelback-01', status: 'Online', count: '0', alert: false },
@@ -54,6 +58,7 @@ const DEVICE_GROUPS = [
 		],
 	},
 	{
+		id: 'phoenix-az-network-3',
 		title: 'Phoenix AZ Network',
 		rows: [
 			{ name: 'PHX-Camelback-01', status: 'Online', count: '0', alert: false },
@@ -264,10 +269,10 @@ function DeviceListSidebar() {
 			<div className="devicelist-content">
 				<div className="devicelist-item-wrapper" ref={wrapperRef}>
 					{DEVICE_GROUPS.map((group) => (
-						<div key={group.title}>
+						<div key={group.id}>
 							<h6 className="device-title">{group.title}</h6>
 							{group.rows.map((row, i) => (
-								<DeviceRow key={`${group.title}-${i}`} {...row} />
+								<DeviceRow key={`${group.id}-${row.name}-${i}`} {...row} />
 							))}
 						</div>
 					))}

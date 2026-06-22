@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function ComponentsAsidebar({
 	search = '',
 	onSearchChange,
@@ -44,14 +46,14 @@ export default function ComponentsAsidebar({
 					<div className="alpha-group" data-group={letter} key={letter}>
 						<span className="alpha-label">{letter}</span>
 						{groupedPanels[letter].map((panel) => (
-							<a
+								<Link
 								className={`sb-link ${activePanel === panel.id ? 'active' : ''}`}
-								href={`/components/${panel.id}`}
+									to={`/components/${panel.id}`}
 								key={panel.id}
-							>
+								>
 								{panel.label}
 								{panel.id === 'button' ? <span className="new-pill">HOT</span> : null}
-							</a>
+								</Link>
 						))}
 					</div>
 				))}

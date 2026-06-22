@@ -99,7 +99,7 @@ export default function Accordion() {
 				title="Borderless — Arrow Icon Right"
 				variant="single"
 				accordionClass="ai-accordion--borderless"
-				icon="chevron_right"
+				icon="expand_more"
 				items={items}
 			/>
 
@@ -107,7 +107,7 @@ export default function Accordion() {
 				title="Borderless — Arrow Icon Left"
 				variant="single"
 				accordionClass="ai-accordion--borderless"
-				icon="chevron_right"
+				icon="expand_more"
 				iconLeft
 				items={items}
 			/>

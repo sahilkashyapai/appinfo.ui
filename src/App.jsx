@@ -41,8 +41,6 @@ function HomePage({ theme, onThemeChange }) {
 
 export default function App() {
   const [theme, setTheme] = useState('glance');
-  const location = useLocation();
-  const pathname = location.pathname;
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -53,7 +51,8 @@ export default function App() {
       <Navbar theme={theme} onThemeChange={setTheme} />
       <Routes>
         <Route path="/" element={<HomePage theme={theme} onThemeChange={setTheme} />} />
-        <Route path="/components/*" element={<ComponentsPage pathname={pathname} theme={theme} />} />
+        <Route path="/components" element={<ComponentsPage theme={theme} />} />
+        <Route path="/components/:panel" element={<ComponentsPage theme={theme} />} />
         <Route path="/demo2" element={<Demo2Page theme={theme} />} />
         <Route path="/demo/*" element={<DemoPage theme={theme} />} />
         <Route path="*" element={<Navigate to="/" replace />} />
