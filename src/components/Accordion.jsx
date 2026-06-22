@@ -17,7 +17,36 @@ const items = [
 	},
 ];
 
-function AccordionSection({ title, items, openState, onToggle }) {
+// variant: 'single' | 'multiple' | 'first-open' | 'all-open'
+function AccordionSection({ title, items, variant = 'single', accordionClass = '', iconLeft = false, icon = 'expand_more' }) {
+	const initState = () => {
+		const base = Object.fromEntries(items.map((_, i) => [i, false]));
+		if (variant === 'first-open') return { ...base, 0: true };
+		if (variant === 'all-open') return Object.fromEntries(items.map((_, i) => [i, true]));
+		return base;
+	};
+
+	const [openState, setOpenState] = useState(initState);
+
+	const handleToggle = (idx) => {
+		if (variant === 'single' || variant === 'first-open') {
+			setOpenState((prev) => {
+				const alreadyOpen = prev[idx];
+				const reset = Object.fromEntries(Object.keys(prev).map((k) => [k, false]));
+				return alreadyOpen ? reset : { ...reset, [idx]: true };
+			});
+		} else {
+			setOpenState((prev) => ({ ...prev, [idx]: !prev[idx] }));
+		}
+	};
+
+	const fullClass = [
+		'ai-accordion',
+		`ai-accordion--${variant}`,
+		accordionClass,
+		iconLeft ? 'ai-accordion--icon-left' : '',
+	].filter(Boolean).join(' ');
+
 	return (
 		<>
 			<div className="sub-heading">{title}</div>
@@ -25,17 +54,20 @@ function AccordionSection({ title, items, openState, onToggle }) {
 				label="Preview"
 				canvasClassName="ai-p-6 ai-gap-0"
 			>
-				<div className="ai-accordion">
+				<div className={fullClass}>
 					{items.map((item, idx) => {
-						const isOpen = typeof openState === 'object' ? openState[idx] : openState === idx;
+						const isOpen = openState[idx];
+						const iconEl = <span className="ai-acc-icon material-symbols-outlined" aria-hidden="true">{icon}</span>;
 						return (
 							<div className="ai-acc-item" key={item.title}>
 								<button
 									className={`ai-acc-btn ${isOpen ? 'open' : ''}`}
-									onClick={() => onToggle(idx)}
+									onClick={() => handleToggle(idx)}
 									type="button"
 								>
-									{item.title} <span className="ai-acc-icon material-symbols-outlined" aria-hidden="true">expand_more</span>
+									{iconLeft && iconEl}
+									<span className="ai-acc-title">{item.title}</span>
+									{!iconLeft && iconEl}
 								</button>
 								<div className={`ai-acc-body ${isOpen ? 'open' : ''}`}>{item.body}</div>
 							</div>
@@ -48,11 +80,6 @@ function AccordionSection({ title, items, openState, onToggle }) {
 }
 
 export default function Accordion() {
-	const [openIndex, setOpenIndex] = useState(-1);
-	const [openMultiple, setOpenMultiple] = useState({ 0: false, 1: false, 2: false });
-	const [openFirstDefault, setOpenFirstDefault] = useState(0);
-	const [openAllDefault, setOpenAllDefault] = useState({ 0: true, 1: true, 2: true });
-
 	return (
 		<div className="comp-panel" id="p-accordion">
 			<CompHeader
@@ -60,32 +87,29 @@ export default function Accordion() {
 				lead="Collapsible content sections - perfect for FAQs, settings panels, and expandable details."
 			/>
 
+			<AccordionSection title="Only One Open at a Time" variant="single" items={items} />
+
+			<AccordionSection title="All Open at Once (Multiple)" variant="multiple" items={items} />
+
+			<AccordionSection title="First Item Open by Default" variant="first-open" items={items} />
+
+			<AccordionSection title="All Items Open by Default" variant="all-open" items={items} />
+
 			<AccordionSection
-				title="Only One Open at a Time"
+				title="Borderless — Arrow Icon Right"
+				variant="single"
+				accordionClass="ai-accordion--borderless"
+				icon="chevron_right"
 				items={items}
-				openState={openIndex}
-				onToggle={(idx) => setOpenIndex((current) => (current === idx ? -1 : idx))}
 			/>
 
 			<AccordionSection
-				title="All Open at Once (Multiple)"
+				title="Borderless — Arrow Icon Left"
+				variant="single"
+				accordionClass="ai-accordion--borderless"
+				icon="chevron_right"
+				iconLeft
 				items={items}
-				openState={openMultiple}
-				onToggle={(idx) => setOpenMultiple((prev) => ({ ...prev, [idx]: !prev[idx] }))}
-			/>
-
-			<AccordionSection
-				title="First Item Open by Default"
-				items={items}
-				openState={openFirstDefault}
-				onToggle={(idx) => setOpenFirstDefault((current) => (current === idx ? -1 : idx))}
-			/>
-
-			<AccordionSection
-				title="All Items Open by Default"
-				items={items}
-				openState={openAllDefault}
-				onToggle={(idx) => setOpenAllDefault((prev) => ({ ...prev, [idx]: !prev[idx] }))}
 			/>
 		</div>
 	);

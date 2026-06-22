@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from './external/Navbar';
 import Hero from './external/Hero';
 import Features from './external/Features';
@@ -10,69 +11,53 @@ import ComponentsPage from './pages/ComponentsPage';
 import DemoPage from './pages/DemoPage';
 import Demo2Page from './pages/Demo2Page';
 
+function HomePage({ theme, onThemeChange }) {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash !== '#quick-start') return;
+
+    const frame = window.requestAnimationFrame(() => {
+      const target = document.getElementById('quick-start');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [location.hash]);
+
+  return (
+    <>
+      <Hero />
+      <Features />
+      <ThemesSection theme={theme} onThemeChange={onThemeChange} />
+      <ComponentPreview />
+      <QuickStart theme={theme} />
+      <Footer />
+    </>
+  );
+}
 
 export default function App() {
   const [theme, setTheme] = useState('glance');
-  const [pathname, setPathname] = useState(window.location.pathname);
+  const location = useLocation();
+  const pathname = location.pathname;
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
-  useEffect(() => {
-    const onPopState = () => setPathname(window.location.pathname);
-    window.addEventListener('popstate', onPopState);
-
-    const onClick = (event) => {
-      const anchor = event.target.closest('a[href]');
-      if (!anchor) return;
-
-      const href = anchor.getAttribute('href');
-      if (!href || href.startsWith('#') || href.startsWith('http')) return;
-
-      const url = new URL(href, window.location.origin);
-      if (url.origin !== window.location.origin) return;
-
-      event.preventDefault();
-      window.history.pushState({}, '', url.pathname);
-      setPathname(url.pathname);
-      window.scrollTo({ top: 0, behavior: 'auto' });
-    };
-
-    document.addEventListener('click', onClick);
-    return () => {
-      window.removeEventListener('popstate', onPopState);
-      document.removeEventListener('click', onClick);
-    };
-  }, []);
-
-  const isComponentsPage = pathname === '/components' || pathname.startsWith('/components/');
-  const isDemo2Page = pathname === '/demo2' || pathname.startsWith('/demo2/');
-  const isDemoPage = !isDemo2Page && (pathname === '/demo' || pathname.startsWith('/demo/'));
-
   return (
     <>
-      <Navbar
-        theme={theme}
-        onThemeChange={setTheme}
-        currentPage={isDemo2Page ? 'demo2' : isDemoPage ? 'demo' : isComponentsPage ? 'components' : 'home'}
-      />
-      {isDemo2Page ? (
-        <Demo2Page theme={theme} />
-      ) : isDemoPage ? (
-        <DemoPage theme={theme} />
-      ) : isComponentsPage ? (
-        <ComponentsPage pathname={pathname} theme={theme} />
-      ) : (
-        <>
-          <Hero />
-          <Features />
-          <ThemesSection theme={theme} onThemeChange={setTheme} />
-          <ComponentPreview />
-          <QuickStart theme={theme} />
-          <Footer />
-        </>
-      )}
+      <Navbar theme={theme} onThemeChange={setTheme} />
+      <Routes>
+        <Route path="/" element={<HomePage theme={theme} onThemeChange={setTheme} />} />
+        <Route path="/components/*" element={<ComponentsPage pathname={pathname} theme={theme} />} />
+        <Route path="/demo2" element={<Demo2Page theme={theme} />} />
+        <Route path="/demo/*" element={<DemoPage theme={theme} />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
     </>
   );
 }

@@ -5,7 +5,6 @@
     --sidebar-header-height: 40px;
 }
 
-
 // sidebar
 .ai-devicelist-sidebar {
     width: var(--sidebar-width);
@@ -175,4 +174,10 @@
         }
     }
 
+}
+
+.header.header--no-nav+.ai-devicelist-sidebar {
+    .devicelist-item-wrapper {
+        max-height: calc(100vh - var(--sidebar-header-height));
+    }
 }

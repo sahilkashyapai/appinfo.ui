@@ -1,13 +1,37 @@
 import { useState } from 'react';
+import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
 
 const THEMES = ['glance', 'mcomms', 'wwe', 'rattler', 'mainelink'];
 
-export default function Navbar({ theme, onThemeChange, currentPage = 'home' }) {
+export default function Navbar({ theme, onThemeChange }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleThemeChange = (e) => {
     onThemeChange(e.target.value);
   };
+
+  const closeMenu = () => setMenuOpen(false);
+
+  const handleGetStarted = (event) => {
+    event.preventDefault();
+    closeMenu();
+
+    if (location.pathname === '/' && location.hash === '#quick-start') {
+      const target = document.getElementById('quick-start');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      return;
+    }
+
+    navigate('/#quick-start');
+  };
+
+  const linkClass = ({ isActive }) => (isActive ? 'active' : '');
+  const getStartedClass =
+    location.pathname === '/' && location.hash === '#quick-start' ? 'active' : '';
 
   return (
     <nav className="p-nav">
@@ -18,14 +42,28 @@ export default function Navbar({ theme, onThemeChange, currentPage = 'home' }) {
 
       <div className={`nav-items${menuOpen ? ' open' : ''}`} id="navItems">
         <div className="p-nav-links">
-          <a href="/" className={currentPage === 'home' ? 'active' : ''}>Docs</a>
-          <a href="/components" className={currentPage === 'components' ? 'active' : ''}>Components</a>
-          <a href="/demo" className={currentPage === 'demo' ? 'active' : ''}>Demo</a>
-          <a href="/demo2" className={currentPage === 'demo2' ? 'active' : ''}>Demo 2</a>
-          <a href="#themes">Themes</a>
-          <a href="#quick-start">Get Started</a>
+          <NavLink to="/" end className={linkClass} onClick={closeMenu}>
+            Docs
+          </NavLink>
+
+          <Link to="/#quick-start" className={getStartedClass} onClick={handleGetStarted}>
+            Get Started
+          </Link>
+
+          <NavLink to="/components" className={linkClass} onClick={closeMenu}>
+            Components
+          </NavLink>
+
+          <NavLink to="/demo2" className={linkClass} onClick={closeMenu}>
+            Demo
+          </NavLink>
+
+
           <div className="nav-divider" />
-          <a href="#">GitHub</a>
+
+          <a href="https://github.com/sahilkashyapai/appinfo.ui" target="_new" rel="noopener noreferrer" onClick={closeMenu}>
+            GitHub
+          </a>
         </div>
 
         <div className="nav-divider" />
