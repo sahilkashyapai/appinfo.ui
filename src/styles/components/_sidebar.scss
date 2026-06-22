@@ -178,6 +178,6 @@
 
 .header.header--no-nav+.ai-devicelist-sidebar {
     .devicelist-item-wrapper {
-        max-height: calc(100vh - var(--sidebar-header-height));
+        max-height: calc(100vh - var(--sidebar-header-height) - var(--header-head-height));
     }
 }

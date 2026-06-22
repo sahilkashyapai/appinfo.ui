@@ -31,7 +31,7 @@ const STEPS = [
 
 function buildSnippet(origin, theme = 'glance') {
   return `<!-- 1. Add AppInfo.UI CSS -->
-<link rel="stylesheet" href="${origin}/cdn/components.bundle.css">
+<link rel="stylesheet" href="${origin}/cdn/components.css">
 
 <!-- 2. Add AppInfo.UI Images CDN -->
 <link rel="preconnect" href="${origin}/images/">
@@ -56,14 +56,14 @@ function buildBasicLayoutSnippet(origin, theme = 'glance') {
     <title>My App — Built with AppInfo.UI</title>
 
     <!-- AppInfo.UI CSS -->
-    <link rel="stylesheet" href="${origin}/cdn/components.bundle.css">
+    <link rel="stylesheet" href="${origin}/cdn/components.css">
 </head>
 <body>
 
     <header class="header header--no-nav">
       <div class="header-head">
         <div class="header-branding">
-          <img src="${origin}/cdn/images/${theme}"/logo.png" class="brand-logo" alt="Logo"/>
+          <img src="${origin}/cdn/images/${theme}/logo.png" class="brand-logo" alt="Logo"/>
           <span class="powered-by">Powered by APPLIED INFORMATION</span>
         </div>
         <div class="header-user-actions">
@@ -88,7 +88,7 @@ function buildBasicLayoutSnippet(origin, theme = 'glance') {
 
 export default function QuickStart({ theme = 'glance' }) {
   const origin = window.location.origin;
-  const cdnCss = `${origin}/cdn/components.bundle.css`;
+  const cdnCss = `${origin}/cdn/components.css`;
   const cdnImg = `${origin}/images/`;
   const cdnJs = `${origin}/cdn/components.js`;
 
@@ -196,7 +196,7 @@ export default function QuickStart({ theme = 'glance' }) {
 
               {'    '}<span className="cmd">{'<link'}</span>{' '}
               <span className="str">{'rel'}</span>=<span className="str">{'"stylesheet"'}</span>{' '}
-              <span className="str">{'href'}</span>=<span className="str">{`"${origin}/cdn/components.bundle.css"`}</span>
+              <span className="str">{'href'}</span>=<span className="str">{`"${origin}/cdn/components.css"`}</span>
               <span className="cmd">{'>'}</span>{'\n'}
 
               <span className="cmd">{'</head>'}</span>{'\n'}
