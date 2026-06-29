@@ -1,6 +1,8 @@
 import CopyButton from '../components/CopyButton';
 import Navbar from '../components/Navbar';
 
+const CDN_VERSION = '1.0.1';
+
 const STEPS = [
   {
     num: 1,
@@ -31,7 +33,7 @@ const STEPS = [
 
 function buildSnippet(origin, theme = 'glance') {
   return `<!-- 1. Add AppInfo.UI CSS -->
-<link rel="stylesheet" href="${origin}/cdn/components.css">
+<link rel="stylesheet" href="${origin}/cdn/components.css?v=${CDN_VERSION}">
 
 <!-- 2. Add AppInfo.UI Images CDN -->
 <link rel="preconnect" href="${origin}/images/">
@@ -43,7 +45,7 @@ function buildSnippet(origin, theme = 'glance') {
 <button class="ai-btn ai-btn-primary">Get Started</button>
 
 <!-- Optional: Add JS for interactive components -->
-<script src="${origin}/cdn/components.js"></script>`;
+<script src="${origin}/cdn/components.js?v=${CDN_VERSION}"></script>`;
 }
 
 function buildBasicLayoutSnippet(origin, theme = 'glance') {
@@ -56,7 +58,7 @@ function buildBasicLayoutSnippet(origin, theme = 'glance') {
     <title>My App — Built with AppInfo.UI</title>
 
     <!-- AppInfo.UI CSS -->
-    <link rel="stylesheet" href="${origin}/cdn/components.css">
+    <link rel="stylesheet" href="${origin}/cdn/components.css?v=${CDN_VERSION}">
 </head>
 <body>
 
@@ -81,16 +83,16 @@ function buildBasicLayoutSnippet(origin, theme = 'glance') {
     </header>
       
     <!-- AppInfo.UI JavaScript -->
-    <script src="${origin}/cdn/components.js" defer></script>
+    <script src="${origin}/cdn/components.js?v=${CDN_VERSION}" defer></script>
 </body>
 </html>`;
 }
 
 export default function QuickStart({ theme = 'glance' }) {
   const origin = window.location.origin;
-  const cdnCss = `${origin}/cdn/components.css`;
+  const cdnCss = `${origin}/cdn/components.css?v=${CDN_VERSION}`;
   const cdnImg = `${origin}/images/`;
-  const cdnJs = `${origin}/cdn/components.js`;
+  const cdnJs = `${origin}/cdn/components.js?v=${CDN_VERSION}`;
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(buildSnippet(origin, theme));
@@ -196,7 +198,7 @@ export default function QuickStart({ theme = 'glance' }) {
 
               {'    '}<span className="cmd">{'<link'}</span>{' '}
               <span className="str">{'rel'}</span>=<span className="str">{'"stylesheet"'}</span>{' '}
-              <span className="str">{'href'}</span>=<span className="str">{`"${origin}/cdn/components.css"`}</span>
+              <span className="str">{'href'}</span>=<span className="str">{`"${origin}/cdn/components.css?v=${CDN_VERSION}"`}</span>
               <span className="cmd">{'>'}</span>{'\n'}
 
               <span className="cmd">{'</head>'}</span>{'\n'}
@@ -280,7 +282,7 @@ export default function QuickStart({ theme = 'glance' }) {
               {'    '}<span className="comment">{'<!-- AppInfo.UI JavaScript -->'}</span>{'\n'}
 
               {'    '}<span className="cmd">{'<script'}</span>{' '}
-              <span className="str">{'src'}</span>=<span className="str">{`"${origin}/cdn/components.js"`}</span>{' '}
+              <span className="str">{'src'}</span>=<span className="str">{`"${origin}/cdn/components.js?v=${CDN_VERSION}"`}</span>{' '}
               <span className="str">{'defer'}</span>
               <span className="cmd">{'></script>'}</span>{'\n'}
 

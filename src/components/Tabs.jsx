@@ -22,11 +22,15 @@ export default function Tabs() {
 				label="Preview"
 				canvasStyle={{ padding: '24px', gap: 0 }}
 			>
-				<div className="ai-tabs">
+				<div className="ai-tabs" data-tabs>
 					<div className="ai-tab-list">
 						{TAB_ITEMS.map((tab) => (
 							<button
 								className={`ai-tab-btn ${activeTabId === tab.id ? 'active' : ''}`}
+								data-tab-target={tab.id}
+								role="tab"
+								aria-controls={tab.id}
+								aria-selected={activeTabId === tab.id}
 								onClick={() => setActiveTabId(tab.id)}
 								type="button"
 								key={tab.id}
@@ -35,15 +39,21 @@ export default function Tabs() {
 							</button>
 						))}
 					</div>
-				</div>
 
-				{TAB_ITEMS.map((tab) => (
-					<div className={`ai-tab-content ${activeTabId === tab.id ? 'active' : ''}`} id={tab.id} data-group="t1" key={tab.id}>
-						<span className="material-symbols-outlined" aria-hidden="true">{tab.icon}</span>
-						{' '}
-						{tab.content}
-					</div>
-				))}
+					{TAB_ITEMS.map((tab) => (
+						<div
+							className={`ai-tab-content ${activeTabId === tab.id ? 'active' : ''}`}
+							id={tab.id}
+							role="tabpanel"
+							hidden={activeTabId !== tab.id}
+							key={tab.id}
+						>
+							<span className="material-symbols-outlined" aria-hidden="true">{tab.icon}</span>
+							{' '}
+							{tab.content}
+						</div>
+					))}
+				</div>
 			</PreviewBlock>
 		</div>
 	);

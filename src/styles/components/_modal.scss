@@ -1,5 +1,9 @@
 @use '../utilities/mixins' as *;
 
+.ai-overlay-open {
+    overflow: hidden;
+}
+
 .ai-modal {
     background: var(--c-surface);
     border-radius: 14px;

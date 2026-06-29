@@ -133,7 +133,9 @@ function SidebarPreview() {
 				<span
 					className="devicelist-header-toggle"
 					id="devicelistSidebarToggle"
+					data-sidebar-toggle="devicelistSidebar"
 					role="button"
+					aria-controls="devicelistSidebar"
 					tabIndex={enabled ? 0 : -1}
 					aria-disabled={!enabled}
 					aria-expanded={expanded}
@@ -143,11 +145,6 @@ function SidebarPreview() {
 							e.preventDefault();
 							handleToggle();
 						}
-					}}
-					style={{
-						pointerEvents: enabled ? 'auto' : 'none',
-						opacity: enabled ? 1 : 0.4,
-						cursor: enabled ? 'pointer' : 'default',
 					}}
 				>
 					<span className="material-symbols-outlined">

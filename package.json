@@ -1,9 +1,10 @@
 {
   "name": "ai-ui-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "dev": "vite",
+    "dev:cdn": "node scripts/dev-cdn.mjs",
     "build": "vite build",
     "build:cdn": "sass public/cdn/components.scss public/cdn/components.bundle.css --style=compressed",
     "preview": "vite preview"

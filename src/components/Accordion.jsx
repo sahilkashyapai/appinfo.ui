@@ -46,6 +46,7 @@ function AccordionSection({ title, items, variant = 'single', accordionClass = '
 		accordionClass,
 		iconLeft ? 'ai-accordion--icon-left' : '',
 	].filter(Boolean).join(' ');
+	const sectionId = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
 	return (
 		<>
@@ -62,6 +63,9 @@ function AccordionSection({ title, items, variant = 'single', accordionClass = '
 							<div className="ai-acc-item" key={item.title}>
 								<button
 									className={`ai-acc-btn ${isOpen ? 'open' : ''}`}
+									data-accordion-toggle={`accordion-${sectionId}-${idx}`}
+									aria-controls={`accordion-${sectionId}-${idx}`}
+									aria-expanded={isOpen}
 									onClick={() => handleToggle(idx)}
 									type="button"
 								>
@@ -69,7 +73,13 @@ function AccordionSection({ title, items, variant = 'single', accordionClass = '
 									<span className="ai-acc-title">{item.title}</span>
 									{!iconLeft && iconEl}
 								</button>
-								<div className={`ai-acc-body ${isOpen ? 'open' : ''}`}>{item.body}</div>
+								<div
+									className={`ai-acc-body ${isOpen ? 'open' : ''}`}
+									id={`accordion-${sectionId}-${idx}`}
+									hidden={!isOpen}
+								>
+									{item.body}
+								</div>
 							</div>
 						);
 					})}

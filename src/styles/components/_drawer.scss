@@ -1,0 +1,51 @@
+.ai-overlay-open {
+  overflow: hidden;
+}
+
+.ai-drawer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1100;
+  width: min(360px, 90vw);
+  padding: 24px;
+  overflow-y: auto;
+  background: var(--c-surface);
+  color: var(--c-text);
+  box-shadow: 12px 0 36px rgba(0, 0, 0, 0.18);
+  transform: translateX(-105%);
+  visibility: hidden;
+  transition: transform 0.22s ease, visibility 0.22s;
+
+  &.open {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  &.ai-drawer-right {
+    right: 0;
+    left: auto;
+    box-shadow: -12px 0 36px rgba(0, 0, 0, 0.18);
+    transform: translateX(105%);
+
+    &.open {
+      transform: translateX(0);
+    }
+  }
+}
+
+.ai-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1090;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.22s ease, visibility 0.22s;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+}

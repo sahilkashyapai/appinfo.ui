@@ -45,6 +45,7 @@ export default function Dropdown() {
 				<div className={`ai-dropdown ${openDropdown === 'dd1' ? 'open' : ''}`} id="dd1">
 					<button
 						className="ai-btn ai-btn-primary"
+						data-dropdown-toggle="dd1"
 						onClick={() => toggleDropdown('dd1')}
 						type="button"
 						aria-expanded={openDropdown === 'dd1'}
@@ -63,6 +64,7 @@ export default function Dropdown() {
 				<div className={`ai-dropdown ${openDropdown === 'dd2' ? 'open' : ''}`} id="dd2">
 					<button
 						className="ai-btn ai-btn-outline"
+						data-dropdown-toggle="dd2"
 						onClick={() => toggleDropdown('dd2')}
 						type="button"
 						aria-expanded={openDropdown === 'dd2'}

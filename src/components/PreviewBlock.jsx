@@ -14,6 +14,24 @@ const VOID_TAGS = new Set([
 	'link', 'meta', 'param', 'source', 'track', 'wbr',
 ]);
 
+const FORBIDDEN_SNIPPET_SYNTAX = [
+	{ pattern: /\bclassName\s*=/, label: 'className' },
+	{ pattern: /\bhtmlFor\s*=/, label: 'htmlFor' },
+	{ pattern: /\s+on[a-z]+\s*=/i, label: 'inline event handler' },
+	{ pattern: /\{\/\*/, label: 'JSX comment' },
+	{ pattern: /\{\s*\{/, label: 'JSX expression' },
+];
+
+export function assertPureHtmlSnippet(html) {
+	const violation = FORBIDDEN_SNIPPET_SYNTAX.find(({ pattern }) => pattern.test(html));
+	if (violation) {
+		throw new Error(
+			`PreviewBlock code must be pure HTML. Found ${violation.label}; use a data-* behavior attribute instead.`
+		);
+	}
+	return html;
+}
+
 // Lightweight HTML pretty-printer
 function formatHtml(html) {
 	if (!html) return '';
@@ -79,9 +97,9 @@ export default function PreviewBlock({ label = 'Preview', code, children, canvas
 	const [activeTab, setActiveTab] = useState('preview');
 
 	const generatedCode = useMemo(() => {
-		if (code) return code;
+		if (code) return assertPureHtmlSnippet(code);
 		try {
-			return formatHtml(renderToStaticMarkup(children));
+			return assertPureHtmlSnippet(formatHtml(renderToStaticMarkup(children)));
 		} catch {
 			return '';
 		}

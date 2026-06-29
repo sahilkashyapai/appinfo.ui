@@ -19,152 +19,152 @@ export default function Modal() {
 		return () => document.removeEventListener('keydown', handleEscape);
 	}, []);
 
-	const configModalCode = `<button className="ai-btn ai-btn-primary" onClick={() => openModal('m1')} type="button">Open Modal</button>
+	const configModalCode = `<button class="ai-btn ai-btn-primary" data-modal-open="m1" type="button" aria-controls="m1" aria-expanded="false">Open Modal</button>
 
-{/* Modal - Device Configuration */}
-<div className="ai-modal-backdrop open" role="dialog" aria-modal="true">
-	<div className="ai-modal">
-		<div className="ai-modal-header">
-			<span className="ai-modal-title">Device Configuration</span>
-			<button className="ai-modal-close" onClick={closeModal} type="button"><span className="material-symbols-outlined" aria-hidden="true">close</span></button>
+<!-- Modal: Device Configuration -->
+<div class="ai-modal-backdrop" id="m1" aria-hidden="true">
+	<div class="ai-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-device">
+		<div class="ai-modal-header">
+			<span class="ai-modal-title" id="modal-title-device">Device Configuration</span>
+			<button class="ai-modal-close" data-modal-close type="button" aria-label="Close dialog"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
 		</div>
-		<div className="ai-modal-body">
+		<div class="ai-modal-body">
 			<p>Update the configuration settings for device <strong>SNSR-042</strong>. Changes will apply after next sync cycle.</p>
-			<div className="ai-input-group ai-mt-4">
-				<label className="ai-label">Poll Interval</label>
-				<select className="ai-select">
+			<div class="ai-input-group ai-mt-4">
+				<label class="ai-label">Poll Interval</label>
+				<select class="ai-select">
 					<option>30 seconds</option>
 					<option>60 seconds</option>
 					<option>5 minutes</option>
 				</select>
 			</div>
 		</div>
-		<div className="ai-modal-footer">
-			<button className="ai-btn ai-btn-ghost ai-btn-sm" type="button">Cancel</button>
-			<button className="ai-btn ai-btn-primary ai-btn-sm" type="button">Save Changes</button>
+		<div class="ai-modal-footer">
+			<button class="ai-btn ai-btn-ghost ai-btn-sm" data-modal-close type="button">Cancel</button>
+			<button class="ai-btn ai-btn-primary ai-btn-sm" type="button">Save Changes</button>
 		</div>
 	</div>
 </div>`;
 
-	const deleteModalCode = `<button className="ai-btn ai-btn-danger" onClick={() => openModal('m2')} type="button">Confirm Delete</button>
+	const deleteModalCode = `<button class="ai-btn ai-btn-danger" data-modal-open="m2" type="button" aria-controls="m2" aria-expanded="false">Confirm Delete</button>
 
-{/* Modal - Confirm Delete */}
-<div className="ai-modal-backdrop open" role="dialog" aria-modal="true">
-	<div className="ai-modal">
-		<div className="ai-modal-header">
-			<span className="ai-modal-title">
-				<span className="material-symbols-outlined">warning</span> Confirm Delete
+<!-- Modal: Confirm Delete -->
+<div class="ai-modal-backdrop" id="m2" aria-hidden="true">
+	<div class="ai-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-delete">
+		<div class="ai-modal-header">
+			<span class="ai-modal-title" id="modal-title-delete">
+				<span class="material-symbols-outlined">warning</span> Confirm Delete
 			</span>
-			<button className="ai-modal-close" onClick={closeModal} type="button"><span className="material-symbols-outlined" aria-hidden="true">close</span></button>
+			<button class="ai-modal-close" data-modal-close type="button" aria-label="Close dialog"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
 		</div>
-		<div className="ai-modal-body">
+		<div class="ai-modal-body">
 			<p>Are you sure you want to delete device <strong>SNSR-042</strong>? This action cannot be undone and all historical data will be permanently removed.</p>
 		</div>
-		<div className="ai-modal-footer">
-			<button className="ai-btn ai-btn-ghost ai-btn-sm" type="button">Cancel</button>
-			<button className="ai-btn ai-btn-danger ai-btn-sm" type="button">Yes, Delete</button>
+		<div class="ai-modal-footer">
+			<button class="ai-btn ai-btn-ghost ai-btn-sm" data-modal-close type="button">Cancel</button>
+			<button class="ai-btn ai-btn-danger ai-btn-sm" type="button">Yes, Delete</button>
 		</div>
 	</div>
 </div>`;
 
-	const largeModalCode = `<button className="ai-btn ai-btn-primary" type="button">Large Modal</button>
+	const largeModalCode = `<button class="ai-btn ai-btn-primary" data-modal-open="m3" type="button" aria-controls="m3" aria-expanded="false">Large Modal</button>
 
-<div className="ai-modal-backdrop open" role="dialog" aria-modal="true">
-	<div className="ai-modal ai-modal-lg">
-		<div className="ai-modal-header">
-			<span className="ai-modal-title">Large Modal</span>
-			<button className="ai-modal-close" type="button"><span className="material-symbols-outlined" aria-hidden="true">close</span></button>
+<div class="ai-modal-backdrop" id="m3" aria-hidden="true">
+	<div class="ai-modal ai-modal-lg" role="dialog" aria-modal="true" aria-labelledby="modal-title-large">
+		<div class="ai-modal-header">
+			<span class="ai-modal-title" id="modal-title-large">Large Modal</span>
+			<button class="ai-modal-close" data-modal-close type="button" aria-label="Close dialog"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
 		</div>
-		<div className="ai-modal-body">
+		<div class="ai-modal-body">
 			<p>This is a large modal with more width for displaying detailed content, tables, or forms.</p>
 		</div>
-		<div className="ai-modal-footer">
-			<button className="ai-btn ai-btn-ghost ai-btn-sm" type="button">Close</button>
+		<div class="ai-modal-footer">
+			<button class="ai-btn ai-btn-ghost ai-btn-sm" data-modal-close type="button">Close</button>
 		</div>
 	</div>
 </div>`;
 
-	const smallModalCode = `<button className="ai-btn ai-btn-primary" type="button">Small Modal</button>
+	const smallModalCode = `<button class="ai-btn ai-btn-primary" data-modal-open="m4" type="button" aria-controls="m4" aria-expanded="false">Small Modal</button>
 
-<div className="ai-modal-backdrop open" role="dialog" aria-modal="true">
-	<div className="ai-modal ai-modal-sm">
-		<div className="ai-modal-header">
-			<span className="ai-modal-title">Small Modal</span>
-			<button className="ai-modal-close" type="button"><span className="material-symbols-outlined" aria-hidden="true">close</span></button>
+<div class="ai-modal-backdrop" id="m4" aria-hidden="true">
+	<div class="ai-modal ai-modal-sm" role="dialog" aria-modal="true" aria-labelledby="modal-title-small">
+		<div class="ai-modal-header">
+			<span class="ai-modal-title" id="modal-title-small">Small Modal</span>
+			<button class="ai-modal-close" data-modal-close type="button" aria-label="Close dialog"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
 		</div>
-		<div className="ai-modal-body">
+		<div class="ai-modal-body">
 			<p>Compact modal for simple confirmations or quick actions.</p>
 		</div>
-		<div className="ai-modal-footer">
-			<button className="ai-btn ai-btn-primary ai-btn-sm" type="button">OK</button>
+		<div class="ai-modal-footer">
+			<button class="ai-btn ai-btn-primary ai-btn-sm" data-modal-close type="button">OK</button>
 		</div>
 	</div>
 </div>`;
 
-	const alertModalCode = `<button className="ai-btn ai-btn-danger" type="button">Alert Modal</button>
+	const alertModalCode = `<button class="ai-btn ai-btn-danger" data-modal-open="m5" type="button" aria-controls="m5" aria-expanded="false">Alert Modal</button>
 
-<div className="ai-modal-backdrop open" role="dialog" aria-modal="true">
-	<div className="ai-modal">
-		<div className="ai-modal-header ai-bg-danger-light">
-			<span className="ai-modal-title">
-				<span className="material-symbols-outlined" aria-hidden="true">error</span> Alert
+<div class="ai-modal-backdrop" id="m5" aria-hidden="true">
+	<div class="ai-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-alert">
+		<div class="ai-modal-header ai-bg-danger-light">
+			<span class="ai-modal-title" id="modal-title-alert">
+				<span class="material-symbols-outlined" aria-hidden="true">error</span> Alert
 			</span>
-			<button className="ai-modal-close" type="button"><span className="material-symbols-outlined" aria-hidden="true">close</span></button>
+			<button class="ai-modal-close" data-modal-close type="button" aria-label="Close dialog"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
 		</div>
-		<div className="ai-modal-body">
+		<div class="ai-modal-body">
 			<p><strong>Warning:</strong> This action requires your confirmation. Please review before proceeding.</p>
 		</div>
-		<div className="ai-modal-footer">
-			<button className="ai-btn ai-btn-ghost ai-btn-sm" type="button">Cancel</button>
-			<button className="ai-btn ai-btn-danger ai-btn-sm" type="button">Proceed</button>
+		<div class="ai-modal-footer">
+			<button class="ai-btn ai-btn-ghost ai-btn-sm" data-modal-close type="button">Cancel</button>
+			<button class="ai-btn ai-btn-danger ai-btn-sm" type="button">Proceed</button>
 		</div>
 	</div>
 </div>`;
 
-	const successModalCode = `<button className="ai-btn ai-btn-success" type="button">Success Modal</button>
+	const successModalCode = `<button class="ai-btn ai-btn-success" data-modal-open="m6" type="button" aria-controls="m6" aria-expanded="false">Success Modal</button>
 
-<div className="ai-modal-backdrop open" role="dialog" aria-modal="true">
-	<div className="ai-modal">
-		<div className="ai-modal-header ai-bg-success-light">
-			<span className="ai-modal-title">
-				<span className="material-symbols-outlined" aria-hidden="true">check_circle</span> Success
+<div class="ai-modal-backdrop" id="m6" aria-hidden="true">
+	<div class="ai-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-success">
+		<div class="ai-modal-header ai-bg-success-light">
+			<span class="ai-modal-title" id="modal-title-success">
+				<span class="material-symbols-outlined" aria-hidden="true">check_circle</span> Success
 			</span>
-			<button className="ai-modal-close" type="button"><span className="material-symbols-outlined" aria-hidden="true">close</span></button>
+			<button class="ai-modal-close" data-modal-close type="button" aria-label="Close dialog"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
 		</div>
-		<div className="ai-modal-body">
+		<div class="ai-modal-body">
 			<p>Operation completed successfully! Your changes have been saved.</p>
 		</div>
-		<div className="ai-modal-footer">
-			<button className="ai-btn ai-btn-primary ai-btn-sm" type="button">Done</button>
+		<div class="ai-modal-footer">
+			<button class="ai-btn ai-btn-primary ai-btn-sm" data-modal-close type="button">Done</button>
 		</div>
 	</div>
 </div>`;
 
-	const formModalCode = `<button className="ai-btn ai-btn-primary" type="button">Form Modal</button>
+	const formModalCode = `<button class="ai-btn ai-btn-primary" data-modal-open="m7" type="button" aria-controls="m7" aria-expanded="false">Form Modal</button>
 
-<div className="ai-modal-backdrop open" role="dialog" aria-modal="true">
-	<div className="ai-modal ai-modal-lg">
-		<div className="ai-modal-header">
-			<span className="ai-modal-title">User Registration</span>
-			<button className="ai-modal-close" type="button"><span className="material-symbols-outlined" aria-hidden="true">close</span></button>
+<div class="ai-modal-backdrop" id="m7" aria-hidden="true">
+	<div class="ai-modal ai-modal-lg" role="dialog" aria-modal="true" aria-labelledby="modal-title-form">
+		<div class="ai-modal-header">
+			<span class="ai-modal-title" id="modal-title-form">User Registration</span>
+			<button class="ai-modal-close" data-modal-close type="button" aria-label="Close dialog"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
 		</div>
-		<div className="ai-modal-body">
-			<div className="ai-input-group ai-mb-3">
-				<label className="ai-label">Full Name</label>
-				<input className="ai-input" type="text" placeholder="Enter your name" />
+		<div class="ai-modal-body">
+			<div class="ai-input-group ai-mb-3">
+				<label class="ai-label">Full Name</label>
+				<input class="ai-input" type="text" placeholder="Enter your name">
 			</div>
-			<div className="ai-input-group ai-mb-3">
-				<label className="ai-label">Email Address</label>
-				<input className="ai-input" type="email" placeholder="Enter your email" />
+			<div class="ai-input-group ai-mb-3">
+				<label class="ai-label">Email Address</label>
+				<input class="ai-input" type="email" placeholder="Enter your email">
 			</div>
-			<div className="ai-input-group">
-				<label className="ai-label">Message</label>
-				<textarea className="ai-textarea" rows="4" placeholder="Your message here"></textarea>
+			<div class="ai-input-group">
+				<label class="ai-label">Message</label>
+				<textarea class="ai-textarea" rows="4" placeholder="Your message here"></textarea>
 			</div>
 		</div>
-		<div className="ai-modal-footer">
-			<button className="ai-btn ai-btn-ghost ai-btn-sm" type="button">Cancel</button>
-			<button className="ai-btn ai-btn-primary ai-btn-sm" type="button">Submit</button>
+		<div class="ai-modal-footer">
+			<button class="ai-btn ai-btn-ghost ai-btn-sm" data-modal-close type="button">Cancel</button>
+			<button class="ai-btn ai-btn-primary ai-btn-sm" type="button">Submit</button>
 		</div>
 	</div>
 </div>`;

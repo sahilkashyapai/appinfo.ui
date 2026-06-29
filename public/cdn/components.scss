@@ -26,6 +26,7 @@
 @use '../../src/styles/components/code-block';
 @use '../../src/styles/components/divider';
 @use '../../src/styles/components/dropdown';
+@use '../../src/styles/components/drawer';
 @use '../../src/styles/components/inputs';
 @use '../../src/styles/components/list';
 @use '../../src/styles/components/modal';
@@ -43,3 +44,7 @@
 @use '../../src/styles/components/toast';
 @use '../../src/styles/components/tooltip';
 @use '../../src/styles/components/typography';
+
+// External font dependencies are emitted into components.bundle.css.
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Work+Sans:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block");

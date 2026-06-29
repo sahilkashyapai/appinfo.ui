@@ -74,6 +74,13 @@
             width: 24px;
             overflow: hidden;
             user-select: none;
+            cursor: pointer;
+
+            &[aria-disabled='true'] {
+                pointer-events: none;
+                opacity: .4;
+                cursor: default;
+            }
 
             span {
                 font-size: 32px;
