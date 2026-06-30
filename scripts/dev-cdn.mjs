@@ -21,7 +21,7 @@ const processes = [
   ),
   spawn(
     bin('vite'),
-    ['--open', '/cdn-test.html'],
+    ['--open', '/'],
     { stdio: 'inherit' },
   ),
 ];

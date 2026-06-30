@@ -30,15 +30,14 @@ Regenerate CSS after changing SCSS:
 npm run build:cdn
 ```
 
-Run the plain-HTML CDN component lab with automatic Sass rebuilding and browser
-refresh:
+Run the CDN dev workflow with automatic Sass rebuilding and browser refresh:
 
 ```bash
 npm run dev:cdn
 ```
 
-The lab opens at `/cdn-test.html`. It does not render React components; it loads
-`components.css` and `components.js` exactly like an external HTML project.
+This does not render React components; it loads `components.css` and
+`components.js` exactly like an external HTML project.
 
 Interactive components use HTML data attributes:
 

@@ -18,9 +18,8 @@ function cdnLabReload() {
       if (
         file.includes('/public/cdn/')
         || file.includes('/src/styles/')
-        || file.endsWith('/cdn-test.html')
       ) {
-        context.server.ws.send({ type: 'full-reload', path: '/cdn-test.html' });
+        context.server.ws.send({ type: 'full-reload' });
         return [];
       }
       return undefined;
@@ -34,7 +33,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         app: resolve(__dirname, 'index.html'),
-        cdnTest: resolve(__dirname, 'cdn-test.html'),
       },
     },
   },
