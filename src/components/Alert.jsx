@@ -47,24 +47,26 @@ export default function Alert() {
 				lead="Contextual feedback messages for user actions - info, success, warning, and danger variants."
 			/>
 
-			<PreviewBlock
-				label="Preview"
-				canvasClassName="ai-d-flex ai-flex-column ai-gap-3"
-			>
-				{alerts.map((alert) => (
-					<div key={alert.id} className={`ai-alert ${alert.cls}`}>
+			{alerts.map((alert) => (
+				<PreviewBlock
+					key={alert.id}
+					label={`Alert - ${alert.id.charAt(0).toUpperCase() + alert.id.slice(1)}`}
+				>
+					<div className={`ai-alert ${alert.cls}`}>
 						<div className="al-content">
 							<span className="al-icon material-symbols-outlined" aria-hidden="true">{alert.icon}</span>
 							<div>
-								<strong>{alert.title}</strong> {alert.message}
+								<strong>{alert.title}</strong>
+								{' '}
+								{alert.message}
 							</div>
 						</div>
 						<button className="al-close" onClick={() => removeAlert(alert.id)} type="button" aria-label="Close alert">
 							<span className="material-symbols-outlined" aria-hidden="true">close</span>
 						</button>
 					</div>
-				))}
-			</PreviewBlock>
+				</PreviewBlock>
+			))}
 		</div>
 	);
 }

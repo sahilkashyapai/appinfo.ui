@@ -16,7 +16,7 @@ export default function Range() {
 				label="Preview"
 				canvasStyle={{ display: 'flex', flexDirection: 'column' }}
 			>
-				<div className="ai-input-group">
+				<div className="ai-input-group ai-w-100 ai-mb-5">
 					<label className="ai-label">Threshold Level - <span>{thresholdLevel}</span>%</label>
 					<input
 						className="ai-range"
@@ -27,7 +27,7 @@ export default function Range() {
 						onChange={(event) => setThresholdLevel(Number(event.target.value))}
 					/>
 				</div>
-				<div className="ai-input-group">
+				<div className="ai-input-group ai-w-100">
 					<label className="ai-label">Polling Interval - <span>{pollingInterval}</span>s</label>
 					<input
 						className="ai-range"

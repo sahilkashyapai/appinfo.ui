@@ -199,11 +199,11 @@
     }
 
     &--copied {
-        border-color: #10b981;
-        background: color-mix(in srgb, #10b981 8%, var(--c-surface2));
+        border-color: var(--c-success);
+        background: color-mix(in srgb, var(--c-success) 8%, var(--c-surface2));
 
         .icon-tile__glyph {
-            color: #10b981;
+            color: var(--c-success);
         }
     }
 }
@@ -229,8 +229,8 @@
     right: 4px;
     font-size: 9px;
     font-weight: 600;
-    background: #10b981;
-    color: #fff;
+    background: var(--c-success);
+    color: var(--c-white);
     padding: 1px 5px;
     border-radius: 20px;
     pointer-events: none;

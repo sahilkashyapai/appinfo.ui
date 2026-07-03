@@ -1,7 +1,7 @@
 import CopyButton from '../components/CopyButton';
 import Navbar from '../components/Navbar';
 
-const CDN_VERSION = '1.0.1';
+const CDN_VERSION = '1.0.2';
 
 const STEPS = [
   {
@@ -45,7 +45,7 @@ function buildSnippet(origin, theme = 'glance') {
 <button class="ai-btn ai-btn-primary">Get Started</button>
 
 <!-- Optional: Add JS for interactive components -->
-<script src="${origin}/cdn/components.js?v=${CDN_VERSION}"></script>`;
+<script src="${origin}/cdn/components.js?v=${CDN_VERSION}" defer></script>`;
 }
 
 function buildBasicLayoutSnippet(origin, theme = 'glance') {

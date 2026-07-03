@@ -130,7 +130,7 @@
     font-weight: 700;
     font-family: 'DM Mono', monospace;
     background: var(--c-btn);
-    color: #fff;
+    color: var(--c-white);
     padding: 1px 6px;
     border-radius: 20px;
     letter-spacing: 0.04em;
@@ -246,7 +246,7 @@
 
   &.is-active {
     background: var(--c-dark);
-    color: #fff;
+    color: var(--c-white);
   }
 }
 
@@ -268,7 +268,7 @@
   }
 
   &.dark-bg {
-    background: #1a1a2e;
+    background: var(--c-tooltip-bg);
     border-radius: 0;
   }
 }
@@ -284,25 +284,25 @@
   pre {
     font-family: 'DM Mono', monospace;
     font-size: 12.5px;
-    color: #a8d4f0;
+    color: var(--c-code-text);
     line-height: 1.75;
     white-space: pre;
   }
 
   .kw {
-    color: #f0a8d4;
+    color: var(--c-code-tag);
   }
 
   .at {
-    color: #a8f0c6;
+    color: var(--c-code-attr);
   }
 
   .vl {
-    color: #f0d8a8;
+    color: var(--c-code-string);
   }
 
   .cm {
-    color: rgba(255, 255, 255, 0.3);
+    color: var(--c-code-comment);
   }
 }
 
@@ -327,7 +327,7 @@
 
   &:hover {
     background: rgba(255, 255, 255, 0.2);
-    color: #fff;
+    color: var(--c-white);
   }
 
   &:disabled {
@@ -340,7 +340,7 @@
 
   &.is-copying {
     background: rgba(96, 165, 250, 0.22);
-    color: #dbeafe;
+    color: var(--c-info-light);
     border-color: rgba(96, 165, 250, 0.45);
 
     .material-symbols-outlined {
@@ -349,9 +349,9 @@
   }
 
   &.is-copied {
-    background: #22c55e;
-    color: #fff;
-    border-color: #22c55e;
+    background: var(--c-success);
+    color: var(--c-white);
+    border-color: var(--c-success);
 
     .material-symbols-outlined {
       animation: copy-pop 0.2s ease-out;

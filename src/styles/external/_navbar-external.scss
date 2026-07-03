@@ -18,7 +18,7 @@
     font-family: 'Work Sans', sans-serif;
     font-size: 1.25rem;
     font-weight: 800;
-    color: #fff;
+    color: var(--c-white);
     letter-spacing: -0.03em;
     @include flex($align: center);
     gap: 10px;
@@ -39,7 +39,7 @@
 
       &:hover,
       &.active {
-        color: #fff;
+        color: var(--c-white);
       }
     }
   }
@@ -78,7 +78,7 @@
   .ai-select {
     background: rgba(255, 255, 255, 0.12);
     border: 1px solid rgba(255, 255, 255, 0.18);
-    color: #fff;
+    color: var(--c-white);
     padding: 6px 10px;
     border-radius: 6px;
     font-size: 0.75rem;
@@ -89,7 +89,7 @@
 
     option {
       background: var(--c-dark);
-      color: #fff;
+      color: var(--c-white);
     }
   }
 

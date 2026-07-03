@@ -6,6 +6,12 @@
     height: 120px;
 }
 
+.preview-canvas {
+    .ai-toast {
+        position: static;
+    }
+}
+
 .ai-toast {
     position: absolute;
     bottom: 0;

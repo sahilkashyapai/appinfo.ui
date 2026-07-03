@@ -40,7 +40,7 @@ export default function Dropdown() {
 			/>
 			<PreviewBlock
 				label="Preview"
-				canvasStyle={{ minHeight: '200px', alignItems: 'flex-start', gap: '16px' }}
+				canvasStyle={{ alignItems: 'flex-start', gap: '16px' }}
 			>
 				<div className={`ai-dropdown ${openDropdown === 'dd1' ? 'open' : ''}`} id="dd1">
 					<button

@@ -25,7 +25,7 @@ export default function Toast() {
 					</button>
 				</div>
 
-				<div className="ai-toast" style={{ borderLeft: '3px solid #ef4444' }}>
+				<div className="ai-toast" style={{ borderLeft: '3px solid var(--c-danger)' }}>
 					<span className="t-icon">
 						<span className="material-symbols-outlined" aria-hidden="true">warning</span>
 					</span>

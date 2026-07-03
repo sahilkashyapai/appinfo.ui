@@ -41,20 +41,20 @@
     }
 
     &-success {
-        background: #ecfdf5;
-        border-left: 3px solid #22c55e;
-        color: #166534;
+        background: var(--c-success-light);
+        border-left: 3px solid var(--c-success);
+        color: var(--c-success-dark);
     }
 
     &-warning {
-        background: #fffbeb;
-        border-left: 3px solid #f59e0b;
-        color: #92400e;
+        background: var(--c-warning-light);
+        border-left: 3px solid var(--c-warning);
+        color: var(--c-warning-dark);
     }
 
     &-danger {
-        background: #fef2f2;
-        border-left: 3px solid #ef4444;
-        color: #991b1b;
+        background: var(--c-danger-light);
+        border-left: 3px solid var(--c-danger);
+        color: var(--c-danger-dark);
     }
 }

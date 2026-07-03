@@ -12,33 +12,33 @@ $breakpoints: (
 
 // ─── Border ───
 .ai-border {
-  border: 1px solid #dee2e6 !important;
+  border: 1px solid var(--c-gray-border) !important;
 }
 
 .ai-border-top {
-  border-top: 1px solid #dee2e6 !important;
+  border-top: 1px solid var(--c-gray-border) !important;
 }
 
 .ai-border-right {
-  border-right: 1px solid #dee2e6 !important;
+  border-right: 1px solid var(--c-gray-border) !important;
 }
 
 .ai-border-bottom {
-  border-bottom: 1px solid #dee2e6 !important;
+  border-bottom: 1px solid var(--c-gray-border) !important;
 }
 
 .ai-border-left {
-  border-left: 1px solid #dee2e6 !important;
+  border-left: 1px solid var(--c-gray-border) !important;
 }
 
 .ai-border-x {
-  border-left: 1px solid #dee2e6 !important;
-  border-right: 1px solid #dee2e6 !important;
+  border-left: 1px solid var(--c-gray-border) !important;
+  border-right: 1px solid var(--c-gray-border) !important;
 }
 
 .ai-border-y {
-  border-top: 1px solid #dee2e6 !important;
-  border-bottom: 1px solid #dee2e6 !important;
+  border-top: 1px solid var(--c-gray-border) !important;
+  border-bottom: 1px solid var(--c-gray-border) !important;
 }
 
 // ─── Border Width ───
@@ -371,11 +371,11 @@ $breakpoints: (
 }
 
 .ai-border-white {
-  border-color: #ffffff !important;
+  border-color: var(--c-white) !important;
 }
 
 .ai-border-black {
-  border-color: #000000 !important;
+  border-color: var(--c-black) !important;
 }
 
 // ─── Responsive Border Utilities ───

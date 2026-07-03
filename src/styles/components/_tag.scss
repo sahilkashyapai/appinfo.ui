@@ -24,20 +24,20 @@
   }
 
   &-red {
-    background: #fee2e2;
-    color: #991b1b;
-    border: 1px solid #fca5a5;
+    background: var(--c-danger-light);
+    color: var(--c-danger-dark);
+    border: 1px solid color-mix(in srgb, var(--c-danger) 40%, transparent);
   }
 
   &-green {
-    background: #d1fae5;
-    color: #065f46;
-    border: 1px solid #6ee7b7;
+    background: var(--c-success-light);
+    color: var(--c-success-dark);
+    border: 1px solid color-mix(in srgb, var(--c-success) 40%, transparent);
   }
 
   &-yellow {
-    background: #fef3c7;
-    color: #92400e;
-    border: 1px solid #fcd34d;
+    background: var(--c-warning-light);
+    color: var(--c-warning-dark);
+    border: 1px solid var(--c-warning);
   }
 }

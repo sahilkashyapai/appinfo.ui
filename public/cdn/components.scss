@@ -2,48 +2,13 @@
 // Includes theme variables and component styles only.
 
 // Themes
-@use '../../src/styles/themes/glance';
-@use '../../src/styles/themes/mcomms';
-@use '../../src/styles/themes/wwe';
-@use '../../src/styles/themes/rattler';
-@use '../../src/styles/themes/mainelink';
+@use '../../src/styles/themes/themes';
 
-// Component dependencies
-@use '../../src/styles/utilities/reset';
-@use '../../src/styles/utilities/colors';
-@use '../../src/styles/utilities/variables';
-@use '../../src/styles/utilities/mixins';
+// Utilities
+@use '../../src/styles/utilities/utilities';
 
 // Components
-@use '../../src/styles/components/accordion';
-@use '../../src/styles/components/alert';
-@use '../../src/styles/components/avatar';
-@use '../../src/styles/components/badge';
-@use '../../src/styles/components/breadcrumb';
-@use '../../src/styles/components/buttons';
-@use '../../src/styles/components/card';
-@use '../../src/styles/components/chip';
-@use '../../src/styles/components/code-block';
-@use '../../src/styles/components/divider';
-@use '../../src/styles/components/dropdown';
-@use '../../src/styles/components/drawer';
-@use '../../src/styles/components/inputs';
-@use '../../src/styles/components/list';
-@use '../../src/styles/components/modal';
-@use '../../src/styles/components/navbar';
-@use '../../src/styles/components/sidebar';
-@use '../../src/styles/components/pagination';
-@use '../../src/styles/components/progress';
-@use '../../src/styles/components/range';
-@use '../../src/styles/components/skeleton';
-@use '../../src/styles/components/spinner';
-@use '../../src/styles/components/switch';
-@use '../../src/styles/components/table';
-@use '../../src/styles/components/tabs';
-@use '../../src/styles/components/tag';
-@use '../../src/styles/components/toast';
-@use '../../src/styles/components/tooltip';
-@use '../../src/styles/components/typography';
+@use '../../src/styles/components/components';
 
 // External font dependencies are emitted into components.bundle.css.
 @import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Work+Sans:wght@400;500;600;700;800&display=swap");

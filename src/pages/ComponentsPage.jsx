@@ -9,6 +9,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import Buttons from '../components/Buttons';
 import Card from '../components/Card';
 import Chip from '../components/Chip';
+import Colors from '../components/Colors';
 import Divider from '../components/Divider';
 import Dropdown from '../components/Dropdown';
 import Inputs from '../components/Inputs';
@@ -39,8 +40,8 @@ const PANEL_META = [
 	{ id: 'breadcrumb', label: 'Breadcrumb' },
 	{ id: 'button', label: 'Button' },
 	{ id: 'card', label: 'Card' },
-	{ id: 'checkbox', label: 'Checkbox & Radio' },
 	{ id: 'chip', label: 'Chip' },
+	{ id: 'colors', label: 'Colors' },
 	{ id: 'divider', label: 'Divider' },
 	{ id: 'dropdown', label: 'Dropdown' },
 	{ id: 'icons', label: 'Icons' },
@@ -73,8 +74,10 @@ const PANEL_COMPONENTS = {
 	card: Card,
 	checkbox: Inputs,
 	chip: Chip,
+	colors: Colors,
 	divider: Divider,
 	dropdown: Dropdown,
+
 	icons: Icons,
 	input: Inputs,
 	listgroup: List,

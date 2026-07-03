@@ -46,7 +46,7 @@
     color: var(--c-text);
 
     .req {
-        color: #ef4444;
+        color: var(--c-danger);
         margin-left: 2px;
     }
 }
@@ -80,7 +80,7 @@
     }
 
     &.error {
-        border-color: #ef4444;
+        border-color: var(--c-danger);
     }
 
     &.error:focus {
@@ -90,7 +90,7 @@
 
 .ai-error-msg {
     font-size: 12px;
-    color: #ef4444;
+    color: var(--c-danger);
 }
 
 .ai-textarea {
@@ -117,3 +117,4 @@
         border-radius: 0 7px 7px 0;
     }
 }
+

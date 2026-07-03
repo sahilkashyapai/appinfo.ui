@@ -4,31 +4,31 @@
 
 .code-block {
 	position: relative;
-	background: #1e1e1e;
+	background: var(--c-code-bg);
 	border: 1px solid rgba(255, 255, 255, 0.08);
 	border-radius: 6px;
 	overflow: hidden;
-	margin: 1.5rem 0;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 
 	.copy-btn {
-        width: 72px;
+		width: 85px;
 		position: absolute;
-		top: 12px;
+		top: 10px;
 		right: 12px;
-		@include flex($align: center);
-		gap: 6px;
+		background: #ffffff1a;
+		border: 1px solid rgba(255, 255, 255, .18);
+		color: #ffffffb3;
+		font-size: 11px;
+		font-family: Work Sans, sans-serif;
 		padding: 6px 12px;
-		background: rgba(88, 166, 255, 0.1);
-		border: 1px solid rgba(88, 166, 255, 0.2);
-		border-radius: 4px;
-		color: #58a6ff;
-		font-size: 12px;
-		font-weight: 500;
+		border-radius: 6px;
 		cursor: pointer;
-		transition: all 0.2s ease;
-		font-family: inherit;
-		z-index: 10;
+		transition: background .16s, color .16s, border-color .16s, transform .16s;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 6px;
+		line-height: 1;
 
 		.material-symbols-outlined {
 			font-size: 16px;
@@ -52,16 +52,15 @@
 		}
 
 		&.is-copied {
-			background: rgba(3, 102, 214, 0.15);
-			border-color: rgba(3, 102, 214, 0.3);
-			color: #0366d6;
+			background: var(--c-success);
+			color: var(--c-white);
+			border-color: var(--c-success);
 		}
 	}
 
 	pre {
 		margin: 0;
 		padding: 16px;
-		padding-top: 48px;
 		background: transparent;
 		overflow-x: auto;
 		overflow-y: hidden;

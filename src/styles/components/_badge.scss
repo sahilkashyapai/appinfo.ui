@@ -20,22 +20,22 @@
 
     &-dark {
         background: var(--c-dark);
-        color: #fff;
+        color: var(--c-white);
     }
 
     &-success {
-        background: #d1fae5;
-        color: #065f46;
+        background: var(--c-success-light);
+        color: var(--c-success-dark);
     }
 
     &-warning {
-        background: #fef3c7;
-        color: #92400e;
+        background: var(--c-warning-light);
+        color: var(--c-warning-dark);
     }
 
     &-danger {
-        background: #fee2e2;
-        color: #991b1b;
+        background: var(--c-danger-light);
+        color: var(--c-danger-dark);
     }
 
     &-neutral {

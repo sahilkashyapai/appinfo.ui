@@ -39,4 +39,32 @@ $rattler-text-muted: #9a8a70;
   --badge-label: 'RATTLER';
   --hero-grad: linear-gradient(135deg, #{$rattler-dark} 0%, #{$rattler-mid} 50%, #{$rattler-accent} 100%);
   --card-top: #{$rattler-mid};
+
+  /* Semantic colors */
+  --c-success: #10b981;
+  --c-success-light: #d1fae5;
+  --c-success-dark: #065f46;
+  --c-danger: #ef4444;
+  --c-danger-light: #fee2e2;
+  --c-danger-dark: #991b1b;
+  --c-warning: #f59e0b;
+  --c-warning-light: #fef3c7;
+  --c-warning-dark: #92400e;
+  --c-info: #3b82f6;
+  --c-info-light: #e0e7ff;
+  --c-info-dark: #1e40af;
+
+  /* Code/Syntax colors */
+  --c-code-bg: #1e1e1e;
+  --c-code-string: #f0d8a8;
+  --c-code-attr: #a8f0c6;
+  --c-code-tag: #f0a8d4;
+  --c-code-comment: rgba(255, 255, 255, 0.3);
+  --c-code-text: #a8d4f0;
+
+  /* Neutral colors */
+  --c-white: #ffffff;
+  --c-black: #000000;
+  --c-gray-border: #dee2e6;
+  --c-tooltip-bg: #1a1a2e;
 }

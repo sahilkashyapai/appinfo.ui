@@ -25,9 +25,9 @@ export default function Avatar() {
 				label="Preview"
 			>
 				<div className="ai-avatar-stack">
-					<span className="ai-avatar ai-avatar-md" style={{ background: 'linear-gradient(135deg,#1c5380,#279fd6)' }}>JD</span>
-					<span className="ai-avatar ai-avatar-md" style={{ background: 'linear-gradient(135deg,#48aa40,#54d34e)' }}>KR</span>
-					<span className="ai-avatar ai-avatar-md" style={{ background: 'linear-gradient(135deg,#d69d3a,#f0b84a)' }}>ML</span>
+					<span className="ai-avatar ai-avatar-md" style={{ background: 'var(--hero-grad)' }}>JD</span>
+					<span className="ai-avatar ai-avatar-md" style={{ background: 'linear-gradient(135deg,var(--c-success),var(--c-success-light))' }}>KR</span>
+					<span className="ai-avatar ai-avatar-md" style={{ background: 'linear-gradient(135deg,var(--c-accent),var(--c-accent2))' }}>ML</span>
 					<span className="ai-avatar ai-avatar-md" style={{ background: '#e2e8f0', color: '#64748b', fontSize: '13px' }}>+5</span>
 				</div>
 			</PreviewBlock>

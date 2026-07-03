@@ -21,7 +21,7 @@
 
     &-primary {
         background: var(--c-btn);
-        color: #fff;
+        color: var(--c-white);
         box-shadow: 0 3px 10px color-mix(in srgb, var(--c-btn) 30%, transparent);
 
         &:hover {
@@ -31,7 +31,7 @@
 
     &-primary-light {
         background: var(--c-btn-hover);
-        color: #fff;
+        color: var(--c-white);
         box-shadow: 0 3px 10px color-mix(in srgb, var(--c-btn-hover) 30%, transparent)
     }
 
@@ -41,7 +41,7 @@
 
     &-secondary {
         background: #87898c;
-        color: #e6ebf1;
+        color: var(--c-white);
         box-shadow: 0 3px 10px color-mix(in srgb, #87898c 30%, transparent)
     }
 
@@ -50,24 +50,24 @@
     }
 
     &-warning {
-        background: #F8AE42;
-        color: #0F3849;
-        box-shadow: 0 3px 10px color-mix(in srgb, #F8AE42 30%, transparent)
+        background: var(--c-warning);
+        color: var(--c-white);
+        box-shadow: 0 3px 10px color-mix(in srgb, var(--c-warning) 30%, transparent)
     }
 
     &-warning:hover {
-        background: #F7A028;
+        background: var(--c-warning-dark);
     }
 
     &-success {
-        background: #38A169;
-        color: #fff;
-        box-shadow: 0 3px 10px color-mix(in srgb, #38A169 30%, transparent)
+        background: var(--c-success);
+        color: var(--c-white);
+        box-shadow: 0 3px 10px color-mix(in srgb, var(--c-success) 30%, transparent)
     }
 
     &-dark {
-        background: #0F3849;
-        color: #fff;
+        background: var(--c-dark);
+        color: var(--c-white);
         box-shadow: 0 3px 10px color-mix(in srgb, #0F3849 30%, transparent)
     }
 
@@ -96,8 +96,8 @@
     }
 
     &-danger {
-        background: #e53e3e;
-        color: #fff;
+        background: var(--c-danger);
+        color: var(--c-white);
 
         &:hover {
             background: #c53030;
@@ -157,4 +157,5 @@
 
 .ai-icon-btn {
     padding: 4px 16px;
+    justify-content: center;
 }

@@ -19,7 +19,7 @@
     font-family: 'Work Sans', sans-serif;
     font-size: 1.375rem;
     font-weight: 800;
-    color: #fff;
+    color: var(--c-white);
     letter-spacing: -0.03em;
     margin-bottom: 10px;
 
@@ -91,11 +91,11 @@
   letter-spacing: 0.06em;
 }
 
-.tbf-glance    { background: #2878a3; color: #fff; }
-.tbf-mcomms   { background: #48aa40; color: #fff; }
-.tbf-wwe      { background: #3a4d87; color: #fff; }
-.tbf-rattler  { background: #d69d3a; color: #fff; }
-.tbf-mainelink { background: #e8a713; color: #1a1a1a; }
+.tbf-glance    { background: var(--c-btn); color: var(--c-white); }
+.tbf-mcomms   { background: var(--c-success); color: var(--c-white); }
+.tbf-wwe      { background: var(--c-mid); color: var(--c-white); }
+.tbf-rattler  { background: var(--c-accent); color: var(--c-white); }
+.tbf-mainelink { background: var(--c-btn); color: #1a1a1a; }
 
 @media (max-width: 768px) {
   .footer-inner {

@@ -5,7 +5,7 @@
     @include flex(inline-flex, center, center);
     border-radius: 50%;
     font-weight: 700;
-    color: #fff;
+    color: var(--c-white);
     flex-shrink: 0;
     background: var(--hero-grad);
     font-family: 'Work Sans', sans-serif;

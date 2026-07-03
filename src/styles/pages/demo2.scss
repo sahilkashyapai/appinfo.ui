@@ -136,13 +136,13 @@
 	}
 
 	&.tone-success .demo2-kpi-icon {
-		background: color-mix(in srgb, #2bb673 14%, transparent);
-		color: #2bb673;
+		background: color-mix(in srgb, var(--c-success) 14%, transparent);
+		color: var(--c-success);
 	}
 
 	&.tone-warning .demo2-kpi-icon {
-		background: color-mix(in srgb, #f0a020 14%, transparent);
-		color: #f0a020;
+		background: color-mix(in srgb, var(--c-warning) 14%, transparent);
+		color: var(--c-warning);
 	}
 }
 
@@ -248,15 +248,15 @@
 	}
 
 	&.tone-success .demo2-event-icon {
-		color: #2bb673;
+		color: var(--c-success);
 	}
 
 	&.tone-warning .demo2-event-icon {
-		color: #f0a020;
+		color: var(--c-warning);
 	}
 
 	&.tone-danger .demo2-event-icon {
-		color: #d8463f;
+		color: var(--c-danger);
 	}
 }
 

@@ -74,7 +74,7 @@
 
   &-solid {
     background: var(--c-btn);
-    color: #fff;
+    color: var(--c-white);
     box-shadow: 0 3px 10px color-mix(in srgb, var(--c-btn) 30%, transparent);
 
     &:hover {
@@ -109,8 +109,8 @@
   }
 
   &-danger {
-    background: #e53e3e;
-    color: #fff;
+    background: var(--c-danger);
+    color: var(--c-white);
 
     &:hover {
       background: #c53030;
@@ -149,22 +149,22 @@
 
 .badge-dark {
   background: var(--c-dark);
-  color: #fff;
+  color: var(--c-white);
 }
 
 .badge-success {
-  background: #d1fae5;
-  color: #065f46;
+  background: var(--c-success-light);
+  color: var(--c-success-dark);
 }
 
 .badge-warning {
-  background: #fef3c7;
-  color: #92400e;
+  background: var(--c-warning-light);
+  color: var(--c-warning-dark);
 }
 
 .badge-error {
-  background: #fee2e2;
-  color: #991b1b;
+  background: var(--c-danger-light);
+  color: var(--c-danger-dark);
 }
 
 .badge-neutral {
@@ -196,21 +196,21 @@
 }
 
 .alert-success {
-  background: #ecfdf5;
-  border-left: 3px solid #22c55e;
-  color: #166534;
+  background: var(--c-success-light);
+  border-left: 3px solid var(--c-success);
+  color: var(--c-success-dark);
 }
 
 .alert-warning {
-  background: #fffbeb;
-  border-left: 3px solid #f59e0b;
-  color: #92400e;
+  background: var(--c-warning-light);
+  border-left: 3px solid var(--c-warning);
+  color: var(--c-warning-dark);
 }
 
 .alert-danger {
-  background: #fef2f2;
-  border-left: 3px solid #ef4444;
-  color: #991b1b;
+  background: var(--c-danger-light);
+  border-left: 3px solid var(--c-danger);
+  color: var(--c-danger-dark);
 }
 
 // Form demo

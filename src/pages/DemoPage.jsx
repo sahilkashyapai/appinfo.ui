@@ -361,7 +361,7 @@ export default function DemoPage() {
 																className="ai-progress-bar"
 																style={{
 																	width: `${row.load}%`,
-																	background: row.load > 80 ? '#ef4444' : row.load > 60 ? '#f59e0b' : undefined,
+																	background: row.load > 80 ? 'var(--c-danger)' : row.load > 60 ? 'var(--c-warning)' : undefined,
 																}}
 															/>
 														</div>

@@ -12,22 +12,22 @@ export default function Progress() {
 				label="Preview"
 				canvasClassName="ai-d-flex ai-flex-column ai-gap-4"
 			>
-				<div>
+				<div className="ai-w-100">
 					<div className="ai-progress-label"><span>Sync Progress</span><span>72%</span></div>
 					<div className="ai-progress">
 						<div className="ai-progress-bar" style={{ width: '72%' }} />
 					</div>
 				</div>
-				<div>
+				<div  className="ai-w-100">
 					<div className="ai-progress-label"><span>Uploading...</span><span>45%</span></div>
 					<div className="ai-progress">
 						<div className="ai-progress-bar striped animated" style={{ width: '45%' }} />
 					</div>
 				</div>
-				<div>
+				<div  className="ai-w-100">
 					<div className="ai-progress-label"><span>Storage Used</span><span>90%</span></div>
 					<div className="ai-progress ai-h-3">
-						<div className="ai-progress-bar" style={{ width: '90%', background: '#ef4444' }} />
+								<div className="ai-progress-bar" style={{ width: '90%', background: 'var(--c-danger)' }} />
 					</div>
 				</div>
 			</PreviewBlock>

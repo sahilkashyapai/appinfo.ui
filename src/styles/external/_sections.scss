@@ -155,23 +155,23 @@
   padding: 10px;
 
   &-glance {
-    background: linear-gradient(135deg, #1c5380, #279fd6);
+    background: var(--hero-grad);
   }
 
   &-mcomms {
-    background: linear-gradient(135deg, #1c5696, #48aa40);
+    background: var(--hero-grad);
   }
 
   &-wwe {
-    background: linear-gradient(135deg, #21336b, #008fbe);
+    background: var(--hero-grad);
   }
 
   &-rattler {
-    background: linear-gradient(135deg, #2f2f2f, #d69d3a);
+    background: var(--hero-grad);
   }
 
   &-mainelink {
-    background: linear-gradient(135deg, #0f3754, #e8a713);
+    background: var(--hero-grad);
   }
 
   .theme-logo {
@@ -249,7 +249,7 @@
   font-family: 'Work Sans', sans-serif;
   font-size: 1rem;
   font-weight: 800;
-  color: #fff;
+  color: var(--c-white);
   margin-bottom: 18px;
 }
 
@@ -285,7 +285,7 @@
   gap: 10px;
   font-size: 1.1rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--c-white);
   margin-bottom: 6px;
 }
 
@@ -298,7 +298,7 @@
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--c-white);
   opacity: 0.9;
 }
 
@@ -340,26 +340,26 @@
   pre {
     font-family: 'DM Mono', monospace;
     font-size: 0.8125rem;
-    color: #a8d8f0;
+    color: var(--c-code-text);
     line-height: 1.8;
     position: relative;
     z-index: 1;
   }
 
   .comment {
-    color: rgba(255, 255, 255, 0.3);
+    color: var(--c-code-comment);
   }
 
   .cmd {
-    color: #fff;
+    color: var(--c-white);
   }
 
   .str {
-    color: #a8f0c6;
+    color: var(--c-code-attr);
   }
 
   .val {
-    color: #f0c8a8;
+    color: var(--c-code-string);
   }
 }
 
@@ -391,7 +391,7 @@
 
   &.is-copying {
     background: rgba(96, 165, 250, .22);
-    color: #dbeafe;
+    color: var(--c-info-light);
     border-color: rgba(96, 165, 250, .45);
 
     .material-symbols-outlined {
