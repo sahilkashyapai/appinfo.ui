@@ -1,16 +1,12 @@
+import { getThemeImages } from '../utils/themeImages';
+
 const FOOTER_LINKS = {
   Docs: ['Introduction', 'Installation', 'Theming', 'CSS Variables', 'Migration'],
   Components: ['Buttons', 'Navbar', 'Tables', 'Modals', 'Forms'],
   Resources: ['GitHub', 'Changelog', 'Issues', 'Discussions', 'License'],
 };
 
-const THEME_BADGES = [
-  { cls: 'tbf-glance', label: 'GLANCE' },
-  { cls: 'tbf-mcomms', label: 'MCOMMS' },
-  { cls: 'tbf-wwe', label: 'WWE' },
-  { cls: 'tbf-rattler', label: 'RATTLER' },
-  { cls: 'tbf-mainelink', label: 'MAINELINK' },
-];
+const THEME_IDS = ['glance', 'mcomms', 'wwe', 'rattler', 'mainelink'];
 
 export default function Footer() {
   return (
@@ -23,8 +19,13 @@ export default function Footer() {
             products. MIT licensed.
           </p>
           <div className="theme-badges-footer ai-mt-4">
-            {THEME_BADGES.map(({ cls, label }) => (
-              <span key={label} className={`theme-badge-f ${cls}`}>{label}</span>
+            {THEME_IDS.map((id) => (
+              <img
+                key={id}
+                className="theme-badge-f"
+                src={getThemeImages(id).footer_logo}
+                alt={id}
+              />
             ))}
           </div>
         </div>

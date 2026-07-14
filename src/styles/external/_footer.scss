@@ -78,42 +78,15 @@
 // Theme badges in footer
 .theme-badges-footer {
   @include flex;
-  gap: 6px;
+  gap: 8px;
   margin-top: 16px;
+  justify-content: space-between;
 }
 
 .theme-badge-f {
-  font-family: 'DM Mono', monospace;
-  font-size: 0.5625rem;
-  font-weight: 600;
-  padding: 3px 8px;
-  border-radius: 20px;
-  letter-spacing: 0.06em;
-}
-
-.tbf-glance {
-  background: var(--c-btn);
-  color: var(--c-white);
-}
-
-.tbf-mcomms {
-  background: var(--c-success);
-  color: var(--c-white);
-}
-
-.tbf-wwe {
-  background: var(--c-mid);
-  color: var(--c-white);
-}
-
-.tbf-rattler {
-  background: var(--c-accent);
-  color: var(--c-white);
-}
-
-.tbf-mainelink {
-  background: var(--c-btn);
-  color: var(--c-white);
+  max-width: calc(100% / 5 - 12px);
+  object-fit: contain;
+  border-radius: 4px;
 }
 
 @media (max-width: 768px) {
