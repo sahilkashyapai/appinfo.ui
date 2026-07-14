@@ -137,7 +137,7 @@
     border: 1px solid var(--c-border);
     border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 24px color-mix(in srgb, var(--c-black) 6%, transparent);
     position: relative;
     z-index: 1;
     animation: fadeUp 0.6s 0.4s ease both;
@@ -200,7 +200,7 @@
     background: var(--c-btn-hover);
     transform: translateY(-2px);
     box-shadow: 0 8px 24px color-mix(in srgb, var(--c-btn) 40%, transparent);
-    color: #fff;
+    color: var(--c-white);
   }
 }
 

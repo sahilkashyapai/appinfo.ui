@@ -16,7 +16,7 @@
   transition: width .4s ease;
 
   &.striped {
-    background-image: repeating-linear-gradient(45deg, transparent, transparent 6px, rgba(255, 255, 255, 0.15) 6px, rgba(255, 255, 255, 0.15) 12px);
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 6px, color-mix(in srgb, var(--c-white) 15%, transparent) 6px, color-mix(in srgb, var(--c-white) 15%, transparent) 12px);
   }
 
   &.animated {

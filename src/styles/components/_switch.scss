@@ -35,7 +35,7 @@
         border-radius: 50%;
         background: var(--c-white);
         transition: transform .2s;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 3px color-mix(in srgb, var(--c-black) 20%, transparent);
     }
 
     &-label {

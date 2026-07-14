@@ -40,13 +40,13 @@
     }
 
     &-secondary {
-        background: #87898c;
+        background: var(--c-secondary);
         color: var(--c-white);
-        box-shadow: 0 3px 10px color-mix(in srgb, #87898c 30%, transparent)
+        box-shadow: 0 3px 10px color-mix(in srgb, var(--c-secondary) 30%, transparent)
     }
 
     &-secondary:hover {
-        background: #6e6f71
+        background: var(--c-secondary-hover)
     }
 
     &-warning {
@@ -68,11 +68,11 @@
     &-dark {
         background: var(--c-dark);
         color: var(--c-white);
-        box-shadow: 0 3px 10px color-mix(in srgb, #0F3849 30%, transparent)
+        box-shadow: 0 3px 10px color-mix(in srgb, var(--c-dark) 30%, transparent)
     }
 
     &-dark:hover {
-        background: #0b2a3b;
+        background: color-mix(in srgb, var(--c-dark) 85%, black);
     }
 
     &-outline {
@@ -100,7 +100,7 @@
         color: var(--c-white);
 
         &:hover {
-            background: #c53030;
+            background: var(--c-danger-dark);
             transform: translateY(-1px)
         }
     }
@@ -148,7 +148,7 @@
             }
 
             &:not(:last-child) {
-                border-right: 1px solid rgba(255, 255, 255, 0.2)
+                border-right: 1px solid color-mix(in srgb, var(--c-white) 20%, transparent)
             }
         }
     }

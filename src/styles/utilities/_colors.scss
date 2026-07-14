@@ -1,1 +1,49 @@
-// Color utility file reset after rollback.
+// Shared color tokens — identical across every theme.
+// Theme-specific tokens (brand colors, surfaces, text) live in src/styles/themes/_*.scss.
+
+// Legacy Bootstrap-style palette, used only as fallback values for var(--c-x, ...)
+// in the .ai-* utility classes when no CSS custom property is set.
+$bs-primary: #007bff;
+$bs-secondary: #6c757d;
+$bs-success: #28a745;
+$bs-danger: #dc3545;
+$bs-warning: #ffc107;
+$bs-info: #17a2b8;
+$bs-dark: #343a40;
+$bs-light: #f8f9fa;
+
+:root {
+	/* Semantic colors */
+	--c-success: #10b981;
+	--c-success-light: #d1fae5;
+	--c-success-dark: #065f46;
+	--c-danger: #ef4444;
+	--c-danger-light: #fee2e2;
+	--c-danger-dark: #991b1b;
+	--c-warning: #f59e0b;
+	--c-warning-light: #fef3c7;
+	--c-warning-dark: #92400e;
+	--c-info: #3b82f6;
+	--c-info-light: #e0e7ff;
+	--c-info-dark: #1e40af;
+
+	/* Code/Syntax colors */
+	--c-code-bg: #1e1e1e;
+	--c-code-string: #f0d8a8;
+	--c-code-attr: #a8f0c6;
+	--c-code-tag: #f0a8d4;
+	--c-code-comment: rgba(255, 255, 255, 0.3);
+	--c-code-text: #a8d4f0;
+
+	/* Neutral colors */
+	--c-white: #ffffff;
+	--c-black: #000000;
+	--c-gray-border: #dee2e6;
+	--c-tooltip-bg: #1a1a2e;
+	--c-secondary: #87898c;
+	--c-secondary-hover: #6e6f71;
+	--c-danger-hover: #c53030;
+
+	/* One-off accent used by the "copying" state of copy-to-clipboard buttons */
+	--c-copying: #60a5fa;
+}

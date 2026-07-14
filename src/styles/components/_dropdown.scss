@@ -12,7 +12,7 @@
         background: var(--c-surface);
         border: 1px solid var(--c-border);
         border-radius: 9px;
-        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 8px 28px color-mix(in srgb, var(--c-black) 12%, transparent);
         padding: 6px;
         z-index: 200;
         opacity: 0;
@@ -45,8 +45,8 @@
         }
 
         &.danger:hover {
-            background: #fee2e2;
-            color: #991b1b
+            background: var(--c-danger-light);
+            color: var(--c-danger-dark)
         }
     }
 

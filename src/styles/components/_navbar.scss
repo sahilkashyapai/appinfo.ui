@@ -187,7 +187,7 @@
             }
 
             .nav-link {
-                color: #fff;
+                color: var(--c-white);
                 font-size: 16px;
                 font-weight: 500;
                 text-transform: uppercase;
@@ -225,7 +225,7 @@
             }
 
             .nav-item--has-dropdown.is-open .nav-link--toggle {
-                color: #fff;
+                color: var(--c-white);
             }
         }
 
@@ -258,7 +258,7 @@
                 +.nav-dropdown-save {
                     display: block;
                     padding: 6px 16px;
-                    color: #fff;
+                    color: var(--c-white);
                     font-size: 12px;
                     text-decoration: none;
                     white-space: nowrap;
@@ -267,7 +267,7 @@
 
                     &:hover,
                     &:focus-visible {
-                        background: rgba(255, 255, 255, .12);
+                        background: color-mix(in srgb, var(--c-white) 12%, transparent);
                         outline: none;
                     }
                 }

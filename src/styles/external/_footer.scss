@@ -3,7 +3,7 @@
 // Footer styles
 .footer {
   background: var(--c-dark);
-  color: rgba(255, 255, 255, 0.6);
+  color: color-mix(in srgb, var(--c-white) 60%, transparent);
   padding: 48px 0 0;
 
   &-inner {
@@ -25,7 +25,7 @@
 
     &-sub {
       font-size: 0.8125rem;
-      color: rgba(255, 255, 255, 0.45);
+      color: color-mix(in srgb, var(--c-white) 45%, transparent);
       line-height: 1.6;
     }
   }
@@ -36,7 +36,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: rgba(255, 255, 255, 0.5);
+      color: color-mix(in srgb, var(--c-white) 50%, transparent);
       margin-bottom: 14px;
     }
 
@@ -48,12 +48,12 @@
       }
 
       a {
-        color: rgba(255, 255, 255, 0.5);
+        color: color-mix(in srgb, var(--c-white) 50%, transparent);
         font-size: 0.8125rem;
         transition: color 0.12s;
 
         &:hover {
-          color: rgba(255, 255, 255, 0.9);
+          color: color-mix(in srgb, var(--c-white) 90%, transparent);
         }
       }
     }
@@ -63,14 +63,14 @@
     max-width: 1160px;
     margin: 32px auto 0;
     padding: 18px 28px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid color-mix(in srgb, var(--c-white) 8%, transparent);
     @include flex(flex, center, space-between);
     flex-wrap: wrap;
     gap: 8px;
 
     p {
       font-size: 0.75rem;
-      color: rgba(255, 255, 255, 0.35);
+      color: color-mix(in srgb, var(--c-white) 35%, transparent);
     }
   }
 }
@@ -91,11 +91,30 @@
   letter-spacing: 0.06em;
 }
 
-.tbf-glance    { background: var(--c-btn); color: var(--c-white); }
-.tbf-mcomms   { background: var(--c-success); color: var(--c-white); }
-.tbf-wwe      { background: var(--c-mid); color: var(--c-white); }
-.tbf-rattler  { background: var(--c-accent); color: var(--c-white); }
-.tbf-mainelink { background: var(--c-btn); color: #1a1a1a; }
+.tbf-glance {
+  background: var(--c-btn);
+  color: var(--c-white);
+}
+
+.tbf-mcomms {
+  background: var(--c-success);
+  color: var(--c-white);
+}
+
+.tbf-wwe {
+  background: var(--c-mid);
+  color: var(--c-white);
+}
+
+.tbf-rattler {
+  background: var(--c-accent);
+  color: var(--c-white);
+}
+
+.tbf-mainelink {
+  background: var(--c-btn);
+  color: var(--c-white);
+}
 
 @media (max-width: 768px) {
   .footer-inner {

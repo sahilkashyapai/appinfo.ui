@@ -2,6 +2,8 @@
 // Text and typography utilities with Bootstrap-like responsive support
 // Prefix: .ai- (Applied Information)
 
+@use './colors' as *;
+
 $breakpoints: (
   'sm': 576px,
   'md': 768px,
@@ -37,35 +39,35 @@ $breakpoints: (
 
 // ─── Text Colors ───
 .ai-text-primary {
-  color: var(--c-primary, #007bff) !important;
+  color: var(--c-primary, #{$bs-primary}) !important;
 }
 
 .ai-text-secondary {
-  color: var(--c-secondary, #6c757d) !important;
+  color: var(--c-secondary, #{$bs-secondary}) !important;
 }
 
 .ai-text-success {
-  color: var(--c-success, #28a745) !important;
+  color: var(--c-success, #{$bs-success}) !important;
 }
 
 .ai-text-danger {
-  color: var(--c-danger, #dc3545) !important;
+  color: var(--c-danger, #{$bs-danger}) !important;
 }
 
 .ai-text-warning {
-  color: var(--c-warning, #ffc107) !important;
+  color: var(--c-warning, #{$bs-warning}) !important;
 }
 
 .ai-text-info {
-  color: var(--c-info, #17a2b8) !important;
+  color: var(--c-info, #{$bs-info}) !important;
 }
 
 .ai-text-light {
-  color: var(--c-light, #f8f9fa) !important;
+  color: var(--c-light, #{$bs-light}) !important;
 }
 
 .ai-text-dark {
-  color: var(--c-dark, #343a40) !important;
+  color: var(--c-dark, #{$bs-dark}) !important;
 }
 
 .ai-text-white {
@@ -77,7 +79,7 @@ $breakpoints: (
 }
 
 .ai-text-muted {
-  color: var(--c-text-muted, #6c757d) !important;
+  color: var(--c-text-muted, #{$bs-secondary}) !important;
 }
 
 // ─── Grayscale Text Colors ───

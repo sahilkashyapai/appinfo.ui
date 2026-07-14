@@ -2,6 +2,8 @@
 // Border utilities with Bootstrap-like responsive support
 // Prefix: .ai- (Applied Information)
 
+@use './colors' as *;
+
 $breakpoints: (
   'sm': 576px,
   'md': 768px,
@@ -339,35 +341,35 @@ $breakpoints: (
 
 // ─── Border Colors ───
 .ai-border-primary {
-  border-color: var(--c-primary, #007bff) !important;
+  border-color: var(--c-primary, #{$bs-primary}) !important;
 }
 
 .ai-border-secondary {
-  border-color: var(--c-secondary, #6c757d) !important;
+  border-color: var(--c-secondary, #{$bs-secondary}) !important;
 }
 
 .ai-border-success {
-  border-color: var(--c-success, #28a745) !important;
+  border-color: var(--c-success, #{$bs-success}) !important;
 }
 
 .ai-border-danger {
-  border-color: var(--c-danger, #dc3545) !important;
+  border-color: var(--c-danger, #{$bs-danger}) !important;
 }
 
 .ai-border-warning {
-  border-color: var(--c-warning, #ffc107) !important;
+  border-color: var(--c-warning, #{$bs-warning}) !important;
 }
 
 .ai-border-info {
-  border-color: var(--c-info, #17a2b8) !important;
+  border-color: var(--c-info, #{$bs-info}) !important;
 }
 
 .ai-border-dark {
-  border-color: var(--c-dark, #343a40) !important;
+  border-color: var(--c-dark, #{$bs-dark}) !important;
 }
 
 .ai-border-light {
-  border-color: var(--c-light, #f8f9fa) !important;
+  border-color: var(--c-light, #{$bs-light}) !important;
 }
 
 .ai-border-white {
@@ -382,23 +384,23 @@ $breakpoints: (
 @each $breakpoint, $breakpoint-value in $breakpoints {
   @media (min-width: $breakpoint-value) {
     .ai-border-#{$breakpoint} {
-      border: 1px solid #dee2e6 !important;
+      border: 1px solid var(--c-gray-border) !important;
     }
 
     .ai-border-top-#{$breakpoint} {
-      border-top: 1px solid #dee2e6 !important;
+      border-top: 1px solid var(--c-gray-border) !important;
     }
 
     .ai-border-right-#{$breakpoint} {
-      border-right: 1px solid #dee2e6 !important;
+      border-right: 1px solid var(--c-gray-border) !important;
     }
 
     .ai-border-bottom-#{$breakpoint} {
-      border-bottom: 1px solid #dee2e6 !important;
+      border-bottom: 1px solid var(--c-gray-border) !important;
     }
 
     .ai-border-left-#{$breakpoint} {
-      border-left: 1px solid #dee2e6 !important;
+      border-left: 1px solid var(--c-gray-border) !important;
     }
 
     .ai-rounded-0-#{$breakpoint} {

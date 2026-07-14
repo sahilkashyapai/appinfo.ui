@@ -3,10 +3,10 @@ $glance-dark: #1c5380;
 $glance-mid: #2878a3;
 $glance-fade: #296789;
 $glance-fade-alpha: #296789ec;
-$glance-btn: #2878a3;
+$glance-btn: $glance-mid;
 $glance-btn-hover: #279fd6;
 $glance-selected: #279fd699;
-$glance-accent: #279fd6;
+$glance-accent: $glance-btn-hover;
 $glance-accent2: #56c8f0;
 
 $glance-page-bg: #f0f6fb;
@@ -39,32 +39,4 @@ $glance-text-muted: #7aa3bf;
   --badge-label: 'GLANCE';
   --hero-grad: linear-gradient(135deg, #{$glance-dark} 0%, #{$glance-mid} 50%, #{$glance-accent} 100%);
   --card-top: #{$glance-dark};
-
-  /* Semantic colors */
-  --c-success: #10b981;
-  --c-success-light: #d1fae5;
-  --c-success-dark: #065f46;
-  --c-danger: #ef4444;
-  --c-danger-light: #fee2e2;
-  --c-danger-dark: #991b1b;
-  --c-warning: #f59e0b;
-  --c-warning-light: #fef3c7;
-  --c-warning-dark: #92400e;
-  --c-info: #3b82f6;
-  --c-info-light: #e0e7ff;
-  --c-info-dark: #1e40af;
-
-  /* Code/Syntax colors */
-  --c-code-bg: #1e1e1e;
-  --c-code-string: #f0d8a8;
-  --c-code-attr: #a8f0c6;
-  --c-code-tag: #f0a8d4;
-  --c-code-comment: rgba(255, 255, 255, 0.3);
-  --c-code-text: #a8d4f0;
-
-  /* Neutral colors */
-  --c-white: #ffffff;
-  --c-black: #000000;
-  --c-gray-border: #dee2e6;
-  --c-tooltip-bg: #1a1a2e;
 }

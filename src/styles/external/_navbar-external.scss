@@ -12,7 +12,7 @@
   @include flex($align: center);
   padding: 0 28px;
   gap: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 2px 12px color-mix(in srgb, var(--c-black) 22%, transparent);
 
   &-logo {
     font-family: 'Work Sans', sans-serif;
@@ -32,7 +32,7 @@
     margin-right: 14px;
 
     a {
-      color: rgba(255, 255, 255, 0.65);
+      color: color-mix(in srgb, var(--c-white) 65%, transparent);
       font-size: 0.875rem;
       font-weight: 500;
       transition: color 0.15s;
@@ -53,7 +53,7 @@
 .nav-divider {
   width: 1px;
   height: 35px;
-  background: rgba(255, 255, 255, 0.18);
+  background: color-mix(in srgb, var(--c-white) 18%, transparent);
   margin: 0 6px;
 }
 
@@ -61,9 +61,9 @@
   font-size: 0.625rem;
   font-weight: 600;
   font-family: 'DM Mono', monospace;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: rgba(255, 255, 255, 0.8);
+  background: color-mix(in srgb, var(--c-white) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--c-white) 18%, transparent);
+  color: color-mix(in srgb, var(--c-white) 80%, transparent);
   padding: 2px 8px;
   border-radius: 20px;
   letter-spacing: 0.06em;
@@ -76,8 +76,8 @@
   padding-left: 14px;
 
   .ai-select {
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: color-mix(in srgb, var(--c-white) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--c-white) 18%, transparent);
     color: var(--c-white);
     padding: 6px 10px;
     border-radius: 6px;
@@ -96,7 +96,7 @@
   .theme-label {
     font-family: 'DM Mono', monospace;
     font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.45);
+    color: color-mix(in srgb, var(--c-white) 45%, transparent);
     letter-spacing: 0.06em;
     text-transform: uppercase;
     white-space: nowrap;
@@ -121,7 +121,7 @@
     width: 26px;
     height: 3px;
     border-radius: 20px;
-    background: #fff;
+    background: var(--c-white);
     transition: transform 0.3s ease, opacity 0.25s ease, width 0.3s ease;
   }
 

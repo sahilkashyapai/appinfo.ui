@@ -13,7 +13,7 @@
   overflow-y: auto;
   background: var(--c-surface);
   color: var(--c-text);
-  box-shadow: 12px 0 36px rgba(0, 0, 0, 0.18);
+  box-shadow: 12px 0 36px color-mix(in srgb, var(--c-black) 18%, transparent);
   transform: translateX(-105%);
   visibility: hidden;
   transition: transform 0.22s ease, visibility 0.22s;
@@ -26,7 +26,7 @@
   &.ai-drawer-right {
     right: 0;
     left: auto;
-    box-shadow: -12px 0 36px rgba(0, 0, 0, 0.18);
+    box-shadow: -12px 0 36px color-mix(in srgb, var(--c-black) 18%, transparent);
     transform: translateX(105%);
 
     &.open {
@@ -39,7 +39,7 @@
   position: fixed;
   inset: 0;
   z-index: 1090;
-  background: rgba(0, 0, 0, 0.45);
+  background: color-mix(in srgb, var(--c-black) 45%, transparent);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.22s ease, visibility 0.22s;

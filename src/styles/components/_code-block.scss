@@ -5,19 +5,19 @@
 .code-block {
 	position: relative;
 	background: var(--c-code-bg);
-	border: 1px solid rgba(255, 255, 255, 0.08);
+	border: 1px solid color-mix(in srgb, var(--c-white) 8%, transparent);
 	border-radius: 6px;
 	overflow: hidden;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 2px 8px color-mix(in srgb, var(--c-black) 20%, transparent);
 
 	.copy-btn {
 		width: 85px;
 		position: absolute;
 		top: 10px;
 		right: 12px;
-		background: #ffffff1a;
-		border: 1px solid rgba(255, 255, 255, .18);
-		color: #ffffffb3;
+		background: color-mix(in srgb, var(--c-white) 10%, transparent);
+		border: 1px solid color-mix(in srgb, var(--c-white) 18%, transparent);
+		color: color-mix(in srgb, var(--c-white) 70%, transparent);
 		font-size: 11px;
 		font-family: Work Sans, sans-serif;
 		padding: 6px 12px;
@@ -42,9 +42,9 @@
 		}
 
 		&:hover:not(.is-copied) {
-			background: rgba(88, 166, 255, 0.15);
-			border-color: rgba(88, 166, 255, 0.3);
-			box-shadow: 0 0 8px rgba(88, 166, 255, 0.2);
+			background: color-mix(in srgb, var(--c-info) 15%, transparent);
+			border-color: color-mix(in srgb, var(--c-info) 30%, transparent);
+			box-shadow: 0 0 8px color-mix(in srgb, var(--c-info) 20%, transparent);
 		}
 
 		&:active:not(.is-copied) {
@@ -67,7 +67,7 @@
 		font-family: 'Fira Code', 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
 		font-size: 13px;
 		line-height: 1.6;
-		color: #e0e0e0;
+		color: color-mix(in srgb, var(--c-white) 88%, transparent);
 		letter-spacing: 0.3px;
 
 		// Scrollbar styling
@@ -77,21 +77,21 @@
 
 		// Syntax highlighting classes
 		.kw {
-			color: #d4d4d4; // Keywords/tags - light gray
+			color: var(--c-code-tag); // Keywords/tags
 			font-weight: 500;
 		}
 
 		.at {
-			color: #9cdcfe; // Attributes - light blue
+			color: var(--c-code-attr); // Attributes
 			font-weight: 500;
 		}
 
 		.vl {
-			color: #ce9178; // Values - brownish orange
+			color: var(--c-code-string); // Values
 		}
 
 		.cm {
-			color: #6a9955; // Comments - green (if needed)
+			color: var(--c-code-comment); // Comments
 		}
 	}
 

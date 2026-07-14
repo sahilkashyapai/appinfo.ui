@@ -2,6 +2,8 @@
 // Background color utilities with Bootstrap-like responsive support
 // Prefix: .ai- (Applied Information)
 
+@use './colors' as *;
+
 $breakpoints: (
   'sm': 576px,
   'md': 768px,
@@ -12,35 +14,35 @@ $breakpoints: (
 
 // ─── Theme Colors ───
 .ai-bg-primary {
-  background-color: var(--c-primary, #007bff) !important;
+  background-color: var(--c-primary, #{$bs-primary}) !important;
 }
 
 .ai-bg-secondary {
-  background-color: var(--c-secondary, #6c757d) !important;
+  background-color: var(--c-secondary, #{$bs-secondary}) !important;
 }
 
 .ai-bg-success {
-  background-color: var(--c-success, #28a745) !important;
+  background-color: var(--c-success, #{$bs-success}) !important;
 }
 
 .ai-bg-danger {
-  background-color: var(--c-danger, #dc3545) !important;
+  background-color: var(--c-danger, #{$bs-danger}) !important;
 }
 
 .ai-bg-warning {
-  background-color: var(--c-warning, #ffc107) !important;
+  background-color: var(--c-warning, #{$bs-warning}) !important;
 }
 
 .ai-bg-info {
-  background-color: var(--c-info, #17a2b8) !important;
+  background-color: var(--c-info, #{$bs-info}) !important;
 }
 
 .ai-bg-light {
-  background-color: var(--c-light, #f8f9fa) !important;
+  background-color: var(--c-light, #{$bs-light}) !important;
 }
 
 .ai-bg-dark {
-  background-color: var(--c-dark, #343a40) !important;
+  background-color: var(--c-dark, #{$bs-dark}) !important;
 }
 
 // ─── Neutral Colors ───
@@ -57,11 +59,11 @@ $breakpoints: (
 }
 
 .ai-bg-body {
-  background-color: var(--c-bg-primary, #ffffff) !important;
+  background-color: var(--c-bg-primary, var(--c-white)) !important;
 }
 
 .ai-bg-body-secondary {
-  background-color: var(--c-bg-secondary, #f8f9fa) !important;
+  background-color: var(--c-bg-secondary, #{$bs-light}) !important;
 }
 
 // ─── Grayscale ───
@@ -134,35 +136,35 @@ $breakpoints: (
 @each $breakpoint, $breakpoint-value in $breakpoints {
   @media (min-width: $breakpoint-value) {
     .ai-bg-primary-#{$breakpoint} {
-      background-color: var(--c-primary, #007bff) !important;
+      background-color: var(--c-primary, #{$bs-primary}) !important;
     }
 
     .ai-bg-secondary-#{$breakpoint} {
-      background-color: var(--c-secondary, #6c757d) !important;
+      background-color: var(--c-secondary, #{$bs-secondary}) !important;
     }
 
     .ai-bg-success-#{$breakpoint} {
-      background-color: var(--c-success, #28a745) !important;
+      background-color: var(--c-success, #{$bs-success}) !important;
     }
 
     .ai-bg-danger-#{$breakpoint} {
-      background-color: var(--c-danger, #dc3545) !important;
+      background-color: var(--c-danger, #{$bs-danger}) !important;
     }
 
     .ai-bg-warning-#{$breakpoint} {
-      background-color: var(--c-warning, #ffc107) !important;
+      background-color: var(--c-warning, #{$bs-warning}) !important;
     }
 
     .ai-bg-info-#{$breakpoint} {
-      background-color: var(--c-info, #17a2b8) !important;
+      background-color: var(--c-info, #{$bs-info}) !important;
     }
 
     .ai-bg-light-#{$breakpoint} {
-      background-color: var(--c-light, #f8f9fa) !important;
+      background-color: var(--c-light, #{$bs-light}) !important;
     }
 
     .ai-bg-dark-#{$breakpoint} {
-      background-color: var(--c-dark, #343a40) !important;
+      background-color: var(--c-dark, #{$bs-dark}) !important;
     }
 
     .ai-bg-white-#{$breakpoint} {
