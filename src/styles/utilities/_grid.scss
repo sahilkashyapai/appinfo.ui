@@ -87,8 +87,8 @@ $columns: 12;
     margin-left: -12px;
 }
 
-// ─── Row Column (all columns) ───
-.ai-col-auto {
+// ─── Row Columns (set on .ai-row to size its direct children equally) ───
+.ai-row-cols-auto {
     >* {
         flex: 0 0 auto;
         width: auto;
@@ -96,7 +96,7 @@ $columns: 12;
 }
 
 @for $i from 1 through 6 {
-    .ai-col-#{$i} {
+    .ai-row-cols-#{$i} {
         >* {
             flex: 0 0 auto;
             width: calc(100% / #{$i});
@@ -108,7 +108,7 @@ $columns: 12;
 @each $breakpoint, $breakpoint-value in $breakpoints {
     @if $breakpoint !='xs' {
         @media (min-width: $breakpoint-value) {
-            .ai-col-#{$breakpoint}-auto {
+            .ai-row-cols-#{$breakpoint}-auto {
                 >* {
                     flex: 0 0 auto;
                     width: auto;
@@ -116,7 +116,7 @@ $columns: 12;
             }
 
             @for $i from 1 through 6 {
-                .ai-col-#{$breakpoint}-#{$i} {
+                .ai-row-cols-#{$breakpoint}-#{$i} {
                     >* {
                         flex: 0 0 auto;
                         width: calc(100% / #{$i});
@@ -312,6 +312,42 @@ $gutter-scale: (
                     >* {
                         margin-bottom: $value !important;
                     }
+                }
+            }
+        }
+    }
+}
+
+// ─── CSS Grid Template Columns/Rows ───
+@for $i from 1 through 12 {
+    .ai-grid-cols-#{$i} {
+        grid-template-columns: repeat(#{$i}, minmax(0, 1fr)) !important;
+    }
+
+    .ai-grid-rows-#{$i} {
+        grid-template-rows: repeat(#{$i}, minmax(0, 1fr)) !important;
+    }
+}
+
+.ai-grid-cols-none {
+    grid-template-columns: none !important;
+}
+
+.ai-grid-rows-none {
+    grid-template-rows: none !important;
+}
+
+// ─── Responsive CSS Grid Template Columns/Rows ───
+@each $breakpoint, $breakpoint-value in $breakpoints {
+    @if $breakpoint !='xs' {
+        @media (min-width: $breakpoint-value) {
+            @for $i from 1 through 12 {
+                .ai-grid-cols-#{$breakpoint}-#{$i} {
+                    grid-template-columns: repeat(#{$i}, minmax(0, 1fr)) !important;
+                }
+
+                .ai-grid-rows-#{$breakpoint}-#{$i} {
+                    grid-template-rows: repeat(#{$i}, minmax(0, 1fr)) !important;
                 }
             }
         }

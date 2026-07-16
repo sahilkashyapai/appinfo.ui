@@ -28,6 +28,11 @@ $mcomms-text-muted: #6aaa88;
   --c-accent: #{$mcomms-accent};
   --c-accent2: #{$mcomms-accent2};
 
+  // Aliases so the generic .ai-*-primary / .ai-bg-light utilities
+  // resolve to this theme's colors instead of their Bootstrap fallback.
+  --c-primary: var(--c-btn);
+  --c-light: var(--c-surface2);
+
   --c-page-bg: #{$mcomms-page-bg};
   --c-surface: #{$mcomms-surface};
   --c-surface2: #{$mcomms-surface2};

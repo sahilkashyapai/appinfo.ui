@@ -121,6 +121,28 @@ export default function Buttons() {
 					<button className="ai-btn ai-btn-primary" type="button">Right <span className="material-symbols-outlined" aria-hidden="true">chevron_right</span></button>
 				</div>
 			</PreviewBlock>
+
+			<div className="sub-heading">Icon-Only Buttons</div>
+			<PreviewBlock
+				label="Preview"
+				canvasStyle={{ alignItems: 'center' }}
+			>
+				<button className="ai-btn ai-btn-primary ai-icon-btn" type="button" aria-label="Search">
+					<span className="material-symbols-outlined" aria-hidden="true">search</span>
+				</button>
+				<button className="ai-btn ai-btn-ghost ai-icon-btn" type="button" aria-label="Notifications">
+					<span className="material-symbols-outlined" aria-hidden="true">notifications</span>
+				</button>
+				<button className="ai-btn ai-btn-outline ai-icon-btn" type="button" aria-label="Settings">
+					<span className="material-symbols-outlined" aria-hidden="true">settings</span>
+				</button>
+				<button className="ai-btn ai-btn-ghost ai-btn-sm ai-icon-btn" type="button" aria-label="Edit">
+					<span className="material-symbols-outlined" aria-hidden="true">edit</span>
+				</button>
+				<button className="ai-btn ai-btn-danger ai-icon-btn" type="button" aria-label="Delete" disabled>
+					<span className="material-symbols-outlined" aria-hidden="true">delete</span>
+				</button>
+			</PreviewBlock>
 		</div>
 	);
 }

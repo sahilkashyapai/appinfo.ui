@@ -42,7 +42,7 @@ function DeviceGroup({ title, rows }) {
 	);
 }
 
-function SidebarPreview() {
+function SidebarPreview({ groupCount = DEVICE_GROUP_COUNT, instanceId = 'devicelistSidebar' }) {
 	const wrapperRef = useRef(null);
 	const [hasScroll, setHasScroll] = useState(false);
 	const [expanded, setExpanded] = useState(false);
@@ -123,7 +123,7 @@ function SidebarPreview() {
 		.join(' ');
 
 	return (
-		<aside className={asideClass} id="devicelistSidebar">
+		<aside className={asideClass} id={instanceId}>
 			<div className="devicelist-header">
 				<ul className="devicelist-items">
 					{HEADER_COLUMNS.map((label) => (
@@ -132,10 +132,10 @@ function SidebarPreview() {
 				</ul>
 				<span
 					className="devicelist-header-toggle"
-					id="devicelistSidebarToggle"
-					data-sidebar-toggle="devicelistSidebar"
+					id={`${instanceId}Toggle`}
+					data-sidebar-toggle={instanceId}
 					role="button"
-					aria-controls="devicelistSidebar"
+					aria-controls={instanceId}
 					tabIndex={enabled ? 0 : -1}
 					aria-disabled={!enabled}
 					aria-expanded={expanded}
@@ -154,7 +154,7 @@ function SidebarPreview() {
 			</div>
 			<div className="devicelist-content">
 				<div className="devicelist-item-wrapper" ref={wrapperRef}>
-					{Array.from({ length: DEVICE_GROUP_COUNT }).map((_, i) => (
+					{Array.from({ length: groupCount }).map((_, i) => (
 						<DeviceGroup key={i} {...DEVICE_GROUP} />
 					))}
 				</div>
@@ -168,15 +168,88 @@ export default function Sidebars() {
 		<div className="comp-panel active" id="p-external-aside">
 			<CompHeader
 				title="Sidebars"
-				lead="Left-aligned device list sidebar with header, scrollable content, and status indicators."
+				lead="A reusable left-aligned device-list sidebar (.ai-devicelist-sidebar) meant for consuming apps: a fixed-width header row, a vertically scrollable content area grouped by device group, and per-row status-light indicators. When its content overflows, a header toggle expands the sidebar to a fixed width and flips the scroll direction to horizontal so every group's columns stay legible - the toggle disables itself automatically when there's nothing to expand."
 			/>
 
+			<div className="sub-heading">Scrollable, Expandable (10 groups)</div>
 			<PreviewBlock
 				label="Preview - Left-Aligned Device List Sidebar without Alarmbar and without Expandable feature"
 				canvasStyle={{ gap: '16px', padding: '24px' }}
 			>
 				<SidebarPreview />
 			</PreviewBlock>
+
+			<div className="sub-heading">Compact - Nothing to Scroll</div>
+			<PreviewBlock
+				label="Preview - fits without overflow, so the expand toggle is disabled (aria-disabled)"
+				canvasStyle={{ gap: '16px', padding: '24px' }}
+			>
+				<SidebarPreview groupCount={1} instanceId="devicelistSidebarCompact" />
+			</PreviewBlock>
+
+			<div className="ai-table-wrap">
+				<table className="ai-table">
+					<thead>
+						<tr>
+							<th>Class / Attribute</th>
+							<th>Applies to</th>
+							<th>Notes</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code>ai-devicelist-sidebar</code></td>
+							<td>Root <code>&lt;aside&gt;</code></td>
+							<td>Fixed <code>--sidebar-width</code> (340px) by default.</td>
+						</tr>
+						<tr>
+							<td><code>sidebar-expanded-full</code></td>
+							<td>Root modifier</td>
+							<td>Switches width to <code>auto</code>, makes the content area scroll horizontally, and lays device groups out as columns side by side.</td>
+						</tr>
+						<tr>
+							<td><code>not-closable</code> / <code>no-alarmbar</code></td>
+							<td>Root modifiers</td>
+							<td>Marker classes consumers use to signal layout intent (no close affordance / no alarm bar above the sidebar) in their own app shell.</td>
+						</tr>
+						<tr>
+							<td><code>devicelist-header</code></td>
+							<td>Header bar</td>
+							<td>Fixed <code>--sidebar-header-height</code> (40px) row with the column labels and the expand toggle.</td>
+						</tr>
+						<tr>
+							<td><code>devicelist-items</code></td>
+							<td>Header/row <code>&lt;ul&gt;</code></td>
+							<td>3-column flex layout: name 53%, status 35%, count 12%.</td>
+						</tr>
+						<tr>
+							<td><code>devicelist-header-toggle</code></td>
+							<td>Expand/collapse control</td>
+							<td>Chevron button; gets <code>aria-disabled="true"</code> (and is skipped in tab order) when the list already fits without scrolling.</td>
+						</tr>
+						<tr>
+							<td><code>devicelist-content</code> / <code>devicelist-item-wrapper</code></td>
+							<td>Scroll region</td>
+							<td>Vertically scrollable by default; wrapper height is capped to the viewport minus header heights.</td>
+						</tr>
+						<tr>
+							<td><code>device-title</code></td>
+							<td>Group heading</td>
+							<td>Bold, accent-colored group label (e.g. an intersection name) above its rows.</td>
+						</tr>
+						<tr>
+							<td><code>child1-item</code></td>
+							<td>Row cell (<code>li</code>)</td>
+							<td>One column of a device row.</td>
+						</tr>
+						<tr>
+							<td><code>device-status-light</code></td>
+							<td>Status dot</td>
+							<td>10x10px square dot preceding the device name; add <code>.red</code> to flag an alert/fault state.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	);
 }

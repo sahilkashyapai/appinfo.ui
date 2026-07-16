@@ -1,6 +1,31 @@
 import { useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ComponentsAsidebar from '../components/ComponentsAsidebar';
+import Breakpoints from '../components/Breakpoints';
+import Containers from '../components/Containers';
+import Grid from '../components/Grid';
+import Columns from '../components/Columns';
+import Gutters from '../components/Gutters';
+import Zindex from '../components/Zindex';
+import CssGrid from '../components/CssGrid';
+import UtilBackground from '../components/UtilBackground';
+import UtilBorders from '../components/UtilBorders';
+import UtilColors from '../components/UtilColors';
+import UtilDisplay from '../components/UtilDisplay';
+import UtilFlex from '../components/UtilFlex';
+import UtilFloat from '../components/UtilFloat';
+import UtilInteractions from '../components/UtilInteractions';
+import UtilLink from '../components/UtilLink';
+import UtilObjectFit from '../components/UtilObjectFit';
+import UtilOpacity from '../components/UtilOpacity';
+import UtilOverflow from '../components/UtilOverflow';
+import UtilPosition from '../components/UtilPosition';
+import UtilShadows from '../components/UtilShadows';
+import UtilSizing from '../components/UtilSizing';
+import UtilSpacing from '../components/UtilSpacing';
+import UtilText from '../components/UtilText';
+import UtilVerticalAlign from '../components/UtilVerticalAlign';
+import UtilVisibility from '../components/UtilVisibility';
 import Accordion from '../components/Accordion';
 import Alert from '../components/Alert';
 import Avatar from '../components/Avatar';
@@ -33,7 +58,32 @@ import Typography from '../components/Typography';
 import '../styles/main.scss'
 
 const PANEL_META = [
-	{ id: 'accordion', label: 'Accordion' },
+	{ id: 'breakpoints', label: 'Breakpoints', category: 'Layout' },
+	{ id: 'containers', label: 'Containers', category: 'Layout' },
+	{ id: 'grid', label: 'Grid', category: 'Layout' },
+	{ id: 'columns', label: 'Columns', category: 'Layout' },
+	{ id: 'gutters', label: 'Gutters', category: 'Layout' },
+	{ id: 'cssgrid', label: 'CSS Grid', category: 'Layout' },
+	{ id: 'bg', label: 'Background', category: 'Utilities' },
+	{ id: 'borders', label: 'Borders', category: 'Utilities' },
+	{ id: 'utility-colors', label: 'Colors', category: 'Utilities' },
+	{ id: 'display', label: 'Display', category: 'Utilities' },
+	{ id: 'flex', label: 'Flex', category: 'Utilities' },
+	{ id: 'float', label: 'Float', category: 'Utilities' },
+	{ id: 'interactions', label: 'Interactions', category: 'Utilities' },
+	{ id: 'link', label: 'Link', category: 'Utilities' },
+	{ id: 'object-fit', label: 'Object fit', category: 'Utilities' },
+	{ id: 'opacity', label: 'Opacity', category: 'Utilities' },
+	{ id: 'overflow', label: 'Overflow', category: 'Utilities' },
+	{ id: 'position', label: 'Position', category: 'Utilities' },
+	{ id: 'shadows', label: 'Shadows', category: 'Utilities' },
+	{ id: 'sizing', label: 'Sizing', category: 'Utilities' },
+	{ id: 'spacing', label: 'Spacing', category: 'Utilities' },
+	{ id: 'text', label: 'Text', category: 'Utilities' },
+	{ id: 'vertical-align', label: 'Vertical align', category: 'Utilities' },
+	{ id: 'visibility', label: 'Visibility', category: 'Utilities' },
+	{ id: 'zindex', label: 'Z-index', category: 'Utilities' },
+	{ id: 'accordion', label: 'Accordion', category: 'Components' },
 	{ id: 'alert', label: 'Alert' },
 	{ id: 'avatar', label: 'Avatar' },
 	{ id: 'badge', label: 'Badge' },
@@ -65,6 +115,31 @@ const PANEL_META = [
 ];
 
 const PANEL_COMPONENTS = {
+	breakpoints: Breakpoints,
+	containers: Containers,
+	grid: Grid,
+	columns: Columns,
+	gutters: Gutters,
+	zindex: Zindex,
+	cssgrid: CssGrid,
+	bg: UtilBackground,
+	borders: UtilBorders,
+	'utility-colors': UtilColors,
+	display: UtilDisplay,
+	flex: UtilFlex,
+	float: UtilFloat,
+	interactions: UtilInteractions,
+	link: UtilLink,
+	'object-fit': UtilObjectFit,
+	opacity: UtilOpacity,
+	overflow: UtilOverflow,
+	position: UtilPosition,
+	shadows: UtilShadows,
+	sizing: UtilSizing,
+	spacing: UtilSpacing,
+	text: UtilText,
+	'vertical-align': UtilVerticalAlign,
+	visibility: UtilVisibility,
 	accordion: Accordion,
 	alert: Alert,
 	avatar: Avatar,

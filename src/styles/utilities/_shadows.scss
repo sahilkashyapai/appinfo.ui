@@ -39,35 +39,35 @@ $breakpoints: (
 
 // ─── Color Shadows ───
 .ai-shadow-primary {
-  box-shadow: 0 0.5rem 1rem color-mix(in srgb, #{$bs-primary} 30%, transparent) !important;
+  box-shadow: 0 0.5rem 1rem color-mix(in srgb, var(--c-primary, #{$bs-primary}) 30%, transparent) !important;
 }
 
 .ai-shadow-secondary {
-  box-shadow: 0 0.5rem 1rem color-mix(in srgb, #{$bs-secondary} 30%, transparent) !important;
+  box-shadow: 0 0.5rem 1rem color-mix(in srgb, var(--c-secondary, #{$bs-secondary}) 30%, transparent) !important;
 }
 
 .ai-shadow-success {
-  box-shadow: 0 0.5rem 1rem color-mix(in srgb, #{$bs-success} 30%, transparent) !important;
+  box-shadow: 0 0.5rem 1rem color-mix(in srgb, var(--c-success, #{$bs-success}) 30%, transparent) !important;
 }
 
 .ai-shadow-danger {
-  box-shadow: 0 0.5rem 1rem color-mix(in srgb, #{$bs-danger} 30%, transparent) !important;
+  box-shadow: 0 0.5rem 1rem color-mix(in srgb, var(--c-danger, #{$bs-danger}) 30%, transparent) !important;
 }
 
 .ai-shadow-warning {
-  box-shadow: 0 0.5rem 1rem color-mix(in srgb, #{$bs-warning} 30%, transparent) !important;
+  box-shadow: 0 0.5rem 1rem color-mix(in srgb, var(--c-warning, #{$bs-warning}) 30%, transparent) !important;
 }
 
 .ai-shadow-info {
-  box-shadow: 0 0.5rem 1rem color-mix(in srgb, #{$bs-info} 30%, transparent) !important;
+  box-shadow: 0 0.5rem 1rem color-mix(in srgb, var(--c-info, #{$bs-info}) 30%, transparent) !important;
 }
 
 .ai-shadow-dark {
-  box-shadow: 0 0.5rem 1rem color-mix(in srgb, #{$bs-dark} 30%, transparent) !important;
+  box-shadow: 0 0.5rem 1rem color-mix(in srgb, var(--c-dark, #{$bs-dark}) 30%, transparent) !important;
 }
 
 .ai-shadow-light {
-  box-shadow: 0 0.5rem 1rem color-mix(in srgb, #{$bs-light} 30%, transparent) !important;
+  box-shadow: 0 0.5rem 1rem color-mix(in srgb, var(--c-light, #{$bs-light}) 30%, transparent) !important;
 }
 
 // ─── Inset Shadow ───

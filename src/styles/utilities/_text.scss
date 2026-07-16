@@ -251,6 +251,33 @@ $breakpoints: (
   letter-spacing: 0.1em !important;
 }
 
+// ─── Vertical Align ───
+// Named .ai-valign-* (not .ai-align-*) since that prefix is already
+// used by the flexbox align-items shorthands in _flexbox.scss.
+.ai-valign-baseline {
+  vertical-align: baseline !important;
+}
+
+.ai-valign-top {
+  vertical-align: top !important;
+}
+
+.ai-valign-middle {
+  vertical-align: middle !important;
+}
+
+.ai-valign-bottom {
+  vertical-align: bottom !important;
+}
+
+.ai-valign-text-top {
+  vertical-align: text-top !important;
+}
+
+.ai-valign-text-bottom {
+  vertical-align: text-bottom !important;
+}
+
 // ─── Responsive Text Utilities ───
 @each $breakpoint, $breakpoint-value in $breakpoints {
   @media (min-width: $breakpoint-value) {

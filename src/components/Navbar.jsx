@@ -139,7 +139,7 @@ export default function Navbar({ theme = 'glance' }) {
 		<div className="comp-panel active" id="p-navbar">
 			<CompHeader
 				title="Navbar"
-				lead="Top navigation bar - brand logo, links, and action areas. Theme-aware."
+				lead="Top navigation bar - brand logo, links, and action areas. Theme-aware: the top strip uses var(--c-dark), the nav bar beneath it uses var(--c-mid), and dropdown panels use var(--c-fade-alpha), so the whole header restyles instantly when the theme selector changes. The header can ship with or without a secondary nav bar (.header--no-nav vs .header--has-nav), that nav bar can hold either a search box + multi-level dropdown menu or a row of quick-select dropdowns (.header--has-dropdowns), and every layout collapses below 1080px into a hamburger-triggered mobile menu with the same content re-flowed into a vertical list."
 			/>
 
 			<PreviewBlock
@@ -392,6 +392,37 @@ export default function Navbar({ theme = 'glance' }) {
 					</nav>
 				</header>
 			</PreviewBlock>
+
+			<div className="ai-table-wrap">
+				<table className="ai-table">
+					<thead>
+						<tr>
+							<th>Class</th>
+							<th>Purpose</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr><td><code>header</code></td><td>Root wrapper. Full width; height is fixed by <code>--header-head-height</code> alone, or plus <code>--navbar-height</code> when a nav bar is present.</td></tr>
+						<tr><td><code>header--no-nav</code> / <code>header--has-nav</code></td><td>Whether the secondary <code>.ai-navbar</code> bar renders beneath the top strip.</td></tr>
+						<tr><td><code>header--has-dropdowns</code></td><td>Adds a row of quick-select <code>&lt;select&gt;</code> dropdowns + submit button into the top strip's action area.</td></tr>
+						<tr><td><code>header-branding</code> / <code>brand-logo</code> / <code>powered-by</code></td><td>Logo + "Powered by" label on the left of the top strip.</td></tr>
+						<tr><td><code>header-user-actions</code> / <code>user-info</code></td><td>Right-aligned user name/business + logout button; hidden below 1080px in favor of the mobile menu.</td></tr>
+						<tr><td><code>ai-navbar-toggler</code> / <code>navtoggler-sticks</code> / <code>.stick</code></td><td>Hamburger button, built from 3 absolutely-positioned bars.</td></tr>
+						<tr><td><code>burger-open</code></td><td>Applied to the toggler when expanded — animates the 3 bars into an X.</td></tr>
+						<tr><td><code>only-mobile</code></td><td>Utility that's hidden by default and shown (<code>flex</code>) only below the 1080px breakpoint.</td></tr>
+						<tr><td><code>ai-navbar</code></td><td>The secondary bar — brand-mid background, holds the search box and/or nav list.</td></tr>
+						<tr><td><code>ai-navbar--mobile-only</code></td><td>Modifier for a nav bar that only ever renders in the mobile collapsed layout (no desktop bar at all).</td></tr>
+						<tr><td><code>navbar-expanded</code></td><td>Applied below 1080px when the hamburger is toggled open — switches the nav bar from <code>display: none</code> to a full-height flyout.</td></tr>
+						<tr><td><code>ai-navbar-searchbox</code></td><td>Fixed-width search input area, sized to match the sidebar width; hidden below 1080px.</td></tr>
+						<tr><td><code>ai-navbar-nav</code> / <code>nav-item</code> / <code>nav-link</code></td><td>The horizontal (desktop) or stacked (mobile) list of top-level nav entries.</td></tr>
+						<tr><td><code>nav-item--has-dropdown</code> / <code>is-open</code></td><td>Marks an item with a child menu; <code>.is-open</code> reveals its <code>.nav-dropdown</code> panel.</td></tr>
+						<tr><td><code>nav-link--toggle</code> / <code>nav-caret-btn</code> / <code>nav-caret</code></td><td>The label + chevron button that opens/closes a dropdown; the chevron glyph itself swaps between <code>expand_more</code>/<code>expand_less</code>.</td></tr>
+						<tr><td><code>nav-dropdown</code> / <code>nav-dropdown-list</code> / <code>nav-dropdown-item</code></td><td>Absolutely-positioned (statically stacked on mobile) scrollable menu panel and its rows.</td></tr>
+						<tr><td><code>nav-dropdown-save</code></td><td>Optional sticky footer action rendered at the bottom of a dropdown panel (e.g. "Save Map Coordinates").</td></tr>
+						<tr><td><code>header-dropdown-items</code></td><td>Row of quick-select controls injected into the top strip when <code>.header--has-dropdowns</code> is set.</td></tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	);
 }

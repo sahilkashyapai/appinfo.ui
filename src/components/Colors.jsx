@@ -140,9 +140,49 @@ export default function Colors() {
 		<div className="comp-panel" id="p-colors">
 			<CompHeader
 				title="Colors"
-				lead="Semantic color palettes for each theme. Click any swatch to copy the hex value."
+				lead="Each of the 5 brand themes (Glance, Mainelink, Mcomms, Rattler, WWE) defines the same fixed set of CSS custom properties — --c-dark, --c-mid, --c-btn, --c-surface, --c-border, --c-text, and so on — with different hex values. Every component in this library reads those variables instead of hardcoding colors, so swapping the data-theme attribute on the root <html> element (exactly what the theme selector in the navbar does) instantly re-skins buttons, headers, cards, borders, and text everywhere on the page, live, with no reload and no per-component styling. Click any swatch below to copy its hex value."
 			/>
 
+			<div className="sub-heading">How Theme Tokens Get Consumed</div>
+			<p className="ai-text-muted ai-mb-4" style={{ fontSize: '13.5px', lineHeight: 1.7 }}>
+				Each swatch below corresponds to one CSS variable that components reference directly — for example
+				{' '}<code>.ai-btn-primary</code> reads <code>var(--c-btn)</code> for its background and <code>var(--c-btn-hover)</code> on hover,
+				the navbar's top strip and secondary bar read <code>var(--c-dark)</code> and <code>var(--c-mid)</code>,
+				and cards/modals/accordions read <code>var(--c-surface)</code> / <code>var(--c-border)</code> for their background and outline.
+				A <code>--c-primary</code> alias (pointing at the same value as <code>--c-btn</code>) is also defined per theme so that the generic
+				{' '}<code>.ai-bg-primary</code> / <code>.ai-text-primary</code> utility classes resolve to the active theme's real brand color rather than a
+				generic fallback blue — see the <strong>Utilities → Colors</strong> page for the full list of semantic utility classes built on top of these tokens.
+			</p>
+
+			<div className="ai-table-wrap ai-mb-6">
+				<table className="ai-table">
+					<thead>
+						<tr>
+							<th>Swatch Label</th>
+							<th>CSS Variable</th>
+							<th>Typically Used For</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr><td>Dark</td><td><code>--c-dark</code></td><td>Header top strip background</td></tr>
+						<tr><td>Mid</td><td><code>--c-mid</code></td><td>Secondary nav bar background</td></tr>
+						<tr><td>Fade</td><td><code>--c-fade</code></td><td>Search box / hamburger toggler background, mobile menu overlay</td></tr>
+						<tr><td>Button</td><td><code>--c-btn</code> (aliased as <code>--c-primary</code>)</td><td>Primary button fill, active tab underline, accordion active state, links</td></tr>
+						<tr><td>Button Hover</td><td><code>--c-btn-hover</code></td><td>Hover state for primary buttons and interactive brand elements</td></tr>
+						<tr><td>Accent</td><td><code>--c-accent</code></td><td>Secondary highlight, typically equal to Button Hover</td></tr>
+						<tr><td>Accent 2</td><td><code>--c-accent2</code></td><td>Tertiary highlight — gradients, chart accents</td></tr>
+						<tr><td>Page BG</td><td><code>--c-page-bg</code></td><td>App/page background behind cards and panels</td></tr>
+						<tr><td>Surface</td><td><code>--c-surface</code></td><td>Card, modal, accordion, and dropdown panel backgrounds</td></tr>
+						<tr><td>Surface 2</td><td><code>--c-surface2</code> (aliased as <code>--c-light</code>)</td><td>Secondary surface — hover backgrounds, subtle containers</td></tr>
+						<tr><td>Border</td><td><code>--c-border</code></td><td>Default border color for inputs, cards, tables, dividers</td></tr>
+						<tr><td>Text</td><td><code>--c-text</code></td><td>Primary heading and body text color</td></tr>
+						<tr><td>Text Sub</td><td><code>--c-text-sub</code></td><td>Secondary/supporting text (descriptions, body copy)</td></tr>
+						<tr><td>Text Muted</td><td><code>--c-text-muted</code></td><td>Placeholder, disabled, and low-emphasis text</td></tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div className="sub-heading">Brand Palettes</div>
 			<div className="colors-grid">
 				{Object.entries(THEMES).map(([key, theme]) => (
 					<div key={key} className="theme-section">

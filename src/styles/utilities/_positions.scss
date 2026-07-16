@@ -156,6 +156,26 @@ $z-indexes: (
   object-fit: none !important;
 }
 
+.ai-object-position-top {
+  object-position: top !important;
+}
+
+.ai-object-position-right {
+  object-position: right !important;
+}
+
+.ai-object-position-bottom {
+  object-position: bottom !important;
+}
+
+.ai-object-position-left {
+  object-position: left !important;
+}
+
+.ai-object-position-center {
+  object-position: center !important;
+}
+
 // ─── Responsive Position Utilities ───
 @each $breakpoint, $breakpoint-value in $breakpoints {
   @media (min-width: $breakpoint-value) {

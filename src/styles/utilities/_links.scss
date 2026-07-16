@@ -1,0 +1,73 @@
+// ═══ Link Utilities (.ai-link-*) ═══
+// Colored, underlined links with a darker hover state
+// Prefix: .ai- (Applied Information)
+
+@use './colors' as *;
+
+// Each variant sets --ai-link-color so .ai-link-opacity-* can mix it
+// toward transparent when combined on the same element — currentColor
+// can't be used for this since it resolves to the inherited color, not
+// a sibling class's color on the same element.
+@mixin ai-link($color) {
+  --ai-link-color: #{$color};
+  color: var(--ai-link-color) !important;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--ai-link-color) 50%, transparent);
+
+  &:hover {
+    color: color-mix(in srgb, var(--ai-link-color) 85%, black) !important;
+    text-decoration-color: currentColor;
+  }
+}
+
+.ai-link-primary {
+  @include ai-link(var(--c-primary, #{$bs-primary}));
+}
+
+.ai-link-secondary {
+  @include ai-link(var(--c-secondary, #{$bs-secondary}));
+}
+
+.ai-link-success {
+  @include ai-link(var(--c-success, #{$bs-success}));
+}
+
+.ai-link-danger {
+  @include ai-link(var(--c-danger, #{$bs-danger}));
+}
+
+.ai-link-warning {
+  @include ai-link(var(--c-warning, #{$bs-warning}));
+}
+
+.ai-link-info {
+  @include ai-link(var(--c-info, #{$bs-info}));
+}
+
+.ai-link-dark {
+  @include ai-link(var(--c-dark, #{$bs-dark}));
+}
+
+// ─── Link Opacity ───
+// Mixes --ai-link-color (set by a .ai-link-* variant above) toward
+// transparent, so hover/focus feedback on the link isn't also faded out
+// the way plain `opacity` would fade it.
+.ai-link-opacity-10 {
+  color: color-mix(in srgb, var(--ai-link-color, currentColor) 10%, transparent) !important;
+}
+
+.ai-link-opacity-25 {
+  color: color-mix(in srgb, var(--ai-link-color, currentColor) 25%, transparent) !important;
+}
+
+.ai-link-opacity-50 {
+  color: color-mix(in srgb, var(--ai-link-color, currentColor) 50%, transparent) !important;
+}
+
+.ai-link-opacity-75 {
+  color: color-mix(in srgb, var(--ai-link-color, currentColor) 75%, transparent) !important;
+}
+
+.ai-link-opacity-100 {
+  color: var(--ai-link-color, currentColor) !important;
+}

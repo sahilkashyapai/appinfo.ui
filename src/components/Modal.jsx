@@ -140,6 +140,45 @@ export default function Modal() {
 	</div>
 </div>`;
 
+	const warningModalCode = `<button class="ai-btn ai-btn-primary" data-modal-open="m8" type="button" aria-controls="m8" aria-expanded="false">Warning Modal</button>
+
+<div class="ai-modal-backdrop" id="m8" aria-hidden="true">
+	<div class="ai-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-warning">
+		<div class="ai-modal-header ai-bg-warning-light">
+			<span class="ai-modal-title" id="modal-title-warning">
+				<span class="material-symbols-outlined" aria-hidden="true">warning</span> Low Signal Strength
+			</span>
+			<button class="ai-modal-close" data-modal-close type="button" aria-label="Close dialog"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
+		</div>
+		<div class="ai-modal-body">
+			<p>Device <strong>SNSR-042</strong> is reporting intermittent signal loss. Consider relocating the antenna or checking for interference.</p>
+		</div>
+		<div class="ai-modal-footer">
+			<button class="ai-btn ai-btn-ghost ai-btn-sm" data-modal-close type="button">Dismiss</button>
+			<button class="ai-btn ai-btn-primary ai-btn-sm" type="button">Run Diagnostics</button>
+		</div>
+	</div>
+</div>`;
+
+	const infoModalCode = `<button class="ai-btn ai-btn-primary" data-modal-open="m9" type="button" aria-controls="m9" aria-expanded="false">Info Modal</button>
+
+<div class="ai-modal-backdrop" id="m9" aria-hidden="true">
+	<div class="ai-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-info">
+		<div class="ai-modal-header ai-bg-info-light">
+			<span class="ai-modal-title" id="modal-title-info">
+				<span class="material-symbols-outlined" aria-hidden="true">info</span> What's New
+			</span>
+			<button class="ai-modal-close" data-modal-close type="button" aria-label="Close dialog"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
+		</div>
+		<div class="ai-modal-body">
+			<p>Firmware v3.2.0 adds adaptive polling intervals and improved battery reporting for all sensor units.</p>
+		</div>
+		<div class="ai-modal-footer">
+			<button class="ai-btn ai-btn-primary ai-btn-sm" data-modal-close type="button">Got It</button>
+		</div>
+	</div>
+</div>`;
+
 	const formModalCode = `<button class="ai-btn ai-btn-primary" data-modal-open="m7" type="button" aria-controls="m7" aria-expanded="false">Form Modal</button>
 
 <div class="ai-modal-backdrop" id="m7" aria-hidden="true">
@@ -174,7 +213,7 @@ export default function Modal() {
 			<div className="comp-panel" id="p-modal">
 				<CompHeader
 					title="Modal"
-					lead="Focused overlay dialogs for confirmations, forms, and detail views."
+					lead="Focused overlay dialogs for confirmations, forms, and detail views. Modals are centered by a fixed, blurred backdrop and animate in with a scale + fade transition. Three widths are available (sm / default / lg), and the header can be tinted with a semantic .ai-bg-{state}-light class to signal danger, success, warning, or info at a glance. Dismiss by clicking the close icon, clicking the backdrop, or pressing Escape."
 				/>
 				<PreviewBlock
 					label="Device Configuration"
@@ -231,6 +270,45 @@ export default function Modal() {
 				>
 					<button className="ai-btn ai-btn-primary" onClick={() => openModal('m7')} type="button">Form Modal</button>
 				</PreviewBlock>
+
+				<PreviewBlock
+					label="Warning Modal"
+					canvasClassName="ai-d-flex ai-gap-3"
+					code={warningModalCode}
+				>
+					<button className="ai-btn ai-btn-primary" onClick={() => openModal('m8')} type="button">Warning Modal</button>
+				</PreviewBlock>
+
+				<PreviewBlock
+					label="Info Modal"
+					canvasClassName="ai-d-flex ai-gap-3"
+					code={infoModalCode}
+				>
+					<button className="ai-btn ai-btn-primary" onClick={() => openModal('m9')} type="button">Info Modal</button>
+				</PreviewBlock>
+
+				<div className="ai-table-wrap">
+					<table className="ai-table">
+						<thead>
+							<tr>
+								<th>Class</th>
+								<th>Purpose</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr><td><code>ai-modal-backdrop</code></td><td>Fixed, full-viewport, blurred overlay. Add a <code>data-modal-open</code> attribute (matching this element&apos;s id) to any trigger button. Toggling the <code>.open</code> class shows it and animates the dialog in.</td></tr>
+							<tr><td><code>ai-modal</code></td><td>The dialog card itself — surface background, rounded corners, shadow. Default width is <code>min(480px, 90vw)</code>.</td></tr>
+							<tr><td><code>ai-modal-sm</code></td><td>Narrow width variant, <code>min(320px, 90vw)</code> — quick confirmations.</td></tr>
+							<tr><td><code>ai-modal-lg</code></td><td>Wide width variant, <code>min(800px, 95vw)</code> — forms, tables, detail views.</td></tr>
+							<tr><td><code>ai-modal-header</code></td><td>Title row with bottom border. Optionally tinted with a state class below.</td></tr>
+							<tr><td><code>ai-bg-danger-light</code> / <code>ai-bg-success-light</code> / <code>ai-bg-warning-light</code> / <code>ai-bg-info-light</code></td><td>Header-only tint + matching title color, for alert/confirmation/success/info modals.</td></tr>
+							<tr><td><code>ai-modal-body</code></td><td>Scrollable content area — paragraphs, forms, tables.</td></tr>
+							<tr><td><code>ai-modal-footer</code></td><td>Right-aligned action row for Cancel/Confirm buttons.</td></tr>
+							<tr><td><code>ai-modal-close</code></td><td>Icon-only dismiss button, usually paired with <code>data-modal-close</code>.</td></tr>
+							<tr><td><code>data-modal-open</code> / <code>data-modal-close</code></td><td>Behavior hooks the framework-free JS listens for to open/close the backdrop matching the given id.</td></tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
 
 			{/* Basic Modal 1 - Device Configuration */}
@@ -453,6 +531,59 @@ export default function Modal() {
 					<div className="ai-modal-footer">
 						<button className="ai-btn ai-btn-ghost ai-btn-sm" onClick={closeModal} type="button">Cancel</button>
 						<button className="ai-btn ai-btn-primary ai-btn-sm" type="button">Submit Registration</button>
+					</div>
+				</div>
+			</div>
+
+			{/* Warning Modal */}
+			<div
+				className={`ai-modal-backdrop ${activeModal === 'm8' ? 'open' : ''}`}
+				id="m8"
+				onClick={(event) => {
+					if (event.target === event.currentTarget) {
+						closeModal();
+					}
+				}}
+			>
+				<div className="ai-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-warning">
+					<div className="ai-modal-header ai-bg-warning-light">
+						<span className="ai-modal-title" id="modal-title-warning">
+							<span className="material-symbols-outlined" aria-hidden="true">warning</span> Low Signal Strength
+						</span>
+						<button className="ai-modal-close" onClick={closeModal} type="button" aria-label="Close dialog"><span className="material-symbols-outlined" aria-hidden="true">close</span></button>
+					</div>
+					<div className="ai-modal-body">
+						<p>Device <strong>SNSR-042</strong> is reporting intermittent signal loss. Consider relocating the antenna or checking for interference.</p>
+					</div>
+					<div className="ai-modal-footer">
+						<button className="ai-btn ai-btn-ghost ai-btn-sm" onClick={closeModal} type="button">Dismiss</button>
+						<button className="ai-btn ai-btn-primary ai-btn-sm" type="button">Run Diagnostics</button>
+					</div>
+				</div>
+			</div>
+
+			{/* Info Modal */}
+			<div
+				className={`ai-modal-backdrop ${activeModal === 'm9' ? 'open' : ''}`}
+				id="m9"
+				onClick={(event) => {
+					if (event.target === event.currentTarget) {
+						closeModal();
+					}
+				}}
+			>
+				<div className="ai-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-info">
+					<div className="ai-modal-header ai-bg-info-light">
+						<span className="ai-modal-title" id="modal-title-info">
+							<span className="material-symbols-outlined" aria-hidden="true">info</span> What's New
+						</span>
+						<button className="ai-modal-close" onClick={closeModal} type="button" aria-label="Close dialog"><span className="material-symbols-outlined" aria-hidden="true">close</span></button>
+					</div>
+					<div className="ai-modal-body">
+						<p>Firmware v3.2.0 adds adaptive polling intervals and improved battery reporting for all sensor units.</p>
+					</div>
+					<div className="ai-modal-footer">
+						<button className="ai-btn ai-btn-primary ai-btn-sm" onClick={closeModal} type="button">Got It</button>
 					</div>
 				</div>
 			</div>

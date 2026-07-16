@@ -28,6 +28,11 @@ $glance-text-muted: #7aa3bf;
   --c-accent: #{$glance-accent};
   --c-accent2: #{$glance-accent2};
 
+  // Aliases so the generic .ai-*-primary / .ai-bg-light utilities
+  // resolve to this theme's colors instead of their Bootstrap fallback.
+  --c-primary: var(--c-btn);
+  --c-light: var(--c-surface2);
+
   --c-page-bg: #{$glance-page-bg};
   --c-surface: #{$glance-surface};
   --c-surface2: #{$glance-surface2};

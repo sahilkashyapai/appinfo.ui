@@ -28,6 +28,11 @@ $mainelink-text-muted: #6090b0;
   --c-accent: #{$mainelink-accent};
   --c-accent2: #{$mainelink-accent2};
 
+  // Aliases so the generic .ai-*-primary / .ai-bg-light utilities
+  // resolve to this theme's colors instead of their Bootstrap fallback.
+  --c-primary: var(--c-btn);
+  --c-light: var(--c-surface2);
+
   --c-page-bg: #{$mainelink-page-bg};
   --c-surface: #{$mainelink-surface};
   --c-surface2: #{$mainelink-surface2};

@@ -28,6 +28,11 @@ $rattler-text-muted: #9a8a70;
   --c-accent: #{$rattler-accent};
   --c-accent2: #{$rattler-accent2};
 
+  // Aliases so the generic .ai-*-primary / .ai-bg-light utilities
+  // resolve to this theme's colors instead of their Bootstrap fallback.
+  --c-primary: var(--c-btn);
+  --c-light: var(--c-surface2);
+
   --c-page-bg: #{$rattler-page-bg};
   --c-surface: #{$rattler-surface};
   --c-surface2: #{$rattler-surface2};

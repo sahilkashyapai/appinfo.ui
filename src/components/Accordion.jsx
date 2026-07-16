@@ -94,7 +94,7 @@ export default function Accordion() {
 		<div className="comp-panel" id="p-accordion">
 			<CompHeader
 				title="Accordion"
-				lead="Collapsible content sections - perfect for FAQs, settings panels, and expandable details."
+				lead="Collapsible content sections - perfect for FAQs, settings panels, and expandable details. Behavior is controlled entirely by JS state, not CSS: 'single' accordions close any other open item when one is opened (classic single-open-at-a-time), 'multiple' lets any number stay open simultaneously, and 'first-open' / 'all-open' just seed the initial state. The chevron icon rotates 180deg and turns the theme's button color whenever its item is open. A .ai-accordion--borderless modifier strips the card border/background for a flatter, list-like look, and .ai-accordion--icon-left moves the chevron to the front of the row instead of the end."
 			/>
 
 			<AccordionSection title="Only One Open at a Time" variant="single" items={items} />
@@ -104,6 +104,14 @@ export default function Accordion() {
 			<AccordionSection title="First Item Open by Default" variant="first-open" items={items} />
 
 			<AccordionSection title="All Items Open by Default" variant="all-open" items={items} />
+
+			<AccordionSection
+				title="Icon on the Left (Bordered)"
+				variant="single"
+				icon="expand_more"
+				iconLeft
+				items={items}
+			/>
 
 			<AccordionSection
 				title="Borderless — Arrow Icon Right"
@@ -121,6 +129,27 @@ export default function Accordion() {
 				iconLeft
 				items={items}
 			/>
+
+			<div className="ai-table-wrap">
+				<table className="ai-table">
+					<thead>
+						<tr>
+							<th>Class</th>
+							<th>Purpose</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr><td><code>ai-accordion</code></td><td>Base wrapper — bordered card with rounded corners, clips its children.</td></tr>
+						<tr><td><code>ai-acc-item</code></td><td>One row: its trigger button + collapsible body. Bottom-bordered except the last item.</td></tr>
+						<tr><td><code>ai-acc-btn</code></td><td>Full-width trigger. Title on the left, chevron icon on the right by default.</td></tr>
+						<tr><td><code>ai-acc-btn.open</code></td><td>Applied when that item is expanded — text/icon switch to <code>var(--c-btn)</code> and the background tints slightly.</td></tr>
+						<tr><td><code>ai-acc-icon</code></td><td>The chevron; rotates 180deg when its button carries <code>.open</code>.</td></tr>
+						<tr><td><code>ai-acc-body</code></td><td>Collapsed via <code>max-height: 0</code>; <code>.open</code> reveals it up to a 200px cap with padding.</td></tr>
+						<tr><td><code>ai-accordion--icon-left</code></td><td>Modifier on the accordion root — moves the chevron before the title instead of after.</td></tr>
+						<tr><td><code>ai-accordion--borderless</code></td><td>Modifier on the accordion root — removes the outer border/radius and item dividers for a flush, list-style look.</td></tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	);
 }
