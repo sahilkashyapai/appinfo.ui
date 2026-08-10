@@ -180,7 +180,9 @@
     }
 }
 
-// Icon stage — circular outline that scales in, then draws its mark.
+// Icon stage — circular outline that scales in, then reveals its mark.
+// The mark is a plain text glyph (✓ / ✕ / ! / i / ?) rather than a
+// hand-drawn SVG, so it just inherits color/weight like any other text.
 .ai-swal-icon {
     position: relative;
     width: 72px;
@@ -190,117 +192,49 @@
     @include flex(flex, center, center);
     animation: ai-swal-icon-in .4s ease-out .05s backwards;
 
-    svg {
-        width: 40px;
-        height: 40px;
-        overflow: visible;
-    }
-
-    circle {
-        fill: none;
-        stroke-width: 4;
-    }
-
-    path,
-    line {
-        fill: none;
-        stroke-width: 4;
-        stroke-linecap: round;
-        stroke-linejoin: round;
+    .ai-swal-icon-content {
+        font-family: 'Work Sans', sans-serif;
+        font-size: 34px;
+        font-weight: 700;
+        line-height: 1;
+        opacity: 0;
+        animation: ai-swal-mark-in .3s ease-out .3s forwards;
     }
 
     &--success {
         border: 3px solid color-mix(in srgb, var(--c-success) 35%, transparent);
-
-        circle,
-        path {
-            stroke: var(--c-success);
-        }
-
-        .ai-swal-check {
-            stroke-dasharray: 40;
-            stroke-dashoffset: 40;
-            animation: ai-swal-draw .35s ease-out .3s forwards;
-        }
+        color: var(--c-success);
     }
 
     &--error {
         border: 3px solid color-mix(in srgb, var(--c-danger) 35%, transparent);
-
-        line {
-            stroke: var(--c-danger);
-        }
-
-        .ai-swal-x1,
-        .ai-swal-x2 {
-            stroke-dasharray: 24;
-            stroke-dashoffset: 24;
-            animation: ai-swal-draw .3s ease-out forwards;
-        }
-
-        .ai-swal-x1 {
-            animation-delay: .3s;
-        }
-
-        .ai-swal-x2 {
-            animation-delay: .48s;
-        }
+        color: var(--c-danger);
     }
 
     &--warning {
         border: 3px solid color-mix(in srgb, var(--c-warning) 35%, transparent);
+        color: var(--c-warning);
 
-        line,
-        circle.ai-swal-dot {
-            stroke: var(--c-warning);
-        }
-
-        circle.ai-swal-dot {
-            fill: var(--c-warning);
-        }
-
-        .ai-swal-bang {
-            stroke-dasharray: 22;
-            stroke-dashoffset: 22;
-            animation: ai-swal-draw .25s ease-out .3s forwards, ai-swal-shake .5s ease-in-out .6s;
+        .ai-swal-icon-content {
+            animation: ai-swal-mark-in .25s ease-out .3s forwards, ai-swal-shake .5s ease-in-out .6s;
         }
     }
 
     &--info {
         border: 3px solid color-mix(in srgb, var(--c-info) 35%, transparent);
+        color: var(--c-info);
 
-        line,
-        circle.ai-swal-dot {
-            stroke: var(--c-info);
-        }
-
-        circle.ai-swal-dot {
-            fill: var(--c-info);
-        }
-
-        .ai-swal-i-line {
-            stroke-dasharray: 16;
-            stroke-dashoffset: 16;
-            animation: ai-swal-draw .25s ease-out .3s forwards;
+        .ai-swal-icon-content {
+            font-style: italic;
         }
     }
 
     &--question {
         border: 3px solid color-mix(in srgb, var(--c-primary) 35%, transparent);
+        color: var(--c-primary);
 
-        path,
-        circle.ai-swal-dot {
-            stroke: var(--c-primary);
-        }
-
-        circle.ai-swal-dot {
-            fill: var(--c-primary);
-        }
-
-        .ai-swal-q {
-            stroke-dasharray: 34;
-            stroke-dashoffset: 34;
-            animation: ai-swal-draw .35s ease-out .3s forwards;
+        .ai-swal-icon-content {
+            animation: ai-swal-question-mark .5s ease-out .3s forwards;
         }
     }
 }
@@ -333,9 +267,27 @@
     }
 }
 
-@keyframes ai-swal-draw {
+@keyframes ai-swal-mark-in {
+    from {
+        opacity: 0;
+        transform: scale(.4);
+    }
+
     to {
-        stroke-dashoffset: 0;
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes ai-swal-question-mark {
+    from {
+        opacity: 0;
+        transform: rotateY(-360deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateY(0);
     }
 }
 
@@ -359,8 +311,9 @@
 
     .ai-modal-backdrop.open .ai-modal-popup,
     .ai-swal-icon,
-    .ai-swal-icon [class^="ai-swal-"] {
+    .ai-swal-icon-content {
         animation: none !important;
-        stroke-dashoffset: 0 !important;
+        opacity: 1 !important;
+        transform: none !important;
     }
 }

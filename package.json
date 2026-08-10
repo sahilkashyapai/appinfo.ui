@@ -1,8 +1,9 @@
 {
   "name": "ai-ui-react",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "private": true,
   "scripts": {
+    "prepare": "node scripts/setup-git-hooks.mjs",
     "dev": "vite",
     "dev:cdn": "node scripts/dev-cdn.mjs",
     "build": "vite build",

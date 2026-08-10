@@ -186,10 +186,7 @@ export default function Modal() {
 	<div class="ai-modal ai-modal-popup" role="dialog" aria-modal="true" aria-labelledby="swal-title-success">
 		<button class="ai-modal-close" data-modal-close type="button" aria-label="Close dialog"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
 		<div class="ai-swal-icon ai-swal-icon--success" aria-hidden="true">
-			<svg viewBox="0 0 24 24">
-				<circle cx="12" cy="12" r="10" />
-				<path class="ai-swal-check" d="M7 12.5l3.2 3.2L17 9" />
-			</svg>
+			<span class="ai-swal-icon-content">&#x2713;</span>
 		</div>
 		<h3 class="ai-swal-title" id="swal-title-success">Saved!</h3>
 		<p class="ai-swal-text">Your changes have been saved successfully.</p>
@@ -206,11 +203,7 @@ export default function Modal() {
 	<div class="ai-modal ai-modal-popup" role="dialog" aria-modal="true" aria-labelledby="swal-title-error">
 		<button class="ai-modal-close" data-modal-close type="button" aria-label="Close dialog"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
 		<div class="ai-swal-icon ai-swal-icon--error" aria-hidden="true">
-			<svg viewBox="0 0 24 24">
-				<circle cx="12" cy="12" r="10" />
-				<line class="ai-swal-x1" x1="8" y1="8" x2="16" y2="16" />
-				<line class="ai-swal-x2" x1="16" y1="8" x2="8" y2="16" />
-			</svg>
+			<span class="ai-swal-icon-content">&#x2715;</span>
 		</div>
 		<h3 class="ai-swal-title" id="swal-title-error">Something went wrong</h3>
 		<p class="ai-swal-text">We couldn't process your request. Please try again.</p>
@@ -227,11 +220,7 @@ export default function Modal() {
 	<div class="ai-modal ai-modal-popup" role="dialog" aria-modal="true" aria-labelledby="swal-title-warning">
 		<button class="ai-modal-close" data-modal-close type="button" aria-label="Close dialog"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
 		<div class="ai-swal-icon ai-swal-icon--warning" aria-hidden="true">
-			<svg viewBox="0 0 24 24">
-				<circle cx="12" cy="12" r="10" />
-				<line class="ai-swal-bang" x1="12" y1="7" x2="12" y2="13" />
-				<circle class="ai-swal-dot" cx="12" cy="17" r="1" />
-			</svg>
+			<span class="ai-swal-icon-content">!</span>
 		</div>
 		<h3 class="ai-swal-title" id="swal-title-warning">Are you sure?</h3>
 		<p class="ai-swal-text">This action can't be undone once confirmed.</p>
@@ -249,11 +238,7 @@ export default function Modal() {
 	<div class="ai-modal ai-modal-popup" role="dialog" aria-modal="true" aria-labelledby="swal-title-info">
 		<button class="ai-modal-close" data-modal-close type="button" aria-label="Close dialog"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
 		<div class="ai-swal-icon ai-swal-icon--info" aria-hidden="true">
-			<svg viewBox="0 0 24 24">
-				<circle cx="12" cy="12" r="10" />
-				<line class="ai-swal-i-line" x1="12" y1="11" x2="12" y2="16" />
-				<circle class="ai-swal-dot" cx="12" cy="7.5" r="1" />
-			</svg>
+			<span class="ai-swal-icon-content">i</span>
 		</div>
 		<h3 class="ai-swal-title" id="swal-title-info">Heads up</h3>
 		<p class="ai-swal-text">Firmware v3.2.0 is available for this device.</p>
@@ -270,11 +255,7 @@ export default function Modal() {
 	<div class="ai-modal ai-modal-popup" role="dialog" aria-modal="true" aria-labelledby="swal-title-question">
 		<button class="ai-modal-close" data-modal-close type="button" aria-label="Close dialog"><span class="material-symbols-outlined" aria-hidden="true">close</span></button>
 		<div class="ai-swal-icon ai-swal-icon--question" aria-hidden="true">
-			<svg viewBox="0 0 24 24">
-				<circle cx="12" cy="12" r="10" />
-				<path class="ai-swal-q" d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .8-1 1.7" />
-				<circle class="ai-swal-dot" cx="12" cy="17" r="1" />
-			</svg>
+			<span class="ai-swal-icon-content">?</span>
 		</div>
 		<h3 class="ai-swal-title" id="swal-title-question">Delete this device?</h3>
 		<p class="ai-swal-text">Device <strong>SNSR-042</strong> and its history will be permanently removed.</p>
@@ -291,16 +272,12 @@ export default function Modal() {
 <div class="ai-modal-backdrop" id="swal-logout" aria-hidden="true">
 	<div class="ai-modal ai-modal-popup" role="dialog" aria-modal="true" aria-labelledby="swal-title-logout">
 		<div class="ai-swal-icon ai-swal-icon--question" aria-hidden="true">
-			<svg viewBox="0 0 24 24">
-				<circle cx="12" cy="12" r="10" />
-				<path class="ai-swal-q" d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .8-1 1.7" />
-				<circle class="ai-swal-dot" cx="12" cy="17" r="1" />
-			</svg>
+			<span class="ai-swal-icon-content">?</span>
 		</div>
 		<p class="ai-swal-text" id="swal-title-logout">Are you sure you want to logout?</p>
 		<div class="ai-modal-footer">
 			<button class="ai-btn ai-btn-primary ai-btn-sm" type="button">Logout</button>
-			<button class="ai-btn ai-btn-ghost ai-btn-sm" data-modal-close type="button">Back</button>
+			<button class="ai-btn ai-btn-secondary ai-btn-sm" data-modal-close type="button">Back</button>
 		</div>
 	</div>
 </div>`;
@@ -485,7 +462,7 @@ export default function Modal() {
 							<tr><td><code>ai-modal-close</code></td><td>Icon-only dismiss button, usually paired with <code>data-modal-close</code>.</td></tr>
 							<tr><td><code>data-modal-open</code> / <code>data-modal-close</code></td><td>Behavior hooks the framework-free JS listens for to open/close the backdrop matching the given id.</td></tr>
 							<tr><td><code>ai-modal-popup</code></td><td>SweetAlert-style variant: centered text, no header/footer border, and a bouncier scale-in entrance animation.</td></tr>
-							<tr><td><code>ai-swal-icon</code> + <code>--success</code> / <code>--error</code> / <code>--warning</code> / <code>--info</code> / <code>--question</code></td><td>Circular animated icon stage for the popup — scales in, then draws its checkmark/X/exclamation/question mark with an SVG stroke animation.</td></tr>
+							<tr><td><code>ai-swal-icon</code> + <code>--success</code> / <code>--error</code> / <code>--warning</code> / <code>--info</code> / <code>--question</code></td><td>Circular animated icon stage for the popup — scales in, then reveals a plain-text mark (<code>ai-swal-icon-content</code>: ✓ / ✕ / ! / i / ?) instead of an SVG.</td></tr>
 							<tr><td><code>ai-swal-title</code> / <code>ai-swal-text</code></td><td>Centered heading and supporting copy for the popup body.</td></tr>
 						</tbody>
 					</table>
@@ -782,10 +759,7 @@ export default function Modal() {
 				<div className="ai-modal ai-modal-popup" role="dialog" aria-modal="true" aria-labelledby="swal-title-success">
 					<button className="ai-modal-close" onClick={closeModal} type="button" aria-label="Close dialog"><span className="material-symbols-outlined" aria-hidden="true">close</span></button>
 					<div className="ai-swal-icon ai-swal-icon--success" aria-hidden="true">
-						<svg viewBox="0 0 24 24">
-							<circle cx="12" cy="12" r="10" />
-							<path className="ai-swal-check" d="M7 12.5l3.2 3.2L17 9" />
-						</svg>
+						<span className="ai-swal-icon-content">&#x2713;</span>
 					</div>
 					<h3 className="ai-swal-title" id="swal-title-success">Saved!</h3>
 					<p className="ai-swal-text">Your changes have been saved successfully.</p>
@@ -808,11 +782,7 @@ export default function Modal() {
 				<div className="ai-modal ai-modal-popup" role="dialog" aria-modal="true" aria-labelledby="swal-title-error">
 					<button className="ai-modal-close" onClick={closeModal} type="button" aria-label="Close dialog"><span className="material-symbols-outlined" aria-hidden="true">close</span></button>
 					<div className="ai-swal-icon ai-swal-icon--error" aria-hidden="true">
-						<svg viewBox="0 0 24 24">
-							<circle cx="12" cy="12" r="10" />
-							<line className="ai-swal-x1" x1="8" y1="8" x2="16" y2="16" />
-							<line className="ai-swal-x2" x1="16" y1="8" x2="8" y2="16" />
-						</svg>
+						<span className="ai-swal-icon-content">&#x2715;</span>
 					</div>
 					<h3 className="ai-swal-title" id="swal-title-error">Something went wrong</h3>
 					<p className="ai-swal-text">We couldn&apos;t process your request. Please try again.</p>
@@ -835,11 +805,7 @@ export default function Modal() {
 				<div className="ai-modal ai-modal-popup" role="dialog" aria-modal="true" aria-labelledby="swal-title-warning">
 					<button className="ai-modal-close" onClick={closeModal} type="button" aria-label="Close dialog"><span className="material-symbols-outlined" aria-hidden="true">close</span></button>
 					<div className="ai-swal-icon ai-swal-icon--warning" aria-hidden="true">
-						<svg viewBox="0 0 24 24">
-							<circle cx="12" cy="12" r="10" />
-							<line className="ai-swal-bang" x1="12" y1="7" x2="12" y2="13" />
-							<circle className="ai-swal-dot" cx="12" cy="17" r="1" />
-						</svg>
+						<span className="ai-swal-icon-content">!</span>
 					</div>
 					<h3 className="ai-swal-title" id="swal-title-warning">Are you sure?</h3>
 					<p className="ai-swal-text">This action can&apos;t be undone once confirmed.</p>
@@ -863,11 +829,7 @@ export default function Modal() {
 				<div className="ai-modal ai-modal-popup" role="dialog" aria-modal="true" aria-labelledby="swal-title-info">
 					<button className="ai-modal-close" onClick={closeModal} type="button" aria-label="Close dialog"><span className="material-symbols-outlined" aria-hidden="true">close</span></button>
 					<div className="ai-swal-icon ai-swal-icon--info" aria-hidden="true">
-						<svg viewBox="0 0 24 24">
-							<circle cx="12" cy="12" r="10" />
-							<line className="ai-swal-i-line" x1="12" y1="11" x2="12" y2="16" />
-							<circle className="ai-swal-dot" cx="12" cy="7.5" r="1" />
-						</svg>
+						<span className="ai-swal-icon-content">i</span>
 					</div>
 					<h3 className="ai-swal-title" id="swal-title-info">Heads up</h3>
 					<p className="ai-swal-text">Firmware v3.2.0 is available for this device.</p>
@@ -890,11 +852,7 @@ export default function Modal() {
 				<div className="ai-modal ai-modal-popup" role="dialog" aria-modal="true" aria-labelledby="swal-title-question">
 					<button className="ai-modal-close" onClick={closeModal} type="button" aria-label="Close dialog"><span className="material-symbols-outlined" aria-hidden="true">close</span></button>
 					<div className="ai-swal-icon ai-swal-icon--question" aria-hidden="true">
-						<svg viewBox="0 0 24 24">
-							<circle cx="12" cy="12" r="10" />
-							<path className="ai-swal-q" d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .8-1 1.7" />
-							<circle className="ai-swal-dot" cx="12" cy="17" r="1" />
-						</svg>
+						<span className="ai-swal-icon-content">?</span>
 					</div>
 					<h3 className="ai-swal-title" id="swal-title-question">Delete this device?</h3>
 					<p className="ai-swal-text">Device <strong>SNSR-042</strong> and its history will be permanently removed.</p>
@@ -917,16 +875,12 @@ export default function Modal() {
 			>
 				<div className="ai-modal ai-modal-popup" role="dialog" aria-modal="true" aria-labelledby="swal-title-logout">
 					<div className="ai-swal-icon ai-swal-icon--question" aria-hidden="true">
-						<svg viewBox="0 0 24 24">
-							<circle cx="12" cy="12" r="10" />
-							<path className="ai-swal-q" d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .8-1 1.7" />
-							<circle className="ai-swal-dot" cx="12" cy="17" r="1" />
-						</svg>
+						<span className="ai-swal-icon-content">?</span>
 					</div>
 					<p className="ai-swal-text" id="swal-title-logout">Are you sure you want to logout?</p>
 					<div className="ai-modal-footer">
 						<button className="ai-btn ai-btn-primary ai-btn-sm" onClick={closeModal} type="button">Logout</button>
-						<button className="ai-btn ai-btn-ghost ai-btn-sm" onClick={closeModal} type="button">Back</button>
+						<button className="ai-btn ai-btn-secondary ai-btn-sm" onClick={closeModal} type="button">Back</button>
 					</div>
 				</div>
 			</div>
