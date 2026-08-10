@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
+import { version } from '../../package.json';
 
 const THEMES = ['glance', 'mcomms', 'wwe', 'rattler', 'mainelink'];
 
@@ -37,7 +38,7 @@ export default function Navbar({ theme, onThemeChange }) {
     <nav className="p-nav">
       <div className="p-nav-logo">
         AppInfo.UI
-        <span className="ver-tag">v1.0</span>
+        <span className="ver-tag">v{version}</span>
       </div>
 
       <div className={`nav-items${menuOpen ? ' open' : ''}`} id="navItems">
