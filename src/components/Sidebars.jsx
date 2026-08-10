@@ -4,28 +4,38 @@ import PreviewBlock from './PreviewBlock';
 
 const HEADER_COLUMNS = ['Name', 'Status', 'A'];
 
+const FOOTER_STATS = [
+	{ label: 'Alarms', value: 3 },
+	{ label: 'Critical', value: 1, tone: 'danger' },
+	{ label: 'High', value: 1, tone: 'warning' },
+	{ label: 'Low', value: 1 },
+];
+
 const DEVICE_GROUP = {
 	title: 'Addison TX Intersections',
 	rows: [
-		{ name: 'Addison-Airport', status: 'Online', count: '0', alert: true },
-		{ name: 'Addison-Airport', status: 'Comms Fail', count: '0', alert: false },
+		{ name: 'Addison-Airport', status: 'Online', count: '1', statusLight: 'red' },
+		{ name: 'Addison-Belt Line', status: 'Comms Fail', count: '0', statusLight: 'black' },
+		{ name: 'Addison-Beltway', status: 'Online', count: '0', statusLight: '' },
 	],
 };
 
 const DEVICE_GROUP_COUNT = 10;
 
-function DeviceRow({ name, status, count, alert }) {
+function DeviceRow({ name, status, count, statusLight = '' }) {
 	return (
 		<ul className="devicelist-items">
 			<li className="child1-item">
-				<span className={`device-status-light${alert ? ' red' : ''}`}></span>
+				<span className={`device-status-light${statusLight ? ` ${statusLight}` : ''}`}></span>
 				<a href="#">{name}</a>
 			</li>
 			<li className="child1-item">
 				<a href="#">{status}</a>
 			</li>
 			<li className="child1-item">
-				<a href="#">{count}</a>
+				<a href="#">
+					<span className={`device-count${count !== '0' ? ' device-count--alert' : ''}`}>{count}</span>
+				</a>
 			</li>
 		</ul>
 	);
@@ -42,7 +52,25 @@ function DeviceGroup({ title, rows }) {
 	);
 }
 
-function SidebarPreview({ groupCount = DEVICE_GROUP_COUNT, instanceId = 'devicelistSidebar' }) {
+function SidebarAlarmbar({ stats }) {
+	return (
+		<div className="devicelist-footer">
+			<div className="devicelist-footer-stats">
+				{stats.map((stat) => (
+					<div className={`devicelist-footer-stat${stat.tone ? ` tone-${stat.tone}` : ''}`} key={stat.label}>
+						<span className="devicelist-footer-value">{stat.value}</span>
+						<span className="devicelist-footer-label">{stat.label}</span>
+					</div>
+				))}
+			</div>
+			<span className="devicelist-footer-toggle" aria-hidden="true">
+				<span className="material-symbols-outlined">chevron_right</span>
+			</span>
+		</div>
+	);
+}
+
+function SidebarPreview({ groupCount = DEVICE_GROUP_COUNT, instanceId = 'devicelistSidebar', hasAlarmbar = false }) {
 	const wrapperRef = useRef(null);
 	const [hasScroll, setHasScroll] = useState(false);
 	const [expanded, setExpanded] = useState(false);
@@ -116,7 +144,7 @@ function SidebarPreview({ groupCount = DEVICE_GROUP_COUNT, instanceId = 'devicel
 	const asideClass = [
 		'ai-devicelist-sidebar',
 		'not-closable',
-		'no-alarmbar',
+		hasAlarmbar ? 'has-alarmbar' : 'no-alarmbar',
 		expanded ? 'sidebar-expanded-full' : '',
 	]
 		.filter(Boolean)
@@ -159,6 +187,7 @@ function SidebarPreview({ groupCount = DEVICE_GROUP_COUNT, instanceId = 'devicel
 					))}
 				</div>
 			</div>
+			{hasAlarmbar && <SidebarAlarmbar stats={FOOTER_STATS} />}
 		</aside>
 	);
 }
@@ -168,7 +197,7 @@ export default function Sidebars() {
 		<div className="comp-panel active" id="p-external-aside">
 			<CompHeader
 				title="Sidebars"
-				lead="A reusable left-aligned device-list sidebar (.ai-devicelist-sidebar) meant for consuming apps: a fixed-width header row, a vertically scrollable content area grouped by device group, and per-row status-light indicators. When its content overflows, a header toggle expands the sidebar to a fixed width and flips the scroll direction to horizontal so every group's columns stay legible - the toggle disables itself automatically when there's nothing to expand."
+				lead="A reusable left-aligned device-list sidebar (.ai-devicelist-sidebar) meant for consuming apps: a fixed-width header row, a vertically scrollable content area grouped by device group, and per-row status-light indicators. When its content overflows, a header toggle expands the sidebar to a fixed width and flips the scroll direction to horizontal so every group's columns stay legible - the toggle disables itself automatically when there's nothing to expand. Rows band automatically (zebra striping) and non-zero alarm counts pick up a warning badge. Add .has-alarmbar (instead of .no-alarmbar) plus a devicelist-footer to summarize Alarms/Critical/High/Low counts at the bottom."
 			/>
 
 			<div className="sub-heading">Scrollable, Expandable (10 groups)</div>
@@ -185,6 +214,14 @@ export default function Sidebars() {
 				canvasStyle={{ gap: '16px', padding: '24px' }}
 			>
 				<SidebarPreview groupCount={1} instanceId="devicelistSidebarCompact" />
+			</PreviewBlock>
+
+			<div className="sub-heading">With Alarm Bar</div>
+			<PreviewBlock
+				label="Preview - .has-alarmbar swaps in a bottom Alarms/Critical/High/Low summary strip"
+				canvasStyle={{ gap: '16px', padding: '24px' }}
+			>
+				<SidebarPreview instanceId="devicelistSidebarAlarmbar" hasAlarmbar />
 			</PreviewBlock>
 
 			<div className="ai-table-wrap">
@@ -208,9 +245,14 @@ export default function Sidebars() {
 							<td>Switches width to <code>auto</code>, makes the content area scroll horizontally, and lays device groups out as columns side by side.</td>
 						</tr>
 						<tr>
-							<td><code>not-closable</code> / <code>no-alarmbar</code></td>
+							<td><code>not-closable</code></td>
+							<td>Root modifier</td>
+							<td>Marker class consumers use to signal layout intent (no close affordance) in their own app shell.</td>
+						</tr>
+						<tr>
+							<td><code>no-alarmbar</code> / <code>has-alarmbar</code></td>
 							<td>Root modifiers</td>
-							<td>Marker classes consumers use to signal layout intent (no close affordance / no alarm bar above the sidebar) in their own app shell.</td>
+							<td>Mutually exclusive: <code>no-alarmbar</code> hides the <code>devicelist-footer</code> summary strip (default); <code>has-alarmbar</code> shows it. Pair <code>has-alarmbar</code> with a rendered <code>devicelist-footer</code> — see "With Alarm Bar" above.</td>
 						</tr>
 						<tr>
 							<td><code>devicelist-header</code></td>
@@ -245,7 +287,32 @@ export default function Sidebars() {
 						<tr>
 							<td><code>device-status-light</code></td>
 							<td>Status dot</td>
-							<td>10x10px square dot preceding the device name; add <code>.red</code> to flag an alert/fault state.</td>
+							<td>10x10px square dot preceding the device name; add <code>.red</code> for an alert/fault state or <code>.black</code> for a distinct neutral state. No modifier renders an invisible placeholder so names stay aligned.</td>
+						</tr>
+						<tr>
+							<td>(default)</td>
+							<td><code>devicelist-items</code> (even)</td>
+							<td>Zebra row banding — every other device row gets a surface2 tint, counted continuously across group boundaries.</td>
+						</tr>
+						<tr>
+							<td><code>device-count</code> / <code>device-count--alert</code></td>
+							<td><code>span</code> in the count cell</td>
+							<td>Wraps the alarm-count value; <code>--alert</code> highlights non-zero counts with a warning-colored badge.</td>
+						</tr>
+						<tr>
+							<td><code>devicelist-footer</code></td>
+							<td>Footer bar</td>
+							<td>Fixed strip below the scroll region — stat cells plus a chevron affordance, mirroring the header's visual weight. Hidden unless the root carries <code>has-alarmbar</code>.</td>
+						</tr>
+						<tr>
+							<td><code>devicelist-footer-stat</code></td>
+							<td>Stat cell</td>
+							<td>Equal-width column with a value/label pair; add <code>.tone-danger</code> or <code>.tone-warning</code> to tint the value.</td>
+						</tr>
+						<tr>
+							<td><code>devicelist-footer-toggle</code></td>
+							<td>Footer control</td>
+							<td>Chevron affordance at the footer's trailing edge, styled like <code>devicelist-header-toggle</code>.</td>
 						</tr>
 					</tbody>
 				</table>

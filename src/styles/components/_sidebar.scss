@@ -139,6 +139,10 @@
                         &.red {
                             background-color: var(--c-danger);
                         }
+
+                        &.black {
+                            background-color: var(--c-dark);
+                        }
                     }
                 }
 
@@ -151,6 +155,27 @@
                         filter: brightness(135%);
                     }
                 }
+
+                .device-count {
+                    display: inline-block;
+                    min-width: 18px;
+                    padding: 1px 6px;
+                    text-align: center;
+                    border-radius: 4px;
+                    font-size: 12px;
+                    font-weight: 600;
+
+                    &--alert {
+                        background: var(--c-warning);
+                        color: var(--c-dark);
+                    }
+                }
+            }
+
+            /* Row banding — alternates every other device row; counted across the
+               whole wrapper (not per-group) so stripes stay continuous between groups. */
+            &:nth-of-type(even) li {
+                background-color: var(--c-surface2);
             }
         }
     }
@@ -178,6 +203,70 @@
                 padding-left: 4px;
                 padding-right: 4px;
             }
+        }
+    }
+
+    .devicelist-footer {
+        @extend %flex;
+        border-top: 1px solid var(--c-border);
+        background: var(--c-surface2);
+        display: none;
+    }
+
+    &.has-alarmbar .devicelist-footer {
+        display: flex;
+    }
+
+    .devicelist-footer-stats {
+        @extend %flex;
+        flex: 1;
+    }
+
+    .devicelist-footer-stat {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        padding: 6px 4px;
+        border-right: 1px solid var(--c-border);
+
+        &:last-child {
+            border-right: none;
+        }
+
+        .devicelist-footer-value {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--c-text);
+        }
+
+        .devicelist-footer-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--c-text-sub);
+        }
+
+        &.tone-danger .devicelist-footer-value {
+            color: var(--c-danger);
+        }
+
+        &.tone-warning .devicelist-footer-value {
+            color: var(--c-warning);
+        }
+    }
+
+    .devicelist-footer-toggle {
+        @include flex($align: center, $justify: center);
+        width: 24px;
+        background: var(--c-text-sub);
+        color: var(--c-page-bg);
+        cursor: pointer;
+
+        span {
+            font-size: 20px;
         }
     }
 

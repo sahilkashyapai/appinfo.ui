@@ -41,4 +41,123 @@
       display: block;
     }
   }
+
+  /* Narrow-screen fallback — the button list collapses into this native
+     select so a small viewport gets one compact control instead of a
+     wrapping/scrolling row of tab buttons. Present in every variant since
+     it lives on the shared .ai-tabs wrapper, not a modifier. */
+  .ai-tab-select {
+    display: none;
+  }
+
+  @media (max-width: 1080px) {
+    /* !important: must win over every variant's .ai-tab-list display
+       override (segmented/pills/boxed each set their own), regardless of
+       how many classes a future variant stacks on top of .ai-tabs. */
+    .ai-tab-list {
+      display: none !important;
+    }
+
+    .ai-tab-select {
+      display: block !important;
+      width: 100%;
+      max-width: 320px;
+    }
+  }
+
+  /* Segmented — attached rectangular buttons, filled active state */
+  &.ai-tabs--segmented {
+    border-bottom: none;
+
+    .ai-tab-list {
+      display: inline-flex;
+      gap: 0;
+    }
+
+    .ai-tab-btn {
+      background: var(--c-surface2);
+      color: var(--c-text-sub);
+      border: 1px solid var(--c-border);
+      border-radius: 0;
+      padding: 9px 22px;
+
+      &:not(:last-child) {
+        border-right: none;
+      }
+
+      &:first-child {
+        border-radius: 6px 0 0 6px;
+      }
+
+      &:last-child {
+        border-radius: 0 6px 6px 0;
+      }
+
+      &:hover {
+        color: var(--c-text);
+      }
+
+      &.active {
+        background: var(--c-btn);
+        color: var(--c-white);
+        border-color: var(--c-btn);
+      }
+    }
+  }
+
+  /* Pills — spaced, fully rounded, filled active state */
+  &.ai-tabs--pills {
+    border-bottom: none;
+
+    .ai-tab-list {
+      gap: 6px;
+    }
+
+    .ai-tab-btn {
+      background: transparent;
+      color: var(--c-text-sub);
+      border-radius: 999px;
+      border-bottom: none;
+
+      &:hover {
+        background: var(--c-surface2);
+        color: var(--c-text);
+      }
+
+      &.active {
+        background: var(--c-btn);
+        color: var(--c-white);
+        box-shadow: 0 3px 10px color-mix(in srgb, var(--c-btn) 30%, transparent);
+      }
+    }
+  }
+
+  /* Boxed — folder-style tabs that visually connect to the panel below */
+  &.ai-tabs--boxed {
+    border-bottom: 1px solid var(--c-border);
+
+    .ai-tab-list {
+      gap: 4px;
+    }
+
+    .ai-tab-btn {
+      background: var(--c-surface2);
+      color: var(--c-text-sub);
+      border: 1px solid var(--c-border);
+      border-bottom: none;
+      border-radius: 8px 8px 0 0;
+      margin-bottom: -1px;
+
+      &:hover {
+        color: var(--c-text);
+      }
+
+      &.active {
+        background: var(--c-surface);
+        color: var(--c-btn);
+        border-color: var(--c-border);
+        border-bottom: 1px solid var(--c-surface);
+      }
+    }
+  }
 }

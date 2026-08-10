@@ -154,7 +154,9 @@ function DeviceRow({ name, status, count, alert }) {
 				<a href="#">{status}</a>
 			</li>
 			<li className="child1-item">
-				<a href="#">{count}</a>
+				<a href="#">
+					<span className={`device-count${count !== '0' ? ' device-count--alert' : ''}`}>{count}</span>
+				</a>
 			</li>
 		</ul>
 	);

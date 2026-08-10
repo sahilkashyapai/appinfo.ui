@@ -66,5 +66,55 @@ Canonical attributes:
 - `data-alert-close`
 - `data-chip-toggle`, `data-chip-remove`
 - `data-switch-toggle`
+- `data-sort-key`, `data-sort-type`
+- `data-tab-select`
 
 The old `data-ai-*` forms remain supported for migration.
+
+Tabs collapse into a dropdown at 1080px and narrower — add a `<select
+data-tab-select>` next to `.ai-tab-list`, one `<option value="panel-id">` per
+tab:
+
+```html
+<div class="ai-tabs" data-tabs>
+  <div class="ai-tab-list">
+    <button class="ai-tab-btn active" data-tab-target="general">General</button>
+    <button class="ai-tab-btn" data-tab-target="advanced">Advanced</button>
+  </div>
+  <select class="ai-select ai-tab-select" data-tab-select aria-label="Select tab">
+    <option value="general" selected>General</option>
+    <option value="advanced">Advanced</option>
+  </select>
+  <div class="ai-tab-content active" id="general">...</div>
+  <div class="ai-tab-content" id="advanced" hidden>...</div>
+</div>
+```
+
+Sortable table headers:
+
+```html
+<table class="ai-table ai-table--sortable">
+  <thead>
+    <tr>
+      <th aria-sort="none"><button type="button" class="ai-th-sort" data-sort-key="name">Name</button></th>
+    </tr>
+  </thead>
+  <tbody><!-- rows --></tbody>
+</table>
+```
+
+Table headers (`.ai-table thead th`) are sticky to the top of their scrolling
+ancestor by default. Add `.ai-table-wrap--scroll` to the wrapper to scroll the
+table body in a fixed-height box instead of the whole page.
+
+Table style modifiers (stack freely, no JS involved):
+
+- `.ai-table--striped` — zebra-shaded even rows
+- `.ai-table--compact` — tighter cell padding
+- `.ai-table--bordered` — vertical column dividers
+
+```html
+<table class="ai-table ai-table--striped ai-table--compact ai-table--bordered">
+  <!-- thead / tbody as usual -->
+</table>
+```

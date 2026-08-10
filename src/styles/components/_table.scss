@@ -4,6 +4,13 @@
     border: 1px solid var(--c-border);
     border-radius: 10px;
     width: 100%;
+
+    /* Opt-in modifier: bounds the wrapper height and scrolls the body
+       vertically so the sticky header has a scrolling ancestor to stick within. */
+    &--scroll {
+        max-height: 360px;
+        overflow-y: auto;
+    }
 }
 
 .ai-table {
@@ -25,6 +32,14 @@
         text-transform: uppercase;
         letter-spacing: 0.06em;
         font-family: 'DM Mono', monospace;
+
+        /* Sticky column headers — stick to the top of whatever ancestor scrolls
+           (the page, or a .ai-table-wrap--scroll container). Background lives on
+           the cell itself so scrolled-under rows never show through. */
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        background: var(--c-surface2);
     }
 
     td {
@@ -50,6 +65,89 @@
 
         &:hover td {
             background: color-mix(in srgb, var(--c-btn) 5%, var(--c-surface));
+        }
+    }
+
+    /* Sortable modifier — th holds aria-sort, a real <button class="ai-th-sort">
+       carries the click target so the control stays keyboard-accessible for free. */
+    &--sortable {
+        th {
+            padding: 0;
+        }
+    }
+
+    .ai-th-sort {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        width: 100%;
+        padding: 10px 16px;
+        background: none;
+        border: none;
+        font: inherit;
+        text-transform: inherit;
+        letter-spacing: inherit;
+        color: inherit;
+        cursor: pointer;
+
+        &::after {
+            font-family: 'Material Symbols Outlined';
+            font-size: 16px;
+            font-weight: normal;
+            line-height: 1;
+            content: 'unfold_more';
+            opacity: 0.4;
+        }
+
+        &:hover {
+            color: var(--c-btn);
+        }
+    }
+
+    th[aria-sort='ascending'] .ai-th-sort::after {
+        content: 'arrow_upward';
+        opacity: 1;
+        color: var(--c-btn);
+    }
+
+    th[aria-sort='descending'] .ai-th-sort::after {
+        content: 'arrow_downward';
+        opacity: 1;
+        color: var(--c-btn);
+    }
+
+    /* Striped modifier — zebra-shades even body rows; hover still wins over the stripe. */
+    &--striped {
+        tbody tr:nth-child(even) td {
+            background: var(--c-surface2);
+        }
+
+        tbody tr:hover td {
+            background: color-mix(in srgb, var(--c-btn) 8%, var(--c-surface));
+        }
+    }
+
+    /* Compact modifier — tighter cell padding for dense, data-heavy tables. */
+    &--compact {
+        th {
+            padding: 7px 12px;
+        }
+
+        td {
+            padding: 6px 12px;
+        }
+    }
+
+    /* Bordered modifier — adds vertical dividers between columns. */
+    &--bordered {
+        th,
+        td {
+            border-right: 1px solid var(--c-border);
+
+            &:last-child {
+                border-right: none;
+            }
         }
     }
 }

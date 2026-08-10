@@ -29,7 +29,9 @@
     navDropdown: '.nav-item--has-dropdown',
     sidebar: '.ai-devicelist-sidebar',
     sidebarToggle: '[data-sidebar-toggle], [data-ai-sidebar-toggle], .devicelist-header-toggle',
+    sortTrigger: '[data-sort-key], [data-ai-sort-key]',
     switchToggle: '[data-switch-toggle], [data-ai-switch-toggle]',
+    tabSelect: '[data-tab-select], [data-ai-tab-select]',
     tabToggle: '[data-tab-target], [data-ai-tab-target], .ai-tab-btn',
     toast: '.ai-toast',
     toastClose: '.t-close, [data-toast-close], [data-ai-toast-close]',
@@ -351,7 +353,72 @@
       }
     });
 
+    if (target) {
+      scope.querySelectorAll(SELECTORS.tabSelect).forEach((select) => {
+        if (select.value !== target) select.value = target;
+      });
+    }
+
     if (panel) emit(panel, 'tab:show', { trigger: toggle });
+  }
+
+  function selectTab(select) {
+    const root = select.closest('[data-tabs], .ai-tabs');
+    const scope = root || document;
+    const target = select.value;
+    const toggles = Array.from(scope.querySelectorAll(SELECTORS.tabToggle));
+    const match = toggles.find((toggle) => (
+      attribute(toggle, ['data-tab-target', 'data-ai-tab-target']) === target
+    ));
+    if (match) activateTab(match);
+  }
+
+  function sortCellValue(row, columnIndex) {
+    const cell = row.children[columnIndex];
+    if (!cell) return '';
+    return cell.hasAttribute('data-sort-value') ? cell.getAttribute('data-sort-value') : cell.textContent.trim();
+  }
+
+  function compareSortValues(valueA, valueB, type) {
+    if (type === 'string') return valueA.localeCompare(valueB, undefined, { numeric: true, sensitivity: 'base' });
+    if (type === 'number' || (valueA !== '' && valueB !== '' && !isNaN(valueA) && !isNaN(valueB))) {
+      return parseFloat(valueA) - parseFloat(valueB);
+    }
+    return valueA.localeCompare(valueB, undefined, { numeric: true, sensitivity: 'base' });
+  }
+
+  function sortTable(trigger) {
+    const th = trigger.closest('th');
+    const table = trigger.closest('table');
+    if (!th || !table) return;
+
+    const headerRow = th.parentElement;
+    const columnIndex = Array.from(headerRow.children).indexOf(th);
+    const nextDirection = th.getAttribute('aria-sort') === 'ascending' ? 'descending' : 'ascending';
+
+    Array.from(headerRow.children).forEach((otherTh) => {
+      otherTh.setAttribute('aria-sort', otherTh === th ? nextDirection : 'none');
+    });
+
+    const tbody = table.tBodies[0];
+    if (!tbody) return;
+
+    const type = attribute(trigger, ['data-sort-type', 'data-ai-sort-type']);
+    const rows = Array.from(tbody.rows).sort((rowA, rowB) => {
+      const comparison = compareSortValues(
+        sortCellValue(rowA, columnIndex),
+        sortCellValue(rowB, columnIndex),
+        type
+      );
+      return nextDirection === 'ascending' ? comparison : -comparison;
+    });
+    rows.forEach((row) => tbody.appendChild(row));
+
+    emit(table, 'table:sort', {
+      key: attribute(trigger, ['data-sort-key', 'data-ai-sort-key']),
+      direction: nextDirection,
+      trigger,
+    });
   }
 
   function getDrawer(target) {
@@ -450,6 +517,16 @@
       toggle.setAttribute('tabindex', active ? '0' : '-1');
       const panel = resolveTarget(attribute(toggle, ['data-tab-target', 'data-ai-tab-target']));
       if (panel) panel.hidden = !active;
+
+      if (active) {
+        const target = attribute(toggle, ['data-tab-target', 'data-ai-tab-target']);
+        const tabsRoot = toggle.closest('[data-tabs], .ai-tabs') || scope;
+        if (target) {
+          tabsRoot.querySelectorAll(SELECTORS.tabSelect).forEach((select) => {
+            select.value = target;
+          });
+        }
+      }
     });
 
     scope.querySelectorAll(SELECTORS.sidebar).forEach(initializeSidebar);
@@ -523,6 +600,12 @@
       if (tabToggle) {
         event.preventDefault();
         activateTab(tabToggle);
+        return;
+      }
+
+      const sortTrigger = closest(event, SELECTORS.sortTrigger);
+      if (sortTrigger) {
+        sortTable(sortTrigger);
         return;
       }
 
@@ -613,6 +696,11 @@
 
       if (!closest(event, SELECTORS.dropdown)) closeDropdowns();
       if (!closest(event, SELECTORS.navDropdown)) closeNavDropdowns();
+    });
+
+    document.addEventListener('change', (event) => {
+      const tabSelect = closest(event, SELECTORS.tabSelect);
+      if (tabSelect) selectTab(tabSelect);
     });
 
     document.addEventListener('keydown', (event) => {
@@ -739,8 +827,10 @@
     hideTooltip,
     init,
     openModal,
+    selectTab,
     setDrawer,
     showTooltip,
+    sortTable,
     toggleAccordion,
     toggleDropdown,
     toggleNavbar,
