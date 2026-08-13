@@ -51,6 +51,18 @@ svg {
   max-width: 100%;
 }
 
+// Themed scrollbars - applied globally so any consumer of the library
+// gets these by default, without opting in.
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--c-dark) var(--c-border);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
 ::-webkit-scrollbar-button {
   display: none;
 }
@@ -58,6 +70,10 @@ svg {
 ::-webkit-scrollbar-thumb {
   background: var(--c-dark);
   border-radius: 8px;
+
+  &:hover {
+    background: var(--c-btn-hover);
+  }
 }
 
 ::-webkit-scrollbar-track {

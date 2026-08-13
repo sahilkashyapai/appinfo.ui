@@ -57,7 +57,7 @@ export default function Table() {
 		<div className="comp-panel" id="p-table">
 			<CompHeader
 				title="Table"
-				lead="Data tables (.ai-table inside a .ai-table-wrap) with hover row highlighting, uppercase mono-font headers, status badges, and inline code cells. The wrapper adds a rounded border and scrolls horizontally (overflow-x: auto) so wide tables never break the page layout. Every header is sticky by default, and adding .ai-table--sortable plus a data-sort-key button per column makes rows click-to-sort. Mix in .ai-table--striped, .ai-table--compact, and .ai-table--bordered for zebra rows, denser padding, and column dividers — all modifiers stack on the same table."
+				lead="Data tables (.ai-table inside a .ai-table-wrap) with hover row highlighting, uppercase mono-font headers, status badges, and inline code cells. The wrapper adds a rounded border and scrolls horizontally (overflow-x: auto) so wide tables never break the page layout. Every header is sticky by default, and adding .ai-table--sortable plus a data-sort-key button per column makes rows click-to-sort. Mix in .ai-table--striped, .ai-table--compact, and .ai-table--bordered for zebra rows, denser padding, and column dividers - all modifiers stack on the same table."
 			/>
 			<div className="sub-heading">Standard</div>
 			<PreviewBlock
@@ -98,7 +98,7 @@ export default function Table() {
 
 			<div className="sub-heading">Sortable</div>
 			<PreviewBlock
-				label="Preview — click a column header to sort"
+				label="Preview - click a column header to sort"
 				canvasStyle={{ padding: 20 }}
 			>
 				<div className="ai-table-wrap" style={{ width: '100%' }}>
@@ -174,7 +174,7 @@ export default function Table() {
 
 			<div className="sub-heading">Compact</div>
 			<PreviewBlock
-				label="Preview — tighter padding for dense, data-heavy tables"
+				label="Preview - tighter padding for dense, data-heavy tables"
 				canvasStyle={{ padding: 20 }}
 			>
 				<div className="ai-table-wrap" style={{ width: '100%' }}>
@@ -211,7 +211,7 @@ export default function Table() {
 
 			<div className="sub-heading">Bordered</div>
 			<PreviewBlock
-				label="Preview — vertical dividers between columns"
+				label="Preview - vertical dividers between columns"
 				canvasStyle={{ padding: 20 }}
 			>
 				<div className="ai-table-wrap" style={{ width: '100%' }}>
@@ -246,9 +246,9 @@ export default function Table() {
 				</div>
 			</PreviewBlock>
 
-			<div className="sub-heading">Combined — striped, compact, sortable &amp; sticky</div>
+			<div className="sub-heading">Combined - striped, compact, sortable &amp; sticky</div>
 			<PreviewBlock
-				label="Preview — modifiers stack freely; click a column header to sort"
+				label="Preview - modifiers stack freely; click a column header to sort"
 				canvasStyle={{ padding: 20 }}
 			>
 				<div className="ai-table-wrap ai-table-wrap--scroll" style={{ width: '100%' }}>
@@ -287,7 +287,7 @@ export default function Table() {
 
 			<div className="sub-heading">Sticky Header (scrolling body)</div>
 			<PreviewBlock
-				label="Preview — header stays pinned while the body scrolls"
+				label="Preview - header stays pinned while the body scrolls"
 				canvasStyle={{ padding: 20 }}
 			>
 				<div className="ai-table-wrap ai-table-wrap--scroll" style={{ width: '100%' }}>
@@ -374,14 +374,14 @@ export default function Table() {
 						<tr><td><code>ai-table-wrap</code></td><td><code>div</code></td><td>Bordered, rounded outer shell; scrolls horizontally on overflow so the table itself stays unstyled by width constraints.</td></tr>
 						<tr><td><code>ai-table</code></td><td><code>table</code></td><td>Full-width, border-collapsed, 13.5px body text.</td></tr>
 						<tr><td>(default)</td><td><code>thead</code></td><td>Surface2 background band behind the header row.</td></tr>
-						<tr><td>(default)</td><td><code>th</code></td><td>Uppercase, letter-spaced, mono-font (DM Mono) column headers — sticky to the top of the nearest scrolling ancestor by default.</td></tr>
+						<tr><td>(default)</td><td><code>th</code></td><td>Uppercase, letter-spaced, mono-font (DM Mono) column headers - sticky to the top of the nearest scrolling ancestor by default.</td></tr>
 						<tr><td>(default)</td><td><code>td</code></td><td>Body cell, muted text, bottom border (removed on the last row).</td></tr>
 						<tr><td>(hover)</td><td><code>tr:hover td</code></td><td>Subtle accent-tinted row highlight - built in, no modifier class needed.</td></tr>
 						<tr><td>(default)</td><td><code>td code</code></td><td>Inline code chip style for values like firmware versions or IP addresses.</td></tr>
 						<tr><td><code>ai-table-wrap--scroll</code></td><td><code>div</code></td><td>Bounds the wrapper to a fixed height with vertical scroll, giving the sticky header a visible scrolling ancestor.</td></tr>
 						<tr><td><code>ai-table--sortable</code></td><td><code>table</code></td><td>Removes default <code>th</code> padding so the header button can fill the cell.</td></tr>
-						<tr><td><code>ai-th-sort</code></td><td><code>button</code> in <code>th</code></td><td>Real, focusable sort trigger — set <code>data-sort-key</code> to the row-data key it sorts by. Its <code>::after</code> icon reflects the parent <code>th</code>'s <code>aria-sort</code>.</td></tr>
-						<tr><td><code>th[aria-sort]</code></td><td><code>th</code></td><td><code>"none"</code> / <code>"ascending"</code> / <code>"descending"</code> — drives the sort icon; toggle it (and reorder rows) on click.</td></tr>
+						<tr><td><code>ai-th-sort</code></td><td><code>button</code> in <code>th</code></td><td>Real, focusable sort trigger - set <code>data-sort-key</code> to the row-data key it sorts by. Its <code>::after</code> icon reflects the parent <code>th</code>'s <code>aria-sort</code>.</td></tr>
+						<tr><td><code>th[aria-sort]</code></td><td><code>th</code></td><td><code>"none"</code> / <code>"ascending"</code> / <code>"descending"</code> - drives the sort icon; toggle it (and reorder rows) on click.</td></tr>
 						<tr><td><code>ai-table--striped</code></td><td><code>table</code></td><td>Zebra-shades even body rows with the surface2 tint; row hover still takes priority over the stripe.</td></tr>
 						<tr><td><code>ai-table--compact</code></td><td><code>table</code></td><td>Tighter <code>th</code>/<code>td</code> padding for dense, data-heavy tables.</td></tr>
 						<tr><td><code>ai-table--bordered</code></td><td><code>table</code></td><td>Adds a right-hand divider to every cell except the last column, for a gridded look.</td></tr>

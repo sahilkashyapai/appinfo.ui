@@ -43,7 +43,7 @@ export default function Breakpoints() {
 			</div>
 
 			<p className="ai-fs-7 ai-text-muted">
-				The system is <strong>mobile-first</strong>: a class with no breakpoint suffix (e.g. <code>ai-p-3</code>) applies at every viewport width. Adding a suffix like <code>-md-</code> only overrides the value <em>at that width and wider</em> — it never affects anything narrower. That's why you stack unsuffixed → <code>sm</code> → <code>md</code> → <code>lg</code> classes together rather than repeating the same rule at every breakpoint: each suffixed class only needs to state what changes.
+				The system is <strong>mobile-first</strong>: a class with no breakpoint suffix (e.g. <code>ai-p-3</code>) applies at every viewport width. Adding a suffix like <code>-md-</code> only overrides the value <em>at that width and wider</em> - it never affects anything narrower. That's why you stack unsuffixed → <code>sm</code> → <code>md</code> → <code>lg</code> classes together rather than repeating the same rule at every breakpoint: each suffixed class only needs to state what changes.
 			</p>
 
 			<div className="sub-heading">Cascading a single property</div>
@@ -74,7 +74,7 @@ export default function Breakpoints() {
 				</div>
 			</PreviewBlock>
 			<p className="ai-fs-7 ai-text-muted">
-				Resize the window (or shrink the browser) to see the same three columns go from a single stacked column, to a 2-up layout at <code>sm</code>, to a 3-up layout at <code>lg</code> — no JavaScript involved. See the <strong>Columns</strong> page for the full column-sizing and offset/order reference.
+				Resize the window (or shrink the browser) to see the same three columns go from a single stacked column, to a 2-up layout at <code>sm</code>, to a 3-up layout at <code>lg</code> - no JavaScript involved. See the <strong>Columns</strong> page for the full column-sizing and offset/order reference.
 			</p>
 		</div>
 	);

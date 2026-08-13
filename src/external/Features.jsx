@@ -17,7 +17,7 @@ const FEATURES = [
   {
     icon: 'extension',
     title: '40+ Components',
-    desc: 'Buttons, modals, navbars, data tables, accordions, toasts, and more — every pattern your IoT dashboard needs.',
+    desc: 'Buttons, modals, navbars, data tables, accordions, toasts, and more - every pattern your IoT dashboard needs.',
   },
   {
     icon: 'accessibility_new',
@@ -40,7 +40,7 @@ export default function Features() {
           Everything your team needs,<br />nothing you don't.
         </div>
         <p className="section-lead">
-          Designed for speed and consistency across your product portfolio — Glance, Mcomms, WWE,
+          Designed for speed and consistency across your product portfolio - Glance, Mcomms, WWE,
           Rattler, and Mainelink all share the same component API, just different palettes.
         </p>
 

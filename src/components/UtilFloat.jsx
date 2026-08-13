@@ -6,7 +6,7 @@ export default function UtilFloat() {
 		<div className="comp-panel" id="p-float">
 			<CompHeader
 				title="Float"
-				lead="Float an element left or right of surrounding content with .ai-float-{start,end,none}, and clear floats with .ai-clear-*. Clearing matters whenever a floated box is taller than the content next to it — without a clearing element after it, a container's height collapses to the height of its non-floated content and the float visually spills out past the container's border."
+				lead="Float an element left or right of surrounding content with .ai-float-{start,end,none}, and clear floats with .ai-clear-*. Clearing matters whenever a floated box is taller than the content next to it - without a clearing element after it, a container's height collapses to the height of its non-floated content and the float visually spills out past the container's border."
 				badge="UTILITIES"
 			/>
 

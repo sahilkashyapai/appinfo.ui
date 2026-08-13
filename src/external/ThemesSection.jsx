@@ -22,7 +22,7 @@ export default function ThemesSection({ theme, onThemeChange }) {
         <div className="section-eyebrow">Brand Themes</div>
         <div className="section-title">One library, five personalities.</div>
         <p className="section-lead">
-          Each theme is crafted from your product's official brand palette. Toggle instantly — all
+          Each theme is crafted from your product's official brand palette. Toggle instantly - all
           components update automatically.
         </p>
 

@@ -6,7 +6,7 @@ export default function Badge() {
 		<div className="comp-panel" id="p-badge">
 			<CompHeader
 				title="Badge"
-				lead="Small pill-shaped status indicators and count labels. Six semantic color variants, an optional leading dot indicator, and icon support for every context — inline text, table cells, or alongside card titles."
+				lead="Small pill-shaped status indicators and count labels. Six semantic color variants, an optional leading dot indicator, and icon support for every context - inline text, table cells, or alongside card titles."
 			/>
 
 			<div className="sub-heading">Variants</div>
@@ -78,13 +78,13 @@ export default function Badge() {
 						</tr>
 					</thead>
 					<tbody>
-						<tr><td><code>ai-badge</code></td><td>Base class — required on every badge. Sets the pill shape, padding, and font.</td></tr>
+						<tr><td><code>ai-badge</code></td><td>Base class - required on every badge. Sets the pill shape, padding, and font.</td></tr>
 						<tr><td><code>ai-badge-primary</code></td><td>Tinted brand color background with a subtle border.</td></tr>
 						<tr><td><code>ai-badge-dark</code></td><td>Solid dark background, white text.</td></tr>
 						<tr><td><code>ai-badge-success</code></td><td>Light green background, dark green text.</td></tr>
 						<tr><td><code>ai-badge-warning</code></td><td>Light amber background, dark amber text.</td></tr>
 						<tr><td><code>ai-badge-danger</code></td><td>Light red background, dark red text.</td></tr>
-						<tr><td><code>ai-badge-neutral</code></td><td>Surface-tinted background with a border — for low-emphasis labels.</td></tr>
+						<tr><td><code>ai-badge-neutral</code></td><td>Surface-tinted background with a border - for low-emphasis labels.</td></tr>
 						<tr><td><code>ai-badge-dot</code></td><td>Adds a small solid <code>currentColor</code> dot before the label (status indicator).</td></tr>
 						<tr><td><code>.material-symbols-outlined</code> child</td><td>Any icon placed inside a badge is automatically sized to 16px.</td></tr>
 					</tbody>

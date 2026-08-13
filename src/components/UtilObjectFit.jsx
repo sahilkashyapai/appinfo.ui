@@ -19,7 +19,7 @@ export default function UtilObjectFit() {
 		<div className="comp-panel" id="p-object-fit">
 			<CompHeader
 				title="Object fit"
-				lead="Control how a replaced element (img, video, canvas) fills its box with .ai-object-{fill,contain,cover,scale-down,none}, and where it's anchored with .ai-object-position-{top,right,bottom,left,center}. object-position only has a visible effect once the image isn't stretched to exactly match the box — that's why the position demo below pairs it with ai-object-none, which keeps the image at its natural size and lets the box crop it."
+				lead="Control how a replaced element (img, video, canvas) fills its box with .ai-object-{fill,contain,cover,scale-down,none}, and where it's anchored with .ai-object-position-{top,right,bottom,left,center}. object-position only has a visible effect once the image isn't stretched to exactly match the box - that's why the position demo below pairs it with ai-object-none, which keeps the image at its natural size and lets the box crop it."
 				badge="UTILITIES"
 			/>
 
@@ -51,7 +51,7 @@ export default function UtilObjectFit() {
 				))}
 			</PreviewBlock>
 
-			<PreviewBlock label="object-position (with object-fit: cover) — image still fills the box, but the crop anchor shifts">
+			<PreviewBlock label="object-position (with object-fit: cover) - image still fills the box, but the crop anchor shifts">
 				{POSITIONS.map((pos) => (
 					<figure key={pos} className="ai-d-flex ai-flex-column ai-align-center" style={{ gap: '4px' }}>
 						<img

@@ -44,7 +44,7 @@ export default function Alert() {
 		<div className="comp-panel" id="p-alert">
 			<CompHeader
 				title="Alert"
-				lead="Contextual feedback messages for user actions - info, success, warning, and danger variants, each with a tinted background, matching left border accent, and an icon. Alerts are dismissible by default via a built-in close button that removes the alert from the DOM, but the close button and icon are both optional — omit either for a persistent, plain-text banner."
+				lead="Contextual feedback messages for user actions - info, success, warning, and danger variants, each with a tinted background, matching left border accent, and an icon. Alerts are dismissible by default via a built-in close button that removes the alert from the DOM, but the close button and icon are both optional - omit either for a persistent, plain-text banner."
 			/>
 
 			<div className="sub-heading">Dismissible, With Icon (click the X to remove)</div>
@@ -90,7 +90,7 @@ export default function Alert() {
 						<div>
 							<strong>Warning:</strong>
 							{' '}
-							The icon span is optional — an alert works fine with just the message content.
+							The icon span is optional - an alert works fine with just the message content.
 						</div>
 					</div>
 					<button className="al-close" type="button" aria-label="Close alert">
@@ -108,14 +108,14 @@ export default function Alert() {
 						</tr>
 					</thead>
 					<tbody>
-						<tr><td><code>ai-alert</code></td><td>Base class — rounded corners, padding, and the left/right layout between content and close button.</td></tr>
-						<tr><td><code>ai-alert-info</code></td><td>Tinted with <code>var(--c-btn)</code> at 10% — theme brand color, so it recolors per-theme.</td></tr>
-						<tr><td><code>ai-alert-success</code></td><td>Fixed green background/border/text (<code>--c-success*</code>) — same in every theme.</td></tr>
+						<tr><td><code>ai-alert</code></td><td>Base class - rounded corners, padding, and the left/right layout between content and close button.</td></tr>
+						<tr><td><code>ai-alert-info</code></td><td>Tinted with <code>var(--c-btn)</code> at 10% - theme brand color, so it recolors per-theme.</td></tr>
+						<tr><td><code>ai-alert-success</code></td><td>Fixed green background/border/text (<code>--c-success*</code>) - same in every theme.</td></tr>
 						<tr><td><code>ai-alert-warning</code></td><td>Fixed amber background/border/text (<code>--c-warning*</code>).</td></tr>
 						<tr><td><code>ai-alert-danger</code></td><td>Fixed red background/border/text (<code>--c-danger*</code>).</td></tr>
 						<tr><td><code>al-content</code></td><td>Wraps the icon + message so they align and the close button can be pushed to the far right.</td></tr>
 						<tr><td><code>al-icon</code></td><td>Optional leading icon, 20px, slightly nudged down to align with the first line of text.</td></tr>
-						<tr><td><code>al-close</code></td><td>Optional dismiss button — 50% opacity at rest, full opacity on hover. Omit it for a persistent alert.</td></tr>
+						<tr><td><code>al-close</code></td><td>Optional dismiss button - 50% opacity at rest, full opacity on hover. Omit it for a persistent alert.</td></tr>
 					</tbody>
 				</table>
 			</div>

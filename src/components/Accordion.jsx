@@ -114,7 +114,7 @@ export default function Accordion() {
 			/>
 
 			<AccordionSection
-				title="Borderless — Arrow Icon Right"
+				title="Borderless - Arrow Icon Right"
 				variant="single"
 				accordionClass="ai-accordion--borderless"
 				icon="expand_more"
@@ -122,7 +122,7 @@ export default function Accordion() {
 			/>
 
 			<AccordionSection
-				title="Borderless — Arrow Icon Left"
+				title="Borderless - Arrow Icon Left"
 				variant="single"
 				accordionClass="ai-accordion--borderless"
 				icon="expand_more"
@@ -139,14 +139,14 @@ export default function Accordion() {
 						</tr>
 					</thead>
 					<tbody>
-						<tr><td><code>ai-accordion</code></td><td>Base wrapper — bordered card with rounded corners, clips its children.</td></tr>
+						<tr><td><code>ai-accordion</code></td><td>Base wrapper - bordered card with rounded corners, clips its children.</td></tr>
 						<tr><td><code>ai-acc-item</code></td><td>One row: its trigger button + collapsible body. Bottom-bordered except the last item.</td></tr>
 						<tr><td><code>ai-acc-btn</code></td><td>Full-width trigger. Title on the left, chevron icon on the right by default.</td></tr>
-						<tr><td><code>ai-acc-btn.open</code></td><td>Applied when that item is expanded — text/icon switch to <code>var(--c-btn)</code> and the background tints slightly.</td></tr>
+						<tr><td><code>ai-acc-btn.open</code></td><td>Applied when that item is expanded - text/icon switch to <code>var(--c-btn)</code> and the background tints slightly.</td></tr>
 						<tr><td><code>ai-acc-icon</code></td><td>The chevron; rotates 180deg when its button carries <code>.open</code>.</td></tr>
 						<tr><td><code>ai-acc-body</code></td><td>Collapsed via <code>max-height: 0</code>; <code>.open</code> reveals it up to a 200px cap with padding.</td></tr>
-						<tr><td><code>ai-accordion--icon-left</code></td><td>Modifier on the accordion root — moves the chevron before the title instead of after.</td></tr>
-						<tr><td><code>ai-accordion--borderless</code></td><td>Modifier on the accordion root — removes the outer border/radius and item dividers for a flush, list-style look.</td></tr>
+						<tr><td><code>ai-accordion--icon-left</code></td><td>Modifier on the accordion root - moves the chevron before the title instead of after.</td></tr>
+						<tr><td><code>ai-accordion--borderless</code></td><td>Modifier on the accordion root - removes the outer border/radius and item dividers for a flush, list-style look.</td></tr>
 					</tbody>
 				</table>
 			</div>

@@ -50,8 +50,8 @@ export default function Spinner() {
 					</thead>
 					<tbody>
 						<tr><td><code>ai-spinner</code></td><td>Base ring spinner (36px), rotating border with a solid top segment.</td></tr>
-						<tr><td><code>ai-spinner-sm</code></td><td>Small ring spinner — 20px, thinner border.</td></tr>
-						<tr><td><code>ai-spinner-lg</code></td><td>Large ring spinner — 52px, thicker border.</td></tr>
+						<tr><td><code>ai-spinner-sm</code></td><td>Small ring spinner - 20px, thinner border.</td></tr>
+						<tr><td><code>ai-spinner-lg</code></td><td>Large ring spinner - 52px, thicker border.</td></tr>
 						<tr><td><code>ai-spinner-dots</code></td><td>Flex row container for the three-dot bouncing variant.</td></tr>
 						<tr><td><code>ai-spinner-dot</code></td><td>A single bouncing dot; each child staggers its animation delay automatically.</td></tr>
 					</tbody>

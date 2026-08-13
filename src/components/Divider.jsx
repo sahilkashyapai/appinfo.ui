@@ -6,7 +6,7 @@ export default function Divider() {
 		<div className="comp-panel" id="p-divider">
 			<CompHeader
 				title="Divider"
-				lead="Horizontal rules for separating content — a default hairline, a thick brand-accent variant, and a centered text-label variant for 'or' style breaks between sections."
+				lead="Horizontal rules for separating content - a default hairline, a thick brand-accent variant, and a centered text-label variant for 'or' style breaks between sections."
 			/>
 			<PreviewBlock
 				label="Preview"
@@ -50,9 +50,9 @@ export default function Divider() {
 						</tr>
 					</thead>
 					<tbody>
-						<tr><td><code>ai-divider</code></td><td>Base horizontal rule — 1px solid border, no default margin, full width. Apply to an <code>&lt;hr&gt;</code>.</td></tr>
-						<tr><td><code>ai-divider-thick</code></td><td>Modifier — thickens the line to 2px and colors it with the brand accent.</td></tr>
-						<tr><td><code>ai-divider-text</code></td><td>Standalone flex element (not an <code>&lt;hr&gt;</code>) that renders its text content centered between two rule segments — e.g. "OR".</td></tr>
+						<tr><td><code>ai-divider</code></td><td>Base horizontal rule - 1px solid border, no default margin, full width. Apply to an <code>&lt;hr&gt;</code>.</td></tr>
+						<tr><td><code>ai-divider-thick</code></td><td>Modifier - thickens the line to 2px and colors it with the brand accent.</td></tr>
+						<tr><td><code>ai-divider-text</code></td><td>Standalone flex element (not an <code>&lt;hr&gt;</code>) that renders its text content centered between two rule segments - e.g. "OR".</td></tr>
 					</tbody>
 				</table>
 			</div>

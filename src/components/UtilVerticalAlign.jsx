@@ -8,12 +8,12 @@ export default function UtilVerticalAlign() {
 		<div className="comp-panel" id="p-vertical-align">
 			<CompHeader
 				title="Vertical align"
-				lead="Align inline, inline-block, or table-cell elements against their line box with .ai-valign-{value} (the CSS vertical-align property). Named .ai-valign-* rather than .ai-align-*, which is already used by the flexbox align-items shorthands in _flexbox.scss — the two properties look similar by name but do completely different things, so distinct prefixes avoid an easy mix-up."
+				lead="Align inline, inline-block, or table-cell elements against their line box with .ai-valign-{value} (the CSS vertical-align property). Named .ai-valign-* rather than .ai-align-*, which is already used by the flexbox align-items shorthands in _flexbox.scss - the two properties look similar by name but do completely different things, so distinct prefixes avoid an easy mix-up."
 				badge="UTILITIES"
 			/>
 
 			<p className="ai-fs-7 ai-text-muted">
-				<strong>When this actually does something:</strong> vertical-align only affects elements laid out as <code>inline</code>, <code>inline-block</code>, or <code>table-cell</code> — it aligns the element relative to the line box (or table row) it sits in. It has <em>no effect</em> on block-level elements, and no effect on flex or grid items (those use <code>ai-align-items-*</code> / <code>ai-align-self-*</code> instead). Applying <code>ai-valign-*</code> to a flex child is a no-op, which is a common point of confusion.
+				<strong>When this actually does something:</strong> vertical-align only affects elements laid out as <code>inline</code>, <code>inline-block</code>, or <code>table-cell</code> - it aligns the element relative to the line box (or table row) it sits in. It has <em>no effect</em> on block-level elements, and no effect on flex or grid items (those use <code>ai-align-items-*</code> / <code>ai-align-self-*</code> instead). Applying <code>ai-valign-*</code> to a flex child is a no-op, which is a common point of confusion.
 			</p>
 
 			<div className="sub-heading">Works: inline-block elements sharing a line</div>
@@ -32,7 +32,7 @@ export default function UtilVerticalAlign() {
 			</PreviewBlock>
 
 			<div className="sub-heading">No effect: flex items</div>
-			<PreviewBlock label="Same classes applied to flex children — vertical-align is ignored">
+			<PreviewBlock label="Same classes applied to flex children - vertical-align is ignored">
 				<div className="ai-d-flex ai-align-center ai-bg-light ai-border ai-rounded-2 ai-p-2" style={{ width: '100%', height: '70px' }}>
 					<span className="ai-valign-top ai-bg-secondary ai-text-white ai-rounded-1 ai-p-2 ai-fs-8">ai-valign-top</span>
 					<span className="ai-valign-bottom ai-bg-secondary ai-text-white ai-rounded-1 ai-p-2 ai-fs-8">ai-valign-bottom</span>
@@ -40,7 +40,7 @@ export default function UtilVerticalAlign() {
 				</div>
 			</PreviewBlock>
 			<p className="ai-fs-7 ai-text-muted">
-				Both children above sit at the same vertical position — the flex container's <code>ai-align-center</code> is what's controlling their alignment, not the <code>ai-valign-*</code> classes.
+				Both children above sit at the same vertical position - the flex container's <code>ai-align-center</code> is what's controlling their alignment, not the <code>ai-valign-*</code> classes.
 			</p>
 
 			<div className="ai-table-wrap">

@@ -6,13 +6,13 @@ export default function UtilText() {
 		<div className="comp-panel" id="p-text">
 			<CompHeader
 				title="Text"
-				lead="Font size (.ai-fs-*), weight (.ai-fw-*), style, alignment, decoration, transform, line-height, letter-spacing, and wrapping utilities. (Vertical alignment of inline content has its own dedicated page — see Vertical Align.)"
+				lead="Font size (.ai-fs-*), weight (.ai-fw-*), style, alignment, decoration, transform, line-height, letter-spacing, and wrapping utilities. (Vertical alignment of inline content has its own dedicated page - see Vertical Align.)"
 				badge="UTILITIES"
 			/>
 
 			<PreviewBlock label="Font size (.ai-fs-1 .. .ai-fs-8)" canvasClassName="ai-d-flex ai-flex-column">
 				{[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
-					<span key={n} className={`ai-fs-${n}`}>ai-fs-{n} — The quick brown fox</span>
+					<span key={n} className={`ai-fs-${n}`}>ai-fs-{n} - The quick brown fox</span>
 				))}
 			</PreviewBlock>
 
@@ -31,7 +31,7 @@ export default function UtilText() {
 				<span className="ai-text-lowercase">LOWERCASE ME</span>
 			</PreviewBlock>
 
-			<PreviewBlock label="Line height (.ai-lh-*) — same font size, different line spacing" canvasClassName="ai-d-flex ai-flex-column">
+			<PreviewBlock label="Line height (.ai-lh-*) - same font size, different line spacing" canvasClassName="ai-d-flex ai-flex-column">
 				<p className="ai-lh-1 ai-fs-8" style={{ width: '220px' }}>ai-lh-1: The quick brown fox jumps over the lazy dog near the riverbank.</p>
 				<p className="ai-lh-base ai-fs-8" style={{ width: '220px' }}>ai-lh-base: The quick brown fox jumps over the lazy dog near the riverbank.</p>
 				<p className="ai-lh-xl ai-fs-8" style={{ width: '220px' }}>ai-lh-xl: The quick brown fox jumps over the lazy dog near the riverbank.</p>

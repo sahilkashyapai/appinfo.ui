@@ -33,7 +33,7 @@
         letter-spacing: 0.06em;
         font-family: 'DM Mono', monospace;
 
-        /* Sticky column headers — stick to the top of whatever ancestor scrolls
+        /* Sticky column headers - stick to the top of whatever ancestor scrolls
            (the page, or a .ai-table-wrap--scroll container). Background lives on
            the cell itself so scrolled-under rows never show through. */
         position: sticky;
@@ -68,7 +68,7 @@
         }
     }
 
-    /* Sortable modifier — th holds aria-sort, a real <button class="ai-th-sort">
+    /* Sortable modifier - th holds aria-sort, a real <button class="ai-th-sort">
        carries the click target so the control stays keyboard-accessible for free. */
     &--sortable {
         th {
@@ -117,7 +117,7 @@
         color: var(--c-btn);
     }
 
-    /* Striped modifier — zebra-shades even body rows; hover still wins over the stripe. */
+    /* Striped modifier - zebra-shades even body rows; hover still wins over the stripe. */
     &--striped {
         tbody tr:nth-child(even) td {
             background: var(--c-surface2);
@@ -128,7 +128,7 @@
         }
     }
 
-    /* Compact modifier — tighter cell padding for dense, data-heavy tables. */
+    /* Compact modifier - tighter cell padding for dense, data-heavy tables. */
     &--compact {
         th {
             padding: 7px 12px;
@@ -139,7 +139,7 @@
         }
     }
 
-    /* Bordered modifier — adds vertical dividers between columns. */
+    /* Bordered modifier - adds vertical dividers between columns. */
     &--bordered {
         th,
         td {

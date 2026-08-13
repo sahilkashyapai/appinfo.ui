@@ -172,7 +172,7 @@
                 }
             }
 
-            /* Row banding — alternates every other device row; counted across the
+            /* Row banding - alternates every other device row; counted across the
                whole wrapper (not per-group) so stripes stay continuous between groups. */
             &:nth-of-type(even) li {
                 background-color: var(--c-surface2);

@@ -55,7 +55,7 @@ function buildBasicLayoutSnippet(origin, theme = 'glance') {
     <!-- Meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My App — Built with AppInfo.UI</title>
+    <title>My App - Built with AppInfo.UI</title>
 
     <!-- AppInfo.UI CSS -->
     <link rel="stylesheet" href="${origin}/cdn/components.css?v=${CDN_VERSION}">
@@ -191,7 +191,7 @@ export default function QuickStart({ theme = 'glance' }) {
               <span className="cmd">{'>'}</span>{'\n'}
 
               {'    '}<span className="cmd">{'<title>'}</span>
-              {'My App — Built with AppInfo.UI'}
+              {'My App - Built with AppInfo.UI'}
               <span className="cmd">{'</title>'}</span>{'\n\n'}
 
               {'    '}<span className="comment">{'<!-- AppInfo.UI CSS -->'}</span>{'\n'}

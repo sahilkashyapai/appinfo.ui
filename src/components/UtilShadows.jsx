@@ -9,7 +9,7 @@ export default function UtilShadows() {
 		<div className="comp-panel" id="p-shadows">
 			<CompHeader
 				title="Shadows"
-				lead="Box-shadow scale (.ai-shadow-{sm,'',lg,xl,2xl}), semantic color shadows (.ai-shadow-{color}), inset shadows, and text-shadow utilities. All of these are built with color-mix() against a theme CSS variable (falling back to a Bootstrap-style default), so every shadow automatically adapts when the color theme or dark mode changes — no separate dark-mode override needed."
+				lead="Box-shadow scale (.ai-shadow-{sm,'',lg,xl,2xl}), semantic color shadows (.ai-shadow-{color}), inset shadows, and text-shadow utilities. All of these are built with color-mix() against a theme CSS variable (falling back to a Bootstrap-style default), so every shadow automatically adapts when the color theme or dark mode changes - no separate dark-mode override needed."
 				badge="UTILITIES"
 			/>
 

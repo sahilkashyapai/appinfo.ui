@@ -8,7 +8,7 @@ export default function Zindex() {
 		<div className="comp-panel" id="p-zindex">
 			<CompHeader
 				title="Z-index"
-				lead="A shared stacking-order scale so overlapping elements (dropdowns, modals, toasts, sticky headers) layer predictably instead of every component inventing its own arbitrary z-index number. Apply with .ai-z-{level}. Note that z-index only has an effect on a positioned element — one with .ai-position-relative, -absolute, -fixed, or -sticky (position: static, the default, ignores z-index entirely)."
+				lead="A shared stacking-order scale so overlapping elements (dropdowns, modals, toasts, sticky headers) layer predictably instead of every component inventing its own arbitrary z-index number. Apply with .ai-z-{level}. Note that z-index only has an effect on a positioned element - one with .ai-position-relative, -absolute, -fixed, or -sticky (position: static, the default, ignores z-index entirely)."
 				badge="LAYOUT"
 			/>
 

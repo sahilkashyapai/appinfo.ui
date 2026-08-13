@@ -408,11 +408,11 @@ export default function Navbar({ theme = 'glance' }) {
 						<tr><td><code>header-branding</code> / <code>brand-logo</code> / <code>powered-by</code></td><td>Logo + "Powered by" label on the left of the top strip.</td></tr>
 						<tr><td><code>header-user-actions</code> / <code>user-info</code></td><td>Right-aligned user name/business + logout button; hidden below 1080px in favor of the mobile menu.</td></tr>
 						<tr><td><code>ai-navbar-toggler</code> / <code>navtoggler-sticks</code> / <code>.stick</code></td><td>Hamburger button, built from 3 absolutely-positioned bars.</td></tr>
-						<tr><td><code>burger-open</code></td><td>Applied to the toggler when expanded — animates the 3 bars into an X.</td></tr>
+						<tr><td><code>burger-open</code></td><td>Applied to the toggler when expanded - animates the 3 bars into an X.</td></tr>
 						<tr><td><code>only-mobile</code></td><td>Utility that's hidden by default and shown (<code>flex</code>) only below the 1080px breakpoint.</td></tr>
-						<tr><td><code>ai-navbar</code></td><td>The secondary bar — brand-mid background, holds the search box and/or nav list.</td></tr>
+						<tr><td><code>ai-navbar</code></td><td>The secondary bar - brand-mid background, holds the search box and/or nav list.</td></tr>
 						<tr><td><code>ai-navbar--mobile-only</code></td><td>Modifier for a nav bar that only ever renders in the mobile collapsed layout (no desktop bar at all).</td></tr>
-						<tr><td><code>navbar-expanded</code></td><td>Applied below 1080px when the hamburger is toggled open — switches the nav bar from <code>display: none</code> to a full-height flyout.</td></tr>
+						<tr><td><code>navbar-expanded</code></td><td>Applied below 1080px when the hamburger is toggled open - switches the nav bar from <code>display: none</code> to a full-height flyout.</td></tr>
 						<tr><td><code>ai-navbar-searchbox</code></td><td>Fixed-width search input area, sized to match the sidebar width; hidden below 1080px.</td></tr>
 						<tr><td><code>ai-navbar-nav</code> / <code>nav-item</code> / <code>nav-link</code></td><td>The horizontal (desktop) or stacked (mobile) list of top-level nav entries.</td></tr>
 						<tr><td><code>nav-item--has-dropdown</code> / <code>is-open</code></td><td>Marks an item with a child menu; <code>.is-open</code> reveals its <code>.nav-dropdown</code> panel.</td></tr>

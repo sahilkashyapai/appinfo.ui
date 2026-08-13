@@ -42,7 +42,7 @@
     }
   }
 
-  /* Narrow-screen fallback — the button list collapses into this native
+  /* Narrow-screen fallback - the button list collapses into this native
      select so a small viewport gets one compact control instead of a
      wrapping/scrolling row of tab buttons. Present in every variant since
      it lives on the shared .ai-tabs wrapper, not a modifier. */
@@ -65,7 +65,7 @@
     }
   }
 
-  /* Segmented — attached rectangular buttons, filled active state */
+  /* Segmented - attached rectangular buttons, filled active state */
   &.ai-tabs--segmented {
     border-bottom: none;
 
@@ -105,7 +105,7 @@
     }
   }
 
-  /* Pills — spaced, fully rounded, filled active state */
+  /* Pills - spaced, fully rounded, filled active state */
   &.ai-tabs--pills {
     border-bottom: none;
 
@@ -132,7 +132,7 @@
     }
   }
 
-  /* Boxed — folder-style tabs that visually connect to the panel below */
+  /* Boxed - folder-style tabs that visually connect to the panel below */
   &.ai-tabs--boxed {
     border-bottom: 1px solid var(--c-border);
 

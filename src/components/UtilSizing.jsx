@@ -38,7 +38,7 @@ export default function UtilSizing() {
 				</div>
 			</PreviewBlock>
 
-			<PreviewBlock label="ai-aspect-16x9 + ai-max-w-100 — a responsive media placeholder">
+			<PreviewBlock label="ai-aspect-16x9 + ai-max-w-100 - a responsive media placeholder">
 				<div style={{ width: '200px' }}>
 					<div className="ai-aspect-16x9 ai-max-w-100 ai-bg-dark ai-text-white ai-rounded-2 ai-d-flex ai-align-center ai-justify-center ai-fs-8" style={{ width: '340px' }}>
 						16:9 media, scaled down to fit
@@ -62,7 +62,7 @@ export default function UtilSizing() {
 						<tr><td><code>ai-min-h-0 / -100 / -auto / -100vh</code></td><td>min-height</td></tr>
 						<tr><td><code>ai-max-w-100 / -none / -auto / -100vw</code></td><td>max-width</td></tr>
 						<tr><td><code>ai-max-h-100 / -none / -auto / -100vh</code></td><td>max-height</td></tr>
-						<tr><td><code>ai-aspect-1x1 / -16x9 / -4x3 / -21x9 / -9x16 / -3x4</code></td><td>aspect-ratio — pair with <code>ai-max-w-100</code> for responsive media boxes</td></tr>
+						<tr><td><code>ai-aspect-1x1 / -16x9 / -4x3 / -21x9 / -9x16 / -3x4</code></td><td>aspect-ratio - pair with <code>ai-max-w-100</code> for responsive media boxes</td></tr>
 					</tbody>
 				</table>
 			</div>

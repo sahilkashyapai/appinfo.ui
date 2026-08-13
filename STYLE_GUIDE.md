@@ -1,4 +1,4 @@
-# AI-UI-React — Style Guide
+# AI-UI-React - Style Guide
 
 A complete reference for the design tokens, themes, typography, spacing, and component conventions used across this project. This guide is the source of truth when building or extending UI in the library.
 
@@ -26,17 +26,17 @@ All components consume `var(--c-*)` tokens, so changing the theme attribute inst
 
 Tokens are defined in two layers:
 
-1. **SCSS variables** (per theme file in [src/styles/themes/](src/styles/themes)) — palette source of truth.
-2. **CSS custom properties** (also in each theme file, scoped under `[data-theme='…']`) — what components actually consume.
+1. **SCSS variables** (per theme file in [src/styles/themes/](src/styles/themes)) - palette source of truth.
+2. **CSS custom properties** (also in each theme file, scoped under `[data-theme='…']`) - what components actually consume.
 
 ### Universal token names (every theme defines all of these)
 
 | Token | Purpose |
 | --- | --- |
-| `--c-dark` | Darkest brand shade — hero, headings, deep accents |
-| `--c-mid` | Mid brand shade — secondary surfaces, gradients |
-| `--c-fade` | Softer brand tone — overlays, navbar backgrounds |
-| `--c-fade-alpha` | Same as `--c-fade` with alpha — translucent overlays |
+| `--c-dark` | Darkest brand shade - hero, headings, deep accents |
+| `--c-mid` | Mid brand shade - secondary surfaces, gradients |
+| `--c-fade` | Softer brand tone - overlays, navbar backgrounds |
+| `--c-fade-alpha` | Same as `--c-fade` with alpha - translucent overlays |
 | `--c-btn` | Primary action color (buttons, links, focus rings) |
 | `--c-btn-hover` | Hover state for `--c-btn` |
 | `--c-selected` | Selected/active state (semi-transparent accent) |
@@ -59,7 +59,7 @@ Tokens are defined in two layers:
 
 The project ships with **5 brand themes**. Each is a self-contained palette in [src/styles/themes/](src/styles/themes).
 
-### 3.1 Glance — Steel Blue
+### 3.1 Glance - Steel Blue
 File: [src/styles/themes/_glance.scss](src/styles/themes/_glance.scss)
 
 | Token | Hex |
@@ -85,7 +85,7 @@ Personality: clean, corporate, professional. Use for analytics, dashboards, B2B 
 
 ---
 
-### 3.2 MComms — Ocean + Green
+### 3.2 MComms - Ocean + Green
 File: [src/styles/themes/_mcomms.scss](src/styles/themes/_mcomms.scss)
 
 | Token | Hex |
@@ -107,11 +107,11 @@ File: [src/styles/themes/_mcomms.scss](src/styles/themes/_mcomms.scss)
 | `--c-text-sub` | `#1f5c44` |
 | `--c-text-muted` | `#6aaa88` |
 
-Personality: confident, action-forward. Blue chrome with green CTA — use for environmental, comms, and conversion-driven products.
+Personality: confident, action-forward. Blue chrome with green CTA - use for environmental, comms, and conversion-driven products.
 
 ---
 
-### 3.3 WWE — Indigo + Cyan
+### 3.3 WWE - Indigo + Cyan
 File: [src/styles/themes/_wwe.scss](src/styles/themes/_wwe.scss)
 
 | Token | Hex |
@@ -137,7 +137,7 @@ Personality: bold, energetic, broadcast. Use for entertainment, media, sports.
 
 ---
 
-### 3.4 Rattler — Tan + Gold
+### 3.4 Rattler - Tan + Gold
 File: [src/styles/themes/_rattler.scss](src/styles/themes/_rattler.scss)
 
 | Token | Hex |
@@ -163,7 +163,7 @@ Personality: warm, premium, editorial. Use for hospitality, lifestyle, craft bra
 
 ---
 
-### 3.5 Mainelink — Navy + Amber
+### 3.5 Mainelink - Navy + Amber
 File: [src/styles/themes/_mainelink.scss](src/styles/themes/_mainelink.scss)
 
 | Token | Hex |
@@ -207,14 +207,14 @@ Defined in [src/styles/components/_typography.scss](src/styles/components/_typog
 | --- | --- | --- | --- | --- | --- | --- |
 | `.ai-h1` | Syne | 36px | 800 | -0.03em | 1.1 | `--c-text` |
 | `.ai-h2` | Syne | 28px | 700 | -0.02em | 1.15 | `--c-text` |
-| `.ai-h3` | Syne | 22px | 700 | — | 1.2 | `--c-text` |
-| `.ai-h4` | Syne | 18px | 700 | — | 1.25 | `--c-text` |
-| `.ai-lead` | DM Sans | 17px | 400 | — | 1.65 | `--c-text-sub` |
-| `.ai-body` | DM Sans | 14.5px | 400 | — | 1.7 | `--c-text-sub` |
-| `.ai-small` | DM Sans | 12.5px | 400 | — | — | `--c-text-muted` |
-| `.ai-mono` | DM Mono | 13px | 400 | — | — | `--c-btn` |
-| `.ai-blockquote` | DM Sans | 14.5px | italic | — | — | `--c-text-sub` |
-| `.ai-link` | inherit | inherit | 500 | — | — | `--c-btn` → `--c-btn-hover` |
+| `.ai-h3` | Syne | 22px | 700 | - | 1.2 | `--c-text` |
+| `.ai-h4` | Syne | 18px | 700 | - | 1.25 | `--c-text` |
+| `.ai-lead` | DM Sans | 17px | 400 | - | 1.65 | `--c-text-sub` |
+| `.ai-body` | DM Sans | 14.5px | 400 | - | 1.7 | `--c-text-sub` |
+| `.ai-small` | DM Sans | 12.5px | 400 | - | - | `--c-text-muted` |
+| `.ai-mono` | DM Mono | 13px | 400 | - | - | `--c-btn` |
+| `.ai-blockquote` | DM Sans | 14.5px | italic | - | - | `--c-text-sub` |
+| `.ai-link` | inherit | inherit | 500 | - | - | `--c-btn` → `--c-btn-hover` |
 
 ### 4.3 Mono label pattern
 
@@ -262,17 +262,17 @@ Containers should max out around 1200px and center with auto margins. Sections b
 
 - **Default border:** `1px solid var(--c-border)`
 - **Radius scale (informal, used across components):**
-  - 4px — inline mono/code chips
-  - 6–8px — buttons, inputs, tags
-  - 10–12px — cards, modals
-  - 999px — pills, avatars, switches
+  - 4px - inline mono/code chips
+  - 6–8px - buttons, inputs, tags
+  - 10–12px - cards, modals
+  - 999px - pills, avatars, switches
 - **Shadows:** kept minimal; favor solid `--c-border` + subtle `box-shadow: 0 1px 2px rgba(0,0,0,0.04)` for raised surfaces. Hero/preview surfaces may use a deeper layered shadow but never colored shadows.
 
 ---
 
 ## 8. Motion
 
-- Default transition: `transition: color 0.1s, background 0.1s, border-color 0.1s;` — see the `transition-colors` mixin.
+- Default transition: `transition: color 0.1s, background 0.1s, border-color 0.1s;` - see the `transition-colors` mixin.
 - Theme switch transitions on `body`: `transition: background 0.3s, color 0.3s;`
 - Avoid transitioning `all`. Avoid easings >300ms for UI feedback.
 
@@ -308,7 +308,7 @@ Defined in [src/styles/utilities/_variables.scss](src/styles/utilities/_variable
 
 ## 11. Component Library
 
-All components live in [src/components/](src/components) with matching styles in [src/styles/components/](src/styles/components). Every component pulls color from `--c-*` tokens — never hard-code hex inside a component stylesheet.
+All components live in [src/components/](src/components) with matching styles in [src/styles/components/](src/styles/components). Every component pulls color from `--c-*` tokens - never hard-code hex inside a component stylesheet.
 
 | Component | JSX | Styles |
 | --- | --- | --- |
@@ -346,7 +346,7 @@ All components live in [src/components/](src/components) with matching styles in
 - **States:** `:hover`, `:focus-visible`, `[aria-disabled="true"]`, `.is-active`, `.is-open`.
 - **Colors:** always via `var(--c-*)`. Use `color-mix(in srgb, var(--c-btn) 10%, var(--c-surface))` for tinted backgrounds rather than new tokens.
 - **Borders:** `1px solid var(--c-border)`.
-- **Focus ring:** `outline: 2px solid var(--c-btn); outline-offset: 2px;` (or a 2px box-shadow ring) — never remove without a replacement.
+- **Focus ring:** `outline: 2px solid var(--c-btn); outline-offset: 2px;` (or a 2px box-shadow ring) - never remove without a replacement.
 
 ---
 
@@ -354,10 +354,10 @@ All components live in [src/components/](src/components) with matching styles in
 
 Marketing surfaces live in [src/components/external/](src/components/external) and pull from [src/styles/external/](src/styles/external):
 
-- `_navbar-external.scss` — top-of-page brand nav
-- `_hero.scss` — uses `var(--hero-grad)`
-- `_sections.scss` — generic section spacing/typography
-- `_preview.scss` — themed component preview cards (`var(--card-top)` stripe)
+- `_navbar-external.scss` - top-of-page brand nav
+- `_hero.scss` - uses `var(--hero-grad)`
+- `_sections.scss` - generic section spacing/typography
+- `_preview.scss` - themed component preview cards (`var(--card-top)` stripe)
 - `_footer.scss`
 
 These sections also respect `data-theme`, so the marketing page restyles together with the component preview.
@@ -369,7 +369,7 @@ These sections also respect `data-theme`, so the marketing page restyles togethe
 - Color pairs are tuned for ≥ AA contrast on `--c-text` over `--c-page-bg` / `--c-surface`.
 - Always retain a visible `:focus-visible` indicator using `--c-btn`.
 - Interactive elements must be ≥ 32px hit target (buttons default to 36–40px).
-- Don't use color alone to convey meaning — pair with icon or text (e.g. alerts).
+- Don't use color alone to convey meaning - pair with icon or text (e.g. alerts).
 - Respect `prefers-reduced-motion`; avoid auto-playing transitions over 300ms.
 
 ---
@@ -407,7 +407,7 @@ No component CSS should need to change.
 
 **Don't**
 - Don't hard-code hex colors in component SCSS.
-- Don't introduce theme-specific selectors inside a component (`[data-theme='glance'] .ai-btn { … }`) — extend the token instead.
+- Don't introduce theme-specific selectors inside a component (`[data-theme='glance'] .ai-btn { … }`) - extend the token instead.
 - Don't use inline styles for theme-able properties.
 - Don't remove focus outlines without providing a replacement.
 - Don't ship a component that only looks correct in one theme.

@@ -36,7 +36,7 @@ export default function Tabs() {
 		<div className="comp-panel" id="p-tabs">
 			<CompHeader
 				title="Tabs"
-				lead="Horizontal tab navigation for switching between related content panes. Built from a lightweight .ai-tabs / .ai-tab-list / .ai-tab-btn / .ai-tab-content structure — the active button gets a colored underline (var(--c-btn)) and the matching panel is the only one shown. Tab buttons can carry a leading icon alongside the label, and the native disabled attribute removes a tab from the interaction flow without any extra markup. At 1080px and narrower, the button row hides and a native .ai-tab-select dropdown takes over — resize the window below 1080px to see it happen in any preview below."
+				lead="Horizontal tab navigation for switching between related content panes. Built from a lightweight .ai-tabs / .ai-tab-list / .ai-tab-btn / .ai-tab-content structure - the active button gets a colored underline (var(--c-btn)) and the matching panel is the only one shown. Tab buttons can carry a leading icon alongside the label, and the native disabled attribute removes a tab from the interaction flow without any extra markup. At 1080px and narrower, the button row hides and a native .ai-tab-select dropdown takes over - resize the window below 1080px to see it happen in any preview below."
 			/>
 			<div className="sub-heading">Icons + Content Panels</div>
 			<PreviewBlock
@@ -108,14 +108,14 @@ export default function Tabs() {
 						<option disabled>Archived (disabled)</option>
 					</select>
 					<div className="ai-tab-content active" role="tabpanel">
-						Standard tab list with a disabled trailing tab — it cannot be focused or clicked, useful for gating content behind a permission or plan tier.
+						Standard tab list with a disabled trailing tab - it cannot be focused or clicked, useful for gating content behind a permission or plan tier.
 					</div>
 				</div>
 			</PreviewBlock>
 
 			<div className="sub-heading">Segmented</div>
 			<PreviewBlock
-				label="Preview — attached rectangular buttons, filled active state"
+				label="Preview - attached rectangular buttons, filled active state"
 				canvasStyle={{ padding: '24px', gap: 0 }}
 			>
 				<div className="ai-tabs ai-tabs--segmented" data-tabs>
@@ -164,7 +164,7 @@ export default function Tabs() {
 
 			<div className="sub-heading">Pills</div>
 			<PreviewBlock
-				label="Preview — spaced, fully rounded, filled active state"
+				label="Preview - spaced, fully rounded, filled active state"
 				canvasStyle={{ padding: '24px', gap: 0 }}
 			>
 				<div className="ai-tabs ai-tabs--pills" data-tabs>
@@ -213,7 +213,7 @@ export default function Tabs() {
 
 			<div className="sub-heading">Boxed</div>
 			<PreviewBlock
-				label="Preview — folder-style tabs that connect to the panel below"
+				label="Preview - folder-style tabs that connect to the panel below"
 				canvasStyle={{ padding: '24px', gap: 0 }}
 			>
 				<div className="ai-tabs ai-tabs--boxed" data-tabs>
@@ -269,16 +269,16 @@ export default function Tabs() {
 						</tr>
 					</thead>
 					<tbody>
-						<tr><td><code>ai-tabs</code></td><td>Wrapper — draws the bottom border the tab list sits on.</td></tr>
+						<tr><td><code>ai-tabs</code></td><td>Wrapper - draws the bottom border the tab list sits on.</td></tr>
 						<tr><td><code>ai-tab-list</code></td><td>Flex row of tab trigger buttons, no gap between items.</td></tr>
-						<tr><td><code>ai-tab-btn</code></td><td>Individual tab trigger — muted text, transparent 2px bottom border by default.</td></tr>
-						<tr><td><code>ai-tab-btn.active</code></td><td>Selected state — text and bottom border switch to <code>var(--c-btn)</code>.</td></tr>
-						<tr><td><code>ai-tab-btn[disabled]</code></td><td>Native disabled attribute — removes the tab from tab order and click handling.</td></tr>
-						<tr><td><code>ai-tab-content</code></td><td>Panel for a tab's content — hidden (<code>display: none</code>) unless it carries <code>.active</code>.</td></tr>
+						<tr><td><code>ai-tab-btn</code></td><td>Individual tab trigger - muted text, transparent 2px bottom border by default.</td></tr>
+						<tr><td><code>ai-tab-btn.active</code></td><td>Selected state - text and bottom border switch to <code>var(--c-btn)</code>.</td></tr>
+						<tr><td><code>ai-tab-btn[disabled]</code></td><td>Native disabled attribute - removes the tab from tab order and click handling.</td></tr>
+						<tr><td><code>ai-tab-content</code></td><td>Panel for a tab's content - hidden (<code>display: none</code>) unless it carries <code>.active</code>.</td></tr>
 						<tr><td><code>ai-tab-content.active</code></td><td>The one visible panel matching the selected tab.</td></tr>
-						<tr><td><code>ai-tabs--segmented</code></td><td>Modifier on <code>.ai-tabs</code> — attached rectangular buttons; active tab fills with <code>var(--c-btn)</code>. Matches the Details / Modbus device-settings tab bar.</td></tr>
-						<tr><td><code>ai-tabs--pills</code></td><td>Modifier on <code>.ai-tabs</code> — spaced, fully rounded buttons; active tab fills with <code>var(--c-btn)</code> and a soft shadow.</td></tr>
-						<tr><td><code>ai-tabs--boxed</code></td><td>Modifier on <code>.ai-tabs</code> — bordered folder-style tabs; the active tab's bottom border matches the panel so it reads as connected.</td></tr>
+						<tr><td><code>ai-tabs--segmented</code></td><td>Modifier on <code>.ai-tabs</code> - attached rectangular buttons; active tab fills with <code>var(--c-btn)</code>. Matches the Details / Modbus device-settings tab bar.</td></tr>
+						<tr><td><code>ai-tabs--pills</code></td><td>Modifier on <code>.ai-tabs</code> - spaced, fully rounded buttons; active tab fills with <code>var(--c-btn)</code> and a soft shadow.</td></tr>
+						<tr><td><code>ai-tabs--boxed</code></td><td>Modifier on <code>.ai-tabs</code> - bordered folder-style tabs; the active tab's bottom border matches the panel so it reads as connected.</td></tr>
 						<tr><td><code>ai-tab-select</code></td><td>Native <code>&lt;select&gt;</code>, one <code>&lt;option&gt;</code> per tab (<code>value</code> matches its <code>data-tab-target</code>). Hidden above 1080px; below it, it replaces <code>.ai-tab-list</code> and changing it activates the matching tab.</td></tr>
 					</tbody>
 				</table>

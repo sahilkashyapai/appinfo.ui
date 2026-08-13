@@ -79,7 +79,7 @@ export default function Card() {
 			</PreviewBlock>
 
 			<p className="ai-fs-7 ai-text-muted ai-mt-3">
-				Every card lifts and gains a soft shadow on hover automatically — no extra class required.
+				Every card lifts and gains a soft shadow on hover automatically - no extra class required.
 			</p>
 
 			<div className="ai-table-wrap">
@@ -91,14 +91,14 @@ export default function Card() {
 						</tr>
 					</thead>
 					<tbody>
-						<tr><td><code>ai-card</code></td><td>Base container — surface background, border, rounded corners. Lifts with a shadow on hover by default.</td></tr>
+						<tr><td><code>ai-card</code></td><td>Base container - surface background, border, rounded corners. Lifts with a shadow on hover by default.</td></tr>
 						<tr><td><code>ai-card-img</code></td><td>Fixed-height (120px) image/graphic band at the top of the card, centered content over the hero gradient.</td></tr>
 						<tr><td><code>ai-card-header</code></td><td>Optional top section above the body, with its own bottom border and secondary surface background.</td></tr>
 						<tr><td><code>ai-card-header-title</code></td><td>Bold title text used inside <code>ai-card-header</code>.</td></tr>
 						<tr><td><code>ai-card-body</code></td><td>Main padded content area.</td></tr>
 						<tr><td><code>ai-card-title</code></td><td>Bold heading used inside the body.</td></tr>
 						<tr><td><code>ai-card-text</code></td><td>Muted secondary paragraph text inside the body.</td></tr>
-						<tr><td><code>ai-card-footer</code></td><td>Optional bottom bar with a top border; content right-aligned with gap — typically action buttons.</td></tr>
+						<tr><td><code>ai-card-footer</code></td><td>Optional bottom bar with a top border; content right-aligned with gap - typically action buttons.</td></tr>
 					</tbody>
 				</table>
 			</div>

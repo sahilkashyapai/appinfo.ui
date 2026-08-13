@@ -252,7 +252,7 @@ export default function Sidebars() {
 						<tr>
 							<td><code>no-alarmbar</code> / <code>has-alarmbar</code></td>
 							<td>Root modifiers</td>
-							<td>Mutually exclusive: <code>no-alarmbar</code> hides the <code>devicelist-footer</code> summary strip (default); <code>has-alarmbar</code> shows it. Pair <code>has-alarmbar</code> with a rendered <code>devicelist-footer</code> — see "With Alarm Bar" above.</td>
+							<td>Mutually exclusive: <code>no-alarmbar</code> hides the <code>devicelist-footer</code> summary strip (default); <code>has-alarmbar</code> shows it. Pair <code>has-alarmbar</code> with a rendered <code>devicelist-footer</code> - see "With Alarm Bar" above.</td>
 						</tr>
 						<tr>
 							<td><code>devicelist-header</code></td>
@@ -292,7 +292,7 @@ export default function Sidebars() {
 						<tr>
 							<td>(default)</td>
 							<td><code>devicelist-items</code> (even)</td>
-							<td>Zebra row banding — every other device row gets a surface2 tint, counted continuously across group boundaries.</td>
+							<td>Zebra row banding - every other device row gets a surface2 tint, counted continuously across group boundaries.</td>
 						</tr>
 						<tr>
 							<td><code>device-count</code> / <code>device-count--alert</code></td>
@@ -302,7 +302,7 @@ export default function Sidebars() {
 						<tr>
 							<td><code>devicelist-footer</code></td>
 							<td>Footer bar</td>
-							<td>Fixed strip below the scroll region — stat cells plus a chevron affordance, mirroring the header's visual weight. Hidden unless the root carries <code>has-alarmbar</code>.</td>
+							<td>Fixed strip below the scroll region - stat cells plus a chevron affordance, mirroring the header's visual weight. Hidden unless the root carries <code>has-alarmbar</code>.</td>
 						</tr>
 						<tr>
 							<td><code>devicelist-footer-stat</code></td>

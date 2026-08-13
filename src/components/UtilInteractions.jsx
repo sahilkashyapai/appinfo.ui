@@ -12,7 +12,7 @@ export default function UtilInteractions() {
 				badge="UTILITIES"
 			/>
 
-			<PreviewBlock label="Cursor (.ai-cursor-*) — hover each box">
+			<PreviewBlock label="Cursor (.ai-cursor-*) - hover each box">
 				{CURSORS.map((c) => (
 					<div key={c} className={`ai-cursor-${c} ai-bg-secondary ai-text-white ai-rounded-2 ai-p-3 ai-text-center`}>
 						{c}
@@ -26,7 +26,7 @@ export default function UtilInteractions() {
 			</PreviewBlock>
 
 			<PreviewBlock label="User select (.ai-user-select-none prevents text selection)">
-				<p className="ai-user-select-none ai-bg-light ai-rounded-2 ai-p-3">Try selecting this text — you can't.</p>
+				<p className="ai-user-select-none ai-bg-light ai-rounded-2 ai-p-3">Try selecting this text - you can't.</p>
 				<p className="ai-user-select-all ai-bg-light ai-rounded-2 ai-p-3">Click once here and everything gets selected.</p>
 				<p className="ai-user-select-text ai-bg-light ai-rounded-2 ai-p-3">Selectable normally (.ai-user-select-text).</p>
 			</PreviewBlock>
@@ -47,7 +47,7 @@ export default function UtilInteractions() {
 						<tr><td><code>ai-cursor-move</code></td><td>Move/drag cursor</td></tr>
 						<tr><td><code>ai-cursor-not-allowed</code></td><td>Disabled/blocked cursor</td></tr>
 						<tr><td><code>ai-cursor-help</code></td><td>Question-mark help cursor</td></tr>
-						<tr><td><code>ai-pointer-events-none</code></td><td>Element (and its children) become untargetable — clicks/hovers pass through to whatever is behind it</td></tr>
+						<tr><td><code>ai-pointer-events-none</code></td><td>Element (and its children) become untargetable - clicks/hovers pass through to whatever is behind it</td></tr>
 						<tr><td><code>ai-pointer-events-auto</code></td><td>Restores normal pointer targeting, useful to re-enable a child inside a `-none` ancestor</td></tr>
 						<tr><td><code>ai-user-select-none</code></td><td>Text cannot be selected by dragging/double-click</td></tr>
 						<tr><td><code>ai-user-select-text</code></td><td>Normal, selectable text (the default)</td></tr>

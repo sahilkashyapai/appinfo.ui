@@ -58,7 +58,7 @@ Add `.ai-table--sortable` to the `table` and wrap each sortable header's label i
 a `<button class="ai-th-sort" data-sort-key="field">`. Give the parent `th` an
 initial `aria-sort="none"`. Clicking the button reorders `tbody` rows by that
 column's cell text (or `data-sort-value` on the `td`, when the visible text isn't
-what should be compared — e.g. a formatted date) and flips `aria-sort` between
+what should be compared - e.g. a formatted date) and flips `aria-sort` between
 `ascending` and `descending`. Add `data-sort-type="number"` or `"string"` on the
 button to force numeric or lexical comparison instead of auto-detection.
 
@@ -80,7 +80,7 @@ Every `.ai-tabs` root can carry a `<select class="ai-tab-select" data-tab-select
 as a sibling of `.ai-tab-list`, with one `<option value="panel-id">` per tab (the
 `value` matches that tab's `data-tab-target`). Above 1080px the select stays
 hidden and the button row shows; at 1080px and narrower `.ai-tab-list` hides and
-the select takes over — no JS branching needed, it's a pure CSS swap. Changing
+the select takes over - no JS branching needed, it's a pure CSS swap. Changing
 the select activates the matching tab (same `.active` state, same
 `appinfo:tab:show` event); clicking a tab button also keeps the select's value in
 sync, so switching viewport width mid-session never desyncs the two controls.
@@ -102,7 +102,7 @@ sync, so switching viewport width mid-session never desyncs the two controls.
 
 ## Sticky table headers
 
-`.ai-table thead th` is `position: sticky; top: 0` by default — no markup change
+`.ai-table thead th` is `position: sticky; top: 0` by default - no markup change
 needed. It stays pinned to whatever ancestor actually scrolls. To scroll the table
 body itself (rather than the page), add `.ai-table-wrap--scroll` to the wrapper,
 which bounds it to a fixed height with `overflow-y: auto`.
@@ -112,10 +112,10 @@ which bounds it to a fixed height with `overflow-y: auto`.
 Three modifier classes on `.ai-table` are purely visual (no JS, no markup change
 beyond the class) and stack freely with each other and with `--sortable`:
 
-- `.ai-table--striped` — zebra-shades even body rows; hover still overrides the
+- `.ai-table--striped` - zebra-shades even body rows; hover still overrides the
   stripe color.
-- `.ai-table--compact` — tighter `th`/`td` padding for dense, data-heavy tables.
-- `.ai-table--bordered` — adds a right-hand divider to every column except the
+- `.ai-table--compact` - tighter `th`/`td` padding for dense, data-heavy tables.
+- `.ai-table--bordered` - adds a right-hand divider to every column except the
   last, for a gridded look.
 
 ```html

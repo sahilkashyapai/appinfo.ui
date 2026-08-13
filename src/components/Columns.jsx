@@ -64,7 +64,7 @@ export default function Columns() {
 
 			<div className="sub-heading">Row columns (equal-split shorthand)</div>
 			<p className="ai-fs-7 ai-text-muted">
-				<code>.ai-row-cols-{'{n}'}</code> is applied to the <code>.ai-row</code> itself instead of to each column — it tells every direct child to take an equal <code>100% / n</code> width automatically, without adding a <code>.ai-col-*</code> class to each one. It's a shorthand for "N equal columns per row," and like everything else it has responsive <code>.ai-row-cols-{'{bp}'}-{'{n}'}</code> variants.
+				<code>.ai-row-cols-{'{n}'}</code> is applied to the <code>.ai-row</code> itself instead of to each column - it tells every direct child to take an equal <code>100% / n</code> width automatically, without adding a <code>.ai-col-*</code> class to each one. It's a shorthand for "N equal columns per row," and like everything else it has responsive <code>.ai-row-cols-{'{bp}'}-{'{n}'}</code> variants.
 			</p>
 			<PreviewBlock label="ai-row-cols-3 (3 equal items per row, wraps automatically)">
 				<div className="ai-row ai-row-cols-3 ai-g-3" style={{ width: '100%' }}>
@@ -121,7 +121,7 @@ export default function Columns() {
 						</tr>
 						<tr>
 							<td><code>ai-order-first</code> / <code>ai-order-last</code></td>
-							<td>Shortcuts for <code>order: -1</code> and <code>order: 13</code> — guaranteed first/last regardless of other order values in range 0-12.</td>
+							<td>Shortcuts for <code>order: -1</code> and <code>order: 13</code> - guaranteed first/last regardless of other order values in range 0-12.</td>
 						</tr>
 						<tr>
 							<td><code>ai-row-cols-{'{1-6}'}</code> / <code>ai-row-cols-{'{bp}'}-{'{1-6}'}</code></td>

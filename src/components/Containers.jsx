@@ -22,7 +22,7 @@ export default function Containers() {
 			/>
 
 			<p className="ai-fs-7 ai-text-muted">
-				Both classes are identical <code>display: flex</code> boxes with <code>12px</code> of horizontal padding and auto side margins — the only difference is <code>max-width</code>. <code>.ai-container</code> snaps to a fixed max-width at each breakpoint (see the table below), which keeps line lengths readable and layouts stable as the viewport grows. <code>.ai-container-fluid</code> never gets a max-width, so it always fills <code>100%</code> of its parent — reach for it when you want edge-to-edge content (toolbars, full-bleed heroes, dashboards) rather than a centered reading column. Because a container is itself a flex box, you'll almost always place an <code>.ai-row</code> directly inside one — the row supplies its own negative margins to cancel out the container's padding, so columns line up flush with the container edge. See the <strong>Grid</strong> page for that combination in action.
+				Both classes are identical <code>display: flex</code> boxes with <code>12px</code> of horizontal padding and auto side margins - the only difference is <code>max-width</code>. <code>.ai-container</code> snaps to a fixed max-width at each breakpoint (see the table below), which keeps line lengths readable and layouts stable as the viewport grows. <code>.ai-container-fluid</code> never gets a max-width, so it always fills <code>100%</code> of its parent - reach for it when you want edge-to-edge content (toolbars, full-bleed heroes, dashboards) rather than a centered reading column. Because a container is itself a flex box, you'll almost always place an <code>.ai-row</code> directly inside one - the row supplies its own negative margins to cancel out the container's padding, so columns line up flush with the container edge. See the <strong>Grid</strong> page for that combination in action.
 			</p>
 
 			<PreviewBlock label=".ai-container" canvasClassName="ai-p-0">
@@ -61,7 +61,7 @@ export default function Containers() {
 			</div>
 
 			<p className="ai-fs-7 ai-text-muted">
-				Because <code>.ai-container</code>'s max-width only ever <em>constrains</em> the box, it can't be demonstrated meaningfully inside this fixed-width preview pane — the table above is the source of truth for how it behaves at real browser widths. <code>.ai-container-fluid</code> has no such breakpoint table since it has no max-width at any size.
+				Because <code>.ai-container</code>'s max-width only ever <em>constrains</em> the box, it can't be demonstrated meaningfully inside this fixed-width preview pane - the table above is the source of truth for how it behaves at real browser widths. <code>.ai-container-fluid</code> has no such breakpoint table since it has no max-width at any size.
 			</p>
 		</div>
 	);

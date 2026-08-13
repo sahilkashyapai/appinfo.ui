@@ -71,7 +71,7 @@ Canonical attributes:
 
 The old `data-ai-*` forms remain supported for migration.
 
-Tabs collapse into a dropdown at 1080px and narrower — add a `<select
+Tabs collapse into a dropdown at 1080px and narrower - add a `<select
 data-tab-select>` next to `.ai-tab-list`, one `<option value="panel-id">` per
 tab:
 
@@ -109,9 +109,9 @@ table body in a fixed-height box instead of the whole page.
 
 Table style modifiers (stack freely, no JS involved):
 
-- `.ai-table--striped` — zebra-shaded even rows
-- `.ai-table--compact` — tighter cell padding
-- `.ai-table--bordered` — vertical column dividers
+- `.ai-table--striped` - zebra-shaded even rows
+- `.ai-table--compact` - tighter cell padding
+- `.ai-table--bordered` - vertical column dividers
 
 ```html
 <table class="ai-table ai-table--striped ai-table--compact ai-table--bordered">

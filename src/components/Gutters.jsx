@@ -98,7 +98,7 @@ export default function Gutters() {
 			</div>
 
 			<p className="ai-fs-7 ai-text-muted">
-				Every size in the table also accepts a breakpoint infix — <code>ai-g-md-6</code>, <code>ai-gx-lg-3</code>, <code>ai-gy-sm-2</code>, and so on — following the same mobile-first cascading rule described on the <strong>Breakpoints</strong> page.
+				Every size in the table also accepts a breakpoint infix - <code>ai-g-md-6</code>, <code>ai-gx-lg-3</code>, <code>ai-gy-sm-2</code>, and so on - following the same mobile-first cascading rule described on the <strong>Breakpoints</strong> page.
 			</p>
 		</div>
 	);

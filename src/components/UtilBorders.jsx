@@ -6,7 +6,7 @@ export default function UtilBorders() {
 		<div className="comp-panel" id="p-borders">
 			<CompHeader
 				title="Borders"
-				lead="Border presence per side (.ai-border*), border width (.ai-border-{1-5}), border-style (.ai-border-{solid,dashed,dotted,double,none}), border-radius — both uniform (.ai-rounded-*) and per-corner (.ai-rounded-{top,end,bottom,start}-*) — and border color utilities (.ai-border-{color})."
+				lead="Border presence per side (.ai-border*), border width (.ai-border-{1-5}), border-style (.ai-border-{solid,dashed,dotted,double,none}), border-radius - both uniform (.ai-rounded-*) and per-corner (.ai-rounded-{top,end,bottom,start}-*) - and border color utilities (.ai-border-{color})."
 				badge="UTILITIES"
 			/>
 

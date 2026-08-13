@@ -9,11 +9,11 @@ export default function UtilLink() {
 		<div className="comp-panel" id="p-link">
 			<CompHeader
 				title="Link"
-				lead="Colored, underlined links with a darker hover state (.ai-link-{color}), and .ai-link-opacity-{value} to fade a link's own color while keeping its hover feedback intact. Each variant stores its base color in a --ai-link-color custom property on the element; on hover, the text color mixes 85% toward black and the underline switches from a 50%-faded tint of that color to a fully solid one (currentColor) — so the underline visibly sharpens on hover even though the underline was already there at rest."
+				lead="Colored, underlined links with a darker hover state (.ai-link-{color}), and .ai-link-opacity-{value} to fade a link's own color while keeping its hover feedback intact. Each variant stores its base color in a --ai-link-color custom property on the element; on hover, the text color mixes 85% toward black and the underline switches from a 50%-faded tint of that color to a fully solid one (currentColor) - so the underline visibly sharpens on hover even though the underline was already there at rest."
 				badge="UTILITIES"
 			/>
 
-			<PreviewBlock label="Colors (.ai-link-*) — hover a link to see it darken">
+			<PreviewBlock label="Colors (.ai-link-*) - hover a link to see it darken">
 				{VARIANTS.map((name) => (
 					<a key={name} className={`ai-link-${name}`} href="#void">{name} link</a>
 				))}
@@ -26,7 +26,7 @@ export default function UtilLink() {
 				</p>
 			</PreviewBlock>
 
-			<PreviewBlock label="Opacity (.ai-link-opacity-*) — fades the link color, not the underline's hover response">
+			<PreviewBlock label="Opacity (.ai-link-opacity-*) - fades the link color, not the underline's hover response">
 				{OPACITIES.map((value) => (
 					<a key={value} className={`ai-link-primary ai-link-opacity-${value}`} href="#void">{`opacity-${value}`}</a>
 				))}

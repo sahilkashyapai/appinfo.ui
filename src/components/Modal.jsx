@@ -297,12 +297,12 @@ export default function Modal() {
 						</thead>
 						<tbody>
 							<tr><td><code>ai-modal-backdrop</code></td><td>Fixed, full-viewport, blurred overlay. Add a <code>data-modal-open</code> attribute (matching this element&apos;s id) to any trigger button. Toggling the <code>.open</code> class shows it and animates the dialog in.</td></tr>
-							<tr><td><code>ai-modal</code></td><td>The dialog card itself — surface background, rounded corners, shadow. Default width is <code>min(480px, 90vw)</code>.</td></tr>
-							<tr><td><code>ai-modal-sm</code></td><td>Narrow width variant, <code>min(320px, 90vw)</code> — quick confirmations.</td></tr>
-							<tr><td><code>ai-modal-lg</code></td><td>Wide width variant, <code>min(800px, 95vw)</code> — forms, tables, detail views.</td></tr>
+							<tr><td><code>ai-modal</code></td><td>The dialog card itself - surface background, rounded corners, shadow. Default width is <code>min(480px, 90vw)</code>.</td></tr>
+							<tr><td><code>ai-modal-sm</code></td><td>Narrow width variant, <code>min(320px, 90vw)</code> - quick confirmations.</td></tr>
+							<tr><td><code>ai-modal-lg</code></td><td>Wide width variant, <code>min(800px, 95vw)</code> - forms, tables, detail views.</td></tr>
 							<tr><td><code>ai-modal-header</code></td><td>Title row with bottom border. Optionally tinted with a state class below.</td></tr>
 							<tr><td><code>ai-bg-danger-light</code> / <code>ai-bg-success-light</code> / <code>ai-bg-warning-light</code> / <code>ai-bg-info-light</code></td><td>Header-only tint + matching title color, for alert/confirmation/success/info modals.</td></tr>
-							<tr><td><code>ai-modal-body</code></td><td>Scrollable content area — paragraphs, forms, tables.</td></tr>
+							<tr><td><code>ai-modal-body</code></td><td>Scrollable content area - paragraphs, forms, tables.</td></tr>
 							<tr><td><code>ai-modal-footer</code></td><td>Right-aligned action row for Cancel/Confirm buttons.</td></tr>
 							<tr><td><code>ai-modal-close</code></td><td>Icon-only dismiss button, usually paired with <code>data-modal-close</code>.</td></tr>
 							<tr><td><code>data-modal-open</code> / <code>data-modal-close</code></td><td>Behavior hooks the framework-free JS listens for to open/close the backdrop matching the given id.</td></tr>

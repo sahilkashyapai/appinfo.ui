@@ -6,12 +6,12 @@ export default function CssGrid() {
 		<div className="comp-panel" id="p-cssgrid">
 			<CompHeader
 				title="CSS Grid"
-				lead="Native CSS Grid utilities for two-dimensional layouts. Pair .ai-d-grid with .ai-grid-cols-{n} / .ai-grid-rows-{n} to define the track count, and .ai-gap-{size} to space items — no wrapper markup required."
+				lead="Native CSS Grid utilities for two-dimensional layouts. Pair .ai-d-grid with .ai-grid-cols-{n} / .ai-grid-rows-{n} to define the track count, and .ai-gap-{size} to space items - no wrapper markup required."
 				badge="LAYOUT"
 			/>
 
 			<p className="ai-fs-7 ai-text-muted">
-				Reach for the <code>.ai-row</code> / <code>.ai-col</code> flexbox grid (see the <strong>Grid</strong> and <strong>Columns</strong> pages) when you're laying things out along one direction at a time — a row of cards, a form's label/input pairs, content that should grow or shrink to fill available space. Reach for <code>.ai-d-grid</code> instead when you need to control <strong>rows and columns together</strong> as a single two-dimensional structure — a dashboard of evenly-sized tiles, a photo grid, or anything where item widths and heights both need to line up on a shared grid. Unlike <code>.ai-row</code>, a grid container needs no matching child class (no <code>.ai-col-*</code> equivalent) — every direct child automatically becomes a grid item and is placed into the next available track.
+				Reach for the <code>.ai-row</code> / <code>.ai-col</code> flexbox grid (see the <strong>Grid</strong> and <strong>Columns</strong> pages) when you're laying things out along one direction at a time - a row of cards, a form's label/input pairs, content that should grow or shrink to fill available space. Reach for <code>.ai-d-grid</code> instead when you need to control <strong>rows and columns together</strong> as a single two-dimensional structure - a dashboard of evenly-sized tiles, a photo grid, or anything where item widths and heights both need to line up on a shared grid. Unlike <code>.ai-row</code>, a grid container needs no matching child class (no <code>.ai-col-*</code> equivalent) - every direct child automatically becomes a grid item and is placed into the next available track.
 			</p>
 
 			<div className="sub-heading">Column tracks</div>
@@ -58,7 +58,7 @@ export default function CssGrid() {
 				</div>
 			</PreviewBlock>
 			<p className="ai-fs-7 ai-text-muted">
-				<code>ai-gap-{'{size}'}</code> sets spacing on both axes at once; <code>ai-gap-x-{'{size}'}</code> and <code>ai-gap-y-{'{size}'}</code> (from the same flexbox/gap utility set used by <code>.ai-d-flex</code>) let you control column-gap and row-gap independently — useful when a grid's rows and columns need visually different amounts of breathing room.
+				<code>ai-gap-{'{size}'}</code> sets spacing on both axes at once; <code>ai-gap-x-{'{size}'}</code> and <code>ai-gap-y-{'{size}'}</code> (from the same flexbox/gap utility set used by <code>.ai-d-flex</code>) let you control column-gap and row-gap independently - useful when a grid's rows and columns need visually different amounts of breathing room.
 			</p>
 
 			<div className="ai-table-wrap">
@@ -76,11 +76,11 @@ export default function CssGrid() {
 						</tr>
 						<tr>
 							<td><code>ai-grid-cols-{'{1-12}'}</code></td>
-							<td>Sets <code>grid-template-columns: repeat(n, minmax(0, 1fr))</code> — n equal-width column tracks.</td>
+							<td>Sets <code>grid-template-columns: repeat(n, minmax(0, 1fr))</code> - n equal-width column tracks.</td>
 						</tr>
 						<tr>
 							<td><code>ai-grid-rows-{'{1-12}'}</code></td>
-							<td>Sets <code>grid-template-rows: repeat(n, minmax(0, 1fr))</code> — n equal-height row tracks (container needs an explicit height to see the effect).</td>
+							<td>Sets <code>grid-template-rows: repeat(n, minmax(0, 1fr))</code> - n equal-height row tracks (container needs an explicit height to see the effect).</td>
 						</tr>
 						<tr>
 							<td><code>ai-grid-cols-none</code> / <code>ai-grid-rows-none</code></td>
@@ -88,7 +88,7 @@ export default function CssGrid() {
 						</tr>
 						<tr>
 							<td><code>ai-grid-cols-{'{bp}'}-{'{1-12}'}</code> / <code>ai-grid-rows-{'{bp}'}-{'{1-12}'}</code></td>
-							<td>Responsive variants — change the track count starting at the given breakpoint and up.</td>
+							<td>Responsive variants - change the track count starting at the given breakpoint and up.</td>
 						</tr>
 						<tr>
 							<td><code>ai-gap-{'{size}'}</code></td>

@@ -6,7 +6,7 @@ export default function Skeleton() {
 		<div className="comp-panel" id="p-skeleton">
 			<CompHeader
 				title="Skeleton"
-				lead="Animated shimmer placeholder shapes that represent loading content structure — text lines, titles, circular avatars, and button blocks — composable into realistic loading states for cards and lists."
+				lead="Animated shimmer placeholder shapes that represent loading content structure - text lines, titles, circular avatars, and button blocks - composable into realistic loading states for cards and lists."
 			/>
 			<div className="sub-heading">Composite Layouts</div>
 			<PreviewBlock
@@ -70,10 +70,10 @@ export default function Skeleton() {
 						</tr>
 					</thead>
 					<tbody>
-						<tr><td><code>ai-skel</code></td><td>Base class — required on every skeleton shape. Applies the shimmer gradient animation.</td></tr>
+						<tr><td><code>ai-skel</code></td><td>Base class - required on every skeleton shape. Applies the shimmer gradient animation.</td></tr>
 						<tr><td><code>ai-skel-text</code></td><td>A single 14px text line, useful for paragraph placeholders.</td></tr>
 						<tr><td><code>ai-skel-title</code></td><td>A 22px heading-sized line, 60% width by default.</td></tr>
-						<tr><td><code>ai-skel-circle</code></td><td>Forces <code>border-radius: 50%</code> — combine with inline <code>width</code>/<code>height</code> for avatars.</td></tr>
+						<tr><td><code>ai-skel-circle</code></td><td>Forces <code>border-radius: 50%</code> - combine with inline <code>width</code>/<code>height</code> for avatars.</td></tr>
 						<tr><td><code>ai-skel-btn</code></td><td>A 36×110px button-shaped placeholder block.</td></tr>
 					</tbody>
 				</table>

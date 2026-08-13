@@ -24,7 +24,7 @@ export default function Hero() {
 
       <p className="hero-sub">
         AppInfo.UI is a production-ready component library built for your internal products.
-        5 themes, 40+ components, zero external dependencies — ship polished interfaces without reinventing the wheel.
+        5 themes, 40+ components, zero external dependencies - ship polished interfaces without reinventing the wheel.
       </p>
 
       <div className="hero-cta">

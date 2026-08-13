@@ -159,7 +159,7 @@ export default function Icons() {
         <div className="comp-panel" id="p-icons">
             <CompHeader
                 title="Icons"
-                lead="Material Symbols (outlined family) bundled directly in the CSS — no CDN or extra network request needed. Browse by category, toggle outlined/filled style, and click any icon to copy its ready-to-paste HTML snippet. Combine with the ai-fs-* and ai-text-* utility classes to control size and color."
+                lead="Material Symbols (outlined family) bundled directly in the CSS - no CDN or extra network request needed. Browse by category, toggle outlined/filled style, and click any icon to copy its ready-to-paste HTML snippet. Combine with the ai-fs-* and ai-text-* utility classes to control size and color."
             />
 
             {/* Toolbar */}
@@ -259,7 +259,7 @@ export default function Icons() {
             {/* Sizing & Color */}
             <div className="sub-heading" style={{ marginTop: '2rem' }}>Sizing &amp; Color</div>
             <p className="icons-count">
-                Icons inherit <code>font-size</code> and <code>color</code> from their surroundings, so the existing text utility classes work directly on them — no icon-specific classes required.
+                Icons inherit <code>font-size</code> and <code>color</code> from their surroundings, so the existing text utility classes work directly on them - no icon-specific classes required.
             </p>
             <div className="ai-d-flex ai-flex-wrap ai-align-center ai-gap-4 ai-mb-4">
                 <span className="material-symbols-outlined ai-fs-8" aria-hidden="true">favorite</span>
@@ -284,7 +284,7 @@ export default function Icons() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td><code>ai-fs-1</code> … <code>ai-fs-8</code></td><td>Font-size scale (largest to smallest) — sets icon size since glyphs scale with <code>font-size</code>.</td></tr>
+                        <tr><td><code>ai-fs-1</code> … <code>ai-fs-8</code></td><td>Font-size scale (largest to smallest) - sets icon size since glyphs scale with <code>font-size</code>.</td></tr>
                         <tr><td><code>ai-text-primary</code> / <code>-success</code> / <code>-warning</code> / <code>-danger</code> / <code>-muted</code> / <code>-dark</code></td><td>Sets icon color via <code>color</code>, since the glyph paints with <code>currentColor</code>.</td></tr>
                         <tr><td><code>ai-icon</code></td><td>Convenience class (20px, vertical-align: middle) for icons inline with body text.</td></tr>
                     </tbody>
@@ -296,7 +296,7 @@ export default function Icons() {
             <div className="icons-usage-block">
                 <div className="icons-usage-note">
                     <span className="material-symbols-outlined" aria-hidden="true">check_circle</span>
-                    <p>No CDN needed — the Material Symbols font is already bundled in the CSS. Just copy the snippet and paste it into your code.</p>
+                    <p>No CDN needed - the Material Symbols font is already bundled in the CSS. Just copy the snippet and paste it into your code.</p>
                 </div>
 
                 <p>Outlined (default):</p>

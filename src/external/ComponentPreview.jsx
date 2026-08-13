@@ -104,9 +104,9 @@ function FormsPanel() {
         <div className="demo-input-group">
           <label className="demo-label">Zone</label>
           <select className="demo-select">
-            <option>Zone A — North</option>
-            <option>Zone B — South</option>
-            <option>Zone C — East</option>
+            <option>Zone A - North</option>
+            <option>Zone B - South</option>
+            <option>Zone C - East</option>
           </select>
         </div>
       </div>
@@ -150,7 +150,7 @@ function CardsPanel() {
     {
       icon: 'battery_std',
       title: 'Power Unit',
-      text: 'Battery at 23%. Solar charging interrupted — check panel.',
+      text: 'Battery at 23%. Solar charging interrupted - check panel.',
       badge: { cls: 'badge-warning', icon: 'warning', label: 'Attention' },
       btnCls: 'demo-btn-danger',
       btnLabel: 'Investigate',

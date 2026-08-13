@@ -5,7 +5,7 @@
 @use './colors' as *;
 
 // Each variant sets --ai-link-color so .ai-link-opacity-* can mix it
-// toward transparent when combined on the same element — currentColor
+// toward transparent when combined on the same element - currentColor
 // can't be used for this since it resolves to the inherited color, not
 // a sibling class's color on the same element.
 @mixin ai-link($color) {

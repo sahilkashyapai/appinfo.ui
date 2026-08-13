@@ -8,7 +8,7 @@ export default function UtilOverflow() {
 		<div className="comp-panel" id="p-overflow">
 			<CompHeader
 				title="Overflow"
-				lead="Control how content that doesn't fit its box is handled with .ai-overflow-{value} (both axes) or .ai-overflow-x-* / .ai-overflow-y-* (single axis). A related pair, .ai-overflow-wrap-normal / -break-word, controls whether a single long unbroken word or URL is allowed to break onto a new line instead of overflowing its box — that's a text-wrapping concern, not a scrolling one, but it lives in the same overflow family."
+				lead="Control how content that doesn't fit its box is handled with .ai-overflow-{value} (both axes) or .ai-overflow-x-* / .ai-overflow-y-* (single axis). A related pair, .ai-overflow-wrap-normal / -break-word, controls whether a single long unbroken word or URL is allowed to break onto a new line instead of overflowing its box - that's a text-wrapping concern, not a scrolling one, but it lives in the same overflow family."
 				badge="UTILITIES"
 			/>
 
@@ -61,8 +61,8 @@ export default function UtilOverflow() {
 						<tr><td><code>ai-overflow-visible / -hidden / -scroll / -auto</code></td><td>overflow, both axes</td></tr>
 						<tr><td><code>ai-overflow-x-*</code></td><td>Same values, horizontal axis only</td></tr>
 						<tr><td><code>ai-overflow-y-*</code></td><td>Same values, vertical axis only</td></tr>
-						<tr><td><code>ai-overflow-wrap-normal</code></td><td>overflow-wrap: normal — long words overflow the box rather than breaking</td></tr>
-						<tr><td><code>ai-overflow-wrap-break-word</code></td><td>overflow-wrap: break-word — breaks a long unbroken word/URL so it wraps instead of overflowing</td></tr>
+						<tr><td><code>ai-overflow-wrap-normal</code></td><td>overflow-wrap: normal - long words overflow the box rather than breaking</td></tr>
+						<tr><td><code>ai-overflow-wrap-break-word</code></td><td>overflow-wrap: break-word - breaks a long unbroken word/URL so it wraps instead of overflowing</td></tr>
 					</tbody>
 				</table>
 			</div>
